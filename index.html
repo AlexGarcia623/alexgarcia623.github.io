@@ -5,6 +5,16 @@
 <link rel="stylesheet" href="/w3css/3/w3.css">
 
 <head>
+<script>
+function openWin() {
+  window.open("https://www.w3schools.com");
+}
+
+function linkedIn() {
+  window.open("https://www.linkedin.com/in/alex-garcia-051300210/")
+}
+</script>
+
 <style>
 body {background-color: powderblue;}
 h1   {color: blue;}
@@ -15,6 +25,18 @@ header {
   text-align: center;
   font-size: 35px;
   color: tomato;
+}
+
+.button {
+  background-color: powderblue;
+  padding: 16px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.button:hover {
+  color:white;
+  background-color:black;
 }
 </style>
 
@@ -28,19 +50,19 @@ header {
 
 <body>
 
-<!-- Navigation -->
-<nav class="w3-bar w3-black">
-  <a href="#home" class="w3-button w3-bar-item">Home</a>
-  <a href="#CV" class="w3-button w3-bar-item">CV</a>
-</nav>
+
+<button class = "button" onclick = "openWin()">Home</button>
+<button class = "button" onclick = "linkedIn()">Linkedin</button>
+
 
 <header>
 	Alex Garcia
 </header>
 
 <div style="padding-left:16px">
-  <p class="para"> Howdy, this will eventually be my webpage </p>  <br>
-  <img src = "Baby.jpg">
+  <p class="para"> Howdy, this will eventually be my webpage </p>
 </div>
 </body>
 </html>
+
+
