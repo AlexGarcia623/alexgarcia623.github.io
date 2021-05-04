@@ -12,5 +12,5 @@ function CV() {
 }
   
 function secondPage() {
-  window.open("https://alexgarcia623.github.io/website/contactMe.html");
+  window.open("https://alexgarcia623.github.io/website/contactMe.html","_self");
 }
