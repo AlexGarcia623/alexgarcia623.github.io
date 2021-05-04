@@ -1,5 +1,5 @@
 function home() {
-  window.open("https://alexgarcia623.github.io/website");
+  window.open("https://alexgarcia623.github.io/website","_self");
 }
 
 function linkedIn() {
