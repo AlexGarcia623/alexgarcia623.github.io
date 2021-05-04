@@ -16,5 +16,5 @@ function secondPage() {
 }
 
 function inTheNews() {
-  window.open("./inTheNews.html"); 
+  window.open("https://alexgarcia623.github.io/website/inTheNews.html","_self"); 
 }
