@@ -5,64 +5,83 @@
 
 <head>
 <style>
-p {color:white;}
+p {
+  color:white;
+}
+
 body {
   color:white;
   background-color:black;
+  padding:0;
 }
 
 header {
-  background-color:black;
-  padding: 30px;
+  background-color:steelblue;
   font-size: 35px;
   border:black;
+  width:100%;
+  margin-bottom:20px;
 }
+
 
 .button {
   color:white;
   border:none;
-  padding: 32px 16px;
+  padding: 24px 16px;
   text-align: center;
   font-size: 16px;
   transition-duration: 0.4s;
-  background-color:black;
+  background-color:steelblue;
 }
 
 .biggerButton {
-  color:white;
-  border:none;
-  padding: 32px 16px;
-  text-align: center;
+  padding: 24px 18px;
   font-size: 24px;
-  transition-duration: 0.4s;
-  background-color:black;
 }
 
 .button:hover {
-  color:black;
+  color:steelblue;
   background-color:white;
 }
-  
+
+#cover-image {
+  display: block;
+  background-color:tomato;
+  border: 3px solid white;
+  width: 350px;
+  height: 525px;
+  padding: 15px;
+}
+
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.frame {
-  background-color:#808080;
-  border: 3px solid white;
-  margin: auto;
-  padding: 15px 10px;
+a {
+  color:powderblue;
 }
 
-table {
-  width: 100%;
+#profile-picture {
+  text-align: center;
+  font-size: 14pt;
+  padding: 2px;
 }
 
-th, td {
-  text-align: left;
-  padding: 32px;
+.body {
+  display: in-line block;
+  margin-left:150px;
+  margin-right:150px;
+}
+
+h1 {
+  color:tomato;
+  font-family:cursive;
+}
+
+h2 {
+  color:steelblue;
 }
 </style>
 

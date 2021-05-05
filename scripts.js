@@ -1,5 +1,5 @@
 function home() {
-  window.open("https://alexgarcia623.github.io/website","_self");
+  window.open("index.html","_self");
 }
 
 function linkedIn() {
@@ -7,14 +7,21 @@ function linkedIn() {
 }
 
 function CV() {
-  var file = "Resume.pdf";
-  window.open(file);
+  window.open("./pdfs/Resume.pdf");
 }
   
-function secondPage() {
-  window.open("https://alexgarcia623.github.io/website/contactMe.html","_self");
+function inTheNews() {
+  window.open("inTheNews.html","_self"); 
 }
 
-function inTheNews() {
-  window.open("https://alexgarcia623.github.io/website/inTheNews.html","_self"); 
+function drumCorps() {
+  window.open("DrumCorps.html","_self");
+}
+
+function workExamples() {
+  window.open("workExamples.html","_self");
+}
+
+function workExamples2() {
+  window.open("../workExamples.html","_self");
 }
