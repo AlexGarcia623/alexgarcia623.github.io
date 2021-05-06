@@ -10,6 +10,7 @@ p {
 }
 
 body {
+  margin-top:90px;
   color:white;
   background-color:black;
   padding:0;
@@ -17,12 +18,21 @@ body {
 
 header {
   background-color:steelblue;
+  position:fixed;
+  top:0;
+  left:0;
   font-size: 35px;
   border:black;
   width:100%;
-  margin-bottom:20px;
 }
 
+footer {
+  background-color:steelblue;
+  position:fixed;
+  bottom:0;
+  width:100%;
+  left:0;
+}
 
 .button {
   color:white;
@@ -44,19 +54,11 @@ header {
   background-color:white;
 }
 
-#cover-image {
-  display: block;
-  background-color:tomato;
-  border: 3px solid white;
-  width: 350px;
-  height: 525px;
-  padding: 15px;
-}
-
 .center {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left:auto;
+  margin-right:auto;
+  right: 0;
 }
 
 a {
@@ -67,16 +69,19 @@ a:hover {
   color:red;
 }
 
-#profile-picture {
+#profile-picture-text {
   text-align: center;
   font-size: 14pt;
   padding: 2px;
+  color:white;
+  margin-right:5px;
 }
 
 .body {
   display: in-line block;
   margin-left:150px;
   margin-right:150px;
+  margin-bottom:150px;
 }
 
 h1 {
@@ -86,6 +91,28 @@ h1 {
 
 h2 {
   color:steelblue;
+}
+
+#footer-text {
+  color:black;
+  padding:10px;
+}
+
+.cover-background {
+  display:block;
+  background-image: url("./images/Gators.jpeg");
+  background-repeat: no-repeat;
+  background-size: 75% 100%;
+  background-position:right;
+  background-attachment:fixed;
+  background-color:tomato;
+}
+
+hr {
+  width:100%;
+  right:0;
+  left:0;
+  overflow:hidden;
 }
 </style>
 

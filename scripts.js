@@ -25,3 +25,7 @@ function workExamples() {
 function workExamples2() {
   window.open("../workExamples.html","_self");
 }
+
+function contactMe() {
+  window.open("contactMe.html","_self");
+}
