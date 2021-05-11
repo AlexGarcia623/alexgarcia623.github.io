@@ -14,6 +14,7 @@ body {
   color:white;
   background-color:black;
   padding:0;
+  height:100%;
 }
 
 header {
@@ -22,8 +23,9 @@ header {
   top:0;
   left:0;
   font-size: 35px;
-  border:black;
   width:100%;
+  height:auto;
+  margin-bottom:15px;
 }
 
 footer {
@@ -58,7 +60,6 @@ footer {
   display: block;
   margin-left:auto;
   margin-right:auto;
-  right: 0;
 }
 
 a {
@@ -104,6 +105,14 @@ h2 {
   background-repeat: no-repeat;
   background-size: 75% 100%;
   background-position:right;
+  background-color:tomato;
+}
+
+#cover-page {
+  display: block;
+  margin-left:33%;
+  margin-right:33%;
+  height:100%;
   background-color:tomato;
 }
 
