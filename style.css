@@ -122,7 +122,19 @@ hr {
   left:0;
   overflow:hidden;
 }
-</style>
 
+input {
+  background-color:black;
+  border: 1px solid tomato;
+  color:powderblue;
+  font-size:14pt;
+}
+
+::placeholder {
+  color:steelblue;
+  font-size:14pt;
+  opacity:0.6;
+}
+</style>
 </head>
 </html>
