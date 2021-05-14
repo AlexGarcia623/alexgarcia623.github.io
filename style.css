@@ -70,14 +70,6 @@ a:hover {
   color:red;
 }
 
-#profile-picture-text {
-  text-align: center;
-  font-size: 14pt;
-  padding: 2px;
-  color:white;
-  margin-right:5px;
-}
-
 .body {
   display: in-line block;
   margin-left:150px;
@@ -128,6 +120,7 @@ input {
   border: 1px solid tomato;
   color:powderblue;
   font-size:14pt;
+  width:250px;
 }
 
 ::placeholder {

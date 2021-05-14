@@ -9,8 +9,29 @@
 <script src="scripts.js"></script>
 
 <style>
+* {
+  box-sizing:border-box;
+}
+.column3 {
+  float:left;
+  width:33%;
+  height:100%;
+}
+
+.row:after {
+  contents: "";
+  display: table;
+  clear: both;
+}
+
+.profileText {
+  text-algin:center;
+  font-family:cursive;
+  font-size:18pt;
+}
+
 a {
-  color:steelblue;
+  color:white;
 }
 
 a:hover {
@@ -27,14 +48,29 @@ a:hover {
   <button class = "button" onclick="workExamples()">Some of my work</button>
 </header>
 
-<body id = "cover-page">
-  <img src = "./images/Garcia_Headshot.jpg" width = 75% height = 80%% padding = 16px class = "center" style="border:2px solid white;">
-  <p id="profile-picture-text">(2021-) MS Astronomy, UF <br><br>
-  (2017-2021) BE Phys + BS Astro, UIUC<br><br>
-  </p>
+<body style="background-color:tomato;">
+  <div class = "row">
+    <div class = "column3">
+      <img src = "./images/Garcia_Headshot.jpg" width = 75% height = 100% padding = 16px class = "center" style="border:2px solid white; border-radius:16px;">
+    </div>
+    <div class = "column3">
+      <p class = "profileText">
+      (2021-) MS Astronomy, UF <br><br>
+      (2017-2021) BE Phys + BS Astro, UIUC<br><br>
+      </p>
 
-  <p style="text-align:center;font-size:12pt;"><a href="unitConversions.html">Unit Conversions </a></p>
+      <hr><br>
+   
+      <p class = "profileText">
+      Experienced tutor with a demonstrated history of working in higher education. Skilled in LaTeX and Python. Pursuing a Master's degree focused in Astronomy from the University of Florida.
+      </p>
+    </div>
+    <div class = "column3">
+      <p style="text-align:center;font-size:12pt;"><a href="unitConversions.html">Unit Conversions </a></p>
+    </div>
+  </div>
 </body>
+
 
 <footer>
   <button class = "button" onclick="contactMe()">Contact Me</button>
