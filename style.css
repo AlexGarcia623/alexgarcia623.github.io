@@ -15,6 +15,8 @@ body {
   background-color:black;
   padding:0;
   height:100%;
+  display:block;
+  background-size: 75% 100%;
 }
 
 header {
@@ -91,28 +93,8 @@ h2 {
   padding:10px;
 }
 
-.cover-background {
-  display:block;
-  background-image: url("./images/Gators.jpeg");
-  background-repeat: no-repeat;
-  background-size: 75% 100%;
-  background-position:right;
-  background-color:tomato;
-}
-
-#cover-page {
-  display: block;
-  margin-left:33%;
-  margin-right:33%;
-  height:100%;
-  background-color:tomato;
-}
-
 hr {
-  width:100%;
-  right:0;
-  left:0;
-  overflow:hidden;
+  border: 1px solid darkblue;
 }
 
 input {

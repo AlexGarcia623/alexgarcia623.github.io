@@ -12,10 +12,10 @@
 * {
   box-sizing:border-box;
 }
+
 .column3 {
   float:left;
   width:33%;
-  height:100%;
 }
 
 .row:after {
@@ -25,17 +25,28 @@
 }
 
 .profileText {
-  text-algin:center;
+  text-align:center;
   font-family:cursive;
   font-size:18pt;
 }
 
+.profileInfo {
+  font-size:16pt;
+  text-align:center;
+}
+
 a {
   color:white;
+  font-family:Times New Roman;
 }
 
 a:hover {
+  color:darkblue;
+}
+
+#coverHeader {
   color:black;
+  text-align:center;
 }
 </style>
 
@@ -54,19 +65,25 @@ a:hover {
       <img src = "./images/Garcia_Headshot.jpg" width = 75% height = 100% padding = 16px class = "center" style="border:2px solid white; border-radius:16px;">
     </div>
     <div class = "column3">
-      <p class = "profileText">
+      <p class = "profileText" style="color:black;"><em>
       (2021-) MS Astronomy, UF <br><br>
-      (2017-2021) BE Phys + BS Astro, UIUC<br><br>
+      (2017-2021) BE Phys + BS Astro, UIUC<br><br></em>
       </p>
 
       <hr><br>
    
-      <p class = "profileText">
+      <p class = "profileInfo">
       Experienced tutor with a demonstrated history of working in higher education. Skilled in LaTeX and Python. Pursuing a Master's degree focused in Astronomy from the University of Florida.
       </p>
     </div>
     <div class = "column3">
-      <p style="text-align:center;font-size:12pt;"><a href="unitConversions.html">Unit Conversions </a></p>
+      <h1 id = "coverHeader">Fun Links<h1>
+      <p class = "profileInfo">
+        <a href="unitConversions.html">Unit Conversions </a>
+      </p>
+      <p class = "profileInfo">
+	<a href="https://www.youtube.com/watch?v=U5HNy1ynPbU&ab_channel=yuminashinozuka" target="_blank">The Bluecoats 2019 </a>
+      </p>
     </div>
   </div>
 </body>
