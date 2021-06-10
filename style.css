@@ -64,6 +64,10 @@ footer {
   margin-right:auto;
 }
 
+#wbckgrd {
+  background-color:white;
+}
+
 a {
   color:powderblue;
 }
