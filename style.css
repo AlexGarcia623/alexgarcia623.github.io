@@ -114,6 +114,15 @@ input {
   font-size:14pt;
   opacity:0.6;
 }
+
+table {
+  border: 2px solid white;
+}
+
+th, td {
+  text-align: center;
+  padding: 5px;
+}
 </style>
 </head>
 </html>

@@ -3,6 +3,16 @@
 <link rel="stylesheet" href="style.css">
 <script src="scripts.js"></script>
 
+<style>
+h1 {
+  font-size:24pt
+}
+
+#toc {
+  font-size:16pt;
+}
+</style>
+
 <header>
   <title>Work Examples</title>
   <button class = "button biggerButton" onclick="home()">Alex Garcia</button>
@@ -13,13 +23,26 @@
 </header>
 
 <div class="body">
+<section id="TOC">
+<h1>Table of Contents</h1>
+
+<p id="toc"><a href="#Graduate Research">Graduate Research</a></p>
+<p id="toc"><a href="#qBraid">qBraid</a></p>
+<p id="toc"><a href="#CARE">CARE Tutoring</a></p>
+<p id="toc"><a href="#Undergraduate Research">Undergraduate Research</a></p>
+<p id="toc"><a href="#Physics 401">Physics 401 Lab Reports Fall 2020</a></p>
+</section>
+
+<section id="Graduate Research">
   <h1>Graduate Research</h1>
   
   <p>Work in progress! I am working with Paul Torrey this summer and as I transition into graduate school at UF </p>
+</section>
 
+<section id="qBraid">
   <h1>qBraid</h1>
 
-  <p>Coming soon! Short Description: High School-level introductory quantum computing course taught 10 weeks over the summer. </p>
+  <p>Summer 2021, quBes introductory quantum computing course. I am teaching this course with Joanna Roy, from University of Toronto. <a href="./pdfs/Quantum_Computing_Syllabus.pdf" target="_blank">Our Section's Syllabus</a> </p>
   
   <p>Participating Universities
   <ul>
@@ -32,10 +55,60 @@
     <li>University of California at Berkeley</li>
   </ul>
 
-  <p><a href="https://www.qBraid.com/education.html" target="_blank">qBraid's website</a> <a href="./images/UIUC_quantum_course_flyer.pdf" target="_blank">Flyer</a> </p>
+  <p><a href="https://www.qBraid.com/education.html" target="_blank">qBraid's website</a><br> <a href="./images/UIUC_quantum_course_flyer.pdf" target="_blank">Course Flyer</a> </p>
 
-  <p><a href="./pdfs/Quantum_Computing_Syllabus.pdf" target="_blank">My Section's Syllabus </a></p>
+  <table style="margin-left:auto; margin-right:auto">
+    <tr>
+      <th>Module Number</th>
+      <th>Module Subject</th>
+    </tr>
+    <tr>
+      <td>00</td>
+      <td>Introduction</td>
+    </tr>
+    <tr>
+      <td>01</td>
+      <td>Quantum Mechanics</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td>Classical Computing</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td>Mathematical Background: Complex Numbers</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td>Mathematical Background: Linear Algebra</td>
+    </tr>
+    <tr>
+      <td>05</td>
+      <td>Qubit and Quantum Gates</td>
+    </tr>
+    <tr>
+      <td>06</td>
+      <td>Writing Quantum Programs</td>
+    </tr>
+    <tr>
+      <td>07</td>
+      <td>Multi-Qubit Gates</td>
+    </tr>
+    <tr>
+      <td>08</td>
+      <td>Deutsch Algorithm</td>
+    </tr>
+    <tr>
+      <td>09</td>
+      <td>Non-local Games</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Quantum Algorithms Discussion</td>
+    </tr>
+  </table>
   
+<section id = "CARE">
   <h1>Center for Academic Resources in Engineering (CARE) UIUC</h1>
 
   <h2>Walk-in Tutoring</h2>
@@ -48,7 +121,9 @@ During the summer before my senior year of undergrad, I aided in creating new wo
 
   <h2>Data Analysis</h2>
   <p>During my tenure as a tutor with CARE, I also looked at the traffic patterns of our walk-in tutoring center. I assembled these reports using python and LaTeX and preseneted them monthly, as well as every semseter, to the entire team. <a href="./pdfs/walkinReports.html" target="_blank">Here</a> are a couple of reports.</p>
+</section>
 
+<section id="Undergraduate Research">
   <h1>Undergraduate Research</h1>
 
   <p>During my time at Illinois, I participated with two research groups: Professor Bryan Dunne's and Professor Yue Shen's. I started with Professor Dunne in the fall semester of my senior year and with Professon Shen the spring of my senior year.</p>
@@ -64,10 +139,59 @@ During the summer before my senior year of undergrad, I aided in creating new wo
   <p>My work with Professor Shen was centered on the Sloan Digitial Sky Survey (SDSS) Data Release 16, specifically the quasars. We wanted to analyze and get rid of a lot of the noise on the spectrum of these quasars. This project was an analysis project and more hands-on with coding than my previous experience with Professor Dunne. My small part in this project was to translate an IDL script into Python. The <a href="./ResearchRelated/synthspec_print.pdf" target="_blank">original IDL script</a> had several checks that we did not have to implement in Python. The <a href="./ResearchRelated/Project.html" target="_blank">Python Script</a>, created in a jupyter notebook, helped filter out this noise and give a much neater spectral emission line.</p>
 
   <img src="./ResearchRelated/Final_small_range.png" class=center id=wbckgrd>
+</section>
 
+<section id="Physics 401">
   <h1>Classical Physics Lab (PHYS 401) </h1>
   <p>Experiments and techniques in classical mechanics and electromagnetism. Dynamics of electrical and mechanical oscillators in the linear domain. Fourier analysis of system response. Measurements of electrostatic fields, transmission lines, waves, and radiation. Electromagnetic phenomena in dielectrics, conductors, and magnetic materials. Instruction in data analysis and report writing.<br><br><a href="./pdfs/labReports.html">Click Here to see the reports</a></p>
+</section>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 </div>
+
+<style>
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+  font-size: 18pt;
+  border: none;
+  outline: none;
+  background-color: steelblue;
+  color: white;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: white;
+  color:steelblue;
+  transition-duration:0.4s;
+}
+</style>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
 
 <footer>
   <button class = "button" onclick="contactMe()">Contact Me</button>
