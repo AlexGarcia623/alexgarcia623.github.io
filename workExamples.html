@@ -11,6 +11,22 @@ h1 {
 #toc {
   font-size:16pt;
 }
+
+.column3 {
+  float:left;
+  width:33%;
+}
+
+.column2 {
+  float:left;
+  width:50%
+}
+
+.row:after {
+  contents: "";
+  display: table;
+  clear: both;
+}
 </style>
 
 <header>
@@ -36,7 +52,51 @@ h1 {
 <section id="Graduate Research">
   <h1>Graduate Research</h1>
   
-  <p>Work in progress! I am working with Paul Torrey this summer and as I transition into graduate school at UF </p>
+  <p>I am working with Paul Torrey this summer (2021) and as I transition into graduate school at UF.<br><br> My work is with the Illustris TNG simulation data, specifically I am looking at median metallicty profiles of TNG50 subhalos binned by mass. What I am trying to determine is the 'break radius', the radius at which the metallicity floor begins to be reached, of each subhalo. These median profiles were created for bins with width log stellar mass 0.5 with startpoints ranging from 9.0 - 10.9 log stellar mass. An example of these median profiles can be seen in the plot below, plotted with one standard deviation shaded in. </p>
+
+  <img src="./ResearchRelated/Graduate/TNG50bins1.png" class="center">
+
+  <p>After creating these individual profiles for each bin, I devised a method to fit the profiles with a two-component linear fit. This method involved a brute-force optimization of chi-squared values on linear regressions at all possible breaks along the profile. The python scripts for the two-component fitting can be found <a href="./ResearchRelated/Graduate/twoCompLR.html" target="_blank">here</a>. One constraint that I added to retreive better fits for the profiles was force all of the regressions to be at least 2 kpc long. Another issue that I ran into while creating these fits was where to start and stop our search area. The noise at the beginning of the profiles and at the end cause some difficulty within the fitting routine. My solution for the startpoints was the trim out the first 5% of the star forming gas in the profiles. For the endpoints, I used 15 + 7.5*binNumber to set the end of the fits.</p>
+
+  <div class="row">
+    <div class="column3">
+      <img src="./ResearchRelated/Graduate/TNG50fit9.0.png" width = 90% height = 100%></img>
+    </div>
+    <div class="column3">
+      <img src="./ResearchRelated/Graduate/TNG50fit2.png" width = 90% height = 100%></img>
+    </div>
+    <div class="column3">
+      <img src="./ResearchRelated/Graduate/TNG50fit10.0.png" width = 90% height = 100%></img>
+    </div>
+  </div>
+
+  <p>Three Example fits for the two-component linear regression, as you can see, we had varying degrees of success with fitting these profiles with only a single break.</p>
+
+  <p>I created these fits for all of the different mass bins and created a plot of the break radius as a function of mass. Several of the higher mass bins had very few subhalos and thus the data were more noisy and less well-constrained for the fitting routine, so I created a second plot omitting these. As seen below, the break radius and log mass follow a linear relationship. </p>
+
+  <div class="row">
+    <div class="column2">
+      <img src="./ResearchRelated/Graduate/BRvMass_medianTNG50outliers.png" width = 90% height = 100% id=wbckgrd></img>
+    </div>
+    <div class="column2">
+      <img src="./ResearchRelated/Graduate/BRvMass_medianTNG50.png" width = 90% height = 100% id=wbckgrd></img> <br><br>
+    </div>
+  </div>
+
+  <p>With this linear relationship between the break and mass of the subhalos demonstrated, the next step was to see if a three-component linear regression would describe our profiles better. This <a href="./ResearchRelated/Graduate/threeCompLR.html" target="_blank">three-component linear regression</a> was just an extension of the two-component linear regression. It optimized the chi-squared of all three lines it fit, simultaneously.</p>
+
+  <div class="row">
+    <div class="column3">
+      <img src="./ResearchRelated/Graduate/TNG503fit2.png" width = 90% height = 100%></img>
+    </div>
+    <div class="column3">
+      <img src="./ResearchRelated/Graduate/TNG503fit4.png" width = 90% height = 100%></img>
+    </div>
+    <div class="column3">
+      <img src="./ResearchRelated/Graduate/TNG503fit1.png" width = 90% height = 100%></img>
+    </div>
+  </div>
+
 </section>
 
 <section id="qBraid">
