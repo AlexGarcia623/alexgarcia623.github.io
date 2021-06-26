@@ -54,7 +54,7 @@ h1 {
   
   <p>I am working with Paul Torrey this summer (2021) and as I transition into graduate school at UF.<br><br> My work is with the Illustris TNG simulation data, specifically I am looking at median metallicty profiles of TNG50 subhalos binned by mass. What I am trying to determine is the 'break radius', the radius at which the metallicity floor begins to be reached, of each subhalo. These median profiles were created for bins with width log stellar mass 0.5 with startpoints ranging from 9.0 - 10.9 log stellar mass. An example of these median profiles can be seen in the plot below, plotted with one standard deviation shaded in. </p>
 
-  <img src="./ResearchRelated/Graduate/TNG50bins1.png" class="center">
+  <img src="./ResearchRelated/Graduate/TNG50bins1.png" class="center" height=33% width=33%>
 
   <p>After creating these individual profiles for each bin, I devised a method to fit the profiles with a two-component linear fit. This method involved a brute-force optimization of chi-squared values on linear regressions at all possible breaks along the profile. The python scripts for the two-component fitting can be found <a href="./ResearchRelated/Graduate/twoCompLR.html" target="_blank">here</a>. One constraint that I added to retreive better fits for the profiles was force all of the regressions to be at least 2 kpc long. Another issue that I ran into while creating these fits was where to start and stop our search area. The noise at the beginning of the profiles and at the end cause some difficulty within the fitting routine. My solution for the startpoints was the trim out the first 5% of the star forming gas in the profiles. For the endpoints, I used 15 + 7.5*binNumber to set the end of the fits.</p>
 
@@ -63,7 +63,7 @@ h1 {
       <img src="./ResearchRelated/Graduate/TNG50fit9.0.png" width = 90% height = 100%></img>
     </div>
     <div class="column3">
-      <img src="./ResearchRelated/Graduate/TNG50fit2.png" width = 90% height = 100%></img>
+      <img src="./ResearchRelated/Graduate/TNG50fit9.8.png" width = 90% height = 100%></img>
     </div>
     <div class="column3">
       <img src="./ResearchRelated/Graduate/TNG50fit10.0.png" width = 90% height = 100%></img>
@@ -198,7 +198,7 @@ During the summer before my senior year of undergrad, I aided in creating new wo
 
   <p>My work with Professor Shen was centered on the Sloan Digitial Sky Survey (SDSS) Data Release 16, specifically the quasars. We wanted to analyze and get rid of a lot of the noise on the spectrum of these quasars. This project was an analysis project and more hands-on with coding than my previous experience with Professor Dunne. My small part in this project was to translate an IDL script into Python. The <a href="./ResearchRelated/synthspec_print.pdf" target="_blank">original IDL script</a> had several checks that we did not have to implement in Python. The <a href="./ResearchRelated/Project.html" target="_blank">Python Script</a>, created in a jupyter notebook, helped filter out this noise and give a much neater spectral emission line.</p>
 
-  <img src="./ResearchRelated/Final_small_range.png" class=center id=wbckgrd>
+  <img src="./ResearchRelated/Final_small_range.png" class=center id=wbckgrd height=50% width=50%>
 </section>
 
 <section id="Physics 401">
