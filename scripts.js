@@ -29,3 +29,7 @@ function workExamples2() {
 function contactMe() {
   window.open("contactMe.html","_self");
 }
+
+function qubes() {
+  window.open("qubes.html","_self");
+}
