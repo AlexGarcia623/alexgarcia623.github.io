@@ -7,7 +7,7 @@ function linkedIn() {
 }
 
 function CV() {
-  window.open("./pdfs/Resume.pdf");
+  window.open("./pdfs/GarciaA_CV.pdf");
 }
   
 function inTheNews() {
