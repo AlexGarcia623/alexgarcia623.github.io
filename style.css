@@ -11,12 +11,15 @@ p {
 
 body {
   margin-top:90px;
-  color:white;
-  background-color:black;
+  color:black;
+  background-color:powderblue;
   padding:0;
   height:100%;
   display:block;
   background-size: 75% 100%;
+  font-size: 15pt;
+  margin-left:10%;
+  margin-right:10%;
 }
 
 header {
@@ -69,7 +72,7 @@ footer {
 }
 
 a {
-  color:powderblue;
+  color:black;
 }
 
 a:hover {
@@ -84,12 +87,13 @@ a:hover {
 }
 
 h1 {
-  color:tomato;
-  font-family:cursive;
+  color:red;
+  font-family:times;
 }
 
 h2 {
   color:steelblue;
+  font-family: times;
 }
 
 #footer-text {
@@ -116,7 +120,7 @@ input {
 }
 
 table {
-  border: 2px solid white;
+  border: 0px;
 }
 
 th, td {
