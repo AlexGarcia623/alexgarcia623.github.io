@@ -39,12 +39,12 @@ td {
 </style>
 
 <header>
-  <title>Work Examples</title>
-  <button class = "button biggerButton" onclick="home()">Alex Garcia</button>
+  <title>Alex's Work</title>
+  <button class = "button" onclick="home()">Alex Garcia</button>
   <button class = "button" onclick="linkedIn()">Linkedin</button>
   <button class = "button" onclick="CV()">CV</button>
   <button class = "button" onclick="inTheNews()">In The News</button>
-  <button class = "button" onclick="workExamples()">Some of my work</button>
+  <button class = "button" onclick="contactMe()" style="float: right;">Contact Me</button>
 </header>
 
 <div class="body">
@@ -192,9 +192,9 @@ During the summer before my senior year of undergrad, I aided in creating new wo
 #myBtn {
   display: none;
   position: fixed;
-  bottom: 80px;
+  bottom: 10px;
   right: 30px;
-  font-size: 18pt;
+  font-size: 24pt;
   border: none;
   outline: none;
   background-color: steelblue;
@@ -218,7 +218,7 @@ var mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+  if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
@@ -232,8 +232,5 @@ function topFunction() {
 }
 </script>
 
-<footer>
-  <button class = "button" onclick="contactMe()">Contact Me</button>
-</footer>
 
 </html>
