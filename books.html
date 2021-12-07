@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+
+<meta http-equiv='cache-control' content='no-cache'> 
+<meta http-equiv='expires' content='0'> 
+<meta http-equiv='pragma' content='no-cache'>
+
+<script src="scripts.js"></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row {
+  padding-bottom: 150px;
+}
+</style>
+</head>
+
+<header>
+  <title>Alex Garcia</title>
+  <button class = "button biggerButton" onclick="linkedIn()">Linkedin</button>
+  <button class = "button biggerButton" onclick="CV()">CV</button>
+  <button class = "button biggerButton" onclick="inTheNews()">In The News</button>
+  <button class = "button biggerButton" onclick="workExamples()">Some of my work</button>
+  <button class = "button biggerButton" onclick="books()">What am I reading?</button>
+  <button class = "button biggerButton" onclick="contactMe()" style="float: right;">Contact Me</button>
+</header>
+
+<body>
+
+<h1>Currently Reading</h1>
+
+<div class="row">
+  <div class="column">
+    <img src="./books/AlgorithmsToLiveBy.jpeg" class="center" width = 300px height= 400px></img>
+  </div>
+  <div class="column">
+    <h2>Algorithms to Live By: The Computer Science of Human Decisions</h2>
+    <h3>Brian Christan & Tom Griffiths</h3>
+    <p>Started: December 2021</p>
+  </div>
+</div>
+
+<h1>Recently Read</h2>
+
+<div class="row">
+  <div class="column">
+    <img src="./books/Dune.jpeg" class="center" width = 300px height= 400px></img>
+  </div>
+  <div class="column">
+    <h2>Dune</h2>
+    <h3>Frank Herbert</h3>
+    <p>Read: November 2021</p>
+  </div>
+</div>
+
+</body>
+</html>

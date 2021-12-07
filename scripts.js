@@ -33,3 +33,7 @@ function contactMe() {
 function qubes() {
   window.open("qubes.html","_self");
 }
+
+function books() {
+  window.open("books.html","_self")
+}
