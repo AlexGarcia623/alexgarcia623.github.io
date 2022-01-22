@@ -13,11 +13,14 @@
 body {
   margin-top:90px;
   color:black;
-  background-color:powderblue;
+  background-image:url('./images/Merger.jpeg');
+  background-repeat:no-repeat;
+  background-attachment: fixed; 
+  background-size:150% 100%;
   padding:0;
   height:100%;
   display:block;
-  background-size: 75% 100%;
+  background-size: 100% 100%;
   font-size: 15pt;
 }
 
@@ -67,40 +70,23 @@ a:hover {
   color:black;
   text-align:center;
 }
+
+
 </style>
 
-<header>
+<footer>
   <title>Alex Garcia</title>
   <button class = "button biggerButton" onclick="linkedIn()">Linkedin</button>
   <button class = "button biggerButton" onclick="CV()">CV</button>
   <button class = "button biggerButton" onclick="inTheNews()">In The News</button>
   <button class = "button biggerButton" onclick="workExamples()">Some of my work</button>
   <button class = "button biggerButton" onclick="books()">What am I reading?</button>
-  <button class = "button biggerButton" onclick="contactMe()" style="float: right;">Contact Me</button>
-</header>
+  <button class = "button biggerButton" onclick="contactMe()">Contact Me</button>
+</footer>
 
 <body style="background-color:tomato;margin-left:0%;margin-right:0%;">
   <div class = "row">
-    <div class = "column2">
-      <img src = "./images/Garcia_Headshot.jpg" width = 55% height = 45% padding = 16px class = "center" style="border:2px solid white; border-radius:16px;">
-      <p class = "profileInfo">
-        <a href="https://astro.ufl.edu/directory/alex-garcia/" target="_blank">UF Student Profile </a>
-      </p>  
-    </div>
-    <div class = "column2">
-      <p style="font-size: 32pt; text-align:center; color:white;">Alex Garcia</p>
-
-      <p class = "profileText"><em>
-      (2021-) MS Astronomy<br> University of Florida <br><br>
-      (2017-2021) BE Engineering Physics + BS Astronomy<br> University of Illinois Urbana-Champaign<br><br></em>
-      </p>
-
-      <hr><br>
-   
-      <p class = "profileInfo">
-        My main research interests lie in cosmological simulations of the universe. I am currently using the Illustris simulation suite to analyze metallicity gradients of simulated galaxies to measure how they vary with mass and redshift. These results then will be compared to observational data, and I will attempt to deduce how well an observational study could observe these trends, given the current paradigm.
-      </p>
-    </div>
+    <p style="font-size: 32pt; text-align:center; color:white;">Alex Garcia</p>
   </div>
 </body>
 

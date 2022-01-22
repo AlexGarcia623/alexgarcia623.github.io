@@ -12,7 +12,7 @@ p {
 body {
   margin-top:90px;
   color:black;
-  background-color:powderblue;
+  background-color:black;
   padding:0;
   height:100%;
   display:block;
@@ -23,22 +23,25 @@ body {
 }
 
 header {
-  background-color:steelblue;
-  position:fixed;
+  background-color:transparent;
+  position:absolute;
   top:0;
   left:0;
-  font-size: 35px;
   width:100%;
   height:auto;
   margin-bottom:15px;
 }
 
 footer {
-  background-color:steelblue;
+  background-color:transparent;
   position:fixed;
   bottom:0;
   width:100%;
   left:0;
+}
+
+div {
+  color:white;
 }
 
 .button {
@@ -48,17 +51,18 @@ footer {
   text-align: center;
   font-size: 16px;
   transition-duration: 0.4s;
-  background-color:steelblue;
+  background-color:transparent;
 }
 
 .biggerButton {
-  padding: 24px 18px;
-  font-size: 16px;
+  padding: 24px 16px;
+  font-size: 18px;
 }
 
 .button:hover {
-  color:steelblue;
+  color:black;
   background-color:white;
+  border-radius:5px;
 }
 
 .center {
@@ -72,7 +76,7 @@ footer {
 }
 
 a {
-  color:black;
+  color:white;
 }
 
 a:hover {
@@ -87,12 +91,12 @@ a:hover {
 }
 
 h1 {
-  color:red;
+  color:steelblue;
   font-family:times;
 }
 
 h2 {
-  color:steelblue;
+  color:tomato;
   font-family: times;
 }
 
