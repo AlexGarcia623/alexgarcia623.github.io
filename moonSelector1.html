@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css">
+
+<meta http-equiv='cache-control' content='no-cache'> 
+<meta http-equiv='expires' content='0'> 
+<meta http-equiv='pragma' content='no-cache'>
+
+<script src="scripts.js"></script>
+
+<head>
+<style>
+* {
+  box-sizing:border-box;
+}
+.column {
+  float:left;
+  width:50%;
+}
+
+.row:after {
+  contents: "";
+  display: table;
+  clear: both;
+}
+
+p {
+  color:steelblue;
+  font-size:14pt;
+}
+
+h1 {
+  font-size:30pt;
+}
+
+h2 {
+  font-size:18pt;
+}
+
+button {
+  background-color:black;
+  color:steelblue;
+  border: 1px solid tomato;
+  padding: 8px;
+  font-size: 12pt;
+}
+
+button:hover {
+  background-color:steelblue;
+  color:black;
+}
+
+input:hover {
+  background-color:steelblue;
+  color:black;
+}
+
+.column3 {
+  float:left;
+  width:33%;
+}
+
+img:hover {
+  width=110%;
+}
+</style>
+
+<script>
+function backButton() {
+  window.open("YouCanWeighJupiter.html","_self");
+}
+</script>
+
+</head>
+
+<header>
+<button class = "button biggerButton" onclick="backButton()">Main Menu</button>
+</header>
+<body>
+<form name = "converter">
+<div class="body">
+
+  <h1>Moon Selector! </h2> 
+
+  <p style="color:white;">You chose configuration 1 <br><br>Which moon do you want to observe?</p>
+
+  <img src="./Jupiter//MoonImages/IoImage.jpeg" class="center" width=50%/>
+   
+  <input type="button" onclick="Io1()" value="Io" class="center"/>
+
+  <img src="./Jupiter//MoonImages/EuropaImage.jpeg" class="center" width=50%/>
+
+  <input type="button" onclick="Eruopa1()" value="Europa" class="center"/> 
+  
+  <img src="./Jupiter//MoonImages/GanymedeImage.jpeg" class="center" width=50%/>
+
+  <input type="button" onclick="Ganymede1()" value="Ganymede" class="center"/>
+
+  <img src="./Jupiter//MoonImages/CallistoImage.jpeg" class="center" width=50%/>
+
+  <input type="button" onclick="Callisto1()" value="Callisto" class="center"/>
+  
+  <p style="color:white;"><br><br>All images credit: NASA </p>
+<script>
+function Io1() {
+  window.open("IoConfig1.html","_self");
+}
+
+function Eruopa1() {
+  window.open("IoConfig1.html","_self");
+}
+
+function Ganymede1() {
+  window.open("IoConfig1.html","_self");
+}
+
+function Callisto1() {
+  window.open("IoConfig1.html","_self");
+}
+</script>
+
+</form>
+
+
+</body>
+
+</html>

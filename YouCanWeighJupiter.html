@@ -55,6 +55,14 @@ input:hover {
   color:black;
 }
 
+.column3 {
+  float:left;
+  width:33%;
+}
+
+img:hover {
+  width=110%;
+}
 </style>
 
 </head>
@@ -64,42 +72,25 @@ input:hover {
 <form name = "converter">
 <div class="body">
 
-  <h2>You Can Weigh Jupiter </h2>
+   <h1>You Can Weigh Jupiter </h2> 
 
-  <img id="theImage" src="./Jupiter/KSPGraphics-page-001.jpg" height=40% width=60%/>
+  <p style="color:white;">Welcome to You Can Weigh Jupiter! In this lab, there are a series of configurations that we can take for the planets to be in. To choose which configuration you want, select from the options below <br><br> The periods and semi-major axes for each of the moons is the same in each configuration, the only thing that should change is the angular size everything appears at</p>
 
-  <input type="button" onclick="next()" value="Next"/>
+  <img src="./Jupiter/Configuration1.jpg" class="center" width=50%/>
+   
+  <input type="button" onclick="startConfig1()" value="Configuration 1" class="center"/>
 
-  <p>Number of elapsed hours:</p>
- 
-  <p id="demo">0</p>
+  <img src="./Jupiter/Configuration2.jpg" class="center" width=50%/>
 
-  <p id="counter" style="color:black;">0</p>
+  <input type="button" onclick="startConfig2()" value="Configuration 2" class="center"/> 
+  
+  <img src="./Jupiter/Configuration3.jpg" class="center" width=50%/>
+
+  <input type="button" onclick="startConfig3()" value="Configuration 3" class="center"/>
   
 <script>
-function next() {
-  var timePerFrame = 1.15;
-  var image = document.getElementById("theImage");
-  var imageName = document.getElementById("theImage").getAttribute("src");
-  var textNoExt = imageName.replace(".jpg",'');
-  var oldString = textNoExt.substr(27);
-  var newVal = parseInt(oldString) + 1;
-  var counter = parseInt(document.getElementById("counter").innerHTML);
-  var newString = "";
-  if (newVal > 36) {
-    var newVal = 1;
-  }
-  if (newVal < 10) {
-    var newString = String(0) + String(0) + newVal;
-  } else {
-    var newString = String(0) + newVal;
-  }
-  imageName = imageName.replace(oldString,newString);
-  document.getElementById("theImage").src = imageName;
-  var counter = counter + 1;
-  var Hours = (counter) * timePerFrame;
-  document.getElementById("counter").innerHTML = counter;
-  document.getElementById("demo").innerHTML = Hours;
+function startConfig1() {
+  window.open("moonSelector1.html","_self");
 }
 </script>
 

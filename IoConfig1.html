@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css">
+
+<meta http-equiv='cache-control' content='no-cache'> 
+<meta http-equiv='expires' content='0'> 
+<meta http-equiv='pragma' content='no-cache'>
+
+<script src="scripts.js"></script>
+
+<head>
+<style>
+* {
+  box-sizing:border-box;
+}
+.column {
+  float:left;
+  width:50%;
+}
+
+.row:after {
+  contents: "";
+  display: table;
+  clear: both;
+}
+
+p {
+  color:steelblue;
+  font-size:14pt;
+}
+
+h1 {
+  font-size:30pt;
+}
+
+h2 {
+  font-size:18pt;
+}
+
+button {
+  background-color:black;
+  color:steelblue;
+  border: 1px solid tomato;
+  padding: 8px;
+  font-size: 12pt;
+}
+
+button:hover {
+  background-color:steelblue;
+  color:black;
+}
+
+input:hover {
+  background-color:steelblue;
+  color:black;
+}
+
+</style>
+
+<script>
+function backButton() {
+  window.open("YouCanWeighJupiter.html","_self");
+}
+function reselectMoon() {
+  window.open("moonSelector1.html","_self");
+}
+</script>
+
+</head>
+
+<header>
+<button class = "button biggerButton" onclick="backButton()">Main Menu</button>
+<button class = "button biggerButton" onclick="reselectMoon()">Reselect Moon</button>
+</header>
+
+<body>
+<form name = "converter">
+<div class="body">
+
+  <h2>Configuration 1: Io </h2>
+
+  <img id="theImage" src="./Jupiter/IoConfig1/IoConfig1-page-001.jpg" height=40% width=100%/> <br>
+
+  <input type="button" onclick="next()" value="Next Frame"/>
+  <input type="button" onclick="back()" value="Back One Frame"/>
+
+  <p>Number of elapsed hours:</p>
+ 
+  <p id="demo">0</p>
+
+  <p id="counter" style="color:white;">0</p>
+  
+<script>
+function next() {
+  var timePerFrame = 2;
+  var image = document.getElementById("theImage");
+  var imageName = document.getElementById("theImage").getAttribute("src");
+  var textNoExt = imageName.replace(".jpg",'');
+  var oldString = textNoExt.substr(35);
+  var newVal = parseInt(oldString) + 1;
+  var counter = parseInt(document.getElementById("counter").innerHTML);
+  var newString = "";
+  if (newVal > 20) {
+    var newVal = 1;
+  }
+  if (newVal < 10) {
+    var newString = String(0) + String(0) + newVal;
+  } else {
+    var newString = String(0) + newVal;
+  }
+  imageName = imageName.replace(oldString,newString);
+  document.getElementById("theImage").src = imageName;
+  var counter = counter + 1;
+  var Hours = (counter) * timePerFrame;
+  document.getElementById("counter").innerHTML = counter;
+  document.getElementById("demo").innerHTML = Hours;
+}
+
+function back() {
+  var timePerFrame = 2;
+  var image = document.getElementById("theImage");
+  var imageName = document.getElementById("theImage").getAttribute("src");
+  var textNoExt = imageName.replace(".jpg",'');
+  var oldString = textNoExt.substr(35);
+  var newVal = parseInt(oldString) - 1;
+  if (newVal == 0) {
+    var newVal = 20;
+  }
+  var counter = parseInt(document.getElementById("counter").innerHTML);
+  var newString = "";
+  if (newVal > 20) {
+    var newVal = 1;
+  }
+  if (newVal < 10) {
+    var newString = String(0) + String(0) + newVal;
+  } else {
+    var newString = String(0) + newVal;
+  }
+  imageName = imageName.replace(oldString,newString);
+  var counter = counter - 1;
+  if (counter < 0) {
+    return ;
+  }
+  var Hours = (counter) * timePerFrame;
+  document.getElementById("theImage").src = imageName;
+  document.getElementById("counter").innerHTML = counter;
+  document.getElementById("demo").innerHTML = Hours;  
+}
+</script>
+
+</form>
+
+
+</body>
+
+</html>
