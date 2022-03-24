@@ -77,9 +77,9 @@ function reselectMoon() {
 <form name = "converter">
 <div class="body">
 
-  <h2>Configuration 1: Io </h2>
+  <h2>Configuration 1: Europa </h2>
 
-  <img id="theImage" src="./Jupiter/IoConfig1/IoConfig1-page-001.jpg" height=40% width=100%/> <br>
+  <img id="theImage" src="./Jupiter/EuropaConfig1/EuropaConfig1-page-001.jpg" height=40% width=100%/> <br>
 
   <input type="button" onclick="next()" value="Next Frame"/>
   <input type="button" onclick="back()" value="Back One Frame"/>
@@ -92,15 +92,15 @@ function reselectMoon() {
   
 <script>
 function next() {
-  var timePerFrame = 2;
+  var timePerFrame = 4.5;
   var image = document.getElementById("theImage");
   var imageName = document.getElementById("theImage").getAttribute("src");
   var textNoExt = imageName.replace(".jpg",'');
-  var oldString = textNoExt.substr(35);
+  var oldString = textNoExt.substr(43);
   var newVal = parseInt(oldString) + 1;
   var counter = parseInt(document.getElementById("counter").innerHTML);
   var newString = "";
-  if (newVal > 20) {
+  if (newVal > 18) {
     var newVal = 1;
   }
   if (newVal < 10) {
@@ -117,18 +117,18 @@ function next() {
 }
 
 function back() {
-  var timePerFrame = 2;
+  var timePerFrame = 4.5;
   var image = document.getElementById("theImage");
   var imageName = document.getElementById("theImage").getAttribute("src");
   var textNoExt = imageName.replace(".jpg",'');
-  var oldString = textNoExt.substr(35);
+  var oldString = textNoExt.substr(43);
   var newVal = parseInt(oldString) - 1;
   if (newVal == 0) {
-    var newVal = 20;
+    var newVal = 18;
   }
   var counter = parseInt(document.getElementById("counter").innerHTML);
   var newString = "";
-  if (newVal > 20) {
+  if (newVal > 18) {
     var newVal = 1;
   }
   if (newVal < 10) {
