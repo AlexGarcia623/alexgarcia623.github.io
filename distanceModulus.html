@@ -55,11 +55,12 @@ button:hover {
 <script>
 function distanceModCalc() {
   var app = document.converter.apparent.value;
-  var abs = document.converter.absolute.value;
+  var abs = -22;
 
   var answer = 10 ** (1 + (app - abs) / 5);
 
-  document.getElementById("Answer").innerHTML = answer.toFixed(2);
+  internationalNumberFormat = new Intl.NumberFormat('en-US');
+  document.getElementById("Answer").innerHTML = internationalNumberFormat.format(answer.toFixed(0));
   
 }
 
@@ -81,17 +82,17 @@ function funcClear() {
 
   <h1>Enter magnitudes here:</h1>
 
-  <p style="color:white;">This first box should be the <em>absolute</em> magnitude, M</p>
+  <p style="color:white;">The <em>absolute</em> magnitude, M, is assumed here to be exactly -22</p>
 
-  <input name="absolute" type = "number" placeholder="Absolute Magnitude, M" oninput="distanceModCalc()" onchange="distanceModCalc()"/>
+  <p style="color:orange;">-22</p>
 
   <p style="color:white;">This second box should be the <em>appparent</em> magnitude, m</p>
 
-  <input name="apparent" type = "number" placeholder="Apparent Magnitude, m" oninput="distanceModCalc()" onchange="distanceModCalc()"/> 
+  <input style="color:orange;" name="apparent" type = "number" placeholder="Apparent Magnitude, m" oninput="distanceModCalc()" onchange="distanceModCalc()"/> 
 
   <h1>Distance Modulus</h1>
 
-  <p style="color:white;">We've taken the liberty of rounding this to two decimal places for you. <br><br> This units of the distance outputted here are in <em>parsecs</em></p>
+  <p style="color:white;">We've taken the liberty of rounding this to two decimal places for you. <br><br> This units of the distance outputted here are in <em>parsecs</em>. Recall that there are 1,000,000 pc in 1 Mpc</p>
 
   <p style="color:orange;"id="Answer"></p>
 
