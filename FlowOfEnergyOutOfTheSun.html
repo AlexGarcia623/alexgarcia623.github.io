@@ -81,12 +81,15 @@ img:hover {
 
    <h1>Flow Of Energy Out Of The Sun </h2> 
 
-  <p style="color:white;">Welcome to the flow of energy out of the sun! My idea for this lab is two fold. First is to have a random-walk generator python file. The next goal is to have something that simulates absorption lines easily</p>
+  <p style="color:white;">Welcome to the flow of energy out of the sun! This first experiment is to understand the random walk through the Sun!</p>
 
   <canvas class="center" id="canvas" height="500" width="750"></canvas> <br>
-  <p id="display"> </p><br>
-
   <input type="button" onclick="start()" value="Start!" class="center"/>
+  <h2>Number of walks:</h2>
+  <p id="display"> </p>
+  <p id="finish" style="color:orange;font-size:25pt;"> </p><br>
+
+  
 
 </form>
 
@@ -135,8 +138,8 @@ img:hover {
       ctx.beginPath();
       ctx.moveTo(x, y);
       if ( ((x-375)**2 + (y-250)**2)**(1/2) < 15 ) {
-        x += random(-1, 1);
-        y += random(-1, 1);
+        x += random(-2.5, 2.5);
+        y += random(-2.5, 2.5);
       } else if ( ((x-375)**2 + (y-250)**2)**(1/2) < 150 ) {
         x += random(-5, 5);
         y += random(-5, 5);
@@ -149,6 +152,7 @@ img:hover {
       ctx.stroke();
       if ( ((x-375)**2 + (y-250)**2)**(1/2) > 200 ) {
         document.getElementById("display").innerHTML = number;
+        document.getElementById("finish").innerHTML = "Photon has escaped the sun!";
       }
       else {
         window.requestAnimationFrame(draw);
@@ -165,6 +169,7 @@ img:hover {
          y = 250;
          number = 0;
          document.getElementById("display").innerHTML = 0;
+         document.getElementById("finish").innerHTML = "";
 	init();
     }
     
