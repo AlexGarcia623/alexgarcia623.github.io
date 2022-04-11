@@ -94,7 +94,7 @@ img:hover {
   <p id="previous3"> </p>
   <p id="previous4"> </p>
 
-  <div id="myPlot" style="width:100%;max-width:700px" class="center"></div>
+  <div id="myPlot" style="width:100%" class="center"></div>
 
 
 
@@ -210,7 +210,6 @@ img:hover {
 	const context = canvas.getContext('2d');
 
 	context.clearRect(0, 0, canvas.width, canvas.height);
-	//plot();
         	x = 375;
         	y = 250;
         	number = 0;
@@ -265,7 +264,16 @@ img:hover {
    
     var layout= {
       plot_bgcolor:"black",
-      paper_bgcolor:"black"
+      paper_bgcolor:"black",
+      yaxis: {
+        autorange: true,
+        showgrid: false,
+        zeroline: false,
+        showline: false,
+        autotick: true,
+        ticks: '',
+        showticklabels: false
+      }
     }
   
     var config = {
