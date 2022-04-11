@@ -88,6 +88,7 @@ img:hover {
   <input type="button" onclick="stop()" value="Stop" class="center"/>
   <h2>Number of Escaped Photons:</h2>
   <p id="display"> </p>
+  <p id="finished" style="color:orange;font-size:25pt;"> </p>
   <p id="previous0"> </p>
   <p id="previous1"> </p>
   <p id="previous2"> </p>
@@ -197,7 +198,7 @@ img:hover {
     function WLChecker() {
       var WL = randomWavelength(WLmin, WLmax+1);
       let index = wavelengths.indexOf(WL);
-      if (counts[index] < 3) {
+      if (counts[index] < 2) {
         counts[index]++;
       } else {
         WLChecker();
@@ -286,6 +287,9 @@ img:hover {
       for (var i=0; i<WLlength; ++i) {
         colors[i] = wavelengthToColor(wavelengths[i],counts[i]);
       };
+      if (number == 676) {
+        document.getElementById('finished').innerHTML = "Finished!";
+      }
       Plotly.newPlot("myPlot", data, layout, config);
     }
     Plotly.newPlot("myPlot", data, layout,config);
