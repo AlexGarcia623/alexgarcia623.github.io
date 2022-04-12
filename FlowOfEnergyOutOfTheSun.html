@@ -138,18 +138,22 @@ img:hover {
       ctx.beginPath();
       ctx.moveTo(x, y);
       if ( ((x-375)**2 + (y-250)**2)**(1/2) < 15 ) {
-        x += random(-2.5, 2.5);
-        y += random(-2.5, 2.5);
+        pertx = random(-2.5, 2.5);
+        perty = random(-2.5, 2.5);
       } else if ( ((x-375)**2 + (y-250)**2)**(1/2) < 150 ) {
-        x += random(-5, 5);
-        y += random(-5, 5);
+        pertx = random(-5, 5);
+        perty = random(-5, 5);
       } else {
-        x += random(-10, 10);
-        y += random(-10, 10);
+        pertx = random(-10, 10);
+        perty = random(-10, 10);
       }
+      ctx.strokeStyle = 'white';
       ctx.lineWidth = 2;
-      ctx.lineTo(x, y);
+      ctx.lineTo(x+pertx, y+perty);
       ctx.stroke();
+
+      x += pertx;
+      y += perty;
       if ( ((x-375)**2 + (y-250)**2)**(1/2) > 200 ) {
         document.getElementById("display").innerHTML = number;
         document.getElementById("finish").innerHTML = "Photon has escaped the sun!";
