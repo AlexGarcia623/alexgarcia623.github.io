@@ -124,7 +124,7 @@ img:hover {
   <canvas class="center" id="canvas" height="500" width="750"></canvas> <br>
   <input class="center" style="color:orange;" id="repeats" type = "number" placeholder="Number of Photons" min="0" max="20" value="15"/> 
   <input type="button" onclick="start()" value="Start!" class="center"/>
-  <p style="color:orange;font-size:25pt;"><span id="number"></span> <span id="finish"> </span> </p>
+  
 
   <p id="display"> </p>
 
@@ -136,6 +136,7 @@ img:hover {
 
   <h2>Results</p>
 
+  <p style="color:orange;font-size:25pt;"><span id="number"></span> <span id="finish"> </span> </p>
   <p style="color:orange;"><span id="prevNum1"></span> <span id="prev1"></span></p>
   <p style="color:orange;"><span id="prevNum2"></span> <span id="prev2"></span></p>
   <p style="color:orange;"><span id="prevNum3"></span> <span id="prev3"></span></p>
@@ -170,17 +171,21 @@ img:hover {
     var counter = document.querySelector('canvas');
     var number = 1;
     var wavelength = 0; 
+    var animation = false;
+    var sleeptime = 5000;
 
     var unlikelyEnergies = [1.9, 2.6, 2.9];
 
-    var pAbs = 0.1;
+    var pAbs = 0;
+    var pAbsLow = 0.0005;
+    var pAbsHigh = 0.01;
 
     function random(min, max) {
       return Math.random() * (max - min) + min;
     }
 
     function init() {
-      window.requestAnimationFrame(draw);
+      animation = window.requestAnimationFrame(draw);
     }
 
     function draw() {
@@ -197,6 +202,12 @@ img:hover {
       ctx.moveTo(0,100);
       ctx.lineTo(750,100);
       ctx.stroke();
+      ctx.strokeStyle = 'blue';
+      ctx.beginPath();
+      ctx.lineWidth = 5;
+      ctx.moveTo(300,25);
+      ctx.lineTo(450,25);
+      ctx.stroke();
 
       var WL = wavelengtheVConverter(document.getElementById("energy").innerHTML);
       var color = wavelengthToColor(WL);      
@@ -210,33 +221,38 @@ img:hover {
 
       if (y > 300 || y < 100) {
         pertx = 0;
-        perty = -25;
+        perty = -10;
         ctx.strokeStyle = color;
         ctx.lineWidth = 2;
         ctx.lineTo(x+pertx, y+perty);
         ctx.stroke();
-        window.requestAnimationFrame(draw);
+        animation = window.requestAnimationFrame(draw);
         x += pertx;
         y += perty;
         if (y < 25) {
+          var np1 = number + 1;
+          document.getElementById("number").innerHTML = np1 + ".";
           document.getElementById("finish").innerHTML = "Photon escaped!";
           if (number < parseInt(document.getElementById("repeats").value) - 1) {
-            sleep(2500);
+            sleep(sleeptime);
             restart();
           }
         }
       } else {
-        pertx = random(-5, 5);
+        pertx = random(-15, 15);
         perty = random(-5, 2);
       
         if ((y + perty) > 300) {
           perty = random(-2,0);
         }
+        if ((y + perty) < 200) {
+          perty = random(-7,5);
+        }
         if ((x + perty) < 0) {
-          pertx = random(0,2);
+          pertx = random(0,7.5);
         }
         if ((x + perty) > 750) {
-          pertx = random(-2,0);
+          pertx = random(-7.5,0);
         }
 
         ctx.strokeStyle = color;
@@ -245,20 +261,27 @@ img:hover {
         ctx.stroke();
 
         if (Math.random() < pAbs) {
+          var np1 = number + 1;
+          document.getElementById("number").innerHTML = np1 + ".";
           document.getElementById("finish").innerHTML = "Photon absorbed!";
           if (number < parseInt(document.getElementById("repeats").value) - 1) {
-            sleep(2500);
+            sleep(sleeptime);
             restart();
+          } else {
+            return;
           }
         } else {
           x += pertx;
           y += perty;
-          window.requestAnimationFrame(draw);
+          animation = window.requestAnimationFrame(draw);
         }
       }
     }
     
     function start() {
+        	if (animation) {
+  	  window.cancelAnimationFrame(animation)
+	}
 	const canvas = document.getElementById('canvas');
 	const context = canvas.getContext('2d');
 
@@ -273,9 +296,9 @@ img:hover {
 
 	var slider = document.getElementById("myRange");
 	if (unlikelyEnergies.includes(parseFloat(slider.value))) {
- 	  pAbs = 0.01;
+ 	  pAbs = pAbsHigh;
         	} else {
-    	  pAbs = 0.0001;
+    	  pAbs = pAbsLow;
      	}
 
          x = 375;
@@ -288,7 +311,9 @@ img:hover {
     }
 
     function restart() {
-        	
+        	if (animation) {
+  	  window.cancelAnimationFrame(animation)
+	}
 	number++;
 	const canvas = document.getElementById('canvas');
 	const context = canvas.getContext('2d');
@@ -308,14 +333,15 @@ img:hover {
 
 	var slider = document.getElementById("myRange");
 	if (unlikelyEnergies.includes(parseFloat(slider.value))) {
- 	  pAbs = 0.01;
+ 	  pAbs = pAbsHigh;
         	} else {
-    	  pAbs = 0.0001;
+    	  pAbs = pAbsLow;
      	}
+
 
        	document.getElementById("prev1").innerHTML = document.getElementById("finish").innerHTML;
         	document.getElementById("prevNum1").innerHTML = String(number) + ".";        
-	document.getElementById("number").innerHTML = String(number) + ".";
+	//document.getElementById("number").innerHTML = String(number) + ".";
 	x = 375;
 	y = 500;
 	draw();
