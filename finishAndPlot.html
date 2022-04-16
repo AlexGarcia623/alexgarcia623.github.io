@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css">
+
+<meta http-equiv='cache-control' content='no-cache'> 
+<meta http-equiv='expires' content='0'> 
+<meta http-equiv='pragma' content='no-cache'>
+
+<script src="scripts.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
+<script src="plotly-2.11.1.min.js"></script>
+
+<head>
+<style>
+* {
+  box-sizing:border-box;
+}
+.column {
+  float:left;
+  width:50%;
+}
+
+.row:after {
+  contents: "";
+  display: table;
+  clear: both;
+}
+
+p {
+  color:steelblue;
+  font-size:14pt;
+}
+
+h1 {
+  font-size:30pt;
+}
+
+h2 {
+  font-size:18pt;
+}
+
+button {
+  background-color:black;
+  color:steelblue;
+  border: 1px solid tomato;
+  padding: 8px;
+  font-size: 12pt;
+}
+
+button:hover {
+  background-color:steelblue;
+  color:black;
+}
+
+input:hover {
+  background-color:steelblue;
+  color:black;
+}
+
+.column3 {
+  float:left;
+  width:33%;
+}
+
+img:hover {
+  width=110%;
+}
+
+#canvas {
+  border: 1px solid black;
+}
+
+
+h3 {
+  color:steelblue;
+}
+
+</style>
+
+<script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
+<script src="plotly-2.11.1.min.js"></script>
+
+</head>
+
+
+<body>
+<form onkeydown="return event.key != 'Enter';">
+<div class="body">
+
+   <h1>Plotting </h2> 
+
+  <p style="color:white;">Let's compare your data against that of the Sun and see how well our random walk does</p>
+
+  <h2>How many photons did you see in each wavelength range?</h2>
+
+  <h3>350-399 nm</h3>
+  <input style="color:orange;" id="350nm" type = "number" placeholder="Number of Photons" min="0" max="10" /> 
+  
+  <h3>400-449 nm</h3>
+  <input style="color:orange;" id="400nm" type = "number" placeholder="Number of Photons" min="0" max="10" /> 
+
+  <h3>450-499 nm</h3>
+  <input style="color:orange;" id="450nm" type = "number" placeholder="Number of Photons" min="0" max="10" /> 
+
+  <h3>500-549 nm</h3>
+  <input style="color:orange;" id="500nm" type = "number" placeholder="Number of Photons" min="0" max="10" /> 
+
+  <h3>550-599 nm</h3>
+  <input style="color:orange;" id="550nm" type = "number" placeholder="Number of Photons" min="0" max="10" /> 
+
+  <h3>600-649 nm</h3>
+  <input style="color:orange;" id="600nm" type = "number" placeholder="Number of Photons" min="0" max="10" /> 
+
+  <h3>650-700 nm</h3>
+  <input style="color:orange;" id="650nm" type = "number" placeholder="Number of Photons" min="0" max="10" /> 
+
+  <input type="button" onclick="plot()" value="Plot" class="center"/><br>
+
+  <p id="counts"></p>
+
+  <div id="myPlot" style="width:100%" class="center"></div>
+</form>
+
+
+</body>
+
+<script>
+    var WLmin = 350;
+    var WLmax = 700;
+    var ROYGBIV = 7;
+    var wavelengths = new Array(ROYGBIV);
+    var counts = new Array(ROYGBIV);
+    var colors = ["violet","indigo","blue","green","yellow","orange","red"];
+
+    var idNames = ["350nm","400nm","450nm","500nm","550nm","600nm","650nm"];
+
+    var lamArr = new Array(1000);
+
+    var p = new Array(1000);
+    var p2 = new Array(1000);
+
+    var layout= {
+      plot_bgcolor:"black",
+      paper_bgcolor:"black",
+      yaxis: {
+        autorange: true,
+        showgrid: false,
+        zeroline: false,
+        showline: false,
+        autotick: true,
+        ticks: '',
+        showticklabels: false
+      },
+      bargap:0,
+      xaxis: {
+        tickcolor: "white",
+        tickfont: {color:"white"}
+      },
+    }
+  
+    var config = {
+      modeBarButtonsToRemove: ['pan2d','lasso2d','select2d','autoScale2d']
+    }
+
+    function planck(p,T) {
+      var lambda0 = 300e-9;
+      var lambdaf = 750e-9;
+      var lam = lambda0;
+      h = 6.6260701e-34;
+      c = 2.9979246e8;
+      k = 1.380649e-23;
+      for (var i=0; lam < lambdaf; ++i) {
+        var step = 0.1e-9;
+        lam = lam + step * i;
+        exp = h*c / (lam*k*T) ;
+        factor = 2*h*c**2 / (lam**5);
+        p[i] = factor / (Math.pow(Math.E,exp) - 1);
+        lamArr[i] = lam ;//+ 25 * 1e-9;
+        document.getElementById("counts").innerHTML = p[i];
+      }
+      return p;
+    }
+
+    function pNorm(p) {
+      var pMax = 0;
+      for (var i=0; i < 1000; ++i) {
+        if (p[i] > pMax) {
+          pMax = p[i];
+        }
+      }
+      for (var i=0; i < 1000; ++i) {
+        p[i] = p[i] * 10 / pMax;
+      }
+      return p;
+    }
+
+    function pullVals() {
+      for (var i = 0; i < ROYGBIV; ++i) {
+        counts[i] = document.getElementById(idNames[i]).value;
+        wavelengths[i] = parseInt( idNames[i] ) * 1e-9 + 25 * 1e-9;
+      }
+      //document.getElementById("counts").innerHTML = ;
+    }
+
+    function plot() {
+      pullVals();
+      
+      p = planck(p,5500);
+      
+      p = pNorm(p);
+      //document.getElementById("counts").innerHTML = p;
+
+      p2 = planck(p2,6368);
+      
+      p2 = pNorm(p2);
+   
+      var trace1 = {
+        x:lamArr,
+        y:p,
+        marker: {color:'white'},
+        type:'scatter'
+      }
+
+      var trace3 = {
+        x:lamArr,
+        y:p2,
+        marker: {color:'red'},
+        type:'scatter'
+      }
+
+      var trace2 = {
+        x:wavelengths,
+        y:counts,
+        marker: {color:colors},
+        type:"bar"
+      };
+      var data = [trace1,trace2,trace3]
+      Plotly.newPlot("myPlot", data, layout, config);
+    }
+
+    Plotly.newPlot("myPlot", data, layout, config);
+
+</script>
+
+</html>

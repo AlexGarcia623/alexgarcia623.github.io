@@ -114,7 +114,7 @@ img:hover {
 
 
 <body>
-<form name = "converter">
+<form onkeydown="return event.key != 'Enter';">
 <div class="body">
 
    <h1>Flow Of Energy Out Of The Sun </h2> 
@@ -122,7 +122,7 @@ img:hover {
   <p style="color:white;">Welcome to the flow of energy out of the sun 3! The third experiment is to look at absorption lines within a gas!</p>
 
   <canvas class="center" id="canvas" height="500" width="750"></canvas> <br>
-  <input class="center" style="color:orange;" id="repeats" type = "number" placeholder="Number of Photons" min="0" max="20" value="15"/> 
+  <input class="center" style="color:orange;" id="repeats" type = "number" placeholder="Number of Photons" min="0" max="20" value="15" onchange=""/> 
   <input type="button" onclick="start()" value="Start!" class="center"/>
   
 
