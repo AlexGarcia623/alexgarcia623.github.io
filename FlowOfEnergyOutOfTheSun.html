@@ -79,9 +79,9 @@ img:hover {
 <form name = "converter">
 <div class="body">
 
-   <h1>Flow Of Energy Out Of The Sun </h2> 
+   <h1>Understanding the Continuous Spectrum on the Sun and Perfect Blackbodies </h2> 
 
-  <p style="color:white;">Welcome to the flow of energy out of the sun! This first experiment is to understand the random walk through the Sun!</p>
+  <p style="color:white;">Welcome to the flow of energy out of the sun! This first experiment is to understand the random walk through the Sun as well as blackbody emission.</p>
 
   <canvas class="center" id="canvas" height="500" width="750"></canvas> <br>
   <input type="button" onclick="start()" value="Start!" class="center"/>
@@ -139,7 +139,7 @@ img:hover {
       ctx.arc(375, 250, 150, 0, 2 * Math.PI);
       ctx.stroke();
 
-      var wavelength = normalRandomScaled(550, 100);
+      var wavelength = normalRandomScaled(550, 150);
       var color = wavelengthToColor(wavelength);
 
       ctx.strokeStyle = color;

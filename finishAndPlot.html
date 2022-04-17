@@ -65,7 +65,6 @@ input:hover {
 img:hover {
   width=110%;
 }
-
 #canvas {
   border: 1px solid black;
 }
@@ -75,13 +74,54 @@ h3 {
   color:steelblue;
 }
 
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: white;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: green;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: green;
+}
 </style>
 
 <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
 <script src="plotly-2.11.1.min.js"></script>
 
 </head>
+<header>
+<button class = "button biggerButton" onclick="backButton()">Back</button>
+</header>
 
+<script>
+  function backButton() {
+    window.open("FlowOfEnergyOutOfTheSun.html","_self");
+  }
+</script>
 
 <body>
 <form onkeydown="return event.key != 'Enter';">
@@ -94,29 +134,35 @@ h3 {
   <h2>How many photons did you see in each wavelength range?</h2>
 
   <h3>350-399 nm</h3>
-  <input style="color:orange;" id="350nm" type = "number" placeholder="Number of Photons" min="0" max="10" /> 
+  <input style="color:orange;" id="350nm" type = "number" placeholder="Number of Photons" min="0" max="30" /> 
   
   <h3>400-449 nm</h3>
-  <input style="color:orange;" id="400nm" type = "number" placeholder="Number of Photons" min="0" max="10" /> 
+  <input style="color:orange;" id="400nm" type = "number" placeholder="Number of Photons" min="0" max="30" /> 
 
   <h3>450-499 nm</h3>
-  <input style="color:orange;" id="450nm" type = "number" placeholder="Number of Photons" min="0" max="10" /> 
+  <input style="color:orange;" id="450nm" type = "number" placeholder="Number of Photons" min="0" max="30" /> 
 
   <h3>500-549 nm</h3>
-  <input style="color:orange;" id="500nm" type = "number" placeholder="Number of Photons" min="0" max="10" /> 
+  <input style="color:orange;" id="500nm" type = "number" placeholder="Number of Photons" min="0" max="30" /> 
 
   <h3>550-599 nm</h3>
-  <input style="color:orange;" id="550nm" type = "number" placeholder="Number of Photons" min="0" max="10" /> 
+  <input style="color:orange;" id="550nm" type = "number" placeholder="Number of Photons" min="0" max="30" /> 
 
   <h3>600-649 nm</h3>
-  <input style="color:orange;" id="600nm" type = "number" placeholder="Number of Photons" min="0" max="10" /> 
+  <input style="color:orange;" id="600nm" type = "number" placeholder="Number of Photons" min="0" max="30" /> 
 
   <h3>650-700 nm</h3>
-  <input style="color:orange;" id="650nm" type = "number" placeholder="Number of Photons" min="0" max="10" /> 
+  <input style="color:orange;" id="650nm" type = "number" placeholder="Number of Photons" min="0" max="30" /> 
 
   <input type="button" onclick="plot()" value="Plot" class="center"/><br>
 
   <p id="counts"></p>
+
+  <div class="slidecontainer">
+    <p style="font-size:25pt;">Blackbody Temperature: <span id="Temperature"></span> K</p>
+    <input type="range" min="3000" max="30000" value="0" step="100" class="slider" id="myRange">
+    
+  </div>
 
   <div id="myPlot" style="width:100%" class="center"></div>
 </form>
@@ -130,7 +176,7 @@ h3 {
     var ROYGBIV = 7;
     var wavelengths = new Array(ROYGBIV);
     var counts = new Array(ROYGBIV);
-    var colors = ["violet","indigo","blue","green","yellow","orange","red"];
+    var colors = ["indigo","violet","blue","green","yellow","orange","red"];
 
     var idNames = ["350nm","400nm","450nm","500nm","550nm","600nm","650nm"];
 
@@ -138,6 +184,16 @@ h3 {
 
     var p = new Array(1000);
     var p2 = new Array(1000);
+
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("Temperature");
+    output.innerHTML = slider.value;
+
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+      plot();
+      pullVals();
+    }
 
     var layout= {
       plot_bgcolor:"black",
@@ -176,12 +232,14 @@ h3 {
         factor = 2*h*c**2 / (lam**5);
         p[i] = factor / (Math.pow(Math.E,exp) - 1);
         lamArr[i] = lam ;//+ 25 * 1e-9;
-        document.getElementById("counts").innerHTML = p[i];
+        //document.getElementById("counts").innerHTML = p[i];
       }
       return p;
     }
 
-    function pNorm(p) {
+    var maxInputed = 0;
+
+    function pNorm(p,norm) {
       var pMax = 0;
       for (var i=0; i < 1000; ++i) {
         if (p[i] > pMax) {
@@ -189,7 +247,7 @@ h3 {
         }
       }
       for (var i=0; i < 1000; ++i) {
-        p[i] = p[i] * 10 / pMax;
+        p[i] = p[i] * norm / pMax;
       }
       return p;
     }
@@ -199,7 +257,11 @@ h3 {
         counts[i] = document.getElementById(idNames[i]).value;
         wavelengths[i] = parseInt( idNames[i] ) * 1e-9 + 25 * 1e-9;
       }
-      //document.getElementById("counts").innerHTML = ;
+      //document.getElementById("counts").innerHTML = counts;
+    }
+
+    function getMaxOfArray(numArray) {
+     return Math.max.apply(null, numArray);
     }
 
     function plot() {
@@ -207,34 +269,38 @@ h3 {
       
       p = planck(p,5500);
       
-      p = pNorm(p);
+      //p = pNorm(p);
       //document.getElementById("counts").innerHTML = p;
 
-      p2 = planck(p2,6368);
-      
-      p2 = pNorm(p2);
+      maxInputed = getMaxOfArray(counts);
+
+      p2 = planck(p2,parseInt(output.innerHTML));
+      p2 = pNorm(p2,maxInputed);
    
       var trace1 = {
         x:lamArr,
-        y:p,
+        y:p2,
         marker: {color:'white'},
-        type:'scatter'
+        type:'scatter',
+        showlegend:false
       }
 
       var trace3 = {
         x:lamArr,
         y:p2,
         marker: {color:'red'},
-        type:'scatter'
+        type:'scatter',
+        showlegend:false
       }
 
       var trace2 = {
         x:wavelengths,
         y:counts,
         marker: {color:colors},
-        type:"bar"
+        type:"bar",
+        showlegend:false
       };
-      var data = [trace1,trace2,trace3]
+      var data = [trace1,trace2]
       Plotly.newPlot("myPlot", data, layout, config);
     }
 
