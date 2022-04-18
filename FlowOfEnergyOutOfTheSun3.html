@@ -112,12 +112,22 @@ img:hover {
 
 </head>
 
+<header>
+  <title>Spectroscopy II</title>
+  <button class = "button biggerButton" onclick="SpecHome()">Main Menu</button>
+</header>
+
+<script>
+  function SpecHome() {
+    window.open('AstronomicalSpectroscopyII.html','_self');
+  }
+</script>
 
 <body>
 <form onkeydown="return event.key != 'Enter';">
 <div class="body">
 
-   <h1>Flow Of Energy Out Of The Sun </h2> 
+   <h1>Flow Of Energy Out Of The Sun: Absorption Spectra </h2> 
 
   <p style="color:white;">Welcome to the flow of energy out of the sun 3! The third experiment is to look at absorption lines within a gas!</p>
 
@@ -178,7 +188,7 @@ img:hover {
 
     var pAbs = 0;
     var pAbsLow = 0.0005;
-    var pAbsHigh = 0.01;
+    var pAbsHigh = 0.05;
 
     function random(min, max) {
       return Math.random() * (max - min) + min;
@@ -202,12 +212,12 @@ img:hover {
       ctx.moveTo(0,100);
       ctx.lineTo(750,100);
       ctx.stroke();
-      ctx.strokeStyle = 'blue';
-      ctx.beginPath();
-      ctx.lineWidth = 5;
-      ctx.moveTo(300,25);
-      ctx.lineTo(450,25);
-      ctx.stroke();
+      //ctx.strokeStyle = 'blue';
+      //ctx.beginPath();
+      //ctx.lineWidth = 5;
+      //ctx.moveTo(300,25);
+      //ctx.lineTo(450,25);
+      //ctx.stroke();
 
       var WL = wavelengtheVConverter(document.getElementById("energy").innerHTML);
       var color = wavelengthToColor(WL);      

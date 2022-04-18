@@ -7,6 +7,7 @@
 <style>
 p {
   color:white;
+  font-size:18pt;
 }
 
 body {
@@ -93,11 +94,13 @@ a:hover {
 h1 {
   color:steelblue;
   font-family:times;
+  font-size:35pt;
 }
 
 h2 {
   color:tomato;
   font-family: times;
+  font-size: 26pt;
 }
 
 #footer-text {

@@ -114,10 +114,15 @@ h3 {
 
 </head>
 <header>
-<button class = "button biggerButton" onclick="backButton()">Back</button>
+  <title>Spectroscopy II</title>
+  <button class = "button biggerButton" onclick="SpecHome()">Main Menu</button>
+  <button class = "button biggerButton" onclick="backButton()">Back</button>
 </header>
 
 <script>
+  function SpecHome() {
+    window.open('AstronomicalSpectroscopyII.html','_self');
+  }
   function backButton() {
     window.open("FlowOfEnergyOutOfTheSun.html","_self");
   }

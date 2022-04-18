@@ -74,26 +74,28 @@ img:hover {
 
 </head>
 
+<header>
+  <title>Spectroscopy II</title>
+  <button class = "button biggerButton" onclick="SpecHome()">Main Menu</button>
+</header>
+
+<script>
+  function SpecHome() {
+    window.open('AstronomicalSpectroscopyII.html','_self');
+  }
+</script>
 
 <body>
 
 <div class="body">
 
-  <h1>Flow Of Energy Out Of The Sun 2</h2> 
+  <h1>Identifying Spectral Lines</h2> 
 
-  <p style="color:white;">Welcome to the flow of energy out of the sun 2! This second experiment is to understand the emission of Fraunhofer lines. Random walk part of this is cool, but necessary...? Ehh not entirely sure. Slows down the process, maybe just keep for the random walk part.</p>
+  <p style="color:white;">In this first experiment, we'll look at a mock absorption spectrum for the Sun. Press the button below to see a mock spectrum of the Sun. This spectrum does not contain ALL of the Fraunhofer lines, but it does include some of the most conspicuous ones (namely, most of the capital letter lines)</p>
 
-  <canvas class="center" id="canvas" height="500" width="750"></canvas> <br>
-  <input type="button" onclick="start()" value="Start!" class="center"/>
-  <input type="button" onclick="stop()" value="Stop" class="center"/>
-  <h2>Number of Escaped Photons:</h2>
   <p id="display"> </p>
   <p id="finished" style="color:orange;font-size:25pt;"> </p>
-  <p id="previous0"> </p>
-  <p id="previous1"> </p>
-  <p id="previous2"> </p>
-  <p id="previous3"> </p>
-  <p id="previous4"> </p>
+  <input type="button" onclick="start()" value="Generate Spectrum" class="center"/>
 
   <div id="myPlot" style="width:100%" class="center"></div>
 
@@ -101,14 +103,7 @@ img:hover {
 
 </body>
 
-<script>
-    // Based on code found here: https://gist.github.com/hacknightly/fd609abe5a7e15e223a823ee6e0724c8
-    let x = 375;
-    let y = 250;
-    var counter = document.querySelector('canvas');
-    var number = 0;
-    //var requestID;
- 
+<script> 
     var WLmin = 350;
     var WLmax = 700;
     var WLlength = WLmax - WLmin + 1;
@@ -142,119 +137,25 @@ img:hover {
     function random(min, max) {
       return Math.random() * (max - min) + min;
     }
-
-    function init() {
-      requestID = window.requestAnimationFrame(draw);
-      document.getElementById("display").innerHTML = number;
-    }
-   
-    function draw() {
-      const canvas = document.getElementById('canvas');
-      const ctx = canvas.getContext('2d');    
-
-      ctx.strokeStyle = 'yellow';
-      ctx.beginPath();
-      ctx.arc(375, 250, 200, 0, 2 * Math.PI);
-      ctx.lineWidth = 3;
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.strokeStyle = 'red';
-      ctx.arc(375, 250, 15, 0, 2 * Math.PI);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.strokeStyle = 'orange';
-      ctx.arc(375, 250, 150, 0, 2 * Math.PI);
-      ctx.stroke();
-
-      ctx.strokeStyle = 'white';
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      if ( ((x-375)**2 + (y-250)**2)**(1/2) < 15 ) {
-        x += random(-30, 30);
-        y += random(-30, 30);
-      } else if ( ((x-375)**2 + (y-250)**2)**(1/2) < 150 ) {
-        x += random(-150, 150);
-        y += random(-150, 150);
-      } else {
-        x += random(-30, 30);
-        y += random(-30, 30);
-      }
-      ctx.lineWidth = 2;
-      ctx.lineTo(x, y);
-      ctx.stroke();
-      if ( ((x-375)**2 + (y-250)**2)**(1/2) > 200 ) {
-        var WL = WLChecker();
-        
-        document.getElementById("display").innerHTML = WL
-        
-        restart();
-      }
-      else {
-        requestID = window.requestAnimationFrame(draw);
-      }
-      return;
-    }
     
-    function WLChecker() {
-      var WL = randomWavelength(WLmin, WLmax+1);
+    function WLChecker(WL) {
       let index = wavelengths.indexOf(WL);
-      if (counts[index] < 2) {
-        counts[index]++;
+      if (Lines.includes(WL)) {
+        counts[index] = 0;
       } else {
-        WLChecker();
+        counts[index] = 2;
       }
-      return WL;
+      //return WL;
     }
 
     function start() {
-	const canvas = document.getElementById('canvas');
-	const context = canvas.getContext('2d');
 
-	context.clearRect(0, 0, canvas.width, canvas.height);
-        	x = 375;
-        	y = 250;
-        	number = 0;
-        	document.getElementById("display").innerHTML = "";
+        	for (var i = 0; i < wavelengths.length; ++i) {
+	  var WL = wavelengths[i];
+       	  WLChecker(WL);
+    	}
       	plot();
-	init();
     }
-
-    function restart() {
-	number++;
-	const canvas = document.getElementById('canvas');
-	const context = canvas.getContext('2d');
-
-	context.clearRect(0, 0, canvas.width, canvas.height);
-
-	x = 375;
-	y = 250;
-	plot();
-	init();
-    }
-    
-    function stop() {
-      cancelAnimationFrame(requestID);
-
-      plot();
-      
-      for (var i=0; i<WLlength; ++i) {
-        counts[i] = 0
-      };
-      for (var i=0; i<WLlength; ++i) {
-         wavelengths[i] = WLmin + i;
-      };
-      for (var i=0; i<WLlength; ++i) {
-         colors[i] = "";
-      }; 
-
-    }
-    
-    var trace1 = {
-      x: Lines,
-      y: negative,
-      mode: 'markers',
-      type: 'scatter'
-    };
 
     var trace2 = {
       x:wavelengths,
@@ -292,9 +193,6 @@ img:hover {
       for (var i=0; i<WLlength; ++i) {
         colors[i] = wavelengthToColor(wavelengths[i],counts[i]);
       };
-      if (number == 676) {
-        document.getElementById('finished').innerHTML = "Finished!";
-      }
       Plotly.newPlot("myPlot", data, layout, config);
     }
     Plotly.newPlot("myPlot", data, layout,config);
@@ -362,6 +260,15 @@ img:hover {
        
         return colorSpace;
        
+    }
+
+    function sleep(milliseconds) {
+      var start = new Date().getTime();
+      for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+        }
+      }
     }
 
   </script>

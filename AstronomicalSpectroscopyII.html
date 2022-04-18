@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css">
+
+<meta http-equiv='cache-control' content='no-cache'> 
+<meta http-equiv='expires' content='0'> 
+<meta http-equiv='pragma' content='no-cache'>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<script src="scripts.js"></script>
+
+<head>
+<style>
+* {
+  box-sizing:border-box;
+}
+.column {
+  float:left;
+  width:50%;
+}
+
+.row:after {
+  contents: "";
+  display: table;
+  clear: both;
+}
+
+p {
+  color:steelblue;
+  font-size:14pt;
+}
+
+h1 {
+  font-size:30pt;
+}
+
+h2 {
+  font-size:18pt;
+}
+
+button {
+  background-color:black;
+  color:steelblue;
+  border: 1px solid tomato;
+  padding: 8px;
+  font-size: 12pt;
+}
+
+button:hover {
+  background-color:steelblue;
+  color:black;
+}
+
+input:hover {
+  background-color:steelblue;
+  color:black;
+}
+
+.column3 {
+  float:left;
+  width:33%;
+}
+
+img:hover {
+  width=110%;
+}
+
+#canvas {
+  border: 1px solid black;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: white;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: green;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: green;
+}
+
+</style>
+
+<script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
+<script src="plotly-2.11.1.min.js"></script>
+
+</head>
+
+<header>
+  <title>Spectroscopy II</title>
+  <button class = "button biggerButton" onclick="ALEXHome()">ALEX Home</button>
+</header>
+
+<script>
+  function ALEXHome() {
+    window.open('ALEXLabs.html','_self');
+  }
+</script>
+
+<body>
+<form onkeydown="return event.key != 'Enter';">
+<div class="body">
+
+  <h2 style="color:green; font-size:24pt">Astronomical Spectroscopy II</h2>
+
+  <p style="color:#478778; font-size:18pt;">This lab is broken into three different sections. Each of these experiements has its roots in spectroscopy, but each serves a different purpose.<br><br>
+
+  <h2 style="color:green; font-size:20pt">Identifying Spectral Lines </h2>
+  
+  <p style="color:#478778; font-size:18pt;">Before we get into the nitty-gritty of why the Sun does what it does, let's take a step back and see what it does. In this experiemtn, you will see a mock stellar spectrum. You will notice that there are several wavelengths missing from this spectrum. As you learned in Astronomical Spectroscopy I, one of Kirchoff's Laws tells us about absorption spectra. The radiation from the Sun is one example of a place that we see these absorption lines in a continuous source. <br><br>
+
+  The most conspicuous lines are called "Fraunhofer Lines" (named after the man who discovered and catalogued them). As Kirchoff showed, each of these lines corresponds to a different electron transition within atoms. Use the table in your lab manual and see if you can identify which line is which Fraunhofer line, as well as what element it corresponds to.
+
+  </p>
+
+  <a href="FlowOfEnergyOutOfTheSun2.html" target="_self" style="color:#478778; font-size:18pt;"">Examine a mock stellar spectrum</a>
+
+  <h2 style="color:green; font-size:20pt">Flow Of Energy Out Of The Sun: Blackbody and Continuous Spectrum
+ </h2>
+  
+  <p style="color:#478778; font-size:18pt;">Now that we have an idea of what to expect from the Sun, let's start to investigate WHY we see what we see. We'll start with the continuous spectrum. <br><br>
+
+  The continuous spectrum comes from (blah blah) in the (blah blah) of the Sun.
+
+  </p>
+
+  <a href="FlowOfEnergyOutOfTheSun.html" target="_self" style="color:#478778; font-size:18pt;"">Observe a continuous spectrum being created</a>
+
+  <h2 style="color:green; font-size:20pt">Flow Of Energy Out Of The Sun: Absorption Spectra
+ </h2>
+  
+  <p style="color:#478778; font-size:18pt;">So that's where the continuous spectrum arises. But why do we see the dark-line absorption features? <br><br>
+
+  This all goes back to Kirchoff's Laws. We have a cool, gaseous source being backlit by a continuous spectrum. Based on what's in this gas in the (blah blah) determines the wavelengths that are absorbed. Let's examine this effect to see if we can't put two and two together.
+
+  </p>
+
+  <a href="FlowOfEnergyOutOfTheSun3.html" target="_self" style="color:#478778; font-size:18pt;"">Create an absorption spectrum</a>
+
+</form>
+
+
+</body>
+
+</html>

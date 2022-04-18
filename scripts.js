@@ -6,6 +6,10 @@ function linkedIn() {
   window.open("https://www.linkedin.com/in/alex-garcia-051300210/")
 }
 
+function ALEX() {
+  window.open("ALEXLabs.html","_self");
+}
+
 function CV() {
   window.open("./pdfs/GarciaA_CV.pdf");
 }
