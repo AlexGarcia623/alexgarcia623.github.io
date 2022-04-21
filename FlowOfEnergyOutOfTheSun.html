@@ -89,17 +89,15 @@ img:hover {
 <form name = "converter">
 <div class="body">
 
-   <h1>Flow Of Energy Out Of The Sun: Blackbody and Continuous Spectrum </h2> 
+   <h1>Flow Of Energy Out Of The Sun: Continuous Spectrum </h2> 
 
-  <p style="color:white;">Welcome to the flow of energy out of the sun! This first experiment is to understand the random walk through the Sun as well as blackbody emission.</p>
+  <p style="color:white;">Welcome to the flow of energy out of the sun! This first experiment is to understand the random walk through the Sun.</p>
 
   <canvas class="center" id="canvas" height="500" width="750"></canvas> <br>
   <input type="button" onclick="start()" value="Start!" class="center"/>
   <h2>Number of walks:</h2>
   <p id="display"> </p>
   <p style="font-size:25pt;"><span id="finish" style="color:orange;"></span> <span id='WL'> </span></p>
-
-  <input type="button" onclick="FandP()" value="Finish and Plot" class="center"/>
 
 </form>
 
@@ -113,10 +111,6 @@ img:hover {
     var counter = document.querySelector('canvas');
     var number = 0;
     var animation = false;
-
-    function FandP() {
-      window.open('finishAndPlot.html','_self');
-    }
 
     function random(min, max) {
       return Math.random() * (max - min) + min;
@@ -149,7 +143,7 @@ img:hover {
       ctx.arc(375, 250, 150, 0, 2 * Math.PI);
       ctx.stroke();
 
-      var wavelength = normalRandomScaled(550, 150);
+      var wavelength = parseInt( random(350, 700) );
       var color = wavelengthToColor(wavelength);
 
       ctx.strokeStyle = color;
@@ -200,41 +194,9 @@ img:hover {
          document.getElementById("WL").innerHTML = "";
 	init();
     }
- 
-    var spareRandom = null;
-    // Generate Random Variable: https://gist.github.com/bluesmoon/7925696
-    function normalRandom() {
-	var val, u, v, s, mul;
-
-	if(spareRandom !== null) {
-		val = spareRandom;
-		spareRandom = null;
-	} else {
-		do {
-			u = Math.random()*2-1;
-			v = Math.random()*2-1;
-
-			s = u*u+v*v;
-		} while(s === 0 || s >= 1);
-
-		mul = Math.sqrt(-2 * Math.log(s) / s);
-
-		val = u * mul;
-		spareRandom = v * mul;
-	}	
-	return val;
-    }
-
-    function normalRandomScaled(mean, stddev) {
-	var r = normalRandom();
-	r = r * stddev + mean;
-        	if (r < 350) { r = normalRandomScaled(mean, stddev) } 
-        	else if (r > 700) { r = normalRandomScaled(mean, stddev) }
-	return parseInt(r);
-    }
-   
+    
     // takes wavelength in nm and returns an rgba value
-    // Taken from: https://scienceprimer.com/javascript-code-convert-light-wavelength-color
+    // Adopted from: https://scienceprimer.com/javascript-code-convert-light-wavelength-color
     function wavelengthToColor(wavelength) {
         var r,
             g,
