@@ -5,11 +5,11 @@
 
 <style>
 h1 {
-  font-size:24pt
+  font-size:45pt;
 }
 
 #toc {
-  font-size:16pt;
+  font-size:24pt;
 }
 
 .column3 {
@@ -40,12 +40,27 @@ td {
 
 <header>
   <title>Alex's Work</title>
-  <button class = "button" onclick="home()">Alex Garcia</button>
-  <button class = "button" onclick="linkedIn()">Linkedin</button>
-  <button class = "button" onclick="CV()">CV</button>
-  <button class = "button" onclick="inTheNews()">In The News</button>
+  <button class = "button biggerButton" onclick="home()">Home</button>
+  <div class="dropdown">
+    <button class="dropbtn">Where To Find Me</button>
+    <div class="dropdown-content">
+      <a href="https://www.linkedin.com/in/alex-garcia-051300210/" target="_blank">LinkedIn</a>
+      <a href="contactMe.html">Email</a>
+    </div>
+  </div>
+  <button class = "button biggerButton" onclick="CV()">CV</button>
+  <button class = "button biggerButton" onclick="inTheNews()">In The News</button>
+  <div class="dropdown">
+    <button class="dropbtn">Some of my work</button>
+    <div class="dropdown-content">
+      <a href="workExamples.html#Graduate Research">Research</a>
+      <a href="workExamples.html#Teaching">Teaching</a>
+      <a href="workExamples.html#KSP">Kika Silva Pla Planetarium</a>
+      <a href="workExamples.html#CARE">CARE @ UIUC</a>
+    </div>
+  </div>
   <button class = "button biggerButton" onclick="books()">What am I reading?</button>
-  <button class = "button" onclick="contactMe()" style="float: right;">Contact Me</button>
+  <button class = "button biggerButton" onclick="ALEX()">ALEX Labs</button>
 </header>
 
 <div class="body">
@@ -57,7 +72,7 @@ td {
 <p id="toc"><a href="#KSP">Kika Silva Pla Planetarium</a></p>
 <p id="toc"><a href="#CARE">CARE Tutoring</a></p>
 <p id="toc"><a href="#Undergraduate Research">Undergraduate Research</a></p>
-<p id="toc"><a href="#Physics 401">Physics 401 Lab Reports Fall 2020</a></p>
+<!p id="toc"><!a href="#Physics 401"></a></p>
 </section>
 
 <section id="Graduate Research">
@@ -148,19 +163,21 @@ td {
 
   <p>Starting in the Fall Semester of 2021, I work at the Kika Silva Pla Planetarium at Santa Fe College in Gainesville, FL. I work there alongside James Albury, the planetarium director and <em>star</em> of <a href="https://www.youtube.com/c/JamesAlburyTheSkyAboveUs" target="_blank">"The Sky Above Us"</a> webseries.</p>
 
-  <p>During my tenure at the planetarium, I engage in science outreach to a wide variety of audiences. The planetarium hosts weekly events on Fridays and Saturdays (starting 11/12/2021) for a series of different shows. The show topics range from educational to entertaining and all serve to get the public more interested in space and astronomy. 
+  <p>I engage in science outreach to a wide variety of audiences. The planetarium hosts weekly events on Fridays and Saturdays (starting 11/12/2021) for a series of different shows. The show topics range from educational to entertaining and all serve to get the public more interested in space and astronomy. 
 
-<br><br> 
+  </p>
+
+  <img src="./images/KSP.jpeg" class="center" height=100% width=50%>  
+
+  <p>
 
 One of the earliest projects that I worked on at KSP Planetarium was to add an accessible option for many of the shows with closed captioning. As a person with a hearing disability this was certainly something that I felt was important that the planetarium had and something that I felt it didn't when I arrived.
 
 <br><br>
 
-My favorite accomplishment during my time at the Planetarium was learning to perform "Florida Skies", an hour long show giving the public a tour of the nighttime sky of Gainesville. Within my first eight months of working at the planetarium, I was able to perform this tour with our CHRONOS-II optical-mechanical projector. 
+My favorite accomplishment during my time at the Planetarium was learning to perform "Florida Skies", an hour long show giving the public a tour of the night-time sky of Gainesville. Within my first eight months of working at the planetarium, I was able to perform this tour with our CHRONOS-II optical-mechanical projector. </p>
 
-<br><br>
-
-Additionally, I hope to create my own full-dome planetarium show on Cosmology and Large Scale Structure using the software on the planetarium computers within the near future.</p>
+  <img src="./images/Chronos.webp" class="center" height=100% width=50%>  
 
   <h2>Show Credits</h2>
 
@@ -176,6 +193,8 @@ Additionally, I hope to create my own full-dome planetarium show on Cosmology an
   
 <section id = "CARE">
   <h1>Center for Academic Resources in Engineering (CARE) UIUC</h1>
+
+  <img src="./images/UIUC.jpeg" class="center" height=100% width=50%>  
 
   <h2>Walk-in Tutoring</h2>
   <p>CARE hosts daily tutoring sessions, typically from noon to midnight, where any student can come into our walk-in space and ask questions. Tutors are rotated in and out during these times and can answer questions on a myriad of different topics. During my time as a CARE tutor, I was able to answer questions on the courses found <a href="courses.html">here</a>.</p>
@@ -204,18 +223,15 @@ During the summer before my senior year of undergrad, I aided in creating new wo
 
   <p>My work with Professor Dunne was focused on beginning research methods. The program was run through <a href="https://www.oursolarsiblings.com/" target="_blank">Our Solar Sibilings</a>, maintained and operated by Michael Fitzgerald, out of Melbourne Australia. The program consisted of weekly modules intended to get students familiar with the process of research. Our group, made up of three undergraduate students, worked on an observation project on variable stars of the RR Lyrae variety. Our target: V0660 Andromeda.</p>
 
-  <p>One of the first modules had us get familiar with the photo-editing program Gimp. We chose a supernova at random, requested composite images, and stacked them together in Gimp. <a href="./images/FirstImage.png" target="_blank">Here</a> is the result. The next, and (unfortunately due to time constraints) last, step of this project was the literature review. We compiled several sources, available to see <a href="V0660_sources.html" target="_blank">here</a>. We were beginning to assemble the framework of a paper when we ran into our time constraints. <a href="./ResearchRelated/V0660_AND.pdf" target="_blank">Here</a> is as far as we got on the paper-writing process (admittedly, not very far).</p>
+  <p>One of the first modules had us get familiar with the photo-editing program Gimp. We chose a supernova at random, requested composite images, and stacked them together in Gimp. Below is the result. The next, and (unfortunately due to time constraints) last, step of this project was the literature review. We compiled several sources, available to see <a href="V0660_sources.html" target="_blank">here</a>. We were beginning to assemble the framework of a paper when we ran into out of time for the project.</p>
+
+  <img src="./images/FirstImage.png" class="center" height=100% width=50%>  
 
   <h2>Professor Yue Shen</h2>
 
   <p>My work with Professor Shen was centered on the Sloan Digitial Sky Survey (SDSS) Data Release 16, specifically the quasars. We wanted to analyze and get rid of a lot of the noise on the spectrum of these quasars. This project was an analysis project and more hands-on with coding than my previous experience with Professor Dunne. My small part in this project was to translate an IDL script into Python. The <a href="./ResearchRelated/synthspec_print.pdf" target="_blank">original IDL script</a> had several checks that we did not have to implement in Python. The <a href="./ResearchRelated/Project.html" target="_blank">Python Script</a>, created in a jupyter notebook, helped filter out this noise and give a much neater spectral emission line.</p>
 
   <img src="./ResearchRelated/Final_small_range.png" class=center id=wbckgrd height=50% width=50%>
-</section>
-
-<section id="Physics 401">
-  <h1>Classical Physics Lab (PHYS 401) </h1>
-  <p>Experiments and techniques in classical mechanics and electromagnetism. Dynamics of electrical and mechanical oscillators in the linear domain. Fourier analysis of system response. Measurements of electrostatic fields, transmission lines, waves, and radiation. Electromagnetic phenomena in dielectrics, conductors, and magnetic materials. Instruction in data analysis and report writing.<br><br><a href="./pdfs/labReports.html">Click Here to see the reports</a></p>
 </section>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
