@@ -11,17 +11,28 @@
 
 
 <style>
-body {
-  margin-top:90px;
-  color:black;
-  background-image:url('./images/Merger.jpeg');
-  background-repeat:no-repeat;
-  background-attachment: fixed; 
-  background-size:100% 100%;
-  padding:0;
-  height:100%;
-  display:block;
-  background-size: 100% 100%;
+@media only screen and (min-width: 800px) {
+  .dynBack {
+    margin-top:90px;
+    color:black;
+    background-image:url('./images/Merger.jpeg');
+    background-repeat:no-repeat;
+    background-attachment: fixed; 
+    background-size:auto;
+    padding:0;
+    height:100%;
+    display:block;
+    background-size: 100% 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .dynBack {
+    background-image: url('./images/HubbleDeepField.jpeg');
+    background-repeat:no-repeat;
+    background-attachment: fixed; 
+    background-size:auto;
+  }
 }
 
 * {
@@ -67,17 +78,17 @@ body {
 <footer>
   <title>Alex Garcia</title>
   <div class="dropup" >
-    <button class="dropbtn">Contacts</button>
+    <button class="dropbtn" onclick="contactMe()">Contacts</button>
     <div class="dropup-content">
       <a href="https://www.linkedin.com/in/alex-garcia-051300210/" target="_blank">LinkedIn</a>
       <a href="https://astro.ufl.edu/directory/alex-garcia/" target="_blank">UF Astro</a>
-      <a href="contactMe.html">Email</a>
+      <a href="mailto:alexgarcia@ufl.edu">Email</a>
     </div>
   </div>
   <button class = "button biggerButton" onclick="CV()">CV</button>
   <button class = "button biggerButton" onclick="inTheNews()">News</button>
   <div class="dropup">
-    <button class="dropbtn">My Work</button>
+    <button class="dropbtn" onclick="workExamples()">My Work</button>
     <div class="dropup-content">
       <a href="workExamples.html#Graduate Research">Research</a>
       <a href="workExamples.html#Teaching">Teaching</a>
@@ -89,9 +100,9 @@ body {
   <button class = "button biggerButton" onclick="ALEX()">ALEX Labs</button>
 </footer>
 
-<body style="margin-left:0%;margin-right:0%;">
+<body class="dynBack">
   <div class = "row">
-    <h1 style="font-size: min(min(32pt, 3vw), 32pt); text-align:center; color:white;">Alex Garcia</h1>
+    <h1 style="font-size: min(max(16pt, 3vw), 32pt); text-align:center; color:white;">Alex Garcia</h1>
   </div>
 </body>
 
