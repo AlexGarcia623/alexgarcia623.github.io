@@ -255,6 +255,19 @@ th, td {
   transition-duration: 0.4s;
 }
 
+@media (max-width: 800px) {
+  /* mobile CSS: hide .desktop div */
+  .desktop {
+    display: none
+  }
+}
+@media (min-width: 800px) {
+  /* desktop CSS: hide .mobile div */
+  .mobile {
+    display: none
+  }
+}
+
 </style>
 </head>
 </html>
