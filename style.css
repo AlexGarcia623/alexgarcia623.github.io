@@ -7,7 +7,7 @@
 <style>
 p {
   color:white;
-  font-size:18pt;
+  font-size:min(max(10pt, 1.5vw), 14pt);
 }
 
 body {
@@ -18,7 +18,7 @@ body {
   height:100%;
   display:block;
   background-size: 75% 100%;
-  font-size: 15pt;
+  font-size: min(max(10pt, 1.5vw), 16pt);
   margin-left:10%;
   margin-right:10%;
 }
@@ -50,14 +50,14 @@ div {
   border:none;
   padding: 24px 16px;
   text-align: center;
-  font-size: 16px;
+  font-size: min(max(10pt, 2vw), 18pt);
   transition-duration: 0.4s;
   background-color:transparent;
 }
 
 .biggerButton {
   padding: 24px 16px;
-  font-size: 18px;
+  font-size: min(max(10pt, 2vw), 18pt);
 }
 
 .button:hover {
@@ -78,6 +78,7 @@ div {
 
 a {
   color:white;
+  font-size:min(max(10pt, 1.5vw), 16pt);
 }
 
 a:hover {
@@ -86,21 +87,22 @@ a:hover {
 
 .body {
   display: in-line block;
-  margin-left:150px;
-  margin-right:150px;
-  margin-bottom:150px;
+  margin-left:10%;
+  margin-right:10%;
+  margin-bottom:5%;
+  margin-top:5%;
 }
 
 h1 {
   color:steelblue;
   font-family:times;
-  font-size:35pt;
+  font-size:3vw;
 }
 
 h2 {
   color:tomato;
   font-family: times;
-  font-size: 26pt;
+  font-size: 2vw;
 }
 
 #footer-text {
@@ -140,7 +142,7 @@ th, td {
   background-color:transparent;
   color: white;
   padding: 24px 16px;
-  font-size: 18px;
+  font-size: min(max(10pt, 2vw), 18pt);
   border: none;
 }
 
@@ -196,7 +198,7 @@ th, td {
   background-color:transparent;
   color: white;
   padding: 24px 16px;
-  font-size: 18px;
+  font-size: min(max(10pt, 2vw), 18pt);
   border: none;
 }
 

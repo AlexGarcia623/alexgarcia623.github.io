@@ -13,12 +13,20 @@
   box-sizing: border-box;
 }
 
+div {
+  padding-top:0;
+}
+
+img {
+  width:40%;
+  height:50%;
+}
+
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
   width: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+  padding: 0px;
 }
 
 /* Clear floats after the columns */
@@ -29,11 +37,11 @@
 }
 
 .row {
-  padding-bottom: 150px;
+  padding-bottom: 0px;
 }
 
 h3 {
-  font-size:18pt;
+  font-size:min(max(10pt, 1.5vw), 16pt);
   color:steelblue;
 }
 </style>
@@ -69,7 +77,7 @@ h3 {
 
 <div class="row">
   <div class="column">
-    <img src="./books/ADanceWithDragons.jpeg" class="center" width = 300px height= 400px></img>
+    <img src="./books/ADanceWithDragons.jpeg" class="center"></img>
   </div>
   <div class="column">
     <h2>A Dance with Dragons</h2>
@@ -86,7 +94,7 @@ h3 {
 
 <div class="row">
   <div class="column">
-    <img src="./books/AFeastForCrows.jpeg" class="center" width = 300px height= 400px></img>
+    <img src="./books/AFeastForCrows.jpeg" class="center"></img>
   </div>
   <div class="column">
     <h2>A Feast for Crows</h2>
@@ -97,7 +105,7 @@ h3 {
 
 <div class="row">
   <div class="column">
-    <img src="./books/AStormOfSwords.jpeg" class="center" width = 300px height= 400px></img>
+    <img src="./books/AStormOfSwords.jpeg" class="center"></img>
   </div>
   <div class="column">
     <h2>A Storm Of Swords</h2>
@@ -108,7 +116,7 @@ h3 {
 
 <div class="row">
   <div class="column">
-    <img src="./books/AClashOfKings.jpeg" class="center" width = 300px height= 400px></img>
+    <img src="./books/AClashOfKings.jpeg" class="center"></img>
   </div>
   <div class="column">
     <h2>A Clash Of Kings</h2>
@@ -119,7 +127,7 @@ h3 {
 
 <div class="row">
   <div class="column">
-    <img src="./books/AGameOfThrones.jpeg" class="center" width = 300px height= 400px></img>
+    <img src="./books/AGameOfThrones.jpeg" class="center"></img>
   </div>
   <div class="column">
     <h2>A Game Of Thrones</h2>
@@ -130,7 +138,7 @@ h3 {
 
 <div class="row">
   <div class="column">
-    <img src="./books/TheWordIsMurder.jpeg" class="center" width = 300px height= 400px></img>
+    <img src="./books/TheWordIsMurder.jpeg" class="center"></img>
   </div>
   <div class="column">
     <h2>The Word Is Murder</h2>
@@ -141,7 +149,7 @@ h3 {
 
 <div class="row">
   <div class="column">
-    <img src="./books/HumblePi.jpeg" class="center" width = 300px height= 400px></img>
+    <img src="./books/HumblePi.jpeg" class="center"></img>
   </div>
   <div class="column">
     <h2>Humble Pi: When Math Goes Wrong in the Real World</h2>
@@ -152,7 +160,7 @@ h3 {
 
 <div class="row">
   <div class="column">
-    <img src="./books/HitchhikerGuide.jpeg" class="center" width = 300px height= 400px></img>
+    <img src="./books/HitchhikerGuide.jpeg" class="center"></img>
   </div>
   <div class="column">
     <h2>The Hitchhiker's Guide to the Galaxy</h2>
@@ -165,7 +173,7 @@ h3 {
 
 <div class="row">
   <div class="column">
-    <img src="./books/EinsteinsDreams.jpeg" class="center" width = 300px height= 400px></img>
+    <img src="./books/EinsteinsDreams.jpeg" class="center"></img>
   </div>
   <div class="column">
     <h2>Einstein's Dreams</h2>
@@ -176,7 +184,7 @@ h3 {
 
 <div class="row">
   <div class="column">
-    <img src="./books/BraveNewWorld.jpeg" class="center" width = 300px height= 400px></img>
+    <img src="./books/BraveNewWorld.jpeg" class="center"></img>
   </div>
   <div class="column">
     <h2>Brave New World</h2>
@@ -188,7 +196,7 @@ h3 {
 
 <div class="row">
   <div class="column">
-    <img src="./books/AstrophysicsPeopleHurry.jpeg" class="center" width = 300px height= 400px></img>
+    <img src="./books/AstrophysicsPeopleHurry.jpeg" class="center"></img>
   </div>
   <div class="column">
     <h2>Astrophysics for People in a Hurry</h2>
@@ -199,7 +207,7 @@ h3 {
 
 <div class="row">
   <div class="column">
-    <img src="./books/AlgorithmsToLiveBy.jpeg" class="center" width = 300px height= 400px></img>
+    <img src="./books/AlgorithmsToLiveBy.jpeg" class="center"></img>
   </div>
   <div class="column">
     <h2>Algorithms to Live By: The Computer Science of Human Decisions</h2>
@@ -210,7 +218,7 @@ h3 {
 
 <div class="row">
   <div class="column">
-    <img src="./books/Dune.jpeg" class="center" width = 300px height= 400px></img>
+    <img src="./books/Dune.jpeg" class="center"></img>
   </div>
   <div class="column">
     <h2>Dune</h2>
