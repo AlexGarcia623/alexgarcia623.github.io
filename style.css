@@ -7,7 +7,7 @@
 <style>
 p {
   color:white;
-  font-size:min(max(10pt, 1.5vw), 14pt);
+  font-size:min(max(14pt, 1.5vw), 16pt);
 }
 
 body {
@@ -19,7 +19,7 @@ body {
   height:100%;
   display:block;
   background-size: 75% 100%;
-  font-size: min(max(10pt, 1.5vw), 16pt);
+  font-size: min(max(14pt, 1.5vw), 16pt);
   margin-left:10%;
   margin-right:10%;
 }
@@ -51,13 +51,13 @@ div {
   border:none;
   padding: min(max(0px, 1.5vw), 14px);
   text-align: center;
-  font-size: min(max(12pt, 2vw), 16pt);
+  font-size: min(max(14pt, 2vw), 16pt);
   transition-duration: 0.4s;
   background-color:transparent;
 }
 
 .biggerButton {
-  font-size: min(max(12pt, 2vw), 16pt);
+  font-size: min(max(14pt, 2vw), 16pt);
 }
 
 .button:hover {
@@ -78,7 +78,7 @@ div {
 
 a {
   color:white;
-  font-size:min(max(10pt, 1.5vw), 16pt);
+  font-size:min(max(14pt, 1.5vw), 16pt);
 }
 
 a:hover {
@@ -96,13 +96,18 @@ a:hover {
 h1 {
   color:steelblue;
   font-family:times;
-  font-size:min(max(16pt, 3vw), 32pt);
+  font-size:min(max(20pt, 3vw), 32pt);
 }
 
 h2 {
   color:tomato;
   font-family: times;
-  font-size:min(max(12pt, 2vw), 24pt);
+  font-size:min(max(16pt, 2vw), 24pt);
+}
+
+h3 {
+  font-size:min(max(14pt, 1.5vw), 16pt);
+  color:steelblue;
 }
 
 #footer-text {
