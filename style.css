@@ -204,7 +204,7 @@ th, td {
   background-color:transparent;
   color: white;
   padding: min(max(0px, 1.5vw), 14px);
-  font-size: min(max(12pt, 2vw), 16pt);
+  font-size: min(max(14pt, 2vw), 16pt);
   border: none;
 }
 
@@ -230,7 +230,7 @@ th, td {
   background-color:black;
   padding: min(max(0px, 2vw), 20px);
   text-decoration: none;
-  font-size: min(max(12pt, 2vw), 16pt);
+  font-size: min(max(14pt, 2vw), 16pt);
   display: block;
 }
 
