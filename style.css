@@ -11,11 +11,9 @@ p {
 }
 
 body {
-  margin-top:max(30px,4vw);
   color:black;
   background-color:black;
-  padding:0;
-  padding-top:10px;
+  padding-top:max(60px,2vw);
   height:100%;
   display:block;
   background-size: 75% 100%;
