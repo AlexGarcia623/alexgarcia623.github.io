@@ -11,7 +11,7 @@ p {
 }
 
 body {
-  margin-top:90px;
+  margin-top:max(30px,4vw);
   color:black;
   background-color:black;
   padding:0;
@@ -50,13 +50,13 @@ div {
   border:none;
   padding: min(max(0px, 1.5vw), 14px);
   text-align: center;
-  font-size: min(max(6pt, 2vw), 16pt);
+  font-size: min(max(12pt, 2vw), 16pt);
   transition-duration: 0.4s;
   background-color:transparent;
 }
 
 .biggerButton {
-  font-size: min(max(6pt, 2vw), 16pt);
+  font-size: min(max(12pt, 2vw), 16pt);
 }
 
 .button:hover {
@@ -95,13 +95,13 @@ a:hover {
 h1 {
   color:steelblue;
   font-family:times;
-  font-size:min(max(14pt, 1.5vw), 24pt);
+  font-size:min(max(16pt, 3vw), 32pt);
 }
 
 h2 {
   color:tomato;
   font-family: times;
-  font-size:min(max(12pt, 1.5vw), 22pt);
+  font-size:min(max(12pt, 2vw), 24pt);
 }
 
 #footer-text {
@@ -140,8 +140,8 @@ th, td {
 .dropbtn {
   background-color:transparent;
   color: white;
-  padding: 24px 16px;
-  font-size: min(max(6pt, 2vw), 16pt);
+  padding: min(max(0px, 1.5vw), 14px);
+  font-size: min(max(12pt, 2vw), 16pt);
   border: none;
 }
 
@@ -155,18 +155,19 @@ th, td {
 .dropup-content {
   display: none;
   position: absolute;
-  bottom: 69px;
+  bottom: min(max(30px, 2.5vw), 200px);
   background-color: white;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 /* Links inside the dropup */
 .dropup-content a {
   color: white;
-  padding: 12px 16px;
+  padding: min(max(0px, 1.5vw), 14px);
   text-decoration: none;
+  font-size: min(max(12pt, 2vw), 16pt);
   display: block;
 }
 
@@ -196,8 +197,8 @@ th, td {
 .dropbtn {
   background-color:transparent;
   color: white;
-  padding: 24px 16px;
-  font-size: min(max(6pt, 2vw), 16pt);
+  padding: min(max(0px, 1.5vw), 14px);
+  font-size: min(max(12pt, 2vw), 16pt);
   border: none;
 }
 
@@ -213,7 +214,7 @@ th, td {
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
@@ -221,8 +222,9 @@ th, td {
 .dropdown-content a {
   color: white;
   background-color:black;
-  padding: 12px 16px;
+  padding: min(max(0px, 1.5vw), 14px);
   text-decoration: none;
+  font-size: min(max(12pt, 2vw), 16pt);
   display: block;
 }
 
