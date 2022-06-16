@@ -48,7 +48,7 @@ div {
 .button {
   color:white;
   border:none;
-  padding: 24px 16px;
+  padding: min(max(0px, 1.5vw), 14px);
   text-align: center;
   font-size: min(max(10pt, 2vw), 18pt);
   transition-duration: 0.4s;
@@ -56,7 +56,6 @@ div {
 }
 
 .biggerButton {
-  padding: 24px 16px;
   font-size: min(max(10pt, 2vw), 18pt);
 }
 
@@ -96,13 +95,13 @@ a:hover {
 h1 {
   color:steelblue;
   font-family:times;
-  font-size:3vw;
+  font-size:min(max(14pt, 1.5vw), 24pt);
 }
 
 h2 {
   color:tomato;
   font-family: times;
-  font-size: 2vw;
+  font-size:min(max(12pt, 1.5vw), 22pt);
 }
 
 #footer-text {
