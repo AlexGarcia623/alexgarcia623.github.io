@@ -38,13 +38,17 @@ button:hover {
 }
 
 input {
-  width:min(max(800, 3vw), 1000px);
-  font-size:min(max(14pt, 1.5vw), 16pt);
+  width:min(max(200px, 3vw), 1000px);
+  font-size:min(max(12pt, 1.5vw), 16pt);
 }
 
 input:hover {
   background-color:steelblue;
   color:black;
+}
+
+img {
+  min-height:1.5vw;
 }
 
 </style>
@@ -71,10 +75,16 @@ function reselectMoon() {
 
   <h2>Callisto </h2>
 
-  <img id="theImage" src="./Jupiter/CallistoConfig1/CallistoConfig1-page-017.jpg" height=100% width=100%/> <br>
-
-  <input type="button" onclick="next()" value="Next Frame"/>
-  <input type="button" onclick="back()" value="Back One Frame"/>
+  <div class="desktop">
+    <img id="theImage" src="./Jupiter/CallistoConfig1/CallistoConfig1-page-017.jpg" height=100% width=100%/> <br>
+    <input type="button" onclick="next()" value="Next Frame"/>
+    <input type="button" onclick="back()" value="Back One Frame"/>
+  </div>
+  <div class="mobile">
+    <img id="theImage" src="./Jupiter/CallistoConfig1/CallistoConfig1-page-017.jpg" height=600px; width=400px;/> <br>
+    <input type="button" onclick="next()" value="Next Frame"/>
+    <!input type="button" onclick="back()" value="Back One Frame"/>
+  </div>
 
   <p>Number of elapsed hours:</p>
  

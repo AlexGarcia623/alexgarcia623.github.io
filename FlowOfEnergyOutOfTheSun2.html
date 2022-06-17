@@ -6,6 +6,8 @@
 <meta http-equiv='expires' content='0'> 
 <meta http-equiv='pragma' content='no-cache'>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <script src="scripts.js"></script>
 
 <head>
@@ -26,15 +28,6 @@
 
 p {
   color:steelblue;
-  font-size:14pt;
-}
-
-h1 {
-  font-size:30pt;
-}
-
-h2 {
-  font-size:18pt;
 }
 
 button {
@@ -42,7 +35,6 @@ button {
   color:steelblue;
   border: 1px solid tomato;
   padding: 8px;
-  font-size: 12pt;
 }
 
 button:hover {
@@ -65,6 +57,12 @@ img:hover {
 }
 #canvas {
   border: 1px solid black;
+}
+
+#myPlot {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 </style>
@@ -94,12 +92,18 @@ img:hover {
   <p style="color:white;">In this first experiment, we'll look at a mock absorption spectrum for the Sun. Press the button below to see a mock spectrum of the Sun. This spectrum does not contain ALL of the Fraunhofer lines, but it does include some of the most conspicuous ones (namely, most of the capital letter lines)</p>
 
   <p id="display"> </p>
-  <p id="finished" style="color:orange;font-size:25pt;"> </p>
-  <input type="button" onclick="start()" value="Generate Spectrum" class="center"/>
+  <p id="finished" style="color:orange;"> </p>
+  
+  <div class="desktop">
+    <input type="button" onclick="start()" value="Generate Spectrum" class="center"/>
+    <div id="myPlot" class="center"></div>
+  </div>
+  <div class="mobile">
+    <input type="button" onclick="start2()" value="Generate Spectrum" class="center"/>
+    <div id="smallPlot" class="center"></div>
+  </div>
 
-  <div id="myPlot" style="width:100%" class="center"></div>
-
-
+  <p id="WLblack"></p>
 
 </body>
 
@@ -138,23 +142,38 @@ img:hover {
       return Math.random() * (max - min) + min;
     }
     
-    function WLChecker(WL) {
+    function WLChecker(WL,Lines2Omit) {
       let index = wavelengths.indexOf(WL);
-      if (Lines.includes(WL)) {
+      if (Lines2Omit.includes(WL)) {
         counts[index] = 0;
       } else {
         counts[index] = 2;
       }
-      //return WL;
     }
 
+    function start2() {
+	var LinesFull = new Array(Lines.length)
+	for (var i = 0; i < Lines.length; ++i) {
+	  LinesFull.push(Lines[i] - 1);
+	  LinesFull.push(Lines[i]);
+	  LinesFull.push(Lines[i] + 1);	  
+	}
+        	for (var i = 0; i < wavelengths.length; ++i) {
+	  var WL = wavelengths[i];
+       	  WLChecker(WL,LinesFull);
+    	}
+      	plot("smallPlot");
+	document.getElementById("WLblack").innerHTML = Lines;
+    }
+   
     function start() {
 
         	for (var i = 0; i < wavelengths.length; ++i) {
 	  var WL = wavelengths[i];
-       	  WLChecker(WL);
+       	  WLChecker(WL,Lines);
     	}
-      	plot();
+      	plot("myPlot");
+	document.getElementById("WLblack").innerHTML = Lines;
     }
 
     var trace2 = {
@@ -184,18 +203,19 @@ img:hover {
     }
   
     var config = {
-      modeBarButtonsToRemove: ['pan2d','lasso2d','select2d','autoScale2d']
+      modeBarButtonsToRemove: ['pan2d','lasso2d','select2d','autoScale2d'],
+      responsive:true
     }
 
     var data = [trace2]
 
-    function plot() {
+    function plot(which) {
       for (var i=0; i<WLlength; ++i) {
         colors[i] = wavelengthToColor(wavelengths[i],counts[i]);
       };
-      Plotly.newPlot("myPlot", data, layout, config);
+      Plotly.newPlot(which, data, layout, config);
     }
-    Plotly.newPlot("myPlot", data, layout,config);
+    Plotly.newPlot(which, data, layout,config);
 
     // takes wavelength in nm and returns an rgba value
     // Taken from: https://scienceprimer.com/javascript-code-convert-light-wavelength-color
