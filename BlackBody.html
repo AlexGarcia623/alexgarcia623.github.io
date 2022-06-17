@@ -6,6 +6,8 @@
 <meta http-equiv='expires' content='0'> 
 <meta http-equiv='pragma' content='no-cache'>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <script src="scripts.js"></script>
 <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
 <script src="plotly-2.11.1.min.js"></script>
@@ -26,25 +28,11 @@
   clear: both;
 }
 
-p {
-  color:steelblue;
-  font-size:14pt;
-}
-
-h1 {
-  font-size:30pt;
-}
-
-h2 {
-  font-size:18pt;
-}
-
 button {
   background-color:black;
   color:steelblue;
   border: 1px solid tomato;
   padding: 8px;
-  font-size: 12pt;
 }
 
 button:hover {
@@ -131,7 +119,7 @@ h3 {
   <h1>Flow Of Energy Out Of The Sun: Blackbody</h2> 
 
 
-  <h2>What is the peak wavelength?</h2>
+  <h2>What is the peak wavelength? (Use nanometers)</h2>
 
   <input style="color:orange;" id="MaxLambda" type = "number" placeholder="Peak Wavelength (nm)" min="100" max="1000" /> 
 
@@ -140,12 +128,12 @@ h3 {
   <p id="counts"></p>
 
   <div class="slidecontainer">
-    <p style="font-size:25pt;">Blackbody Temperature: <span id="Temperature"></span> K</p>
+    <p>Blackbody Temperature: <span id="Temperature"></span> K</p>
     <input type="range" min="3000" max="30000" value="0" step="100" class="slider" id="myRange">
     
   </div>
 
-  <div id="myPlot" style="width:100%" class="center"></div>
+  <div id="myPlot" style="width:100%;padding-left:0;padding-right:0%;"></div>
 </form>
 
 
@@ -192,9 +180,11 @@ h3 {
         tickfont: {color:"white"}
       },
     }
-  
+ 
     var config = {
-      modeBarButtonsToRemove: ['pan2d','lasso2d','select2d','autoScale2d']
+      modeBarButtonsToRemove: ['pan2d','lasso2d','select2d','autoScale2d','toImage','zoom2d','resetScale2d','zoomIn2d','zoomOut2d'],
+      responsive:true,
+      displaylogo:false
     }
     function TfromLM(LambdaMax) {
       LambdaMax = LambdaMax * 1e-9;
@@ -316,15 +306,16 @@ h3 {
         }
  
         // intensty is lower at the edges of the visible spectrum.
-        if (wl > 780 || wl < 350) {
-            alpha = 0;
-        } else if (wl > 700) {
-            alpha = (780 - wl) / (780 - 700);
-        } else if (wl < 420) {
-            alpha = (wl - 350) / (420 - 350);
-        } else {
-            alpha = 1;
-        }
+        //if (wl > 780 || wl < 350) {
+        //    alpha = 0;
+        //} else if (wl > 700) {
+        //    alpha = (780 - wl) / (780 - 700);
+        //} else if (wl < 420) {
+        //    alpha = (wl - 350) / (420 - 350);
+        //} else {
+        //    alpha = 1;
+        //}
+        alpha = 1;
  
         colorSpace = "rgba(" + (R * 100) + "%," + (G * 100) + "%," + (B * 100) + "%, " + alpha +")";
 

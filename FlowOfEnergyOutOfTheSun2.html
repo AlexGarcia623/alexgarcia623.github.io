@@ -97,13 +97,14 @@ img:hover {
   <div class="desktop">
     <input type="button" onclick="start()" value="Generate Spectrum" class="center"/>
     <div id="myPlot" class="center"></div>
+    <p id="Cursor"></p>
   </div>
   <div class="mobile">
     <input type="button" onclick="start2()" value="Generate Spectrum" class="center"/>
     <div id="smallPlot" class="center"></div>
+    <p id="MobileFriendly"> </p>
+    <p id="WLblack"></p>
   </div>
-
-  <p id="WLblack"></p>
 
 </body>
 
@@ -163,6 +164,7 @@ img:hover {
        	  WLChecker(WL,LinesFull);
     	}
       	plot("smallPlot");
+	document.getElementById("MobileFriendly").innerHTML = "Since you're on a small device, the wavelengths are listed below:";
 	document.getElementById("WLblack").innerHTML = Lines;
     }
    
@@ -173,7 +175,7 @@ img:hover {
        	  WLChecker(WL,Lines);
     	}
       	plot("myPlot");
-	document.getElementById("WLblack").innerHTML = Lines;
+	document.getElementById("Cursor").innerHTML = "Use your cursor to find the wavelengths that are omitted <br><br> You can click-and-drag on a desired area to zoom in and double-click to zoom out";
     }
 
     var trace2 = {
@@ -200,16 +202,48 @@ img:hover {
         tickcolor: "white",
         tickfont: {color:"white"}
       },
+      showlegend:false
     }
   
+    var layout2 = {
+      plot_bgcolor:"black",
+      paper_bgcolor:"black",
+      yaxis: {
+        autorange: true,
+        showgrid: false,
+        zeroline: false,
+        showline: false,
+        autotick: true,
+        ticks: '',
+        showticklabels: false
+      },
+      bargap:0,
+      xaxis: {
+        tickcolor: "white",
+        tickfont: {color:"white"}
+      },
+      showlegend:false
+    }
+
     var config = {
+      modeBarButtonsToRemove: ['pan2d','lasso2d','select2d','autoScale2d','toImage','zoom2d','resetScale2d','zoomIn2d','zoomOut2d'],
+      responsive:true,
+      displaylogo:false
+    }
+  
+    var config2 = {
       modeBarButtonsToRemove: ['pan2d','lasso2d','select2d','autoScale2d'],
-      responsive:true
+      responsive:true,
+      staticPlot:true
     }
 
     var data = [trace2]
 
     function plot(which) {
+      if (which === "smallPlot") {
+        layout = layout2;
+        config = config2;
+      }
       for (var i=0; i<WLlength; ++i) {
         colors[i] = wavelengthToColor(wavelengths[i],counts[i]);
       };
