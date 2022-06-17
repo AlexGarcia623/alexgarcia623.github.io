@@ -5,6 +5,7 @@
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
 <meta http-equiv='pragma' content='no-cache'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="scripts.js"></script>
 
@@ -24,30 +25,21 @@
   clear: both;
 }
 
-p {
-  color:steelblue;
-  font-size:14pt;
-}
-
-h1 {
-  font-size:30pt;
-}
-
-h2 {
-  font-size:18pt;
-}
-
 button {
   background-color:black;
   color:steelblue;
   border: 1px solid tomato;
-  padding: 8px;
-  font-size: 12pt;
+  width:min(max(800, 3vw), 1000px);
 }
 
 button:hover {
   background-color:steelblue;
   color:black;
+}
+
+input {
+  width:min(max(800, 3vw), 1000px);
+  font-size:min(max(14pt, 1.5vw), 16pt);
 }
 
 input:hover {
@@ -77,9 +69,9 @@ function reselectMoon() {
 <form name = "converter">
 <div class="body">
 
-  <h2>Configuration 1: Callisto </h2>
+  <h2>Callisto </h2>
 
-  <img id="theImage" src="./Jupiter/CallistoConfig1/CallistoConfig1-page-017.jpg" height=40% width=100%/> <br>
+  <img id="theImage" src="./Jupiter/CallistoConfig1/CallistoConfig1-page-017.jpg" height=100% width=100%/> <br>
 
   <input type="button" onclick="next()" value="Next Frame"/>
   <input type="button" onclick="back()" value="Back One Frame"/>

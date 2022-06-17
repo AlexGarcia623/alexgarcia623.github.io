@@ -7,6 +7,7 @@
 <meta http-equiv='pragma' content='no-cache'>
 
 <script src="scripts.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
 <style>
@@ -29,25 +30,21 @@ p {
   font-size:14pt;
 }
 
-h1 {
-  font-size:30pt;
-}
-
-h2 {
-  font-size:18pt;
-}
-
 button {
   background-color:black;
   color:steelblue;
   border: 1px solid tomato;
   padding: 8px;
-  font-size: 12pt;
 }
 
 button:hover {
   background-color:steelblue;
   color:black;
+}
+
+input {
+  width:min(max(1500, 1.5vw), 1800px);
+  font-size:min(max(14pt, 1.5vw), 16pt);
 }
 
 input:hover {
@@ -85,7 +82,7 @@ img:hover {
 
   <p style="color:white;">Welcome to You Can Weigh Jupiter! In this lab, we will be observing Jupiter at opposition. <br><br> Opposition is when Jupiter is opposite the Sun in the sky. The geometric configuartion of opposition is shown below:</p>
 
-  <img src="./Jupiter/Configuration1.jpg" class="center" width=50%/>
+  <img src="./Jupiter/Configuration1.jpg" class="center" height=100% width=70%/>
   
   <p style="color:white;">Based on the diagram, how far is Jupiter from Earth (in AU) in the configuration?</p>
 

@@ -5,6 +5,7 @@
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
 <meta http-equiv='pragma' content='no-cache'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="scripts.js"></script>
 
@@ -26,27 +27,16 @@
 
 p {
   color:steelblue;
-  font-size:14pt;
-}
-
-h1 {
-  font-size:30pt;
-}
-
-h2 {
-  font-size:18pt;
 }
 
 button {
   background-color:black;
-  color:steelblue;
-  border: 1px solid tomato;
+  border: 0px solid tomato;
   padding: 8px;
-  font-size: 12pt;
 }
 
 button:hover {
-  background-color:steelblue;
+  cursor:pointer;
   color:black;
 }
 
@@ -61,7 +51,8 @@ input:hover {
 }
 
 img:hover {
-  width=110%;
+  transform:scale(1.25);
+  padding:1.5vw;
 }
 </style>
 
@@ -80,26 +71,27 @@ function backButton() {
 <form name = "converter">
 <div class="body">
 
-  <h1>Moon Selector </h2> 
+  <h1>Moon Selector </h1> 
 
-  <img src="./Jupiter/MoonImages/IoImage.jpeg" class="center" width=50%/>
-   
-  <input type="button" onclick="Io1()" value="Io" class="center"/>
+  <h2>Io </h2>
 
-  <img src="./Jupiter/MoonImages/EuropaImage.jpeg" class="center" width=50%/>
+  <a href="./IoConfig1.html"><img src="./Jupiter/MoonImages/IoImage.jpeg" class="center" width=50%/></a>
 
-  <input type="button" onclick="Eruopa1()" value="Europa" class="center"/> 
-  
-  <img src="./Jupiter/MoonImages/GanymedeImage.jpeg" class="center" width=50%/>
+  <h2>Europa</h2>
 
-  <input type="button" onclick="Ganymede1()" value="Ganymede" class="center"/>
+  <a href="./EuropaConfig1.html"><img src="./Jupiter/MoonImages/EuropaImage.jpeg" class="center" width=50%/></a>
 
-  <img src="./Jupiter/MoonImages/CallistoImage.jpeg" class="center" width=50%/>
+  <h2>Ganymede</h2>  
 
-  <input type="button" onclick="Callisto1()" value="Callisto" class="center"/>
+  <a href="./GanymedeConfig1.html"><img src="./Jupiter/MoonImages/GanymedeImage.jpeg" class="center" width=50%/></a>
+
+  <h2>Callisto</h2>
+
+  <a href="./CallistoConfig1.html"><img src="./Jupiter/MoonImages/CallistoImage.jpeg" class="center" width=50%/></a>
   
   <p style="color:white;"><br><br>All images credit: NASA </p>
 <script>
+
 function Io1() {
   window.open("IoConfig1.html","_self");
 }
