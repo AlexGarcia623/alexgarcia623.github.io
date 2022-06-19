@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ALEX.css">
 
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
@@ -12,9 +12,15 @@
 
 <head>
 <style>
+body {
+  margin:0;
+  padding:0;
+}
+
 * {
   box-sizing:border-box;
 }
+
 .column {
   float:left;
   width:50%;
@@ -26,35 +32,34 @@
   clear: both;
 }
 
-p {
-  color:steelblue;
-  font-size:14pt;
+img {
+  width:85%;
+  height:85%;
 }
 
-h1 {
-  font-size:30pt;
-}
-
-h2 {
-  font-size:18pt;
-}
-
-button {
-  background-color:black;
-  color:steelblue;
-  border: 1px solid tomato;
-  padding: 8px;
-  font-size: 12pt;
-}
-
-button:hover {
-  background-color:steelblue;
-  color:black;
+input {
+  background-color:powderblue;
+  border: 0.05vw solid darkblue;
+  border-radius:16px;
+  color:darkblue;
+  padding:0.5vw;
+  font-size:min(max(14pt, 2vw), 20pt);
 }
 
 input:hover {
-  background-color:steelblue;
-  color:black;
+  transition:0.5s;
+  transform:scale(1.005);
+  background-color:darkblue;
+  color:powderblue;
+  margin-left:0px;
+  margin-right:0px;
+}
+
+input:not(:hover) {
+  transition:0.5s;
+  transform:scale(1);
+  border: 0.05vw solid darkblue;
+  color:darkblue;
 }
 
 </style>
@@ -79,19 +84,23 @@ function reselectMoon() {
 <form name = "converter">
 <div class="body">
 
-  <h2>Configuration 1: Io </h2>
+  <p>Time elapsed: <span id="demo">0 </span> Hours <span id="counter" style="color:black;">0</span></p>
+ 
+  <img id="theImage" src="./Jupiter/IoConfig1/IoConfig1-page-003.jpg" class="center"/> <br>
 
-  <img id="theImage" src="./Jupiter/IoConfig1/IoConfig1-page-003.jpg" height=40% width=100%/> <br>
+  <div class="desktop">
 
   <input type="button" onclick="next()" value="Next Frame"/>
   <input type="button" onclick="back()" value="Back One Frame"/>
 
-  <p>Number of elapsed hours:</p>
- 
-  <p id="demo">0</p>
+  </div>
 
-  <p id="counter" style="color:black;">0</p>
-  
+  <div class="mobile">
+
+  <input type="button" onclick="next()" value="Next Frame"/>
+  <input type="button" onclick="back()" value="Back One Frame"/>
+
+  </div>  
 <script>
 function next() {
   var timePerFrame = 2;

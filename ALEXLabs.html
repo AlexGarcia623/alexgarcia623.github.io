@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ALEX.css">
 
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
@@ -35,6 +35,7 @@ button {
   background-color:black;
   color:steelblue;
   border: 1px solid tomato;
+  font-size:min(max(14pt, 1.5vw), 16pt);
 }
 
 button:hover {
@@ -42,55 +43,65 @@ button:hover {
   color:black;
 }
 
-input:hover {
-  background-color:steelblue;
-  color:black;
+.WeighJupiter {
+  color:darkblue;
+  border: 1vw solid darkblue;
+  background-color:powderblue;
+  border-radius:5px;
+  padding:10px;
 }
 
-.column3 {
-  float:left;
-  width:33%;
+.WeighJupiterButton {
+  color:darkblue;
+  border: 0.05vw solid darkblue;
+  background-color:powderblue;
+  border-radius:5px;
+  padding:10px;
 }
 
-img:hover {
-  width=110%;
+.WeighJupiterButton:hover {
+  color:powderblue;
+  background-color:darkblue;
 }
 
-#canvas {
-  border: 1px solid black;
+.AstrSpectroscopy {
+  border: 1vw solid darkgreen;
+  background-color:lightgreen;
+  border-radius:5px;
+  padding:10px;
 }
 
-.slidecontainer {
-  width: 100%;
+.AstrSpecButton {
+  color:darkgreen;
+  border: 0.05vw solid darkgreen;
+  background-color:lightgreen;
+  border-radius:5px;
+  padding:10px;
 }
 
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  background: white;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+.AstrSpecButton:hover {
+  color:lightgreen;
+  background-color:darkgreen;
 }
 
-.slider:hover {
-  opacity: 1;
+.HubbleConstant {
+  border: 1vw solid darkred;
+  background-color:tomato;
+  border-radius:5px;
+  padding:10px;
 }
 
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background: green;
-  cursor: pointer;
+.HubbleConstButton {
+  color:darkred;
+  border: 0.05vw solid darkred;
+  background-color:tomato;
+  border-radius:5px;
+  padding:10px;
 }
 
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: green;
+.HubbleConstButton:hover {
+  color:tomato;
+  background-color:darkred;
 }
 
 </style>
@@ -107,7 +118,6 @@ img:hover {
 </header>
 
 <body>
-<form onkeydown="return event.key != 'Enter';">
 <div class="body">
 
    <h1 style="color:orange;">ALEX Labs</h1> 
@@ -118,30 +128,56 @@ img:hover {
 
   Seeing the writing on the wall, as well as an opportunity to improve upon the formula these original labs had, I took it upon myself to reprogram some of these labs. The intent was to make them future-proof. To that end, I programmed these labs in HTML/Javascript (as you can see). I make no claims of being an expert at either of these languages, but these labs are in a more stable place than when I started my TA position for this course. <br><br>
 
-  The two labs that I have programmed thus far (and may be the only ones, yet to be seen) are <span style="color:blue;">You Can Weigh Jupiter</span> and <span style="color:green">Astronomical Spectroscopy II</span> (based on "The Flow Of Energy Out Of The Sun" by CLEA). <br>
+  The two labs that I have programmed thus far (and may be the only ones, yet to be seen) are <span style="color:blue;">You Can Weigh Jupiter</span> (based on the CLEA lab of the same name) and <span style="color:lightgreen">Astronomical Spectroscopy II</span> (based on "The Flow Of Energy Out Of The Sun" by CLEA). One that I am currently brainstorming is <span style="color:crimson">Measuring the Hubble Constant</span> (based on the CLEA lab of the same name).<br>
   </p>
+
+  <div class="WeighJupiter">
 
   <h2 style="color:blue;">You Can Weigh Jupiter</h2>
 
-  <p>Have you ever wondered how Astronomers know how much the planets weigh? Well wonder no more! This lab explores the motions of Jupiter's most famous moons: Io, Europa, Callisto and Ganymede. <br><br>
+  <p style="color:darkblue;">Have you ever wondered how Astronomers know how much the planets weigh? Well wonder no more! This lab explores the motions of Jupiter's most famous moons: Io, Europa, Callisto and Ganymede. <br><br>
   
   Watch and measure as the moons orbit around Jupiter. With the measurements of the size of the orbits, their timing, and knowledge of Kepler's Laws, we can ascertain the mass of Jupiter!
   </p>
 
-  <a href="YouCanWeighJupiter.html" target="_self" style="color:steelblue;">Weigh Jupiter </a>
+  <button class="WeighJupiterButton" onclick=Jupiter()>Weigh Jupiter </button>
 
+  </div>
+
+  <div class="AstrSpectroscopy">
   <h2 style="color:green;">Astronomical Spectroscopy II</h2>
 
-  <p style="color:#478778;">Have you ever wondered by visible light is visible? How about why does the Sun appears yellow? <br><br>
+  <p style="color:darkgreen">Have you ever wondered by visible light is visible? How about why does the Sun appears yellow? <br><br>
 
   The answers lie in Spectroscopy and Blackbody radiation, the subjects of this lab. In this lab, we predict what the temperature of the Sun is and what it is made of. This lab, a digital follow-up to the physical lab Astronomical Spectroscopy I, provides theoretical background through the example of the Sun. 
   </p>
 
-  <a href="AstronomicalSpectroscopyII.html" target="_self" style="color:#478778;">Examine the Sun </a>
+  <button class="AstrSpecButton" onclick=AstrSpecII()>Examine the Sun </button>
 
-</form>
+  </div>
 
+  <div class="HubbleConstant">
+  <h2 style="color:maroon;">Measuring the Hubble Constant</h2>
+
+  <p style="color:darkred">Coming soon!
+  </p>
+
+  <button class="HubbleConstButton">Measure the Hubble Constant </button>
+
+  </div>
 
 </body>
+
+<script>
+
+function Jupiter() {
+  window.open("YouCanWeighJupiter.html", target="_self");
+}
+
+function AstrSpecII() {
+  window.open("AstronomicalSpectroscopyII.html", target="_self");
+}
+
+</script>
 
 </html>

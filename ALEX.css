@@ -6,21 +6,21 @@
 <head>
 <style>
 p {
-  color:white;
+  color:black;
   font-size: min(max(14pt, 1.5vw), 16pt);
 }
 
 body {
   color:black;
   background-color:black;
-  padding-top:max(60px,2vw);
+  padding-top:min(30px,1.2vw);
   padding-bottom:min(120px,3vw);
   height:100%;
   display:block;
   background-size: 75% 100%;
   font-size: min(max(14pt, 1.5vw), 16pt);
-  margin-left:10%;
-  margin-right:10%;
+  margin-left:0;
+  margin-right:0;
 }
 
 header {

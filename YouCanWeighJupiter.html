@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ALEX.css">
 
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
@@ -19,47 +19,40 @@
   width:50%;
 }
 
-.row:after {
-  contents: "";
-  display: table;
-  clear: both;
+body {
+  background-color:black;
+  color:darkblue;
 }
 
 p {
-  color:steelblue;
-  font-size:14pt;
-}
-
-button {
-  background-color:black;
-  color:steelblue;
-  border: 1px solid tomato;
-  padding: 8px;
-}
-
-button:hover {
-  background-color:steelblue;
-  color:black;
+  color:powderblue;
+  font-size:min(max(14pt, 2vw), 20pt);
 }
 
 input {
-  width:min(max(1500, 1.5vw), 1800px);
-  font-size:min(max(14pt, 1.5vw), 16pt);
+  background-color:powderblue;
+  border: 0.05vw solid darkblue;
+  border-radius:16px;
+  color:darkblue;
+  padding:1.5vw;
+  font-size:min(max(16pt, 2vw), 24pt);
 }
 
 input:hover {
-  background-color:steelblue;
-  color:black;
+  transition:0.5s;
+  transform:scale(1.25);
+  background-color:darkblue;
+  color:powderblue;
 }
 
-.column3 {
-  float:left;
-  width:33%;
+input:not(:hover) {
+  transition:0.5s;
+  transform:scale(1);
+  border: 0.05vw solid darkblue;
+  color:darkblue;
 }
 
-img:hover {
-  width=110%;
-}
+
 </style>
 
 </head>
@@ -80,11 +73,11 @@ img:hover {
 
    <h1>You Can Weigh Jupiter </h2> 
 
-  <p style="color:white;">Welcome to You Can Weigh Jupiter! In this lab, we will be observing Jupiter at opposition. <br><br> Opposition is when Jupiter is opposite the Sun in the sky. The geometric configuartion of opposition is shown below:</p>
+  <p>Welcome to You Can Weigh Jupiter! In this lab, we will be observing Jupiter at opposition. <br><br> Opposition is when Jupiter is opposite the Sun in the sky. The geometric configuartion of opposition is shown below:</p>
 
   <img src="./Jupiter/Configuration1.jpg" class="center" height=100% width=70%/>
   
-  <p style="color:white;">Based on the diagram, how far is Jupiter from Earth (in AU) in the configuration?</p>
+  <p>Based on the diagram, how far is Jupiter from Earth (in AU) in the configuration?</p>
 
   <input type="button" onclick="startConfig1()" value="Start!" class="center"/>
   
