@@ -53,6 +53,7 @@ div {
   font-size: min(max(14pt, 1.5vw), 16pt);
   transition-duration: 0.4s;
   background-color:transparent;
+  margin-bottom:30px;
 }
 
 .biggerButton {

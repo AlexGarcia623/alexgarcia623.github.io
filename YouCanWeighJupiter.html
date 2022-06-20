@@ -21,11 +21,10 @@
 
 body {
   background-color:black;
-  color:darkblue;
 }
 
 p {
-  color:powderblue;
+  color:tomato;
   font-size:min(max(14pt, 2vw), 20pt);
 }
 
@@ -52,6 +51,10 @@ input:not(:hover) {
   color:darkblue;
 }
 
+img {
+  width:40%;
+  height:25%;
+}
 
 </style>
 
@@ -73,11 +76,18 @@ input:not(:hover) {
 
    <h1>You Can Weigh Jupiter </h2> 
 
-  <p>Welcome to You Can Weigh Jupiter! In this lab, we will be observing Jupiter at opposition. <br><br> Opposition is when Jupiter is opposite the Sun in the sky. The geometric configuartion of opposition is shown below:</p>
+  <p>Welcome to You Can Weigh Jupiter! In this lab, we will be observing Jupiter at opposition. Opposition is when Jupiter is opposite the Sun in the sky. </p>
 
-  <img src="./Jupiter/Configuration1.jpg" class="center" height=100% width=70%/>
+  <div class="mobile">
+    <p>If jupiter orbits with a semi-major axis of around 5.2 AU and Earth (by definition) orbits at around 1 AU, what is the distance between the Earth and Jupiter when they're at their closest (i.e. opposition)?
+  </div>
+  <div class="desktop">
+    <p> The geometric configuration of opposition is shown below: </p>
   
-  <p>Based on the diagram, how far is Jupiter from Earth (in AU) in the configuration?</p>
+    <img src="./Jupiter/Configuration1.jpg" class="center"/>
+  
+    <p>Based on the diagram, how far is Jupiter from Earth (in AU) in the configuration?</p>
+  </div>
 
   <input type="button" onclick="startConfig1()" value="Start!" class="center"/>
   

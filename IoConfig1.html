@@ -13,7 +13,7 @@
 <head>
 <style>
 body {
-  margin:0;
+  margin-top:50px;
   padding:0;
 }
 
@@ -37,6 +37,7 @@ img {
   height:85%;
 }
 
+
 input {
   background-color:powderblue;
   border: 0.05vw solid darkblue;
@@ -47,7 +48,7 @@ input {
 }
 
 input:hover {
-  transition:0.5s;
+  transition:0.25s;
   transform:scale(1.005);
   background-color:darkblue;
   color:powderblue;
@@ -61,7 +62,6 @@ input:not(:hover) {
   border: 0.05vw solid darkblue;
   color:darkblue;
 }
-
 </style>
 
 <script>
@@ -86,32 +86,30 @@ function reselectMoon() {
 
   <p>Time elapsed: <span id="demo">0 </span> Hours <span id="counter" style="color:black;">0</span></p>
  
-  <img id="theImage" src="./Jupiter/IoConfig1/IoConfig1-page-003.jpg" class="center"/> <br>
+  <img id="theImage" src="./Jupiter/Io/IoConfig1-page-003.jpg" class="center"/> <br>
 
-  <div class="desktop">
+  <input type="button" onclick="next()" class="FoB" value="Next Frame"/>
+  <input type="button" onclick="back()" class="FoB" value="Back One Frame"/>
+  <br>
+  <input type="button" onclick="toggleGrid()" value="Toggle Grid"/>
 
-  <input type="button" onclick="next()" value="Next Frame"/>
-  <input type="button" onclick="back()" value="Back One Frame"/>
-
-  </div>
-
-  <div class="mobile">
-
-  <input type="button" onclick="next()" value="Next Frame"/>
-  <input type="button" onclick="back()" value="Back One Frame"/>
-
-  </div>  
+  
 <script>
+
+var TIME_PER_FRAME = 2.5;
+var NUMBER_OF_FRAMES = 18;
+
 function next() {
-  var timePerFrame = 2;
+  var timePerFrame = TIME_PER_FRAME;
   var image = document.getElementById("theImage");
   var imageName = document.getElementById("theImage").getAttribute("src");
   var textNoExt = imageName.replace(".jpg",'');
-  var oldString = textNoExt.substr(35);
-  var newVal = parseInt(oldString) + 1;
+  var loc = textNoExt.search("-page-");
+  var oldString = textNoExt.slice(loc+6);
+  var newVal = parseInt(textNoExt.slice(loc+6)) + 1;
   var counter = parseInt(document.getElementById("counter").innerHTML);
   var newString = "";
-  if (newVal > 20) {
+  if (newVal > NUMBER_OF_FRAMES) {
     var newVal = 1;
   }
   if (newVal < 10) {
@@ -128,18 +126,19 @@ function next() {
 }
 
 function back() {
-  var timePerFrame = 2;
+  var timePerFrame = TIME_PER_FRAME;
   var image = document.getElementById("theImage");
   var imageName = document.getElementById("theImage").getAttribute("src");
   var textNoExt = imageName.replace(".jpg",'');
-  var oldString = textNoExt.substr(35);
-  var newVal = parseInt(oldString) - 1;
+  var loc = textNoExt.search("-page-");
+  var oldString = textNoExt.slice(loc+6);
+  var newVal = parseInt( textNoExt.slice(loc+6) ) - 1;
   if (newVal == 0) {
-    var newVal = 20;
+    var newVal = NUMBER_OF_FRAMES;
   }
   var counter = parseInt(document.getElementById("counter").innerHTML);
   var newString = "";
-  if (newVal > 20) {
+  if (newVal > NUMBER_OF_FRAMES) {
     var newVal = 1;
   }
   if (newVal < 10) {
@@ -157,6 +156,23 @@ function back() {
   document.getElementById("counter").innerHTML = counter;
   document.getElementById("demo").innerHTML = Hours;  
 }
+
+function toggleGrid() {
+  var image = document.getElementById("theImage").getAttribute("src");
+
+  var position = image.search("Grid");
+ 
+  let fig = image.search("fig");
+
+  if (position == -1) {
+    var result = image.slice(0, fig+4) + "Grid" + image.slice(fig+4);
+  } else {
+    var result = image.replace("Grid","");
+  }
+  document.getElementById("theImage").src = result;
+
+}
+
 </script>
 
 </form>
