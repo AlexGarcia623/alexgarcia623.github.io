@@ -159,6 +159,10 @@ function backButton() {
 
 <script>
 
+function reset() {
+  window.open("SpecificGalaxy.html",target="_self");
+}
+
 var lambdaArr = new Array(1000);
 var fluxArr   = new Array(1000);
 
@@ -169,25 +173,15 @@ docStyle.setProperty("--seconds", String(noise)+"s");
 
 function addNoise() {
   noise = parseInt(document.getElementById("IntTime").value);
-  document.getElementById("SpectrumDone").innerHTML = "";
-  Plotly.newPlot("myPlot", [], layout, config)
 }
 
-function doAnimate() {
-  var loading = document.getElementById("loading");
-  docStyle.setProperty("--seconds", String(noise/2)+"s");
-  var loadingClass = document.querySelector(".loading:before")
-  loading.className = "loading";
-}
-
-
-var SODIUM_H = 3969;
-var SODIUM_K = 3934;
+var CALCIUM_H = 3969;
+var CALCIUM_K = 3934;
 
 var TRUE_REDSHIFT = 0.01919; //NGC_1260
 
-var SODIUM_H_REDSHIFTED = SODIUM_H + SODIUM_H * TRUE_REDSHIFT;
-var SODIUM_K_REDSHIFTED = SODIUM_K + SODIUM_K * TRUE_REDSHIFT;
+var CALCIUM_H_REDSHIFTED = CALCIUM_H + CALCIUM_H * TRUE_REDSHIFT;
+var CALCIUM_K_REDSHIFTED = CALCIUM_K + CALCIUM_K * TRUE_REDSHIFT;
 
 function random(min, max) {
   return Math.random() * (max - min) + min;
@@ -238,26 +232,27 @@ var config = {
   displaylogo:false
 }
 
+var done = false;
+var loader = document.getElementById("loading");
+
+function updateDisplay() {
+  docStyle.setProperty("--seconds", String(noise/2)+"s");
+  if (done) {
+    done = false;
+    loader.classList.remove('loading');
+    //setTimeout(() => fill.classList.add('loading'), 1);
+  }
+}
+
 function buttonPress() {
-
-  var loader = document.getElementById("loading");
-  document.getElementById('theImage').addEventListener('click',function() {
-    loader.classList.add('animate');
-    // remove animation 
-    document.querySelector(".loader:before").style.animation = 'none';
-
-    // trigger reflow
-    document.querySelector(".loader:before").offsetWidth;
-
-    // add animation again
-    document.querySelector(".loader:before").style.animation = 'load var(--seconds) linear';
-  });
-
+  loader.classList.add("loading");
+  document.getElementById("SpectrumDone").innerHTML = "";
+  Plotly.newPlot("myPlot", [], layout, config)
+  loader.onclick = updateDisplay();
   loader.addEventListener("animationend", function() {
     generateSpectrum();
+    done = true;
   });
-
-  doAnimate();
 }
 
 function generateSpectrum() {
@@ -267,9 +262,9 @@ function generateSpectrum() {
   }
 
   for (var i = 0; i < 3000*Math.sqrt(noise); ++i) {
-    var index = lambdaArr.indexOf(Math.round(generateGaussian(SODIUM_H_REDSHIFTED,5)));  
+    var index = lambdaArr.indexOf(Math.round(generateGaussian(CALCIUM_H_REDSHIFTED,4)));  
     fluxArr[index] = fluxArr[index] - 0.0001;
-    var index = lambdaArr.indexOf(Math.round(generateGaussian(SODIUM_K_REDSHIFTED,5)));  
+    var index = lambdaArr.indexOf(Math.round(generateGaussian(CALCIUM_K_REDSHIFTED,4)));  
     fluxArr[index] = fluxArr[index] - 0.0001;
   }
   trace1 = {x:lambdaArr,y:fluxArr,marker:{color:'rgb(219, 64, 82)'}};
