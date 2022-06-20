@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="ALEX.css">
+
+<meta http-equiv='cache-control' content='no-cache'> 
+<meta http-equiv='expires' content='0'> 
+<meta http-equiv='pragma' content='no-cache'>
+
+<script src="scripts.js"></script>
+
+<head>
+<style>
+body {
+  margin:0;
+  padding:0;
+}
+
+* {
+  box-sizing:border-box;
+}
+.column {
+  float:left;
+  width:50%;
+}
+
+.row:after {
+  contents: "";
+  display: table;
+  clear: both;
+}
+
+input {
+  height:60%;
+  width:50%;
+  background-color:powderblue;
+  border: 0.05vw solid darkblue;
+  border-radius:16px;
+  color:darkblue;
+  padding:0.5vw;
+  font-size:min(max(14pt, 2vw), 20pt);
+}
+
+input:hover {
+  transition:0.5s;
+  transform:scale(1.005);
+  background-color:darkblue;
+  color:powderblue;
+
+}
+
+input:not(:hover) {
+  transition:0.5s;
+  transform:scale(1);
+  border: 0.05vw solid darkblue;
+  color:darkblue;
+}
+
+.inputText {
+  font-size:font-size:min(max(14pt, 2vw), 20pt);
+  width:40%;
+}
+
+button {
+  background-color:black;
+  border: 0px solid tomato;
+  padding: 8px;
+}
+button:hover {
+  cursor:pointer;
+  color:black;
+}
+
+.loading {
+  position: relative;
+}
+
+.loading:before {
+  content:'';
+  animation: load var(--seconds) linear;
+}
+
+@keyframes load{
+  0%{content:  'STARTING';}
+  5%{content:  'Generating Spectrum.';}
+  7.5%{content:  'Generating Spectrum..';}
+  10%{content: 'Generating Spectrum...';}
+  12.5%{content: 'Generating Spectrum';}
+  15%{content: 'Generating Spectrum.';}
+  17.5%{content: 'Generating Spectrum..';}
+  20%{content: 'Generating Spectrum...';}
+  22.5%{content: 'Generating Spectrum';}
+  25%{content: 'Generating Spectrum.';}
+  27.5%{content: 'Generating Spectrum..';}
+  30%{content: 'Generating Spectrum...';}
+  32.5%{content: 'Generating Spectrum';}
+  35%{content: 'Generating Spectrum.';}
+  37.5%{content: 'Generating Spectrum..';}
+  40%{content: 'Generating Spectrum...';}
+  42.5%{content: 'Generating Spectrum';}
+  45%{content: 'Generating Spectrum.';}
+  47.5%{content: 'Generating Spectrum..';}
+  50%{content: 'Generating Spectrum...';}
+  52.5%{content: 'Generating Spectrum';}
+  55%{content: 'Generating Spectrum.';}
+  57.5%{content: 'Generating Spectrum..';}
+  60%{content: 'Generating Spectrum...';}
+  62.5%{content: 'Generating Spectrum';}
+  65%{content: 'Generating Spectrum.';}
+  67.5%{content: 'Generating Spectrum..';}
+  70%{content: 'Generating Spectrum...';}
+  72.5%{content: 'Generating Spectrum';}
+  75%{content: 'Generating Spectrum.';}
+  77.5%{content: 'Generating Spectrum..';}
+  80%{content: 'Generating Spectrum...';}
+  82.5%{content: 'Generating Spectrum';}
+  85%{content: 'Generating Spectrum.';}
+  87.5%{content: 'Generating Spectrum..';}
+  90%{content: 'Generating Spectrum...';}
+  92.5%{content: 'Generating Spectrum';}
+  95%{content: 'Generating Spectrum.';}
+  97.5%{content: 'Generating Spectrum..';}
+}
+
+</style>
+
+<script>
+function backButton() {
+  window.open("Hubble.html","_self");
+}
+</script>
+
+<script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
+<script src="plotly-2.11.1.min.js"></script>
+
+</head>
+
+<header>
+<button class = "button biggerButton" onclick="backButton()">Reselect Galaxy</button>
+</header>
+
+<body>
+<form name = "converter" onsubmit="return false">
+<div class="body">
+
+  <h2>Enter an integration time in seconds, then click on the image to generate a spectrum</h2>
+
+  <input id="IntTime" type = "number" class="inputText" placeholder="Integration Time" min="1" max="1000" oninput=addNoise() onchange=addNoise()/> <br>
+  <input id="theImage" type="image" onclick=buttonPress() src="./Galaxies/NGC_1260.png" class="center"/>
+
+  <p id="loading"></p>
+  <p id="SpectrumDone"></p>
+
+  <div id="myPlot" style="width:100%;padding-left:0;padding-right:0%;"></div>
+
+</form>
+
+
+</body>
+
+<script>
+
+var lambdaArr = new Array(1000);
+var fluxArr   = new Array(1000);
+
+var noise = 1;
+
+var docStyle = document.documentElement.style;
+docStyle.setProperty("--seconds", String(noise)+"s");
+
+function addNoise() {
+  noise = parseInt(document.getElementById("IntTime").value);
+  document.getElementById("SpectrumDone").innerHTML = "";
+  Plotly.newPlot("myPlot", [], layout, config)
+}
+
+function doAnimate() {
+  var loading = document.getElementById("loading");
+  docStyle.setProperty("--seconds", String(noise/2)+"s");
+  var loadingClass = document.querySelector(".loading:before")
+  loading.className = "loading";
+}
+
+
+var SODIUM_H = 3969;
+var SODIUM_K = 3934;
+
+var TRUE_REDSHIFT = 0.01919; //NGC_1260
+
+var SODIUM_H_REDSHIFTED = SODIUM_H + SODIUM_H * TRUE_REDSHIFT;
+var SODIUM_K_REDSHIFTED = SODIUM_K + SODIUM_K * TRUE_REDSHIFT;
+
+function random(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function generateGaussian(mean,std){
+  var _2PI = Math.PI * 2;
+  var u1 = Math.random();
+  var u2 = Math.random();
+  
+  var z0 = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(_2PI * u2);
+  var z1 = Math.sqrt(-2.0 * Math.log(u1)) * Math.sin(_2PI * u2);
+
+  return z1 * std + mean;
+}
+
+for (var i = 3900; i < 4901; ++i) {
+  lambdaArr[i-3000] = i;
+}
+
+
+trace1 = {x:lambdaArr,y:fluxArr};
+
+data = [trace1];
+
+var layout= {
+  plot_bgcolor:"black",
+  paper_bgcolor:"black",
+  yaxis: {
+    autorange: true,
+    showgrid: false,
+    zeroline: false,
+    showline: false,
+    autotick: true,
+    ticks: '',
+    showticklabels: false
+  },
+  xaxis: {
+    tickcolor: "white",
+    tickfont: {color:"white"}
+  },
+  showlegend:false
+}
+
+var config = {
+  modeBarButtonsToRemove:['pan2d','lasso2d','select2d','autoScale2d','toImage','zoom2d','resetScale2d','zoomIn2d','zoomOut2d'],
+  responsive:true,
+  displaylogo:false
+}
+
+function buttonPress() {
+
+  var loader = document.getElementById("loading");
+  document.getElementById('theImage').addEventListener('click',function() {
+    loader.classList.add('animate');
+    // remove animation 
+    document.querySelector(".loader:before").style.animation = 'none';
+
+    // trigger reflow
+    document.querySelector(".loader:before").offsetWidth;
+
+    // add animation again
+    document.querySelector(".loader:before").style.animation = 'load var(--seconds) linear';
+  });
+
+  loader.addEventListener("animationend", function() {
+    generateSpectrum();
+  });
+
+  doAnimate();
+}
+
+function generateSpectrum() {
+  for (var i = 3900; i < 4901; ++i) {
+    lambdaArr[i-3000] = i;
+    fluxArr[i-3000] = i/4900 - generateGaussian(0.075,0.075)/Math.sqrt(noise);
+  }
+
+  for (var i = 0; i < 3000*Math.sqrt(noise); ++i) {
+    var index = lambdaArr.indexOf(Math.round(generateGaussian(SODIUM_H_REDSHIFTED,5)));  
+    fluxArr[index] = fluxArr[index] - 0.0001;
+    var index = lambdaArr.indexOf(Math.round(generateGaussian(SODIUM_K_REDSHIFTED,5)));  
+    fluxArr[index] = fluxArr[index] - 0.0001;
+  }
+  trace1 = {x:lambdaArr,y:fluxArr,marker:{color:'rgb(219, 64, 82)'}};
+
+  data = [trace1];
+  Plotly.newPlot("myPlot", data, layout, config);
+  if (noise == 1) {
+    var seconds = "second";
+  } else {
+    var seconds = "seconds";
+  }
+  document.getElementById("SpectrumDone").innerHTML = "Spectrum Complete (below), integration time: " + String(noise) + " " + String(seconds);
+}
+
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+
+function loading(milliseconds) {
+    var counter = 0;
+    if (counter == 0) {
+      document.getElementById("SpectrumDone").innerHTML = "Generating Spectrum ."
+      sleep(milliseconds/noise);
+    } else if (counter == 1) {
+      document.getElementById("SpectrumDone").innerHTML = "Generating Spectrum . ."
+      sleep(milliseconds/noise);
+    } else if (counter == 2) {
+      document.getElementById("SpectrumDone").innerHTML = "Generating Spectrum . . ."
+      sleep(milliseconds/noise);
+    }
+    counter = counter + 1;
+    if (counter == 3) {
+      counter = 0;
+    }
+}
+
+Plotly.newPlot("myPlot", data, layout, config)
+
+</script>
+
+</html>
