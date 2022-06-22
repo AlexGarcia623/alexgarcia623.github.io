@@ -42,12 +42,26 @@ button {
   font-size:min(max(14pt, 1.5vw), 16pt);
 }
 
+div {
+  min-width:35ch;
+}
+
+/*Thanks to Kevin Powell on YouTube! */
+.grid-ish {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.grid-ish > * {
+  flex: 1 0 33%;
+}
+
 .WeighJupiter {
   color:darkblue;
   border: 1vw solid darkblue;
   background-color:powderblue;
   border-radius:5px;
-  padding:10px;
+  padding:25px;
 }
 
 .WeighJupiterButton {
@@ -67,7 +81,7 @@ button {
   border: 1vw solid green;
   background-color:lightgreen;
   border-radius:5px;
-  padding:10px;
+  padding:25px;
 }
 
 .AstrSpecButton {
@@ -87,7 +101,7 @@ button {
   border: 1vw solid red;
   background-color:#ffa07a;
   border-radius:5px;
-  padding:10px;
+  padding:25px;
 }
 
 .HubbleConstButton {
@@ -114,11 +128,15 @@ button {
 
 footer {
   margin-top:15px;
-  margin-bottom:0px;
+  padding-bottom:0px;
 }
 
 body > footer {
   display: table-row;
+}
+
+.footerButton {
+  margin-bottom:0;
 }
 
 </style>
@@ -157,7 +175,9 @@ body > footer {
   </div>
   </div>
 
-  <div class="WeighJupiter">
+  <div class="grid-ish">
+
+  <div class="WeighJupiter col">
 
   <h2 style="color:blue;">You Can Weigh Jupiter</h2>
 
@@ -170,7 +190,7 @@ body > footer {
 
   </div>
 
-  <div class="AstrSpectroscopy">
+  <div class="AstrSpectroscopy col">
   <h2 style="color:#2e8b57;">Astronomical Spectroscopy II</h2>
 
   <p style="color:darkgreen">Have you ever wondered by visible light is visible? Why does the Sun appears yellow? <br><br>
@@ -182,7 +202,7 @@ body > footer {
 
   </div>
 
-  <div class="HubbleConstant">
+  <div class="HubbleConstant col">
   <h2 style="color:maroon;">Measuring the Hubble Constant</h2>
 
   <p style="color:darkred">Astronomers all agree, the Universe is expanding. How are we so certain? The answer actually takes us back to spectroscopy! <br><br>
@@ -194,8 +214,10 @@ body > footer {
 
   </div>
 
+</div>
+
   <footer style="margin-bottom:0px;">
-    <button class="button biggerButton" onclick=backgroundImage()>About the background image </button>
+    <button class="button biggerButton footerButton" onclick=backgroundImage()>About the background image </button>
   </footer>
 
 </body>

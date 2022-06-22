@@ -10,6 +10,13 @@
 
 <head>
 <style>
+body {
+  background-image:url('Jupiter.jpeg');
+  background-size:cover;
+  background-attachment: fixed; 
+  background-size:fill; 
+}
+
 * {
   box-sizing:border-box;
 }
@@ -23,7 +30,7 @@ body {
 }
 
 p {
-  color:powderblue;
+  color:darkblue;
   font-size:min(max(14pt, 2vw), 20pt);
 }
 
@@ -57,6 +64,28 @@ input:not(:hover) {
 img {
   width:40%;
   height:25%;
+  border-radius:25px;
+}
+
+.WeighJupiter {
+  color:darkblue;
+  border: 1vw solid darkblue;
+  background-color:powderblue;
+  border-radius:5px;
+  padding:25px;
+}
+
+footer {
+  margin-top:15px;
+  padding-bottom:0px;
+}
+
+body > footer {
+  display: table-row;
+}
+
+.footerButton {
+  margin-bottom:0;
 }
 
 </style>
@@ -74,8 +103,9 @@ img {
   }
 </script>
 <body>
-<form name = "converter">
 <div class="body">
+
+  <div class="WeighJupiter">
 
    <h1>You Can Weigh Jupiter </h2> 
 
@@ -93,15 +123,22 @@ img {
   </div>
 
   <input type="button" onclick="startConfig1()" value="Start!" class="center"/>
+
+  </div>
   
 <script>
 function startConfig1() {
   window.open("moonSelector1.html","_self");
 }
+
+function backgroundImage() {
+  window.open("https://www.nasa.gov/image-feature/jpl/giant-storms-and-high-clouds",target="_blank");
+}
 </script>
 
-</form>
-
+<footer>
+  <button class="button" onclick="backgroundImage()">About the background image </button>
+</footer>
 
 </body>
 

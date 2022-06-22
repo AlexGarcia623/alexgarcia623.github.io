@@ -8,10 +8,6 @@
 
 <head>
 <style>
-body {
-  margin:0;
-  padding:0;
-}
 
 * {
   box-sizing:border-box;
@@ -28,9 +24,21 @@ body {
   clear: both;
 }
 
+body {
+  background-image:url('Jupiter.jpeg');
+  background-size:cover;
+  background-attachment: fixed; 
+  background-size:fill; 
+}
+
 img {
   width:85%;
   height:85%;
+  border-radius:15px;
+}
+
+h2 {
+  color:darkblue;
 }
 
 input {
@@ -79,13 +87,12 @@ function reselectMoon() {
 <form name = "converter">
 <div class="body">
 
-  <p>Time elapsed: <span id="demo">0 </span> Hours <span id="counter" style="color:black;">0</span></p>
+  <h2>Time elapsed: <span id="demo">0 </span> Hours <span id="counter" style="opacity:0;">0</span></h2>
 
   <img id="theImage" src="./Jupiter/Ganymede/GanymedeConfig1-page-005.jpg" class="center"/>
 
   <input type="button" onclick="next()" value="Next Frame"/>
   <input type="button" onclick="back()" value="Back One Frame"/>
-  <br>
   <input type="button" onclick="toggleGrid()" value="Toggle Grid"/>
 
   <p id ="testing"></p>
