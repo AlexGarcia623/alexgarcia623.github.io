@@ -10,6 +10,14 @@
 
 <head>
 <style>
+body {
+  background-image:url('Nebula.jpeg');
+  background-size:cover;
+  background-attachment: fixed; 
+  background-size:fill; 
+}
+
+
 * {
   box-sizing:border-box;
 }
@@ -59,8 +67,9 @@ p, a {
   background-color:lightgreen;
   border-radius:5px;
   padding:10px;
-  margin-top:5px;
-  margin-bottom:5px;
+  margin-top:10px;
+  margin-bottom:10px;
+  max-width:90ch;
 }
 
 .AstrSpecButton {
@@ -74,6 +83,19 @@ p, a {
 .AstrSpecButton:hover {
   color:lightgreen;
   background-color:darkgreen;
+}
+
+footer {
+  margin-top:15px;
+  padding-bottom:0px;
+}
+
+body > footer {
+  display: table-row;
+}
+
+.footerButton {
+  margin-bottom:0;
 }
 
 </style>
@@ -97,11 +119,15 @@ p, a {
 <body>
 <div class="body">
 
-  <h1>Astronomical Spectroscopy II</h1>
+  <div class="AstrSpectroscopy center">
 
-  <p style="color:lightgreen;">This lab is broken into a multiple sections.<br><br>
+    <h2>Astronomical Spectroscopy II</h2>
 
-  <div class="AstrSpectroscopy">
+    <p>This lab is broken into a multiple sections.<br><br>
+
+  </div>
+
+  <div class="AstrSpectroscopy center">
 
     <h2>Identifying Spectral Lines </h2>
   
@@ -114,7 +140,7 @@ p, a {
 
   </div>
  
-  <div class="AstrSpectroscopy">
+  <div class="AstrSpectroscopy center">
     <h2>Flow Of Energy Out Of The Sun: Blackbody</h2>
 
     <p> </p>
@@ -122,7 +148,7 @@ p, a {
 
   </div>
 
-  <div class="AstrSpectroscopy">
+  <div class="AstrSpectroscopy center">
 
     <h2>Flow Of Energy Out Of The Sun: Continuous Spectrum </h2>
   
@@ -134,7 +160,7 @@ p, a {
     <button class="AstrSpecButton" onclick=continuousSpectrum()>Observe a continuous spectrum being created</button>
   </div>
 
-  <div class ="AstrSpectroscopy">
+  <div class ="AstrSpectroscopy center">
     <h2>Flow Of Energy Out Of The Sun: Absorption Spectra</h2>
   
     <p>So that's where the continuous spectrum arises. But why do we see the dark-line absorption features? <br><br>
@@ -162,7 +188,15 @@ function absorptionSpectra() {
   window.open("absorptionSpectra.html","_self");
 }
 
+function backgroundImage() {
+  window.open("https://images.nasa.gov/details-PIA15413",target="_blank");
+}
+
 </script>
+
+<footer>
+  <button class="button" onclick="backgroundImage()">About the background image </button>
+</footer>
 
 </body>
 
