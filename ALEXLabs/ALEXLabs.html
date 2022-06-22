@@ -8,11 +8,18 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-<script src="scripts.js"></script>
-
 <head>
 <style>
+body {
+  background-image:url('./starBackground.jpeg');
+  background-size:cover;
+  background-attachment: fixed; 
+  background-size:fill;
+  display:table;
+  padding-bottom:0px;
+  margin-bottom:0px;
+}
+
 * {
   box-sizing:border-box;
 }
@@ -32,15 +39,7 @@ p {
 }
 
 button {
-  background-color:black;
-  color:steelblue;
-  border: 1px solid tomato;
   font-size:min(max(14pt, 1.5vw), 16pt);
-}
-
-button:hover {
-  background-color:steelblue;
-  color:black;
 }
 
 .WeighJupiter {
@@ -52,8 +51,8 @@ button:hover {
 }
 
 .WeighJupiterButton {
-  color:darkblue;
-  border: 0.05vw solid darkblue;
+  color:blue;
+  border: 0.05vw solid blue;
   background-color:powderblue;
   border-radius:5px;
   padding:10px;
@@ -61,19 +60,19 @@ button:hover {
 
 .WeighJupiterButton:hover {
   color:powderblue;
-  background-color:darkblue;
+  background-color:blue;
 }
 
 .AstrSpectroscopy {
-  border: 1vw solid darkgreen;
+  border: 1vw solid green;
   background-color:lightgreen;
   border-radius:5px;
   padding:10px;
 }
 
 .AstrSpecButton {
-  color:darkgreen;
-  border: 0.05vw solid darkgreen;
+  color:#2e8b57;
+  border: 0.05vw solid #2e8b57;
   background-color:lightgreen;
   border-radius:5px;
   padding:10px;
@@ -81,27 +80,45 @@ button:hover {
 
 .AstrSpecButton:hover {
   color:lightgreen;
-  background-color:darkgreen;
+  background-color:#2e8b57;
 }
 
 .HubbleConstant {
-  border: 1vw solid darkred;
-  background-color:tomato;
+  border: 1vw solid red;
+  background-color:#ffa07a;
   border-radius:5px;
   padding:10px;
 }
 
 .HubbleConstButton {
-  color:darkred;
-  border: 0.05vw solid darkred;
-  background-color:tomato;
+  color:maroon;
+  border: 0.05vw solid maroon;
+  background-color:#ffa07a;
   border-radius:5px;
   padding:10px;
 }
 
 .HubbleConstButton:hover {
-  color:tomato;
-  background-color:darkred;
+  color:#ffa07a;
+  background-color:maroon;
+}
+
+
+.ALEX {
+  border: 1vw solid darkorange;
+  color:black;
+  background-color:#ffc87c;
+  border-radius:5px;
+  padding:10px;
+}
+
+footer {
+  margin-top:15px;
+  margin-bottom:0px;
+}
+
+body > footer {
+  display: table-row;
 }
 
 </style>
@@ -113,30 +130,32 @@ button:hover {
 
 <header>
   <title>ALEX Labs Home</title>
-  <button class = "button biggerButton" onclick="home()">Alex Garcia</button>
-  <button class = "button biggerButton" onclick="contactMe()">Contact Me</button>
+  <button class = "button biggerButton" onclick="mainPage()">Alex Garcia</button>
+  <button class = "button biggerButton" onclick="contactAlex()">Contact Me</button>
 </header>
 
 <body>
 <div class="body">
 
-   <h1 style="color:orange;">ALEX Labs</h1> 
+   <div class="ALEX">
 
-  <p style="color:white;">Welcome to <span style="color:orange;">Astronomy Laboratory Exercises and eXperiments (ALEX)</span>! These experiments were originally designed for the use of University of Florida Astronomy 1022L course. <br><br> 
+   <h1 style="color:#ff7518;">ALEX Labs</h1> 
+
+  <p style="color:black;">Welcome to <span style="color:#ff7518;">Astronomy Laboratory Exercises and eXperiments (ALEX)</span>! These experiments were originally designed for the use of University of Florida Astronomy 1022L course. <br><br> 
 
   These labs are inspired by the Contemporary Lab Experiences in Astronomy (CLEA) Labs created by Gettysburg College. Those labs had been in use by the Florida Astronomy department for well over a decade before these labs came along. CLEA labs ceased operations around 2016. In the years following, some of the software became inoperable on UF's Windows 10 machines. <br><br>
 
   Seeing the writing on the wall, as well as an opportunity to improve upon the formula these original labs had, I took it upon myself to reprogram some of these labs. The intent was to make them "future-proof". To that end, I programmed these labs in HTML/Javascript (as you can see). I make no claims of being an expert at either of these languages, but these labs are in a more stable place than when I started my TA position for this course. <br><br>
 
-  The labs that I have programmed are <span style="color:blue;">You Can Weigh Jupiter</span> (based on the CLEA lab of the same name), <span style="color:lightgreen">Astronomical Spectroscopy II</span> (based on "The Flow Of Energy Out Of The Sun" by CLEA), and <span style="color:crimson">Measuring the Hubble Constant</span> (based on the CLEA lab of the same name).</p>
+  The labs that I have programmed are <span style="color:blue;">You Can Weigh Jupiter</span> (based on the CLEA lab of the same name), <span style="color:green">Astronomical Spectroscopy II</span> (based on "The Flow Of Energy Out Of The Sun" by CLEA), and <span style="color:crimson">Measuring the Hubble Constant</span> (based on the CLEA lab of the same name).</p>
 
   <div class="mobile">
-    <p><span style="color:red;font-size:24pt;">Note that these labs are intended to be used on a desktop</span><br> (i.e. the Windows 10 computers in Bryant Room 7). I've made some adjustments to make it more universally friendly, but there's only so much I can do with some labs. </p>
+    <p style="color:black;"><span style="color:white;font-size:24pt;">Note that these labs are intended to be used on a desktop</span><br> (i.e. the Windows 10 computers in Bryant Space Science Center Room 7). I've made some adjustments to make it more universally friendly, but there's only so much I can do with some labs. </p>
   </div>
   <div class="desktop">
-    <p> Note that these labs are intended to be used on a desktop (i.e. the Windows 10 computers in Bryant Room 7). I've made some adjustments to make it more universally friendly, but there's only so much I can do with some labs. </p>
+    <p style="color:black;"> Note that these labs are intended to be used on a desktop (i.e. the Windows 10 computers in Bryant Space Science Center Room 7). I've made some adjustments to make it more universally friendly, but there's only so much I can do with some labs. </p>
   </div>
-
+  </div>
 
   <div class="WeighJupiter">
 
@@ -152,7 +171,7 @@ button:hover {
   </div>
 
   <div class="AstrSpectroscopy">
-  <h2 style="color:green;">Astronomical Spectroscopy II</h2>
+  <h2 style="color:#2e8b57;">Astronomical Spectroscopy II</h2>
 
   <p style="color:darkgreen">Have you ever wondered by visible light is visible? Why does the Sun appears yellow? <br><br>
 
@@ -175,20 +194,36 @@ button:hover {
 
   </div>
 
+  <footer style="margin-bottom:0px;">
+    <button class="button biggerButton" onclick=backgroundImage()>About the background image </button>
+  </footer>
+
 </body>
 
 <script>
 
+function backgroundImage() {
+  window.open("backgroundExplain.html",target="_self");
+}
+
+function mainPage() {
+  window.open("../index.html",target="_self");
+}
+
+function contactAlex() {
+  window.open("../contactMe.html",target="_self");
+}
+
 function Jupiter() {
-  window.open("YouCanWeighJupiter.html", target="_self");
+  window.open("./WeighJupiter/YouCanWeighJupiter.html", target="_self");
 }
 
 function AstrSpecII() {
-  window.open("AstronomicalSpectroscopyII.html", target="_self");
+  window.open("./SpectroscopyII/AstronomicalSpectroscopyII.html", target="_self");
 }
 
 function Hubble() {
-  window.open("Hubble.html",target="_self");
+  window.open("./Hubble/Hubble.html",target="_self");
 }
 
 </script>

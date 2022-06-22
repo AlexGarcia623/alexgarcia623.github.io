@@ -7,7 +7,7 @@ function linkedIn() {
 }
 
 function ALEX() {
-  window.open("ALEXLabs.html","_self");
+  window.open("./ALEXLabs/ALEXLabs.html","_self");
 }
 
 function CV() {

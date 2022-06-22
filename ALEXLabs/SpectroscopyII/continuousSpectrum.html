@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../ALEX.css">
 
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
 <meta http-equiv='pragma' content='no-cache'>
-
-<script src="scripts.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -38,9 +36,16 @@ button:hover {
   color:black;
 }
 
-input:hover {
-  background-color:steelblue;
-  color:black;
+h1 {
+  color:green;
+}
+
+h2 {
+  color:green;
+}
+
+p, a {
+  color:lightgreen;
 }
 
 .column3 {
@@ -48,13 +53,25 @@ input:hover {
   width:33%;
 }
 
-img:hover {
-  width=110%;
-}
 #canvas {
   border: 1px solid black;
-  width: 70%;
-  min-width: 400px;
+  width: 62.5%;
+}
+
+input {
+  color:lightgreen;
+  font-size:min(max(18pt, 2vw), 22pt);
+  border:2px darkgreen solid;
+}
+
+input:hover {
+  color:darkgreen;
+  background:lightgreen;
+}
+
+span {
+  font-size:min(max(14pt, 1.5vw), 16pt);
+  color:lightgreen;
 }
 
 </style>
@@ -79,15 +96,13 @@ img:hover {
 <form name = "converter">
 <div class="body">
 
-   <h1>Flow Of Energy Out Of The Sun: Continuous Spectrum </h2> 
+   <h1>Continuous Spectrum </h2> 
 
-  <p style="color:white;">Welcome to the flow of energy out of the sun! This first experiment is to understand the random walk through the Sun.</p>
+  <p>Welcome to the flow of energy out of the sun! This first experiment is to understand the random walk through the Sun.</p>
 
   <canvas class="center" id="canvas" height="500" width="750"></canvas> <br>
   <input type="button" onclick="start()" value="Start!" class="center"/>
-  <h2>Number of walks:</h2>
-  <p id="display"> </p>
-  <p><span id="finish" style="color:orange;"></span> <span id='WL'> </span></p>
+  <p><b><span style="color:darkgreen;">Number of walks:</span> <span id="display"> </span><br> <span id="finish" style="color:darkgreen;"></span> <span id='WL'> </span><b></p>
 
 </form>
 

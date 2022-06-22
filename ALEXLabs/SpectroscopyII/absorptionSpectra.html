@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../ALEX.css">
 
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
 <meta http-equiv='pragma' content='no-cache'>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<script src="scripts.js"></script>
 
 <head>
 <style>
@@ -27,34 +24,28 @@
   clear: both;
 }
 
-button {
-  background-color:black;
-  color:steelblue;
-  border: 1px solid tomato;
-  padding: 8px;
-}
-
-button:hover {
-  background-color:steelblue;
-  color:black;
-}
-
-input:hover {
-  background-color:steelblue;
-  color:black;
-}
-
 .column3 {
   float:left;
   width:33%;
 }
 
-img:hover {
-  width=110%;
+
+h1 {
+  color:green;
 }
+
+h2 {
+  color:green;
+}
+
+p, a {
+  color:lightgreen;
+}
+
 
 #canvas {
   border: 1px solid black;
+  width: 50%;
 }
 
 .slidecontainer {
@@ -63,9 +54,10 @@ img:hover {
 
 .slider {
   -webkit-appearance: none;
+  border: 2px darkgreen solid;
   width: 100%;
   height: 25px;
-  background: white;
+  background: lightgreen;
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
@@ -74,6 +66,8 @@ img:hover {
 
 .slider:hover {
   opacity: 1;
+  background:darkgreen;
+  border: 2px lightgreen solid;
 }
 
 .slider::-webkit-slider-thumb {
@@ -81,22 +75,25 @@ img:hover {
   appearance: none;
   width: 25px;
   height: 25px;
-  background: green;
   cursor: pointer;
+  background:white;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: green;
+  width: 35px;
+  height: 35px;
 }
 
-#canvas {
-  border: 1px solid black;
-  width: 70%;
-  min-width: 400px;
+input {
+  color:lightgreen;
+  font-size:min(max(18pt, 2vw), 22pt);
+  border:2px darkgreen solid;
 }
 
+input:hover {
+  color:darkgreen;
+  background:lightgreen;
+}
 </style>
 
 <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
@@ -119,12 +116,12 @@ img:hover {
 <form onkeydown="return event.key != 'Enter';">
 <div class="body">
 
-   <h1>Flow Of Energy Out Of The Sun: Absorption Spectra </h2> 
+   <h1>Absorption Spectra</h1> 
 
-  <p style="color:white;">Welcome to the flow of energy out of the sun 3! The third experiment is to look at absorption lines within a gas!</p>
+  <p>Welcome to the absorption spectra! This experiment is to look at absorption lines within a gas!</p>
 
   <canvas class="center" id="canvas" height="500" width="750"></canvas> <br>
-  <input class="center" style="color:orange;" id="repeats" type = "number" placeholder="Number of Photons" min="0" max="20" value="15" onchange=""/> 
+  <input class="center" id="repeats" type = "number" placeholder="Number of Photons" min="0" max="20" value="15" onchange=""/> 
   <input type="button" onclick="start()" value="Start!" class="center"/>
   
 
@@ -133,32 +130,32 @@ img:hover {
   <h2>Use this slider to set the photon energy</h2>
   <div class="slidecontainer">
     <input type="range" min="1.6" max="3.5" value="2.5" step="0.1" class="slider" id="myRange">
-    <p>Energy: <span id="energy"></span> eV</p>
+    <h2 style="color:lightgreen;">Energy: <span id="energy"></span> eV</h2>
   </div>
 
   <h2>Results</p>
 
-  <h2 style="color:orange;"><span id="number"></span> <span id="finish"> </span> </h2>
-  <p style="color:orange;"><span id="prevNum1"></span> <span id="prev1"></span></p>
-  <p style="color:orange;"><span id="prevNum2"></span> <span id="prev2"></span></p>
-  <p style="color:orange;"><span id="prevNum3"></span> <span id="prev3"></span></p>
-  <p style="color:orange;"><span id="prevNum4"></span> <span id="prev4"></span></p>
-  <p style="color:orange;"><span id="prevNum5"></span> <span id="prev5"></span></p>
-  <p style="color:orange;"><span id="prevNum6"></span> <span id="prev6"></span></p>
-  <p style="color:orange;"><span id="prevNum7"></span> <span id="prev7"></span></p>
-  <p style="color:orange;"><span id="prevNum8"></span> <span id="prev8"></span></p>
-  <p style="color:orange;"><span id="prevNum9"></span> <span id="prev9"></span></p>
-  <p style="color:orange;"><span id="prevNum10"></span> <span id="prev10"></span></p>
-  <p style="color:orange;"><span id="prevNum11"></span> <span id="prev11"></span></p>
-  <p style="color:orange;"><span id="prevNum12"></span> <span id="prev12"></span></p>
-  <p style="color:orange;"><span id="prevNum13"></span> <span id="prev13"></span></p>
-  <p style="color:orange;"><span id="prevNum14"></span> <span id="prev14"></span></p>
-  <p style="color:orange;"><span id="prevNum15"></span> <span id="prev15"></span></p>
-  <p style="color:orange;"><span id="prevNum16"></span> <span id="prev16"></span></p>
-  <p style="color:orange;"><span id="prevNum17"></span> <span id="prev17"></span></p>
-  <p style="color:orange;"><span id="prevNum18"></span> <span id="prev18"></span></p>
-  <p style="color:orange;"><span id="prevNum19"></span> <span id="prev19"></span></p>
-  <p style="color:orange;"><span id="prevNum20"></span> <span id="prev20"></span></p>
+  <h2 style="color:lightgreen;"><span id="number"></span> <span id="finish"> </span> </h2>
+  <p ><span id="prevNum1"></span> <span id="prev1"></span></p>
+  <p ><span id="prevNum2"></span> <span id="prev2"></span></p>
+  <p ><span id="prevNum3"></span> <span id="prev3"></span></p>
+  <p ><span id="prevNum4"></span> <span id="prev4"></span></p>
+  <p ><span id="prevNum5"></span> <span id="prev5"></span></p>
+  <p ><span id="prevNum6"></span> <span id="prev6"></span></p>
+  <p ><span id="prevNum7"></span> <span id="prev7"></span></p>
+  <p ><span id="prevNum8"></span> <span id="prev8"></span></p>
+  <p ><span id="prevNum9"></span> <span id="prev9"></span></p>
+  <p ><span id="prevNum10"></span> <span id="prev10"></span></p>
+  <p ><span id="prevNum11"></span> <span id="prev11"></span></p>
+  <p ><span id="prevNum12"></span> <span id="prev12"></span></p>
+  <p ><span id="prevNum13"></span> <span id="prev13"></span></p>
+  <p ><span id="prevNum14"></span> <span id="prev14"></span></p>
+  <p ><span id="prevNum15"></span> <span id="prev15"></span></p>
+  <p ><span id="prevNum16"></span> <span id="prev16"></span></p>
+  <p ><span id="prevNum17"></span> <span id="prev17"></span></p>
+  <p ><span id="prevNum18"></span> <span id="prev18"></span></p>
+  <p ><span id="prevNum19"></span> <span id="prev19"></span></p>
+  <p ><span id="prevNum20"></span> <span id="prev20"></span></p>
 
 
 </form>
@@ -193,7 +190,7 @@ img:hover {
     function draw() {
       const canvas = document.getElementById('canvas');
       const ctx = canvas.getContext('2d');    
-      ctx.strokeStyle = 'yellow';
+      ctx.strokeStyle = 'green';
       ctx.beginPath();
       ctx.lineWidth = 5;
       ctx.moveTo(0,300);
@@ -281,7 +278,7 @@ img:hover {
     }
     
     function start() {
-        	if (animation) {
+      if (animation) {
   	  window.cancelAnimationFrame(animation)
 	}
 	const canvas = document.getElementById('canvas');

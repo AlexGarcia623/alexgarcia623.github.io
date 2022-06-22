@@ -35,10 +35,10 @@ header {
 
 footer {
   background-color:transparent;
-  position:fixed;
-  bottom:0;
+  position:absolute;
   width:100%;
   left:0;
+  margin-top:-50px;
 }
 
 div {
@@ -128,7 +128,6 @@ input {
 }
 
 ::placeholder {
-  color:steelblue;
   font-size:14pt;
   opacity:0.6;
 }

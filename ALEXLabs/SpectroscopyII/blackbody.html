@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="ALEX.css">
+<link rel="stylesheet" href="../ALEX.css">
 
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
@@ -8,7 +8,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="scripts.js"></script>
 <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
 <script src="plotly-2.11.1.min.js"></script>
 
@@ -28,38 +27,21 @@
   clear: both;
 }
 
-button {
-  background-color:black;
-  color:steelblue;
-  border: 1px solid tomato;
-  padding: 8px;
-}
-
-button:hover {
-  background-color:steelblue;
-  color:black;
-}
-
-input:hover {
-  background-color:steelblue;
-  color:black;
-}
-
 .column3 {
   float:left;
   width:33%;
 }
 
-img:hover {
-  width=110%;
-}
-#canvas {
-  border: 1px solid black;
+h1 {
+  color:green;
 }
 
+h2 {
+  color:green;
+}
 
-h3 {
-  color:steelblue;
+p, a {
+  color:lightgreen;
 }
 
 .slidecontainer {
@@ -68,9 +50,10 @@ h3 {
 
 .slider {
   -webkit-appearance: none;
+  border: 2px darkgreen solid;
   width: 100%;
   height: 25px;
-  background: white;
+  background: lightgreen;
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
@@ -79,6 +62,8 @@ h3 {
 
 .slider:hover {
   opacity: 1;
+  background:darkgreen;
+  border: 2px lightgreen solid;
 }
 
 .slider::-webkit-slider-thumb {
@@ -86,14 +71,32 @@ h3 {
   appearance: none;
   width: 25px;
   height: 25px;
-  background: green;
   cursor: pointer;
+  background:white;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: green;
+  width: 35px;
+  height: 35px;
+}
+
+input {
+  color:lightgreen;
+  font-size:min(max(18pt, 2vw), 22pt);
+  border:2px darkgreen solid;
+}
+
+input:hover {
+  color:darkgreen;
+  background:lightgreen;
+}
+
+input::placeholder {
+  color:lightgreen;
+}
+
+input:hover::placeholder {
+  color:darkgreen;
 }
 </style>
 
@@ -119,21 +122,21 @@ h3 {
   <h1>Flow Of Energy Out Of The Sun: Blackbody</h2> 
 
 
-  <h2>What is the peak wavelength? (Use nanometers)</h2>
+  <p>What is the peak wavelength? (Use nanometers)</p>
 
-  <input style="color:orange;" id="MaxLambda" type = "number" placeholder="Peak Wavelength (nm)" min="100" max="1000" /> 
+  <input id="MaxLambda" type = "number" placeholder="Peak Wavelength (nm)" min="100" max="1000" onchange=""/> 
 
   <input type="button" onclick="plot()" value="Plot" class="center"/><br>
 
   <p id="counts"></p>
 
-  <div id="myPlot" style="width:100%;padding-left:0;padding-right:0%;"></div>
-
   <div class="slidecontainer">
-    <p>Blackbody Temperature: <span id="Temperature"></span> K</p>
+    <p><b>Blackbody Temperature:</b> <span id="Temperature"></span> K</p>
     <input type="range" min="3000" max="30000" value="0" step="100" class="slider" id="myRange">
     
   </div>
+
+  <div id="myPlot" style="width:100%;padding-left:0;padding-right:0%;"></div>
 
 </form>
 
@@ -245,7 +248,7 @@ h3 {
       var trace1 = {
         x:lamArr,
         y:p2,
-        marker: {color:'white'},
+        marker: {color:'green'},
         type:'scatter',
         showlegend:false
       }

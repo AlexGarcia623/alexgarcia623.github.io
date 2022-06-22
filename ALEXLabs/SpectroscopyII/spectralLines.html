@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../ALEX.css">
 
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
@@ -26,43 +26,47 @@
   clear: both;
 }
 
-p {
-  color:steelblue;
+h1 {
+  color:green;
 }
 
-button {
-  background-color:black;
-  color:steelblue;
-  border: 1px solid tomato;
-  padding: 8px;
+h2 {
+  color:green;
 }
 
-button:hover {
-  background-color:steelblue;
-  color:black;
+p, a {
+  color:lightgreen;
+}
+
+input {
+  color:lightgreen;
+  font-size:min(max(16pt, 2vw), 20pt);
+  border:2px darkgreen solid;
 }
 
 input:hover {
-  background-color:steelblue;
-  color:black;
+  color:darkgreen;
+  background:lightgreen;
 }
 
-.column3 {
-  float:left;
-  width:33%;
-}
-
-img:hover {
-  width=110%;
-}
 #canvas {
   border: 1px solid black;
+  width: 50%;
 }
 
 #myPlot {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+}
+
+.AstrSpectroscopy {
+  border: 1vw solid darkgreen;
+  background-color:lightgreen;
+  border-radius:5px;
+  padding:10px;
+  margin-top:5px;
+  margin-bottom:5px;
 }
 
 </style>
@@ -86,14 +90,14 @@ img:hover {
 <body>
 
 <div class="body">
-
   <h1>Identifying Spectral Lines</h2> 
 
-  <p style="color:white;">In this first experiment, we'll look at a mock absorption spectrum for the Sun. Press the button below to see a mock spectrum of the Sun. This spectrum does not contain ALL of the Fraunhofer lines, but it does include some of the most conspicuous ones (namely, most of the capital letter lines)</p>
+  <p>In this experiment, we'll look at a mock absorption spectrum for the Sun. Press the button below to see a mock spectrum of the Sun. This spectrum does not contain ALL of the Fraunhofer lines, but it does include some of the most conspicuous ones (namely, most of the capital letter lines)</p>
 
   <p id="display"> </p>
-  <p id="finished" style="color:orange;"> </p>
+  <p id="finished"> </p>
   
+
   <div class="desktop">
     <input type="button" onclick="start()" value="Generate Spectrum" class="center"/>
     <div id="myPlot" class="center"></div>

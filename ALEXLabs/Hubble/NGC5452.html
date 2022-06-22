@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="ALEX.css">
+<link rel="stylesheet" href="../ALEX.css">
 
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
 <meta http-equiv='pragma' content='no-cache'>
-
-<script src="scripts.js"></script>
 
 <head>
 <style>
@@ -29,11 +27,15 @@ body {
   clear: both;
 }
 
+p, a, h1 {
+  color:#ffa07a;
+}
+
 input {
   height:60%;
   width:50%;
-  background-color:powderblue;
-  border: 0.05vw solid darkblue;
+  background-color:maroon;
+  border: 0.05vw solid red;
   border-radius:16px;
   color:darkblue;
   padding:0.5vw;
@@ -43,16 +45,24 @@ input {
 input:hover {
   transition:0.5s;
   transform:scale(1.005);
-  background-color:darkblue;
-  color:powderblue;
-
+  background-color:red;
+  color:maroon;
+  border: 0.05vw solid maroon;
 }
 
 input:not(:hover) {
   transition:0.5s;
   transform:scale(1);
-  border: 0.05vw solid darkblue;
-  color:darkblue;
+  border: 0.05vw solid red;
+  color:maroon;
+}
+
+input::placeholder {
+  color:#ffa07a;
+}
+
+input:hover::placeholder {
+  color:white;
 }
 
 .inputText {
@@ -145,14 +155,14 @@ function backButton() {
   <h2>Enter an integration time in seconds, then click on the image to generate a spectrum</h2>
 
   <input id="IntTime" type = "number" class="inputText" placeholder="Integration Time" min="1" max="1000" oninput=addNoise() onchange=addNoise()/> <br>
-  <input id="theImage" type="image" onclick=buttonPress() src="./Galaxies/NGC_1260.png" class="center"/>
+  <input id="theImage" type="image" onclick=buttonPress() src="./Galaxies/NGC_5452.jpeg" class="center"/>
 
   <p id="loading"></p>
   <p id="SpectrumDone"></p>
 
   <div id="myPlot" style="width:100%;padding-left:0;padding-right:0%;"></div>
 
-  <p>Image Credit: <a href="https://en.wikipedia.org/wiki/NGC_1260#/media/File:NGC_1260-HST10877_38R814GB555.png">Wikipedia</a> via <a href="https://commons.wikimedia.org/wiki/User:Fabian_RRRR">Fabian RRRR</a></p>
+  <p>Image Credit: <a href="https://cseligman.com/text/atlas/ngc54a.htm#5452">CSeligmann.com</a></p>
 
 </form>
 
@@ -180,7 +190,7 @@ function addNoise() {
 var CALCIUM_H = 3969;
 var CALCIUM_K = 3934;
 
-var TRUE_REDSHIFT = 0.01919; //NGC_1260
+var TRUE_REDSHIFT = 0.006891; //NGC_5452
 
 var CALCIUM_H_REDSHIFTED = CALCIUM_H + CALCIUM_H * TRUE_REDSHIFT;
 var CALCIUM_K_REDSHIFTED = CALCIUM_K + CALCIUM_K * TRUE_REDSHIFT;
