@@ -10,6 +10,14 @@
 
 <head>
 <style>
+body {
+  background-image:url('Nebula.jpeg');
+  background-size:cover;
+  background-attachment: fixed; 
+  background-size:fill; 
+}
+
+
 * {
   box-sizing:border-box;
 }
@@ -45,7 +53,7 @@ h2 {
 }
 
 p, a {
-  color:lightgreen;
+  color:darkgreen;
 }
 
 .column3 {
@@ -56,6 +64,8 @@ p, a {
 #canvas {
   border: 1px solid black;
   width: 62.5%;
+  background-color:black;
+  border-radius:15px;
 }
 
 input {
@@ -71,7 +81,16 @@ input:hover {
 
 span {
   font-size:min(max(14pt, 1.5vw), 16pt);
-  color:lightgreen;
+}
+
+.AstrSpectroscopy {
+  border: 1vw solid darkgreen;
+  background-color:lightgreen;
+  border-radius:5px;
+  padding:10px;
+  margin-top:10px;
+  margin-bottom:10px;
+  max-width:120ch;
 }
 
 </style>
@@ -82,7 +101,7 @@ span {
 </head>
 
 <header>
-  <title>Spectroscopy II</title>
+  <title>Continuous Spectrum</title>
   <button class = "button biggerButton" onclick="SpecHome()">Main Menu</button>
 </header>
 
@@ -93,18 +112,25 @@ span {
 </script>
 
 <body>
-<form name = "converter">
 <div class="body">
 
-   <h1>Continuous Spectrum </h2> 
+  <div class="AstrSpectroscopy center">
 
-  <p>Welcome to the flow of energy out of the sun! This first experiment is to understand the random walk through the Sun.</p>
+    <h1>Continuous Spectrum </h2> 
+
+    <p>This experiment is to understand the random walk through the Sun.</p>
+  </div>
 
   <canvas class="center" id="canvas" height="500" width="750"></canvas> <br>
   <input type="button" onclick="start()" value="Start!" class="center"/>
-  <p><b><span style="color:darkgreen;">Number of walks:</span> <span id="display"> </span><br> <span id="finish" style="color:darkgreen;"></span> <span id='WL'> </span><b></p>
+ 
+  <div class="AstrSpectroscopy center" style="background-color:black;">
 
-</form>
+    <p><b><span style="color:darkgreen;">Number of walks:</span> <span id="display"> </span><br> <span id="finish" style="color:darkgreen;"></span> <span id='WL'> </span><b></p>
+
+  </div>
+
+  </div>
 
 
 </body>

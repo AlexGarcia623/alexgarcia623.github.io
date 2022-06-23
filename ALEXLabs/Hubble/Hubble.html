@@ -9,7 +9,7 @@
 <head>
 <style>
 body {
-  background-image:url('Galaxy.jpeg');
+  background-image:url('Nebula.jpeg');
   background-size:cover;
   background-attachment: fixed; 
   background-size:fill; 
@@ -40,6 +40,7 @@ p, a {
 img {
   width:85%;
   height:85%;
+  border-radius:15px;
 }
 
 input {
@@ -86,6 +87,29 @@ input:not(:hover) {
     display: inline-block;
 }
 
+.HubbleConstant {
+  border: 1vw solid red;
+  background-color:#ffa07a;
+  border-radius:5px;
+  padding:25px;
+  margin-top:10px;
+  margin-bottom:10px;
+  max-width:120ch;
+}
+
+footer {
+  margin-top:15px;
+  padding-bottom:0px;
+}
+
+body > footer {
+  display: table-row;
+}
+
+.footerButton {
+  margin-bottom:0;
+}
+
 </style>
 
 <script>
@@ -97,27 +121,36 @@ function backButton() {
 </head>
 
 <header>
-<button class = "button biggerButton" onclick="backButton()">ALEX Home</button>
+  <title>Hubble Constant </title>
+  <button class = "button biggerButton" onclick="backButton()">ALEX Home</button>
 </header>
 
 <body>
 <div class="body">
  
+  <div class="HubbleConstant center">
+
   <h2>NGC 1260 (Lenticular Galaxy) -- Perseus</h2>
 
   <div class="constellations">
-    <img src="./Galaxies/Perseus1.png" usemap="#locationsMap"/>
+    <img src="./Galaxies/Perseus1.png"/>
     <a href="NGC1260.html"><img src="./Galaxies/Perseus2.png" class="img-top"/></a>
   </div>
+
+  </div>
+  
+  <div class="HubbleConstant center">
 
   <h2>NGC 5452 -- Ursa Minor </h2>
 
   <div class="constellations">
-    <img src="./Galaxies/UrsaMinor1.png" usemap="#locationsMap"/>
+    <img src="./Galaxies/UrsaMinor1.png"/>
     <a href="NGC5452.html"><img src="./Galaxies/UrsaMinor2.png" class="img-top"/></a>
   </div>
 
+  </div>
 
+  <div class="HubbleConstant center">
   <h2>Corona Borealis Supercluser -- Corona Borealis </h2>
 
   <div class="constellations">
@@ -125,8 +158,20 @@ function backButton() {
     <a href="CoronaBorealisSuperCluster.html"><img src="./Galaxies/CoronaBorealis2.png" class="img-top"/></a>
   </div>
 
+  </div>
+
   <p>All constellation images taken from <a href="https://stellarium-web.org/">Stellarium</a></p>
 
+<script>
+
+function backgroundImage() {
+  window.open("https://images.nasa.gov/details-GSFC_20171208_Archive_e002075",target="_blank");
+}
+
+</script>
+<footer>
+  <button class="button" onclick="backgroundImage()">About the background image </button>
+</footer>
 
 </body>
 

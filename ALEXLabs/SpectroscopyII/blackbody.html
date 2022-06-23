@@ -13,6 +13,13 @@
 
 <head>
 <style>
+body {
+  background-image:url('Nebula.jpeg');
+  background-size:cover;
+  background-attachment: fixed; 
+  background-size:fill; 
+}
+
 * {
   box-sizing:border-box;
 }
@@ -41,7 +48,7 @@ h2 {
 }
 
 p, a {
-  color:lightgreen;
+  color:darkgreen;
 }
 
 .slidecontainer {
@@ -53,7 +60,7 @@ p, a {
   border: 2px darkgreen solid;
   width: 100%;
   height: 25px;
-  background: lightgreen;
+  background: darkgreen;
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
@@ -98,6 +105,17 @@ input::placeholder {
 input:hover::placeholder {
   color:darkgreen;
 }
+
+.AstrSpectroscopy {
+  border: 1vw solid darkgreen;
+  background-color:lightgreen;
+  border-radius:5px;
+  padding:10px;
+  margin-top:10px;
+  margin-bottom:10px;
+  max-width:120ch;
+}
+
 </style>
 
 <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
@@ -105,7 +123,7 @@ input:hover::placeholder {
 
 </head>
 <header>
-  <title>Spectroscopy II</title>
+  <title>Blackbody</title>
   <button class = "button biggerButton" onclick="SpecHome()">Main Menu</button>
 </header>
 
@@ -116,29 +134,30 @@ input:hover::placeholder {
 </script>
 
 <body>
-<form onkeydown="return event.key != 'Enter';">
 <div class="body">
+  <div class="AstrSpectroscopy center">
+    <h1>The Blackbody</h2> 
 
-  <h1>Flow Of Energy Out Of The Sun: Blackbody</h2> 
 
+    <p>What is the peak wavelength? (Use nanometers)</p>
 
-  <p>What is the peak wavelength? (Use nanometers)</p>
+    <input id="MaxLambda" type = "number" placeholder="Peak Wavelength (nm)" min="100" max="1000" onchange=""/> 
 
-  <input id="MaxLambda" type = "number" placeholder="Peak Wavelength (nm)" min="100" max="1000" onchange=""/> 
+  </div>
 
   <input type="button" onclick="plot()" value="Plot" class="center"/><br>
 
-  <p id="counts"></p>
-
-  <div class="slidecontainer">
-    <p><b>Blackbody Temperature:</b> <span id="Temperature"></span> K</p>
-    <input type="range" min="3000" max="30000" value="0" step="100" class="slider" id="myRange">
+  <div class="AstrSpectroscopy center">
+    <div class="slidecontainer">
+      <p><b>Blackbody Temperature:</b> <span id="Temperature"></span> K</p>
+      <input type="range" min="3000" max="30000" value="0" step="100" class="slider" id="myRange">
     
+    </div>
+
+    <div id="myPlot" style="width:100%;padding-left:0;padding-right:0%;"></div>
+
   </div>
 
-  <div id="myPlot" style="width:100%;padding-left:0;padding-right:0%;"></div>
-
-</form>
 
 
 </body>
@@ -236,12 +255,8 @@ input:hover::placeholder {
       LambdaMax = parseInt(document.getElementById("MaxLambda").value) ;
 
       T = TfromLM(LambdaMax);
-      //document.getElementById("counts").innerHTML = T;
-
       p = planck(p,T);
       p = pNorm(p,10);
-      //document.getElementById("counts").innerHTML = p;
-
       p2 = planck(p2,parseInt(output.innerHTML));
       p2 = pNorm(p2,10);
    

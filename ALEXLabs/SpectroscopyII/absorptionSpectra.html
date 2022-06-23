@@ -10,6 +10,13 @@
 
 <head>
 <style>
+body {
+  background-image:url('Nebula.jpeg');
+  background-size:cover;
+  background-attachment: fixed; 
+  background-size:fill; 
+}
+
 * {
   box-sizing:border-box;
 }
@@ -39,13 +46,15 @@ h2 {
 }
 
 p, a {
-  color:lightgreen;
+  color:darkgreen;
 }
 
 
 #canvas {
   border: 1px solid black;
   width: 50%;
+  background-color:black;
+  border-radius:15px;
 }
 
 .slidecontainer {
@@ -94,6 +103,18 @@ input:hover {
   color:darkgreen;
   background:lightgreen;
 }
+
+.AstrSpectroscopy {
+  border: 1vw solid darkgreen;
+  background-color:lightgreen;
+  border-radius:5px;
+  padding:10px;
+  margin-top:10px;
+  margin-bottom:10px;
+  max-width:120ch;
+}
+
+
 </style>
 
 <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
@@ -102,7 +123,7 @@ input:hover {
 </head>
 
 <header>
-  <title>Spectroscopy II</title>
+  <title>Absorption Spectra</title>
   <button class = "button biggerButton" onclick="SpecHome()">Main Menu</button>
 </header>
 
@@ -113,52 +134,57 @@ input:hover {
 </script>
 
 <body>
-<form onkeydown="return event.key != 'Enter';">
 <div class="body">
 
-   <h1>Absorption Spectra</h1> 
+  <div class="AstrSpectroscopy center">
 
-  <p>Welcome to the absorption spectra! This experiment is to look at absorption lines within a gas!</p>
+    <h1>Absorption Spectra</h1> 
+
+    <p>Welcome to the absorption spectra! This experiment is to look at absorption lines within a gas!</p>
+
+  </div>
 
   <canvas class="center" id="canvas" height="500" width="750"></canvas> <br>
   <input class="center" id="repeats" type = "number" placeholder="Number of Photons" min="0" max="20" value="15" onchange=""/> 
   <input type="button" onclick="start()" value="Start!" class="center"/>
-  
+   
+
 
   <p id="display"> </p>
 
-  <h2>Use this slider to set the photon energy</h2>
-  <div class="slidecontainer">
-    <input type="range" min="1.6" max="3.5" value="2.5" step="0.1" class="slider" id="myRange">
-    <h2 style="color:lightgreen;">Energy: <span id="energy"></span> eV</h2>
+  <div class="AstrSpectroscopy center" style="background-color:black;">
+
+    <h2>Use this slider to set the photon energy</h2>
+    <div class="slidecontainer">
+      <input type="range" min="1.6" max="3.5" value="2.5" step="0.1" class="slider" id="myRange">
+      <h2 style="color:darkgreen;">Energy: <span id="energy"></span> eV</h2>
+    </div>
+
+    <h2>Results</p>
+
+    <h2 style="color:darkgreen;"><span id="number"></span> <span id="finish"> </span> </h2>
+    <p ><span id="prevNum1"></span> <span id="prev1"></span></p>
+    <p ><span id="prevNum2"></span> <span id="prev2"></span></p>
+    <p ><span id="prevNum3"></span> <span id="prev3"></span></p>
+    <p ><span id="prevNum4"></span> <span id="prev4"></span></p>
+    <p ><span id="prevNum5"></span> <span id="prev5"></span></p>
+    <p ><span id="prevNum6"></span> <span id="prev6"></span></p>
+    <p ><span id="prevNum7"></span> <span id="prev7"></span></p>
+    <p ><span id="prevNum8"></span> <span id="prev8"></span></p>
+    <p ><span id="prevNum9"></span> <span id="prev9"></span></p>
+    <p ><span id="prevNum10"></span> <span id="prev10"></span></p>
+    <p ><span id="prevNum11"></span> <span id="prev11"></span></p>
+    <p ><span id="prevNum12"></span> <span id="prev12"></span></p>
+    <p ><span id="prevNum13"></span> <span id="prev13"></span></p>
+    <p ><span id="prevNum14"></span> <span id="prev14"></span></p>
+    <p ><span id="prevNum15"></span> <span id="prev15"></span></p>
+    <p ><span id="prevNum16"></span> <span id="prev16"></span></p>
+    <p ><span id="prevNum17"></span> <span id="prev17"></span></p>
+    <p ><span id="prevNum18"></span> <span id="prev18"></span></p>
+    <p ><span id="prevNum19"></span> <span id="prev19"></span></p>
+    <p ><span id="prevNum20"></span> <span id="prev20"></span></p>
+
   </div>
-
-  <h2>Results</p>
-
-  <h2 style="color:lightgreen;"><span id="number"></span> <span id="finish"> </span> </h2>
-  <p ><span id="prevNum1"></span> <span id="prev1"></span></p>
-  <p ><span id="prevNum2"></span> <span id="prev2"></span></p>
-  <p ><span id="prevNum3"></span> <span id="prev3"></span></p>
-  <p ><span id="prevNum4"></span> <span id="prev4"></span></p>
-  <p ><span id="prevNum5"></span> <span id="prev5"></span></p>
-  <p ><span id="prevNum6"></span> <span id="prev6"></span></p>
-  <p ><span id="prevNum7"></span> <span id="prev7"></span></p>
-  <p ><span id="prevNum8"></span> <span id="prev8"></span></p>
-  <p ><span id="prevNum9"></span> <span id="prev9"></span></p>
-  <p ><span id="prevNum10"></span> <span id="prev10"></span></p>
-  <p ><span id="prevNum11"></span> <span id="prev11"></span></p>
-  <p ><span id="prevNum12"></span> <span id="prev12"></span></p>
-  <p ><span id="prevNum13"></span> <span id="prev13"></span></p>
-  <p ><span id="prevNum14"></span> <span id="prev14"></span></p>
-  <p ><span id="prevNum15"></span> <span id="prev15"></span></p>
-  <p ><span id="prevNum16"></span> <span id="prev16"></span></p>
-  <p ><span id="prevNum17"></span> <span id="prev17"></span></p>
-  <p ><span id="prevNum18"></span> <span id="prev18"></span></p>
-  <p ><span id="prevNum19"></span> <span id="prev19"></span></p>
-  <p ><span id="prevNum20"></span> <span id="prev20"></span></p>
-
-
-</form>
 
 
 </body>
@@ -209,7 +235,9 @@ input:hover {
       //ctx.stroke();
 
       var WL = wavelengtheVConverter(document.getElementById("energy").innerHTML);
-      var color = wavelengthToColor(WL);      
+      var color = wavelengthToColor(WL);    
+  
+   	 document.getElementById("energy").style.color = color;  
 
       ctx.strokeStyle = color;
       ctx.beginPath();
@@ -310,7 +338,7 @@ input:hover {
     }
 
     function restart() {
-        	if (animation) {
+      if (animation) {
   	  window.cancelAnimationFrame(animation)
 	}
 	number++;
@@ -350,8 +378,17 @@ input:hover {
     var output = document.getElementById("energy");
     output.innerHTML = slider.value;
 
+    var WL = wavelengtheVConverter(document.getElementById("energy").innerHTML);
+    var color = wavelengthToColor(WL);    
+  
+    document.getElementById("energy").style.color = color;
+
     slider.oninput = function() {
       output.innerHTML = this.value;
+      var WL = wavelengtheVConverter(document.getElementById("energy").innerHTML);
+      var color = wavelengthToColor(WL);    
+  
+   	 document.getElementById("energy").style.color = color; 
     }
 
     function wavelengtheVConverter(energy) {

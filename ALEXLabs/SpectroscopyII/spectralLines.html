@@ -12,6 +12,14 @@
 
 <head>
 <style>
+body {
+  background-image:url('Nebula.jpeg');
+  background-size:cover;
+  background-attachment: fixed; 
+  background-size:fill; 
+}
+
+
 * {
   box-sizing:border-box;
 }
@@ -35,7 +43,7 @@ h2 {
 }
 
 p, a {
-  color:lightgreen;
+  color:darkgreen;
 }
 
 input {
@@ -69,6 +77,14 @@ input:hover {
   margin-bottom:5px;
 }
 
+#hidden1 {
+  display:none;
+}
+
+#hidden2 {
+  display:none;
+}
+
 </style>
 
 <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
@@ -90,26 +106,33 @@ input:hover {
 <body>
 
 <div class="body">
-  <h1>Identifying Spectral Lines</h2> 
 
-  <p>In this experiment, we'll look at a mock absorption spectrum for the Sun. Press the button below to see a mock spectrum of the Sun. This spectrum does not contain ALL of the Fraunhofer lines, but it does include some of the most conspicuous ones (namely, most of the capital letter lines)</p>
+  <div class="AstrSpectroscopy center">
+    <h1>Identifying Spectral Lines</h2> 
 
-  <p id="display"> </p>
-  <p id="finished"> </p>
+    <p>In this experiment, we'll look at a mock absorption spectrum for the Sun. Press the button below to see a mock spectrum of the Sun. This spectrum does not contain ALL of the Fraunhofer lines, but it does include some of the most conspicuous ones (namely, most of the capital letter lines)</p>
+
+    <p id="display"> </p>
+    <p id="finished"> </p>
+  </div>
+
   
 
   <div class="desktop">
     <input type="button" onclick="start()" value="Generate Spectrum" class="center"/>
-    <div id="myPlot" class="center"></div>
-    <p id="Cursor"></p>
+    <div class="AstrSpectroscopy center" id="hidden1">
+      <div id="myPlot" class="center"></div>
+      <p id="Cursor"></p>
+    </div>
   </div>
   <div class="mobile">
     <input type="button" onclick="start2()" value="Generate Spectrum" class="center"/>
-    <div id="smallPlot" class="center"></div>
-    <p id="MobileFriendly"> </p>
-    <p id="WLblack"></p>
+    <div class="AstrSpectroscopy center" id="hidden2">
+      <div id="smallPlot" class="center"></div>
+      <p id="MobileFriendly"> </p>
+      <p id="WLblack"></p>
+    </div>
   </div>
-
 </body>
 
 <script> 
@@ -157,6 +180,7 @@ input:hover {
     }
 
     function start2() {
+      document.getElementById("hidden2").style.display = "block";
 	var LinesFull = new Array(Lines.length)
 	for (var i = 0; i < Lines.length; ++i) {
 	  LinesFull.push(Lines[i] - 1);
@@ -173,7 +197,7 @@ input:hover {
     }
    
     function start() {
-
+	  document.getElementById("hidden1").style.display = "block";
         	for (var i = 0; i < wavelengths.length; ++i) {
 	  var WL = wavelengths[i];
        	  WLChecker(WL,Lines);
