@@ -268,6 +268,27 @@ th, td {
   }
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 0.75em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 100px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: gray; 
+}
+
 </style>
 </head>
 </html>

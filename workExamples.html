@@ -42,6 +42,20 @@ td {
   font-size:min(max(14pt, 1.5vw), 16pt);
 }
 
+.ALEXbutton {
+  border: 0.5vw solid darkorange;
+  color:darkorange;
+  background-color:#ffc87c;
+  border-radius:5px;
+  padding:10px;
+  font-size:min(max(16pt, 2vw), 24pt);
+}
+
+.ALEXbutton:hover {
+  color:#ffc87c;
+  background-color:orange;
+}
+
 </style>
 
 <header>
@@ -58,7 +72,6 @@ td {
   <button class = "button biggerButton" onclick="CV()">CV</button>
   <button class = "button biggerButton" onclick="inTheNews()">News</button>
   <button class = "button biggerButton" onclick="books()">Books!</button>
-  <button class = "button biggerButton" onclick="ALEX()">ALEX Labs</button>
 </header>
 
 <body>
@@ -146,6 +159,19 @@ td {
   <div class="mobile">
     <p><a href="./pdfs/AST1022Textbook.pdf" target="_blank">View First Pages of AST textbook</a></p>
   </div>
+
+<h2>ALEX Labs</h2>
+
+  <p> In addition to the Astronomy 1022 lab manual/textbook, during the Spring and Summer of 2022, I implemented new computer lab software into the curriculum. hese labs are inspired by the Contemporary Lab Experiences in Astronomy (CLEA) Labs created by Gettysburg College. Those labs had been in use by the Florida Astronomy department for well over a decade before these labs came along. CLEA labs ceased operations around 2016. In the years following, some of the software became inoperable on UF's Windows 10 machines. <br><br>
+
+  Seeing the writing on the wall, as well as an opportunity to improve upon the formula these original labs had, I took it upon myself to reprogram some of these labs. The intent was to make them "future-proof". To that end, I programmed these labs in HTML/Javascript. The labs are in a more stable place than when I started my TA position for this course. <br><br>
+
+  The labs that I have programmed are <span style="color:blue;">You Can Weigh Jupiter</span> (based on the CLEA lab of the same name), <span style="color:green">Astronomical Spectroscopy II</span> (based on "The Flow Of Energy Out Of The Sun" by CLEA), and <span style="color:crimson">Measuring the Hubble Constant</span> (based on the CLEA lab of the same name). <br><br>
+
+  These labs are hosted here on my website. Click the button below to see them.
+  </p>
+
+  <button class = "ALEXbutton center" onclick="ALEX()">ALEX Labs</button>
 
 </section>
 

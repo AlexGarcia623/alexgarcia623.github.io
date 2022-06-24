@@ -19,6 +19,10 @@ h3 {
   color:steelblue;
 }
 
+p {
+  color:black;
+}
+
 div {
   padding-top:0;
 }
@@ -45,6 +49,37 @@ img {
 
 .row {
   margin:auto;
+}
+
+.bookCurrent {
+  border:1vw orange solid;
+  border-radius:15px;
+  background-color:#ffc87c;
+  width:80%;
+  min-width:40ch;
+  margin-top:10px;
+  padding:15px;
+  max-width:125ch;
+}
+
+.bookRead {
+  border:1vw white solid;
+  border-radius:15px;
+  background-color:lightgray;
+  padding:15px;
+  width:80%;
+  min-width:40ch;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.year {
+  border:1vw blue solid;
+  border-radius:15px;
+  background-color:lightblue;
+  padding:15px;
+  margin-top:10px;
+  margin-bottom:10px;
 }
 </style>
 </head>
@@ -76,7 +111,7 @@ img {
 <body>
 <h1>Currently Reading</h1>
 
-<div class="row">
+<div class="row bookCurrent">
   <div class="column">
     <img src="./books/ADanceWithDragons.jpeg" class="center"></img>
   </div>
@@ -89,11 +124,14 @@ img {
 
 <h1>Recently Read</h1>
 
-<h1 style="color:tomato;">2022</h1>
-<p style="color:white;"><b> My goal for 2022 is to read 19 books, I'm 37% of the way there</b></p>
-<p style="color:white;">As of last update, I have read 4,797 pages this year<p>
+<div class="year">
+  <h1 style="color:tomato;">2022</h1>
+  <p><b> My goal for 2022 is to read 19 books, I'm 37% of the way there</b></p>
+  <p>As of last update, I have read 4,797 pages this year<p>
 
-<div class="row">
+</div>
+
+<div class="row bookRead">
   <div class="column">
     <img src="./books/AFeastForCrows.jpeg" class="center"></img>
   </div>
@@ -104,7 +142,7 @@ img {
   </div>
 </div>
 
-<div class="row">
+<div class="row bookRead">
   <div class="column">
     <img src="./books/AStormOfSwords.jpeg" class="center"></img>
   </div>
@@ -115,7 +153,7 @@ img {
   </div>
 </div>
 
-<div class="row">
+<div class="row bookRead">
   <div class="column">
     <img src="./books/AClashOfKings.jpeg" class="center"></img>
   </div>
@@ -126,7 +164,7 @@ img {
   </div>
 </div>
 
-<div class="row">
+<div class="row bookRead">
   <div class="column">
     <img src="./books/AGameOfThrones.jpeg" class="center"></img>
   </div>
@@ -137,7 +175,7 @@ img {
   </div>
 </div>
 
-<div class="row">
+<div class="row bookRead">
   <div class="column">
     <img src="./books/TheWordIsMurder.jpeg" class="center"></img>
   </div>
@@ -148,7 +186,7 @@ img {
   </div>
 </div>
 
-<div class="row">
+<div class="row bookRead">
   <div class="column">
     <img src="./books/HumblePi.jpeg" class="center"></img>
   </div>
@@ -159,7 +197,7 @@ img {
   </div>
 </div>
 
-<div class="row">
+<div class="row bookRead">
   <div class="column">
     <img src="./books/HitchhikerGuide.jpeg" class="center"></img>
   </div>
@@ -170,9 +208,12 @@ img {
   </div>
 </div>
 
-<h1 style="color:tomato;">2021</h1>
+<div class="year">
+  <h1 style="color:tomato;">2021</h1>
+  <p>During 2021, I read 5 books for a total of 1,628 pages</p>
+</div>
 
-<div class="row">
+<div class="row bookRead">
   <div class="column">
     <img src="./books/EinsteinsDreams.jpeg" class="center"></img>
   </div>
@@ -183,7 +224,7 @@ img {
   </div>
 </div>
 
-<div class="row">
+<div class="row bookRead">
   <div class="column">
     <img src="./books/BraveNewWorld.jpeg" class="center"></img>
   </div>
@@ -195,7 +236,7 @@ img {
 </div>
 
 
-<div class="row">
+<div class="row bookRead">
   <div class="column">
     <img src="./books/AstrophysicsPeopleHurry.jpeg" class="center"></img>
   </div>
@@ -206,7 +247,7 @@ img {
   </div>
 </div>
 
-<div class="row">
+<div class="row bookRead">
   <div class="column">
     <img src="./books/AlgorithmsToLiveBy.jpeg" class="center"></img>
   </div>
@@ -217,7 +258,7 @@ img {
   </div>
 </div>
 
-<div class="row">
+<div class="row bookRead">
   <div class="column">
     <img src="./books/Dune.jpeg" class="center"></img>
   </div>
