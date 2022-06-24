@@ -95,13 +95,11 @@ a:hover {
 
 h1 {
   color:steelblue;
-  font-family:times;
   font-size:min(max(20pt, 3vw), 32pt);
 }
 
 h2 {
   color:tomato;
-  font-family: times;
   font-size:min(max(16pt, 2vw), 24pt);
 }
 
@@ -121,14 +119,10 @@ hr {
 
 input {
   background-color:black;
-  border: 1px solid tomato;
-  color:powderblue;
-  font-size:14pt;
   width:250px;
 }
 
 ::placeholder {
-  font-size:14pt;
   opacity:0.6;
 }
 
@@ -136,133 +130,12 @@ table {
   border: 0px;
 }
 
-th, td {
-  text-align: center;
-  padding: 5px;
-}
-
-/* Dropup Button */
-.dropbtn {
-  background-color:transparent;
-  color: white;
-  padding: min(max(0px, 1.5vw), 14px);
-  font-size: min(max(14pt, 1.5vw), 16pt);
-  border: none;
-}
-
-/* The container <div> - needed to position the dropup content */
-.dropup {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropup content (Hidden by Default) */
-.dropup-content {
-  display: none;
-  position: absolute;
-  bottom: min(max(30px, 2.5vw), 200px);
-  background-color: white;
-  min-width: 160px;
-  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropup */
-.dropup-content a {
-  color: white;
-  padding: min(max(0px, 2vw), 20px);
-  text-decoration: none;
-  font-size:min(max(14pt, 1.5vw), 16pt);
-  display: block;
-}
-
-/* Change color of dropup links on hover */
-.dropup-content a:hover {
-  background-color: white;
-  color:black;
-  transition-duration: 0.4s;
-  border-radius:5px;
-}
-
-/* Show the dropup menu on hover */
-.dropup:hover .dropup-content {
-  display: block;
-  background-color: transparent;
-}
-
-/* Change the background color of the dropup button when the dropup content is shown */
-.dropup:hover .dropbtn {
-  background-color: white;
-  color: black;
-  border-radius:5px;
-  transition-duration: 0.4s;
-}
-
-/* Dropdown Button */
-.dropbtn {
-  background-color:transparent;
-  color: white;
-  padding: min(max(0px, 1.5vw), 14px);
-  font-size: min(max(14pt, 1.5vw), 16pt);
-  border: none;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: white;
-  background-color:black;
-  padding: min(max(0px, 2vw), 20px);
-  text-decoration: none;
-  font-size: min(max(14pt, 1.5vw), 16pt);
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: white;
-  color:black;
-  transition-duration: 0.4s;
-  border-radius:5px;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-  background-color: transparent;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  background-color: white;
-  color: black;
-  border-radius:5px;
-  transition-duration: 0.4s;
-}
-
 @media (max-width: 800px) {
-  /* mobile CSS: hide .desktop div */
   .desktop {
     display: none
   }
 }
 @media (min-width: 800px) {
-  /* desktop CSS: hide .mobile div */
   .mobile {
     display: none
   }

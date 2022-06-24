@@ -52,6 +52,7 @@ td {
 }
 
 .ALEXbutton:hover {
+  transition:0.4s;
   color:#ffc87c;
   background-color:orange;
 }
@@ -60,6 +61,7 @@ td {
 
 <header>
   <title>Alex's Work</title>
+  <div class="containbuttons">
   <button class = "button biggerButton" onclick="home()">Home</button>
   <div class="dropdown">
     <button class="dropbtn" onclick="contactMe()">Contacts</button>
@@ -72,6 +74,7 @@ td {
   <button class = "button biggerButton" onclick="CV()">CV</button>
   <button class = "button biggerButton" onclick="inTheNews()">News</button>
   <button class = "button biggerButton" onclick="books()">Books!</button>
+  </div>
 </header>
 
 <body>
@@ -288,7 +291,7 @@ During the summer before my senior year of undergrad, I aided in creating new wo
 
   <p>My work with Professor Shen was centered on the Sloan Digitial Sky Survey (SDSS) Data Release 16, specifically the quasars. We wanted to analyze and get rid of a lot of the noise on the spectrum of these quasars. This project was an analysis project and more hands-on with coding than my previous experience with Professor Dunne. My small part in this project was to translate an IDL script into Python. The <a href="./ResearchRelated/Project.html" target="_blank">Python Script</a>, shown here in a jupyter notebook, helped filter out this noise and give a much neater spectral emission line.</p>
 
-  <img src="./ResearchRelated/Final_small_range.png" class=center id=wbckgrd height=100% width=80%>
+  <img src="./ResearchRelated/Final_small_range.png" class=center style="background-color:white;" height=100% width=80%>
 </section>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
@@ -324,7 +327,7 @@ var mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";

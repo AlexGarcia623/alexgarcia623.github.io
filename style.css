@@ -11,7 +11,7 @@ p {
 }
 
 body {
-  color:black;
+  color:white;
   background-color:black;
   padding-top:max(60px,2vw);
   padding-bottom:min(120px,3vw);
@@ -45,6 +45,11 @@ div {
   color:white;
 }
 
+button {
+  margin-left:0;
+  margin-right:0;
+}
+
 .button {
   color:white;
   border:none;
@@ -62,7 +67,10 @@ div {
 .button:hover {
   color:black;
   background-color:white;
-  border-radius:5px;
+}
+
+button:not(:hover) {
+  transition:0.4s;
 }
 
 .center {
@@ -71,25 +79,18 @@ div {
   margin-right:auto;
 }
 
-#wbckgrd {
-  background-color:white;
-}
-
 a {
   color:white;
   font-size:min(max(14pt, 1.5vw), 16pt);
 }
 
 a:hover {
-  color:red;
+  color:lightblue;
 }
 
 .body {
   display: in-line block;
   margin-left:10%;
-  margin-right:10%;
-  margin-bottom:5%;
-  margin-top:5%;
 }
 
 h1 {
@@ -160,11 +161,11 @@ th, td {
 .dropup-content {
   display: none;
   position: absolute;
-  bottom: min(max(30px, 2.5vw), 200px);
+  bottom: min(max(39px, 2.75vw), 250px);
   background-color: white;
-  min-width: 160px;
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  border:5px white solid;
 }
 
 /* Links inside the dropup */
@@ -174,6 +175,8 @@ th, td {
   text-decoration: none;
   font-size:min(max(14pt, 1.5vw), 16pt);
   display: block;
+  border:2.5px white solid;
+  background-color:steelblue;
 }
 
 /* Change color of dropup links on hover */
@@ -181,7 +184,10 @@ th, td {
   background-color: white;
   color:black;
   transition-duration: 0.4s;
-  border-radius:5px;
+}
+
+.dropup-content a:not(:hover) {
+  transition-duration:0.4s;
 }
 
 /* Show the dropup menu on hover */
@@ -194,7 +200,6 @@ th, td {
 .dropup:hover .dropbtn {
   background-color: white;
   color: black;
-  border-radius:5px;
   transition-duration: 0.4s;
 }
 
@@ -204,7 +209,6 @@ th, td {
   color: white;
   padding: min(max(0px, 1.5vw), 14px);
   font-size: min(max(14pt, 1.5vw), 16pt);
-  border: none;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -217,10 +221,10 @@ th, td {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  border:5px white solid;
 }
 
 /* Links inside the dropdown */
@@ -231,6 +235,8 @@ th, td {
   text-decoration: none;
   font-size: min(max(14pt, 1.5vw), 16pt);
   display: block;
+  border:2.5px white solid;
+  background-color:steelblue;
 }
 
 /* Change color of dropdown links on hover */
@@ -238,7 +244,10 @@ th, td {
   background-color: white;
   color:black;
   transition-duration: 0.4s;
-  border-radius:5px;
+}
+
+.dropdown-content a:not(:hover) {
+  transition-duration:0.4s;
 }
 
 /* Show the dropdown menu on hover */
@@ -251,7 +260,6 @@ th, td {
 .dropdown:hover .dropbtn {
   background-color: white;
   color: black;
-  border-radius:5px;
   transition-duration: 0.4s;
 }
 
@@ -288,6 +296,13 @@ th, td {
 ::-webkit-scrollbar-thumb:hover {
   background: gray; 
 }
+
+.containbuttons {
+  border:5px white solid;
+  margin-bottom:25px;
+  background-color:steelblue;
+}
+
 
 </style>
 </head>
