@@ -73,7 +73,7 @@ h2 {
 canvas {
   background-color:black;
   border-radius:25px;
-  width:60%;
+  width:80%;
 }
 
 .slidecontainer {
@@ -82,10 +82,10 @@ canvas {
 
 .slider {
   -webkit-appearance: none;
-  border: 2px darkgreen solid;
+  border: 2px black solid;
   width: 100%;
   height: 25px;
-  background: lightgreen;
+  background: darkblue;
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
@@ -94,8 +94,8 @@ canvas {
 
 .slider:hover {
   opacity: 1;
-  background:darkgreen;
-  border: 2px lightgreen solid;
+  background:darkblue;
+  border: 2px lightblue solid;
 }
 
 .slider::-webkit-slider-thumb {
@@ -105,11 +105,24 @@ canvas {
   height: 25px;
   cursor: pointer;
   background:white;
+  border: 2px black solid;
+  border-radius:5px;
 }
 
 .slider::-moz-range-thumb {
   width: 35px;
   height: 35px;
+}
+
+.WeighJupiter {
+  color:darkblue;
+  border: 1vw solid darkblue;
+  background-color:powderblue;
+  border-radius:5px;
+  padding:25px;
+  margin-top:10px;
+  margin-bottom:10px;
+  max-width:90ch;
 }
 
 </style>
@@ -127,25 +140,31 @@ function reselectMoon() {
 </head>
 
 <header>
+<title>Continuous Orbits</title>
 <button class = "button biggerButton" onclick="backButton()">Main Menu</button>
-<button class = "button biggerButton" onclick="reselectMoon()">Reselect Moon</button>
+<button class = "button biggerButton" onclick="reselectMoon()">Back</button>
 </header>
 
 <body>
-<form name = "converter">
 <div class="body">
+
+  <div class="WeighJupiter center">
 
   <div class="slidecontainer" id="TimestepControl">
 
-    <h2 style="color:darkgreen;">Number of Hours: <span id="desired"></span></h2>
+    <h2 style="display:none;">Number of Hours: <span id="desired"></span></h2>
   </div>
 
   <div class="slidecontainer" id="ZoomControl">
-    <h2 style="color:darkgreen;">Zoom <span id="zoom"></span></h2>
+    <h2>Zoom <span id="zoom"></span></h2>
     <input type="range" min="2.5" max="5" value="5" step="0.5" class="slider" id="zoomRange">
+  </div>
+
   </div>
  
   <canvas id="canvas" class="center" width="600" height="400"></canvas> <br>
+
+  <div class="WeighJupiter center">
 
   <h2>Time elapsed: <span id="demo">0</span> Hours <span id="counter" style="opacity:0;">0</span></h2>
 
@@ -154,6 +173,22 @@ function reselectMoon() {
   <input type="button" onclick="startAnimation()" class="FoB" value="Start Animation"/>
   <input type="button" onclick="stopAnimation()" class="FoB" value="Stop Animation"/>
  
+  </div>
+
+  <button onclick="whichIsWhich()" id="myBtn" title="Moon Guide">Moon Guide</button>
+
+  <div class="modal" id="myModal">
+
+    <div class="modal-content">
+
+      <p><span style="color:orange;">Io is Orange</span><br><span style="color:red">Europa is red</span><br><span style="color:green;">Ganymede is Green</span><br><span style="color:blue">Callisto is Blue</span></p>
+
+      <p style="color:black;">Click anywhere outside this box to exit</p>
+
+    </div>
+
+  </div>
+
   <p><span id="imageWidth"></span> <span id="imageWidth2"></span> <span id="imageWidth3"></span></p>
 
 <script>
@@ -175,7 +210,7 @@ var output = document.getElementById("desired");
 output.innerHTML = 1;
 
 var TIMING = TIME_PER_FRAME; // Default to individual frames
-var DESIRED_TIME = 1; // Get desired number of hours from slider
+var DESIRED_TIME = 0.75; // Get desired number of hours from slider
 var NUM_ITER = Math.round(DESIRED_TIME / TIME_PER_FRAME); // how many frames to advance by
 
 //slider.oninput = function() {
@@ -186,10 +221,10 @@ var NUM_ITER = Math.round(DESIRED_TIME / TIME_PER_FRAME); // how many frames to 
 
 var slider2 = document.getElementById("zoomRange");
 var output2 = document.getElementById("zoom");
-output2.innerHTML = String( 600 / parseFloat(slider2.value) ) + "x";
+output2.innerHTML = String( parseInt( 600 / parseFloat(slider2.value) ) ) + "x";
 
 slider2.oninput = function() {
-  output2.innerHTML = String( 600 / parseFloat(slider2.value) ) + "x";
+  output2.innerHTML = String( parseInt( 600 / parseFloat(slider2.value) ) ) + "x";
   SCALE = parseFloat(slider2.value);
   changeScale();
 }
@@ -222,8 +257,8 @@ function Next() {
     start = diff;
   }
   startString = String(start);
-  var time_so_far = parseInt(document.getElementById("demo").innerHTML);
-  document.getElementById("demo").innerHTML = time_so_far + DESIRED_TIME;
+  var time_so_far = parseFloat(document.getElementById("demo").innerHTML);
+  document.getElementById("demo").innerHTML = (time_so_far + DESIRED_TIME).toFixed(1);
   animate();
 
 }
@@ -292,7 +327,7 @@ function drawMoonsInit(y,h) {
     }
 
     // IO
-    context.strokeStyle = 'white';
+    context.strokeStyle = 'orange';
     context.beginPath();
     context.lineWidth = 2.5;
     var I = calcIoPos(JupiterWidth);
@@ -433,11 +468,59 @@ function calcCallistoPos(JW) {
   y = a * Math.sin( (2 * Math.PI) * time/CALLISTO_PERIOD );
   return [x,y];
 }
+window.onclick = function(event) {
+ if (event.target == document.getElementById("myModal")) {
+    document.getElementById("myModal").style.display = "none"
+  }
+}
 
+function whichIsWhich() {
+  document.getElementById("myModal").style.display = "block";
+}
 </script>  
 
-</form>
+<style>
+#myBtn {
+  position: fixed;
+  bottom: 10px;
+  right: 30px;
+  font-size: min(max(16pt, 2vw), 24pt);
+  border: none;
+  outline: none;
+  padding: 15px;
+  border-radius: 4px;
+}
 
+#myBtn:hover {
+  transition-duration:0.4s;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden; 
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: lightgray;
+  border-radius:5px;
+  margin: auto;
+  padding: 20px;
+  border: 1vw solid white;
+  width: 40%;
+  opacity:0.75;
+}
+</style>
 
 </body>
 

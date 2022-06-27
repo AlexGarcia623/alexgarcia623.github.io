@@ -45,7 +45,7 @@ h2 {
 }
 
 p {
-  color:blue;
+  color:black;
 }
 
 input:hover {
@@ -68,7 +68,6 @@ img {
 .imgButton {
   border-radius:25px;
   background:black;
-  cursor:pointer;
   min-width:40ch;
   width:50%;
 }
@@ -94,6 +93,29 @@ img:not(:hover) {
   max-width:90ch;
 }
 
+input {
+  background-color:powderblue;
+  border: 0.05vw solid darkblue;
+  border-radius:16px;
+  color:darkblue;
+  padding:1.5vw;
+  font-size:min(max(16pt, 2vw), 24pt);
+}
+
+input:hover {
+  transition:0.5s;
+  transform:scale(1.1);
+  background-color:darkblue;
+  color:powderblue;
+}
+
+input:not(:hover) {
+  transition:0.5s;
+  transform:scale(1);
+  border: 0.05vw solid darkblue;
+  color:darkblue;
+}
+
 </style>
 
 <script>
@@ -105,6 +127,7 @@ function backButton() {
 </head>
 
 <header>
+<title>Meet the Moons</title>
 <button class = "button biggerButton" onclick="backButton()">Main Menu</button>
 </header>
 <body>
@@ -112,10 +135,9 @@ function backButton() {
 
   <div class="WeighJupiter center">
 
-  <h2>Moon Selector </h2> 
+  <h2>Meet the Moons</h2> 
 
   <p>These four moons (Io, Europa, Ganymede, and Callisto) are collectively known as the "Galilean Moons" after Galileo Galilei who discovered them in 1610. Each of the four moons are named after lovers of Jupiter, the king of the Roman gods (Zeus in Greek mythology). <br><br>
-  To begin taking data, just click on the picture of the desired moon.
   </p>
 
   </div>
@@ -126,14 +148,18 @@ function backButton() {
 
   <p>The closest Galilean moon to Jupiter, Io is one of the most volcanically active places in the entire solar system. The reason it is so volcanic there is because of tidal pulling from Jupiter, as well as the other Galilean moons. Io is just slightly larger than the Earth's moon, making it the fourth largest in the solar system. </p>
 
-  <button onclick="Io1()" class="imgButton center" width=50%><img src="./Jupiter/MoonImages/IoImage.jpeg"/></button>
+  <button onclick="" class="imgButton center" width=50%><img src="./Jupiter/MoonImages/IoImage.jpeg"/></button>
+
+  <p style="color:orange">Io will be represented as Orange</p>
   </div>
   <div class="WeighJupiter center">
   <h2>Europa</h2>
 
   <p>Europa is the smallest Galilean moon, but is still the sixth largest in the solar system. Europa has a water-ice crust. It is believed that beneath this crust lies a vast underground ocean of liquid water.</p>
 
-  <button onclick="Europa1()" class="imgButton center" width=50%><img src="./Jupiter/MoonImages/EuropaImage.jpeg"/></button>
+  <button onclick="" class="imgButton center" width=50%><img src="./Jupiter/MoonImages/EuropaImage.jpeg"/></button>
+
+  <p style="color:red">Europa will be represented as Red</p>
 
   </div>
   <div class="WeighJupiter center">
@@ -141,34 +167,36 @@ function backButton() {
 
   <p>The next Galilean moon, Ganymede, is actually the ninth largest object in the entire solar system (i.e. the largest non-solar, non-planet object)! In fact, this moon is 26% larger <em>by volume</em> than Mercury, though it is much less dense and therefore less massive. </p>
 
-  <button onclick="Ganymede1()" class="imgButton center" width=50%><img src="./Jupiter/MoonImages/GanymedeImage.jpeg"/></button>
+  <button onclick="" class="imgButton center" width=50%><img src="./Jupiter/MoonImages/GanymedeImage.jpeg"/></button>
+  
+  <p style="color:green">Ganymede will be represented as Green</p>
+
   </div>
   <div class="WeighJupiter center">
   <h2>Callisto</h2>
 
   <p>The final Galilean moon is Callisto. Callisto is the second largest moon of Jupiter. It is also the least dense moon of Jupiter, being composed of rocks and ice. </p>
 
-  <button onclick="Callisto1();" class="imgButton center" width=50%><img src="./Jupiter/MoonImages/CallistoImage.jpeg"/></button>
+  <button onclick="" class="imgButton center" width=50%><img src="./Jupiter/MoonImages/CallistoImage.jpeg"/></button>
   
+  <p style="color:blue">Callisto will be represented as Blue</p>
+
   </div>
 
+  <input type="button" onclick="start()" value="Start!" class="center"/> <br>
+
+  <input type="button" onclick="continuous()" value="Continuous" class="center"/>
+
   <p style="color:powderblue;">All image credits: NASA </p>
+
 <script>
 
-function Io1() {
-  window.open("IoConfig1.html","_self");
+function start() {
+  window.open("allMoons.html","_self");
 }
 
-function Europa1() {
-  window.open("EuropaConfig1.html","_self");
-}
-
-function Ganymede1() {
-  window.open("GanymedeConfig1.html","_self");
-}
-
-function Callisto1() {
-  window.open("CallistoConfig1.html","_self");
+function continuous() {
+  window.open("Continuous.html","_self");
 }
 </script>
 
