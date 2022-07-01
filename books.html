@@ -28,9 +28,12 @@ div {
 }
 
 img {
-  min-width:130px;
-  width:40%;
-  height:40%;
+  width:75%;
+  aspect-ratio:1/1.5;
+  border: 3px solid white;
+  border-radius: 5px;
+  min-width:15ch;
+  max-width:35ch;
 }
 
 /* Create two equal columns that floats next to each other */
@@ -38,7 +41,6 @@ img {
   float: left;
   width: 50%;
   height: auto;
-  padding:10px;
 }
 
 /* Clear floats after the columns */
@@ -50,6 +52,16 @@ img {
 
 .row {
   margin:auto;
+}
+
+/*Thanks to Kevin Powell on YouTube! */
+.grid-ish {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.grid-ish > * {
+  flex: 1 0 50%;
 }
 
 .bookCurrent {
@@ -80,6 +92,9 @@ img {
   margin-top:10px;
   margin-bottom:10px;
 }
+
+
+
 </style>
 </head>
 
@@ -112,11 +127,11 @@ img {
 <body>
 <h1>Currently Reading</h1>
 
-<div class="row bookCurrent">
-  <div class="column">
-    <img src="./books/ADanceWithDragons.jpeg" class="center"></img>
+<div class="grid-ish bookCurrent center">
+  <div class="col">
+    <img src="./books/ADanceWithDragons.jpeg" class="center" style="border:3px solid orange;"></img>
   </div>
-  <div class="column">
+  <div class="col">
     <h2>A Dance with Dragons</h2>
     <h3>George R.R. Martin</h3>
     <p>Started: June 2022</p>
@@ -132,77 +147,77 @@ img {
 
 </div>
 
-<div class="row bookRead">
-  <div class="column">
+<div class="grid-ish bookRead center">
+  <div class="col">
     <img src="./books/AFeastForCrows.jpeg" class="center"></img>
   </div>
-  <div class="column">
+  <div class="col">
     <h2>A Feast for Crows</h2>
     <h3>George R.R. Martin</h3>
     <p>Finished: June 2022</p>
   </div>
 </div>
 
-<div class="row bookRead">
-  <div class="column">
+<div class="grid-ish bookRead center">
+  <div class="col">
     <img src="./books/AStormOfSwords.jpeg" class="center"></img>
   </div>
-  <div class="column">
+  <div class="col">
     <h2>A Storm Of Swords</h2>
     <h3>George R.R. Martin</h3>
     <p>Finished: May 2022</p>
   </div>
 </div>
 
-<div class="row bookRead">
-  <div class="column">
+<div class="grid-ish bookRead center">
+  <div class="col">
     <img src="./books/AClashOfKings.jpeg" class="center"></img>
   </div>
-  <div class="column">
+  <div class="col">
     <h2>A Clash Of Kings</h2>
     <h3>George R.R. Martin</h3>
     <p>Finished: April 2022</p>
   </div>
 </div>
 
-<div class="row bookRead">
-  <div class="column">
+<div class="grid-ish bookRead center">
+  <div class="col">
     <img src="./books/AGameOfThrones.jpeg" class="center"></img>
   </div>
-  <div class="column">
+  <div class="col">
     <h2>A Game Of Thrones</h2>
     <h3>George R.R. Martin</h3>
     <p>Read: March 2022</p>
   </div>
 </div>
 
-<div class="row bookRead">
-  <div class="column">
+<div class="grid-ish bookRead center">
+  <div class="col">
     <img src="./books/TheWordIsMurder.jpeg" class="center"></img>
   </div>
-  <div class="column">
+  <div class="col">
     <h2>The Word Is Murder</h2>
     <h3>Anthony Horowitz</h3>
     <p>Read: January 2022</p>
   </div>
 </div>
 
-<div class="row bookRead">
-  <div class="column">
+<div class="grid-ish bookRead center">
+  <div class="col">
     <img src="./books/HumblePi.jpeg" class="center"></img>
   </div>
-  <div class="column">
+  <div class="col">
     <h2>Humble Pi: When Math Goes Wrong<br> in the Real World</h2>
     <h3>Matt Parker</h3>
     <p>Read: January 2022</p>
   </div>
 </div>
 
-<div class="row bookRead">
-  <div class="column">
+<div class="grid-ish bookRead center">
+  <div class="col">
     <img src="./books/HitchhikerGuide.jpeg" class="center"></img>
   </div>
-  <div class="column">
+  <div class="col">
     <h2>The Hitchhiker's Guide to the Galaxy</h2>
     <h3>Douglas Adams</h3>
     <p>Read: January 2022</p>
@@ -214,22 +229,22 @@ img {
   <p>During 2021, I read 5 books for a total of 1,628 pages</p>
 </div>
 
-<div class="row bookRead">
-  <div class="column">
+<div class="grid-ish bookRead center">
+  <div class="col">
     <img src="./books/EinsteinsDreams.jpeg" class="center"></img>
   </div>
-  <div class="column">
+  <div class="col">
     <h2>Einstein's Dreams</h2>
     <h3>Alan Lightman</h3>
     <p>Read: December 2021</p>
   </div>
 </div>
 
-<div class="row bookRead">
-  <div class="column">
+<div class="grid-ish bookRead center">
+  <div class="col">
     <img src="./books/BraveNewWorld.jpeg" class="center"></img>
   </div>
-  <div class="column">
+  <div class="col">
     <h2>Brave New World</h2>
     <h3>Aldous Huxley</h3>
     <p>Read: December 2021</p>
@@ -237,33 +252,33 @@ img {
 </div>
 
 
-<div class="row bookRead">
-  <div class="column">
+<div class="grid-ish bookRead center">
+  <div class="col">
     <img src="./books/AstrophysicsPeopleHurry.jpeg" class="center"></img>
   </div>
-  <div class="column">
+  <div class="col">
     <h2>Astrophysics for People in a Hurry</h2>
     <h3>Neil DeGrasse Tyson</h3>
     <p>Read: December 2021</p>
   </div>
 </div>
 
-<div class="row bookRead">
-  <div class="column">
+<div class="grid-ish bookRead center">
+  <div class="col">
     <img src="./books/AlgorithmsToLiveBy.jpeg" class="center"></img>
   </div>
-  <div class="column">
+  <div class="col">
     <h2>Algorithms to Live By:<br> The Computer Science of Human Decisions</h2>
     <h3>Brian Christan & Tom Griffiths</h3>
     <p>Read: December 2021</p>
   </div>
 </div>
 
-<div class="row bookRead">
-  <div class="column">
+<div class="grid-ish bookRead center">
+  <div class="col">
     <img src="./books/Dune.jpeg" class="center"></img>
   </div>
-  <div class="column">
+  <div class="col">
     <h2>Dune</h2>
     <h3>Frank Herbert</h3>
     <p>Read: November 2021</p>
