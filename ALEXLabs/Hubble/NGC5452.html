@@ -207,9 +207,12 @@ function backButton() {
       <p id="loading"></p>
       <p id="SpectrumDone"></p>
 
+      <p>The apparent magnitude of NGC 5452 is: <span id="AppMag"></span> </p>
+
       <div id="myPlot"></div>
 
       <p>Click anywhere outside this box to exit</p>
+      <p id = "clickLocation"></p>
     </div>
   </div>
 
@@ -233,6 +236,11 @@ function addNoise() {
 
 var CALCIUM_H = 3969;
 var CALCIUM_K = 3934;
+
+var APP_MAG = 13.2;
+var DIST    = 33.0; //Mpc
+
+document.getElementById("AppMag").innerHTML = APP_MAG;
 
 var TRUE_REDSHIFT = 0.006891; //NGC_5452
 
@@ -316,14 +324,14 @@ function buttonPress() {
 function generateSpectrum() {
   for (var i = 3900; i < 4901; ++i) {
     lambdaArr[i-3000] = i;
-    fluxArr[i-3000] = i/4900 - generateGaussian(0.075,0.075)/Math.sqrt(noise);
+    fluxArr[i-3000] = i/4900 - generateGaussian(DIST/250,DIST/500)/Math.sqrt(noise);
   }
 
   for (var i = 0; i < 3000*Math.sqrt(noise); ++i) {
     var index = lambdaArr.indexOf(Math.round(generateGaussian(CALCIUM_H_REDSHIFTED,4)));  
-    fluxArr[index] = fluxArr[index] - 0.0001;
+    fluxArr[index] = fluxArr[index] - 0.0001*CLICK_FROM_CENTER;
     var index = lambdaArr.indexOf(Math.round(generateGaussian(CALCIUM_K_REDSHIFTED,4)));  
-    fluxArr[index] = fluxArr[index] - 0.0001;
+    fluxArr[index] = fluxArr[index] - 0.0001*CLICK_FROM_CENTER;
   }
   trace1 = {x:lambdaArr,y:fluxArr,marker:{color:'rgb(219, 64, 82)'}};
 
@@ -367,6 +375,33 @@ window.onclick = function(event) {
  if (event.target == modal) {
     modal.style.display = "none"
   }
+}
+
+document.getElementById("theImage").addEventListener('click', printMousePos, true);
+
+function printMousePos(e){
+  var image = document.getElementById("theImage");
+  var rect = image.getBoundingClientRect();
+  var xHalfWidth = image.clientWidth/2 + rect.left;
+  var top  = window.pageYOffset //|| document.documentElement.scrollTop
+  var yHalfWidth = image.clientHeight/2 + (rect.top + top);
+  var cursorX = e.pageX - xHalfWidth;
+  var cursorY = e.pageY - yHalfWidth;
+
+  var dist_from_gal = (cursorX ** 2 + cursorY**2) ** (0.5);
+
+  //document.getElementById("clickLocation").innerHTML = cursorX + " " + cursorY;
+
+  if (dist_from_gal < 10) {
+    CLICK_FROM_CENTER = 1;
+  } else if (dist_from_gal < 40) {
+    CLICK_FROM_CENTER = 0.85;
+  } else if (dist_from_gal < 100) {
+    CLICK_FROM_CENTER = 0.5;
+  } else {
+    CLICK_FROM_CENTER = 0.1;
+  }
+
 }
 
 Plotly.newPlot("myPlot", data, layout, config)

@@ -190,7 +190,6 @@ function backButton() {
 </header>
 
 <body>
-<form name = "converter" onsubmit="return false">
 <div class="body">
 
   <div class="HubbleConstant center">
@@ -207,13 +206,16 @@ function backButton() {
       <p id="loading"></p>
       <p id="SpectrumDone"></p>
 
+	<p>The apparent magnitude of NGC 1260 is: <span id="AppMag"></span> </p>
+
       <div id="myPlot" style="width:100%;padding-left:0;padding-right:0%;"></div>
+      <p>Click anywhere outside this box to exit</p>
+      <p id = "clickLocation"></p>
     </div>
   </div>
 
   <p style="color:#ffa07a;">Image Credit: <a href="https://en.wikipedia.org/wiki/NGC_1260#/media/File:NGC_1260-HST10877_38R814GB555.png" style="color:#ffa07a;">Wikipedia</a> via <a href="https://commons.wikimedia.org/wiki/User:Fabian_RRRR" style="color:#ffa07a;">Fabian RRRR</a></p>
 
-</form>
 
 
 </body>
@@ -238,6 +240,13 @@ function addNoise() {
 
 var CALCIUM_H = 3969;
 var CALCIUM_K = 3934;
+
+var APP_MAG = 14.3;
+var DIST    = 76.7; //Mpc
+
+var CLICK_FROM_CENTER = 1;
+
+document.getElementById('AppMag').innerHTML = APP_MAG;
 
 var TRUE_REDSHIFT = 0.01919; //NGC_1260
 
@@ -321,14 +330,14 @@ function buttonPress() {
 function generateSpectrum() {
   for (var i = 3900; i < 4901; ++i) {
     lambdaArr[i-3000] = i;
-    fluxArr[i-3000] = i/4900 - generateGaussian(0.075,0.075)/Math.sqrt(noise);
+    fluxArr[i-3000] = i/4900 - generateGaussian(DIST/500,DIST/750)/Math.sqrt(noise);
   }
 
   for (var i = 0; i < 3000*Math.sqrt(noise); ++i) {
     var index = lambdaArr.indexOf(Math.round(generateGaussian(CALCIUM_H_REDSHIFTED,4)));  
-    fluxArr[index] = fluxArr[index] - 0.0001;
+    fluxArr[index] = fluxArr[index] - 0.0001*CLICK_FROM_CENTER;
     var index = lambdaArr.indexOf(Math.round(generateGaussian(CALCIUM_K_REDSHIFTED,4)));  
-    fluxArr[index] = fluxArr[index] - 0.0001;
+    fluxArr[index] = fluxArr[index] - 0.0001*CLICK_FROM_CENTER;
   }
   trace1 = {x:lambdaArr,y:fluxArr,marker:{color:'rgb(219, 64, 82)'}};
 
@@ -350,28 +359,35 @@ function sleep(milliseconds) {
   } while (currentDate - date < milliseconds);
 }
 
-function loading(milliseconds) {
-    var counter = 0;
-    if (counter == 0) {
-      document.getElementById("SpectrumDone").innerHTML = "Generating Spectrum ."
-      sleep(milliseconds/noise);
-    } else if (counter == 1) {
-      document.getElementById("SpectrumDone").innerHTML = "Generating Spectrum . ."
-      sleep(milliseconds/noise);
-    } else if (counter == 2) {
-      document.getElementById("SpectrumDone").innerHTML = "Generating Spectrum . . ."
-      sleep(milliseconds/noise);
-    }
-    counter = counter + 1;
-    if (counter == 3) {
-      counter = 0;
-    }
-}
-
 window.onclick = function(event) {
  if (event.target == modal) {
     modal.style.display = "none"
   }
+}
+
+document.getElementById("theImage").addEventListener('click', printMousePos, true);
+
+function printMousePos(e){
+  var image = document.getElementById("theImage");
+  var rect = image.getBoundingClientRect();
+  var xHalfWidth = image.clientWidth/2 + rect.left;
+  var top  = window.pageYOffset //|| document.documentElement.scrollTop
+  var yHalfWidth = image.clientHeight/2 + (rect.top + top);
+  var cursorX = e.pageX - xHalfWidth*0.95;
+  var cursorY = e.pageY - yHalfWidth*1.025;
+
+  var dist_from_gal = (cursorX ** 2 + cursorY**2) ** (0.5);
+
+  if (dist_from_gal < 10) {
+    CLICK_FROM_CENTER = 1;
+  } else if (dist_from_gal < 40) {
+    CLICK_FROM_CENTER = 0.5;
+  } else if (dist_from_gal < 100) {
+    CLICK_FROM_CENTER = 0.2;
+  } else {
+    CLICK_FROM_CENTER = 0.0;
+  }
+
 }
 
 Plotly.newPlot("myPlot", data, layout, config)
