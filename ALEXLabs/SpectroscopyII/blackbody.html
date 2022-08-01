@@ -200,14 +200,18 @@ input:hover::placeholder {
       bargap:0,
       xaxis: {
         tickcolor: "white",
-        tickfont: {color:"white"}
+        tickfont: {color:"white"},
+        title: "Wavelength (nm)",
+        titlefont: {color:"white"},
+        tickvals:[1e-7,2e-7,3e-7,4e-7,5e-7,6e-7,7e-7,8e-7,9e-7,10e-7],
+        ticktext:[100,200,300,400,500,600,700,800,900,1000]
       },
     }
  
     var config = {
       modeBarButtonsToRemove: ['pan2d','lasso2d','select2d','autoScale2d','toImage','zoom2d','resetScale2d','zoomIn2d','zoomOut2d'],
       responsive:true,
-      displaylogo:false
+      displaylogo:false,
     }
     function TfromLM(LambdaMax) {
       LambdaMax = LambdaMax * 1e-9;
@@ -260,6 +264,8 @@ input:hover::placeholder {
       p2 = planck(p2,parseInt(output.innerHTML));
       p2 = pNorm(p2,10);
    
+      newlamArr = lamArr * 1e9
+
       var trace1 = {
         x:lamArr,
         y:p2,

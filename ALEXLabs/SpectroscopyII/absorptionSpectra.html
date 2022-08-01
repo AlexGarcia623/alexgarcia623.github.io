@@ -175,7 +175,7 @@ select:not(:hover) {
   </div>
 
   <canvas class="center" id="canvas" height="500" width="750"></canvas> <br>
-  <input class="center" id="repeats" type = "number" placeholder="# Photons" min="0" max="20" onchange=""/> 
+  <input class="center" id="repeats" type = "number" placeholder="# Photons" min="0" max="20"/> 
   <input type="button" onclick="start()" value="Start!" class="center"/>
    
 
@@ -229,7 +229,7 @@ select:not(:hover) {
     var number = 1;
     var wavelength = 0; 
     var animation = false;
-    var sleeptime = 5000;
+    var sleeptime = 1000;
     var theta = 0;
 
     var options = document.getElementById('whichGas').selectedOptions;
@@ -298,7 +298,7 @@ select:not(:hover) {
       var WL = wavelengtheVConverter(document.getElementById("energy").innerHTML);
       var color = wavelengthToColor(WL);    
   
-   	document.getElementById("energy").style.color = color;  
+      document.getElementById("energy").style.color = color;  
 
       ctx.strokeStyle = color;
       ctx.beginPath();
@@ -307,9 +307,11 @@ select:not(:hover) {
       var pertx = 0;
       var perty = 0;
 
+      var repeats = parseInt(document.getElementById("repeats").value)
+
       if (y > 300 || y < 100) {
-        pertx = 4 * Math.sin(theta);
-        perty = -4 * Math.abs( 2 * Math.cos(theta) );
+        pertx = 8 * Math.sin(theta);
+        perty = -8 * Math.abs( Math.cos(theta) );
         ctx.strokeStyle = color;
         ctx.lineWidth = 2;
         ctx.lineTo(x+pertx, y+perty);
@@ -317,7 +319,7 @@ select:not(:hover) {
         animation = window.requestAnimationFrame(draw);
         x += pertx;
         y += perty;
-        if (y < 25) {
+        if (y < 30) {
           var np1 = number + 1;
           document.getElementById("number").innerHTML = np1 + ".";
           if (x > 235 && x < 515) {
@@ -325,14 +327,15 @@ select:not(:hover) {
           } else {
             document.getElementById("finish").innerHTML = "No Photon Observed";
           }
-          if (number < parseInt(document.getElementById("repeats").value) - 1) {
+          if (number < repeats - 1) {
             sleep(sleeptime);
             restart();
           }
+          return;
         }
       } else {
-        pertx = 2 * Math.sin(theta);
-        perty = -2 * Math.abs( 2 * Math.cos(theta) );
+        pertx = 4 * Math.sin(theta);
+        perty = -4 * Math.abs( 2 * Math.cos(theta) );
         ctx.strokeStyle = color;//"#000000";
         ctx.lineWidth = 2;
         ctx.lineTo(x+pertx, y+perty);
@@ -355,7 +358,17 @@ select:not(:hover) {
           var np1 = number + 1;
           document.getElementById("number").innerHTML = np1 + ".";
           document.getElementById("finish").innerHTML = "No Photon Observed";
-          if (number < parseInt(document.getElementById("repeats").value) - 1) {
+          if (number < repeats - 1) {
+            sleep(sleeptime);
+          restart();
+          } else {
+            return;
+          }
+        } else if (x + pertx < 0 || x - pertx > 750) {
+          var np1 = number + 1;
+          document.getElementById("number").innerHTML = np1 + ".";
+          document.getElementById("finish").innerHTML = "No Photon Observed";
+          if (number < repeats - 1) {
             sleep(sleeptime);
           restart();
           } else {
@@ -459,9 +472,12 @@ select:not(:hover) {
       var color = wavelengthToColor(WL);    
   
    	 document.getElementById("energy").style.color = color; 
-       document.getElementById("contain1").style.borderColor = color;
+	 document.getElementById("contain1").style.borderColor = color;
  	 document.getElementById("contain2").style.borderColor = color;
     }
+
+    var repeatInput = document.getElementById("repeats")
+    repeatInput.onchange = function() {start();}
 
     function wavelengtheVConverter(energy) {
       h = 6.626e-34;
