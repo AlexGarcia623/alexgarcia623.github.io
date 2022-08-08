@@ -6,12 +6,12 @@
 <head>
 <style>
 p {
-  color:white;
+  color:black;
   font-size: min(max(14pt, 1.5vw), 16pt);
 }
 
 body {
-  color:white;
+  color:black;
   background-color:black;
   padding-top:max(60px,2vw);
   padding-bottom:min(120px,3vw);
@@ -80,12 +80,12 @@ button:not(:hover) {
 }
 
 a {
-  color:white;
+  color:steelblue;
   font-size:min(max(14pt, 1.5vw), 16pt);
 }
 
 a:hover {
-  color:lightblue;
+  color:white;
 }
 
 .body {
@@ -96,6 +96,7 @@ a:hover {
 h1 {
   color:steelblue;
   font-family:times;
+  text-align:center;
   font-size:min(max(20pt, 3vw), 32pt);
 }
 
@@ -103,6 +104,7 @@ h2 {
   color:tomato;
   font-family: times;
   font-size:min(max(16pt, 2vw), 24pt);
+  text-align:center;
 }
 
 h3 {
@@ -304,6 +306,18 @@ th, td {
   background-color:steelblue;
 }
 
+section {
+  border:1vw white solid;
+  border-radius:15px;
+  background-color:lightgray;
+  padding:15px;
+  width:80%;
+  margin-top:10px;
+  margin-bottom:10px;
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+}
 
 </style>
 </head>

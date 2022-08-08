@@ -7,8 +7,13 @@
 <script src="https://kit.fontawesome.com/b502caab12.js" crossorigin="anonymous"></script>
 
 <style>
+:root {
+  --text-color:black;
+  --inv-text-color:white;
+}
+
 body {
-  color:white;
+  margin:0 5% 0 5%;
 }
 
 .column3 {
@@ -43,6 +48,35 @@ td {
   font-size:min(max(14pt, 1.5vw), 16pt);
 }
 
+th, td {
+  color: var(--text-color);
+}
+
+h1, h2 {
+  text-align:center;
+}
+
+p {
+  color: var(--text-color);
+}
+
+ul, li {
+  color: var(--text-color);
+}
+
+a {
+  color:steelblue;
+}
+
+h3 {
+  color: var(--text-color);
+  font-size:min(max(14pt, 2vw), 22pt);
+}
+
+a:hover {
+  color:white;
+}
+
 .ALEXbutton {
   border: 0.5vw solid darkorange;
   color:darkorange;
@@ -56,6 +90,65 @@ td {
   transition:0.4s;
   color:#ffc87c;
   background-color:orange;
+}
+
+section {
+  border:1vw white solid;
+  border-radius:15px;
+  background-color:lightgray;
+  padding:15px;
+  width:80%;
+  margin-top:10px;
+  margin-bottom:10px;
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+table {
+  border:0.5vw steelblue solid;
+  border-radius:15px;
+  background-color: lightblue;
+}
+
+.publication {
+  border: 0.5vw steelblue solid;
+  border-radius:15px;
+  background-color:lightblue;
+  padding:15px;
+  margin:10px 0 10px 0;
+}
+
+.abstractButton {
+  font-size:min(max(14pt, 1.5vw), 16pt);
+  padding:5px;
+  background-color:white;
+  border:0px white solid;
+  border-radius:5px;
+}
+
+.documentButton {
+  font-size:min(max(14pt, 1.5vw), 16pt);
+  padding:5px;
+  background-color:lightgreen;
+  border:0px white solid;
+  border-radius:5px;
+}
+
+.githubButton {
+  font-size:min(max(14pt, 1.5vw), 16pt);
+  padding:5px;
+  background-color:coral;
+  border:0px white solid;
+  border-radius:5px;
+}
+
+.abstest {
+  border: 0.1vw steelblue solid;
+  border-radius:15px;
+  padding:15px;
+  margin:10px 0 10px 0;
+  font-size:min(max(12pt, 1.5vw), 14pt);
 }
 
 </style>
@@ -80,29 +173,39 @@ td {
 </header>
 
 <body>
-
+<div class="container">
 <section id="Graduate Research">
   <h1>Graduate Research</h1>
   
-  <p>I am working in Paul Torrey's group at the University of Florida.<br><br> 
+  <p>I currently work in <a href="https://astro.ufl.edu/directory/paul-torrey/" target="_blank">Paul Torrey's</a> group at the University of Florida.<br><br> 
 
-    My main research interests lie in cosmological simulations of the universe. I am currently using the Illustris and IllustrisTNG (The Next Generation) simulation suites to analyze metallicity gradients of simulated galaxies to measure how they vary with mass and redshift. </p>
+    I am a galaxy evolution theorist, therefore I spend a lot of time in cosmological simulations. My main tools that I'm currently using are the Illustris and IllustrisTNG simulation suites, though moreso the latter than the former. Within these suites, I am analyzing metallicity gradients (both gas-phase and stellar) of galaxies.
+  </p>
 
-   <h2>Project #1: Gas-Phase Metallicity Break Radii in Illustris and IllustrisTNG galaxies</h2>
+  <h2>2022</h2>
 
-   <p><em><b>Abstract:</em></b><br>We present radial gas-phase metallicity profiles, gradients, and break radii at redshift z = 0 - 3 from the TNG50-1 star-forming galaxy population. These metallicity profiles are characterized by an emphasis on identifying the steep inner gradient and flat outer gradient. From this, the break radius is defined as the region where the transition occurs. We observe the break radius having a positive trend with mass that weakens with redshift. When normalized by the stellar half-mass radius, the break radius has a weak relation with both mass and redshift. To test if our results are dependent on the resolution or adopted physics of TNG50-1, the same analysis is performed in TNG50-2 and Illustris-1. We find general agreement between each of the simulations in their qualitative trends; however, the adopted physics between TNG and Illustris differ and therefore the breaks, normalized by size, deviate by a factor of ~2. In order to understand where the break comes from, we define two relevant time-scales: an enrichment time-scale and a radial gas mixing time-scale. We find that the break radius occurs where the gas mixing time-scale is ~10 times as long as the enrichment time-scale in all three simulation runs, with some weak mass and redshift dependence.</p>
+  <div class="publication">
 
-  <p>This work is in an extremely late-stage draft and should be published very soon<p>
-
-  <p><a href="https://github.com/AlexGarcia623/Break-Radii" target="_blank">Github Repo with associated code</a></p>
-
-  <h2>Project #2: Stellar Metallicity Gradients in IllustrisTNG galaxies</h2>
+    <h3>Stellar Metallicity Gradients in IllustrisTNG galaxies</h3>
   
-  <p>More coming soon... </p>
+    <p>More coming soon... </p>
 
-  <h2>Project #3: Something with Splashback Radii in TNG300?</h2>
-  
-  <p>More coming soon...? </p>
+  </div>
+
+  <div class="publication">
+
+    <h3>Gas-phase metallicity break radii of star-forming galaxies in IllustrisTNG </h3>  
+
+    <p>This work is in an extremely late-stage draft and should be published very soon<p>
+
+    <button class="abstractButton" onclick="showAbstract('BRAbstract')">Abstract</button>
+    <button class="documentButton" onclick="openLink()">arXiv (coming soon)</button>
+    <button class="documentButton" onclick="openLink()">ADS (coming soon)</button>
+    <button class="githubButton" onclick="openLink('https://github.com/AlexGarcia623/Break-Radii')">Github Repo</button>
+
+    <p id="BRAbstract" style="display:none;" class="abstest" data-bs-toggle="collapse">We present radial gas-phase metallicity profiles, gradients, and break radii at redshift z = 0 - 3 from the TNG50-1 star-forming galaxy population. These metallicity profiles are characterized by an emphasis on identifying the steep inner gradient and flat outer gradient. From this, the break radius is defined as the region where the transition occurs. We observe the break radius having a positive trend with mass that weakens with redshift. When normalized by the stellar half-mass radius, the break radius has a weak relation with both mass and redshift. To test if our results are dependent on the resolution or adopted physics of TNG50-1, the same analysis is performed in TNG50-2 and Illustris-1. We find general agreement between each of the simulations in their qualitative trends; however, the adopted physics between TNG and Illustris differ and therefore the breaks, normalized by size, deviate by a factor of ~2. In order to understand where the break comes from, we define two relevant time-scales: an enrichment time-scale and a radial gas mixing time-scale. We find that the break radius occurs where the gas mixing time-scale is ~10 times as long as the enrichment time-scale in all three simulation runs, with some weak mass and redshift dependence.</p>
+
+  </div>
 
 </section>
 
@@ -300,7 +403,7 @@ During the summer before my senior year of undergrad, I aided in creating new wo
 
   <img src="./ResearchRelated/Final_small_range.png" class=center style="background-color:white;" height=100% width=80%>
 </section>
-
+</div>
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 </body>
 
@@ -313,15 +416,15 @@ During the summer before my senior year of undergrad, I aided in creating new wo
   font-size: min(max(16pt, 2vw), 24pt);
   border: none;
   outline: none;
-  background-color: steelblue;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 15px;
   border-radius: 4px;
 }
 
 #myBtn:hover {
-  background-color: white;
-  color:steelblue;
+  background-color: steelblue;
+  color:white;
   transition-duration:0.4s;
 }
 </style>
@@ -345,6 +448,16 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+
+function showAbstract(abstract) {
+  currentAbs = document.getElementById(abstract);
+  currentAbs.style.display = currentAbs.style.display != 'none'? 'none' : 'block';
+  //currentAbs.style.visibility = currentAbs.style.display != 'hidden' ? 'hidden' : 'visible';
+}
+
+function openLink(link) {
+  window.open(link,"_blank");
 }
 </script>
 
