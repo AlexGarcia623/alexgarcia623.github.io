@@ -303,7 +303,7 @@ input::placeholder {
     <button onclick="animateDoorsOpen()" style="left:46%;top:87.5%;width:8%;" id="openButton" class="openButton">Open Dome</button>
     <button onclick="animateDoorsClose()" style="left:46%;top:87.5%;width:8%;display:none;" id="closeButton" class="closeButton">Close Dome</button>
 
-    <button style="left:40%;top:4%;width:20%;background-color:white;" id="fieldDisplay">Perseus</button>
+    <button style="left:40%;top:4%;width:20%;background-color:white;" id="fieldDisplay">Welcome!</button>
 
     <button onclick="intToggle()" style="left:70.75%;top:5%;width:12%;background-color:darkgray" id="intToggleButton">Change Integration Time </button>
 
@@ -425,6 +425,10 @@ input::placeholder {
 //
 // Virtual Observatory
 //
+// Projects to get to 
+//  - All galaxies in the field
+//  - Zoom in anywhere (empty field)
+//  - More bug test
 
 var xpos = 60;
 var ypos = 80;
@@ -768,6 +772,7 @@ function closedDome() {
 }
 
 function openDome() {
+  document.getElementById("fieldDisplay").innerHTML = 'Target: ' + whichZoomIn[currentField];
   close = false;
   move = true;
   document.getElementById("openButton").style.display = "none";
@@ -994,7 +999,7 @@ function west() {
       telescopeFrame();
     }
   }
-  document.getElementById('test').innerHTML = xpos + ' ' + ypos;
+  //document.getElementById('test').innerHTML = xpos + ' ' + ypos;
 }
 
 function east() {
@@ -1004,7 +1009,7 @@ function east() {
       telescopeFrame();
     }
   }
-  document.getElementById('test').innerHTML = xpos + ' ' + ypos;
+  //document.getElementById('test').innerHTML = xpos + ' ' + ypos;
 }
 
 function north() {
@@ -1014,7 +1019,7 @@ function north() {
       telescopeFrame();
     }
   }
-  document.getElementById('test').innerHTML = xpos + ' ' + ypos;
+  //document.getElementById('test').innerHTML = xpos + ' ' + ypos;
 }
 
 function south() {
@@ -1024,7 +1029,7 @@ function south() {
       telescopeFrame();
     }
   }
-  document.getElementById('test').innerHTML = xpos + ' ' + ypos;
+  //document.getElementById('test').innerHTML = xpos + ' ' + ypos;
 }
 
 function showAll() {
@@ -1093,6 +1098,7 @@ function switchImage(which2switch) {
 
     document.getElementById("appMag").innerHTML = APP_MAG;
     document.getElementById("galaxyName").innerHTML = whichZoomIn[currentField];
+    document.getElementById("fieldDisplay").innerHTML = 'Target: ' + whichZoomIn[currentField];
 
     zoomOutBool = false;
 
@@ -1114,7 +1120,7 @@ function switchImage(which2switch) {
         document.getElementById(colorHelper[keys[i]]).style.backgroundColor = 'darkgray';
       }
     }
-    document.getElementById("fieldDisplay").innerHTML = document.getElementById(cHelp).innerHTML;
+    //document.getElementById("fieldDisplay").innerHTML = document.getElementById(cHelp).innerHTML;
 
   } else {
     document.getElementById('domeWarningContainer').style.display = 'block';
