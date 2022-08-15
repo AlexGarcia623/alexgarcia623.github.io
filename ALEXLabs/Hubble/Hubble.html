@@ -172,44 +172,44 @@ input::placeholder {
 
 @keyframes load{
   0%{content:  'STARTING';}
-  5%{content:  'Generating Spectrum.';}
-  7.5%{content:  'Generating Spectrum..';}
-  10%{content: 'Generating Spectrum...';}
-  12.5%{content: 'Generating Spectrum';}
-  15%{content: 'Generating Spectrum.';}
-  17.5%{content: 'Generating Spectrum..';}
-  20%{content: 'Generating Spectrum...';}
-  22.5%{content: 'Generating Spectrum';}
-  25%{content: 'Generating Spectrum.';}
-  27.5%{content: 'Generating Spectrum..';}
-  30%{content: 'Generating Spectrum...';}
-  32.5%{content: 'Generating Spectrum';}
-  35%{content: 'Generating Spectrum.';}
-  37.5%{content: 'Generating Spectrum..';}
-  40%{content: 'Generating Spectrum...';}
-  42.5%{content: 'Generating Spectrum';}
-  45%{content: 'Generating Spectrum.';}
-  47.5%{content: 'Generating Spectrum..';}
-  50%{content: 'Generating Spectrum...';}
-  52.5%{content: 'Generating Spectrum';}
-  55%{content: 'Generating Spectrum.';}
-  57.5%{content: 'Generating Spectrum..';}
-  60%{content: 'Generating Spectrum...';}
-  62.5%{content: 'Generating Spectrum';}
-  65%{content: 'Generating Spectrum.';}
-  67.5%{content: 'Generating Spectrum..';}
-  70%{content: 'Generating Spectrum...';}
-  72.5%{content: 'Generating Spectrum';}
-  75%{content: 'Generating Spectrum.';}
-  77.5%{content: 'Generating Spectrum..';}
-  80%{content: 'Generating Spectrum...';}
-  82.5%{content: 'Generating Spectrum';}
-  85%{content: 'Generating Spectrum.';}
-  87.5%{content: 'Generating Spectrum..';}
-  90%{content: 'Generating Spectrum...';}
-  92.5%{content: 'Generating Spectrum';}
-  95%{content: 'Generating Spectrum.';}
-  97.5%{content: 'Generating Spectrum..';}
+  5%{content:  'Observing.';}
+  7.5%{content:  'Observing..';}
+  10%{content: 'Observing...';}
+  12.5%{content: 'Observing';}
+  15%{content: 'Observing.';}
+  17.5%{content: 'Observing..';}
+  20%{content: 'Observing...';}
+  22.5%{content: 'Observing';}
+  25%{content: 'Observing.';}
+  27.5%{content: 'Observing..';}
+  30%{content: 'Observing...';}
+  32.5%{content: 'Observing';}
+  35%{content: 'Observing.';}
+  37.5%{content: 'Observing..';}
+  40%{content: 'Observing...';}
+  42.5%{content: 'Observing';}
+  45%{content: 'Observing.';}
+  47.5%{content: 'Observing..';}
+  50%{content: 'Observing...';}
+  52.5%{content: 'Observing';}
+  55%{content: 'Observing.';}
+  57.5%{content: 'Observing..';}
+  60%{content: 'Observing...';}
+  62.5%{content: 'Observing';}
+  65%{content: 'Observing.';}
+  67.5%{content: 'Observing..';}
+  70%{content: 'Observing...';}
+  72.5%{content: 'Observing';}
+  75%{content: 'Observing.';}
+  77.5%{content: 'Observing.';}
+  80%{content: 'Observing...';}
+  82.5%{content: 'Observing';}
+  85%{content: 'Observing.';}
+  87.5%{content: 'Observing..';}
+  90%{content: 'Observing...';}
+  92.5%{content: 'Observing';}
+  95%{content: 'Observing.';}
+  97.5%{content: 'Observing..';}
 }
 
 /* The Modal (background) */
@@ -326,9 +326,6 @@ input::placeholder {
 
   <div class="HubbleConstant center" id='domeWarningContainer' style="display:none;">
     <p id='domeWarning' style="color:black;"> </p>
-
-
-    <p>What else needs to be added?<br><br> Field 5 <br> Noise based on how far away you select from the center of the galaxy</p>
   </div>
 
   <p id='test' style='color:coral;'> </p>
@@ -487,7 +484,7 @@ var CALCIUM_K = 3934;
 var APP_MAGS = {
   "Perseus":14.3,
   "UrsaMinor":13.2,
-  "UrsaMajor":9.8,
+  "UrsaMajor":10.8,
   "LeoMinor":11.2
 };
 var DISTS   = {
@@ -1207,7 +1204,7 @@ var loader = document.getElementById("loading");
 var modal = document.getElementById("myModal");
 
 function updateDisplay() {
-  docStyle.setProperty("--seconds", String(noise/2)+"s");
+  docStyle.setProperty("--seconds", String(noise)+"s");
   if (done) {
     done = false;
     loader.classList.remove('loading');
@@ -1234,7 +1231,7 @@ function buttonPress() {
 function generateSpectrum() {
   for (var i = 3900; i < 4901; ++i) {
     lambdaArr[i-3000] = i;
-    fluxArr[i-3000] = i/4900 - generateGaussian(1/5,1/7)/Math.sqrt(noise);
+    fluxArr[i-3000] = i/4900 - generateGaussian(1/5,1/7)/Math.sqrt(noise*9);
   }
 
   for (var i = 0; i < 3000*Math.sqrt(noise); ++i) {
