@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="scripts.js"></script>
+<script src="https://kit.fontawesome.com/b502caab12.js" crossorigin="anonymous"></script>
+
+<style>
+
+li {
+  padding:5px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+iframe {
+  width:75%;
+  min-height:40.5vw;
+  overflow:hidden;
+}
+
+section {
+  width:100%;
+}
+
+h3 {
+  text-align:center;
+  font-size: min(max(20pt, 1.5vw), 24pt);
+}
+
+</style>
+
+<script>
+
+function back() {
+  window.open("workExamples.html#Teaching",target="_self");
+}
+
+</script>
+
+<header>
+  <title>AST1022 Lab Manual</title>
+  <div class="containbuttons">
+  <button class = "button biggerButton" onclick="back()">Back</button>
+  </div>
+</header>
+
+<body>  
+
+<section>
+  <h1>Astronomy 1022 Lab Manual Changes </h1>
+
+  <p>During the spring semester of 2022, I was the instructor for the University of Florida Astronomy 1022L lab course. During this time, I became increasing frustrated with the quality and age of the lab manual we had students using. For context, most of the lab manual was originally written before I was born... and I was teaching the course. Needless to say, it needed an upgrade. <br><br><br>
+
+I took it upon myself to copy over the lab manual and make improvements as I went. This task started simple: some figures had been photocopied over and over and over... and over, to the point where the quality of the image suffered. This evolved into a whole new refresh of the entire formatting of the textbook into LaTeX (not to mention ALEX labs -- <a href="./ALEXLabs/ALEXLabs.html" target="_blank">which can be seen here</a>) <br><br><br>
+
+One quality of the updated tenth edition of "Hands On Astronomy" that I am particularly proud of is the addition of vectorized images for virtually all of the figures in the manual via a LaTeX package named Tikz. I show some particularly good examples a little later. 
+
+</p>
+
+<h2>Changes</h2>
+
+<p>For a reference (and for my own personal pride), I have compiled visual exmaples of a couple of the biggest changes here. In addition, here's a nice summary of all the work that I did for the tenth edition of the lab:
+</p>
+
+  <ul>
+    <li>Transferred the entire document from Microsoft Word to LaTeX (via Overleaf)</li>
+    <ul>
+      <li>Individual labs can be edited separately and compiled together into one lightweight (3.2 MB) pdf file</li>
+    </ul>
+    <li>Found high quality pdfs/pngs of all existing photographs/historical references in the lab manual</li>
+    <li>Recreated any figure that did not fall into the category of photograph or historical reference using Tikz (over 25 total diagrams, see below for examples)</li>
+    <ul>
+      <li>In addition to this, I created new figures to help with the clarity of the manual</li>
+    </ul>
+    <li>Created an automatic table of contents and numbering system that updates universally with minimal effort</li>
+    <li>Reworked the computer software for three labs (<a href="./ALEXLabs/ALEXLabs.html" target="_blank">ALEX</a>)</li>
+    <ul>
+      <li> This included rewriting large chunks of text in the manual as well as reworking the conceptual elements of the labs</li>
+    </ul>
+    <li>Clarified directions by editing text in nearly every single experiment</li>
+    <li>Replaced he/she pronouns in reference to the instructor with they/them</li>
+    <li>Unified the style of the entire manual</li>
+  </ul>
+
+<h2>Examples</h2>
+
+<p>I will follow the convention of having the ninth edition textbook on the left and updated tenth editon on the right</p>
+
+<div class="row">
+
+  <div class="column">
+  <iframe src='./pdfs/Old1022/FrontCover.pdf' class="center"></iframe>
+  </div>
+  <div class="column">
+  <iframe src='./pdfs/New1022/FrontCover.pdf' class="center"></iframe>
+  </div>
+
+</div>
+
+<h3>Updated and unified style in text and worksheets</h3>
+
+<div class="row">
+
+  <div class="column">
+  <iframe src='./pdfs/Old1022/UpdateLabCovers.pdf' class="center"></iframe>
+  </div>
+  <div class="column">
+  <iframe src='./pdfs/New1022/UpdateLabCovers.pdf' class="center"></iframe>
+  </div>
+
+</div>
+<div class="row">
+
+  <div class="column">
+  <iframe src='./pdfs/Old1022/Worksheets.pdf' class="center"></iframe>
+  </div>
+  <div class="column">
+  <iframe src='./pdfs/New1022/Worksheets.pdf' class="center"></iframe>
+  </div>
+
+</div>
+
+<h3>Updated Figures (including Tikz recreations)</h3>
+
+<div class="row">
+
+  <div class="column">
+  <iframe src='./pdfs/Old1022/Tikz4.pdf' class="center"></iframe>
+  </div>
+  <div class="column">
+  <iframe src='./pdfs/New1022/Tikz4.pdf' class="center"></iframe>
+  </div>
+
+</div>
+<div class="row">
+
+  <div class="column">
+  <iframe src='./pdfs/Old1022/Tikz5.pdf' class="center"></iframe>
+  </div>
+  <div class="column">
+  <iframe src='./pdfs/New1022/Tikz5.pdf' class="center"></iframe>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="column">
+  <iframe src='./pdfs/Old1022/FullCluster.pdf' class="center"></iframe>
+  </div>
+  <div class="column">
+  <iframe src='./pdfs/New1022/FullCluster.pdf' class="center"></iframe>
+  </div>
+
+</div>
+<div class="row">
+
+  <div class="column">
+  <iframe src='./pdfs/Old1022/Tikz.pdf' class="center"></iframe>
+  </div>
+  <div class="column">
+  <iframe src='./pdfs/New1022/Tikz.pdf' class="center"></iframe>
+  </div>
+
+</div>
+<div class="row">
+
+  <div class="column">
+  <iframe src='./pdfs/Old1022/Tikz2.pdf' class="center"></iframe>
+  </div>
+  <div class="column">
+  <iframe src='./pdfs/New1022/Tikz2.pdf' class="center"></iframe>
+  </div>
+
+</div>
+<div class="row">
+
+  <div class="column">
+  <iframe src='./pdfs/Old1022/Tikz3.pdf' class="center"></iframe>
+  </div>
+  <div class="column">
+  <iframe src='./pdfs/New1022/Tikz3.pdf' class="center"></iframe>
+  </div>
+
+</div>
+</section>
+
+</body>
+
+</html>
