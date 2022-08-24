@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="../ALEX.css">
+<link rel="stylesheet" href="./css/Jupiter.css">
 
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
@@ -9,132 +10,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
-<style>
-body {
-  background-image:url('Jupiter.jpeg');
-  background-size:cover;
-  background-attachment: fixed; 
-  background-size:fill; 
-}
-* {
-  box-sizing:border-box;
-}
-
-.column {
-  float:left;
-  width:50%;
-}
-
-.row:after {
-  contents: "";
-  display: table;
-  clear: both;
-}
-
-img {
-  width:85%;
-  height:85%;
-}
-
-
-input {
-  background-color:powderblue;
-  border: 0.05vw solid darkblue;
-  border-radius:16px;
-  color:darkblue;
-  padding:0.5vw;
-  font-size:min(max(14pt, 2vw), 20pt);
-}
-
-input:hover {
-  transition:0.25s;
-  transform:scale(1.005);
-  background-color:darkblue;
-  color:powderblue;
-  margin-left:0px;
-  margin-right:0px;
-}
-
-input:not(:hover) {
-  transition:0.5s;
-  transform:scale(1);
-  border: 0.05vw solid darkblue;
-  color:darkblue;
-}
-
-img {
-  border-radius:15px;
-}
-
-h2 {
-  color:darkblue;
-}
-
-canvas {
-  background-color:black;
-  border-radius:25px;
-  width:80%;
-}
-
-.slidecontainer {
-  width: 100%;
-}
-
-.slider {
-  -webkit-appearance: none;
-  border: 2px black solid;
-  width: 100%;
-  height: 25px;
-  background: darkblue;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider:hover {
-  opacity: 1;
-  background:darkblue;
-  border: 2px lightblue solid;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  background:white;
-  border: 2px black solid;
-  border-radius:5px;
-}
-
-.slider::-moz-range-thumb {
-  width: 35px;
-  height: 35px;
-}
-
-.WeighJupiter {
-  color:darkblue;
-  border: 1vw solid darkblue;
-  background-color:powderblue;
-  border-radius:5px;
-  padding:25px;
-  margin-top:10px;
-  margin-bottom:10px;
-  max-width:90ch;
-}
-
-</style>
 
 <script>
 function backButton() {
   window.open("YouCanWeighJupiter.html","_self");
 }
 function reselectMoon() {
-  window.open("moonSelector1.html","_self");
+  window.open("modeSelector.html","_self");
 }
-
 </script>
 
 </head>
@@ -149,11 +32,6 @@ function reselectMoon() {
 <div class="body">
 
   <div class="WeighJupiter center">
-
-  <div class="slidecontainer" id="TimestepControl">
-
-    <h2 style="display:none;">Number of Hours: <span id="desired"></span></h2>
-  </div>
 
   <div class="slidecontainer" id="ZoomControl">
     <h2>Zoom <span id="zoom"></span></h2>
@@ -170,8 +48,8 @@ function reselectMoon() {
 
   <p id="warning"></p>
 
-  <input type="button" onclick="startAnimation()" class="FoB" value="Start Animation"/>
-  <input type="button" onclick="stopAnimation()" class="FoB" value="Stop Animation"/>
+  <input type="button" onclick="startContinuousAnimation()" class="FoB" value="Start Animation"/>
+  <input type="button" onclick="stopContinuousAnimation()" class="FoB" value="Stop Animation"/>
  
   </div>
 
@@ -191,33 +69,12 @@ function reselectMoon() {
 
   <p><span id="imageWidth"></span> <span id="imageWidth2"></span> <span id="imageWidth3"></span></p>
 
+<script src="./js/constants.js"></script>
+<script src="./js/helperFunctions.js"></script>
+<script src="./js/animation.js"></script>
 <script>
-var NUMBER_OF_FRAMES = 71;
-
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
-
-var start = 0;
-var startString = String(start);
-
-var SCALE = 5;
-var JUPITER_DAY = 10; // Hours
-
-var TIME_PER_FRAME = JUPITER_DAY / NUMBER_OF_FRAMES;
-
-var slider = document.getElementById("myRange");
-var output = document.getElementById("desired");
-output.innerHTML = 1;
-
-var TIMING = TIME_PER_FRAME; // Default to individual frames
-var DESIRED_TIME = 0.75; // Get desired number of hours from slider
-var NUM_ITER = Math.round(DESIRED_TIME / TIME_PER_FRAME); // how many frames to advance by
-
-//slider.oninput = function() {
-//  output.innerHTML = slider.value;
-//  DESIRED_TIME = parseInt(slider.value);
-//  changeTiming();
-//}
 
 var slider2 = document.getElementById("zoomRange");
 var output2 = document.getElementById("zoom");
@@ -228,300 +85,7 @@ slider2.oninput = function() {
   SCALE = parseFloat(slider2.value);
   changeScale();
 }
-
-//animate();
-
-function changeTiming() {
-  NUM_ITER = Math.round(DESIRED_TIME / TIME_PER_FRAME);
-}
-
-var interval_tracker = "";
-
-var fps = 24;
-
-function startAnimation() {
-  interval_tracker = setInterval(function(){ //throttle requestAnimationFrame to 20fps
-       requestAnimationFrame(Next);
-    }, 1000/fps)
-}
-
-function stopAnimation() {
-  window.clearInterval(interval_tracker);
-}
-
-function Next() {
-  document.getElementById("warning").innerHTML = ""
-  start = start + NUM_ITER;
-  if (start > NUMBER_OF_FRAMES) {
-    var diff = start % NUMBER_OF_FRAMES;
-    start = diff;
-  }
-  startString = String(start);
-  var time_so_far = parseFloat(document.getElementById("demo").innerHTML);
-  document.getElementById("demo").innerHTML = (time_so_far + DESIRED_TIME).toFixed(1);
-  animate();
-
-}
-
-function changeScale() {
-  context.clearRect(0, 0, canvas.width, canvas.height); // clear canvas
-  animate();
-}
-
-var yStart = 0;
-var yHeight = 0;
-
-
-function animate() {
-  var JW = 105/SCALE
-
-  context.clearRect(0, 0, canvas.width/2 - JW, canvas.height); // clear canvas
-  context.clearRect(canvas.width/2 + JW, 0, canvas.width, canvas.height); // clear canvas
-  Jupiter = new Image();
-  Jupiter.src = 'JupiterRotating/spinning_jupiter-' + startString + '.png';
-
-  Jupiter.onload = function(){
-    var wrh = Jupiter.width / Jupiter.height;
-    var newWidth = canvas.width/SCALE;
-    var newHeight = newWidth / wrh;
-    if (newHeight > canvas.height) {
-      newHeight = canvas.height;
-      	newWidth = newHeight * wrh;
-    }
-    var xOffset = newWidth < canvas.width ? ((canvas.width - newWidth) / 2) : 0;
-    var yOffset = newHeight < canvas.height ? ((canvas.height - newHeight) / 2) : 0;
-
-    context.drawImage(Jupiter, xOffset, yOffset, newWidth, newHeight);
-    drawMoonsInit(yOffset,newHeight);
-  }
-
-//  requestAnimationFrame(Next);
-}
-
-var IOx = 0;
-var IOy = 0;
-
-var EUROPAx = 0;
-var EUROPAy = 0;
-
-var GANYMEDEx = 0;
-var GANYMEDEy = 0;
-
-var CALLISTOx = 0;
-var CALLISTOy = 0;
-
-function drawMoonsInit(y,h) {
-    var dispY = y + h/2;
-
-    JupiterWidth = 105/SCALE;
-
-    // IO - Previous
-    context.strokeStyle = 'black';
-    context.beginPath();
-    context.lineWidth = 2.5;
-    if ( (IOx > (canvas.width/2 - JupiterWidth) && IOx < (canvas.width/2 + JupiterWidth)) && (IOy > 0) ) {
-      // do nothing
-    } else {
-      context.arc(IOx, dispY + 2, 0.75, 0, 2 * Math.PI, true);
-      context.stroke();
-    }
-
-    // IO
-    context.strokeStyle = 'orange';
-    context.beginPath();
-    context.lineWidth = 2.5;
-    var I = calcIoPos(JupiterWidth);
-    IOx = I[0];
-    IOy = I[1];
-    if ( (IOx > (canvas.width/2 - JupiterWidth) && IOx < (canvas.width/2 + JupiterWidth)) && (IOy > 0) ) {
-      // do nothing
-    } else {
-      context.arc(IOx, dispY + 2, 0.75, 0, 2 * Math.PI, true);
-      context.stroke();
-    }
-   
-    // Europa - Previous
-    context.strokeStyle = 'black';
-    context.beginPath();
-    context.lineWidth = 2.5;
-    if ( (EUROPAx > (canvas.width/2 - JupiterWidth) && EUROPAx < (canvas.width/2 + JupiterWidth)) && (EUROPAy > 0) ) {
-      // do nothing
-    } else {
-      context.arc(EUROPAx, dispY - 1, 0.75, 0, 2 * Math.PI, true);
-      context.stroke();
-    }
-
-    // Europa
-    context.strokeStyle = 'red';
-    context.beginPath();
-    context.lineWidth = 2.5;
-    var E = calcEuropaPos(JupiterWidth); 
-    EUROPAx = E[0];
-    EUROPAy = E[1];
-    if ( (EUROPAx > (canvas.width/2 - JupiterWidth) && EUROPAx < (canvas.width/2 + JupiterWidth)) && (EUROPAy > 0) ) {
-      // do nothing
-    } else {
-      context.arc(EUROPAx, dispY - 1, 0.75, 0, 2 * Math.PI, true);
-      context.stroke();
-    }
-
-    // Ganymede -- Previous
-    context.strokeStyle = 'black';
-    context.beginPath();
-    context.lineWidth = 0;
-    if ( (GANYMEDEx > (canvas.width/2 - JupiterWidth) && GANYMEDEx < (canvas.width/2 + JupiterWidth)) && (GANYMEDEy > 0) ) {
-      // do nothing
-    } else {
-      context.arc(GANYMEDEx, dispY + 5, 0.75, 0, 2 * Math.PI, true);
-      context.stroke();
-    }
-
-    // Ganymede
-    context.strokeStyle = 'green';
-    context.beginPath();
-    context.lineWidth = 2.5;
-    var G = calcGanymedePos(JupiterWidth);
-    GANYMEDEx = G[0];
-    GANYMEDEy = G[1];
-    if ( (GANYMEDEx > (canvas.width/2 - JupiterWidth) && GANYMEDEx < (canvas.width/2 + JupiterWidth)) && (GANYMEDEy > 0) ) {
-      // do nothing
-    } else {
-      context.arc(GANYMEDEx, dispY + 5, 0.75, 0, 2 * Math.PI, true);
-      context.stroke();
-    }
-
-    // Callisto -- Previous
-    context.strokeStyle = 'black';
-    context.beginPath();
-    context.lineWidth = 2.5;
-    if ( (CALLISTOx > (canvas.width/2 - JupiterWidth) && CALLISTOx < (canvas.width/2 + JupiterWidth)) && (CALLISTOy > 0) ) {
-      // do nothing
-    } else {
-      context.arc(CALLISTOx, dispY, 0.75, 0, 2 * Math.PI, true);
-      context.stroke();
-    }
-
-    // Callisto
-    context.strokeStyle = 'blue';
-    context.beginPath();
-    context.lineWidth = 2.5;
-    var C = calcCallistoPos(JupiterWidth); 
-    CALLISTOx = C[0];
-    CALLISTOy = C[1];
-    if ( (CALLISTOx > (canvas.width/2 - JupiterWidth) && CALLISTOx < (canvas.width/2 + JupiterWidth)) && (CALLISTOy > 0) ) {
-      // do nothing
-    } else {
-      context.arc(CALLISTOx, dispY, 0.75, 0, 2 * Math.PI, true);
-      context.stroke();
-    }
- 
-}
-
-function calcIoPos(JW) {
-  var time = parseInt(document.getElementById("demo").innerHTML);
-  IO_PERIOD = 42; // hours
-  IO_A_TO_JUPITER_R = 5.898; // ratio of jupiter radius to orbit of moon
-  a = (JW * IO_A_TO_JUPITER_R) / (SCALE/2);
-
-  var canvasXcenter = canvas.width / 2
-
-  x = a * Math.cos( (2 * Math.PI) * time/IO_PERIOD + 7*Math.PI/4) + canvasXcenter;
-  y = a * Math.sin( (2 * Math.PI) * time/IO_PERIOD + 7*Math.PI/4);
-  return [x,y];
-}
-
-function calcEuropaPos(JW) {
-  var time = parseInt(document.getElementById("demo").innerHTML);
-  EUROPA_PERIOD = 85; // hours
-  EUROPA_A_TO_JUPITER_R = 9.384; // ratio of jupiter radius to orbit of moon
-  a = (JW * EUROPA_A_TO_JUPITER_R) / (SCALE/2);
-
-  var canvasXcenter = canvas.width / 2  
-
-  x = a * Math.cos( (2 * Math.PI) * time/EUROPA_PERIOD + 2*Math.PI/3) + canvasXcenter;
-  y = a * Math.sin( (2 * Math.PI) * time/EUROPA_PERIOD + 2*Math.PI/3);
-  return [x,y];
-}
-
-function calcGanymedePos(JW) {
-  var time = parseInt(document.getElementById("demo").innerHTML);
-  GANYMEDE_PERIOD = 172; // hours
-  GANYMEDE_A_TO_JUPITER_R = 14.972; // ratio of jupiter radius to orbit of moon
-  a = (JW * GANYMEDE_A_TO_JUPITER_R) / (SCALE/2);
-
-  var canvasXcenter = canvas.width / 2  
-
-  x = a * Math.cos( (2 * Math.PI) * time/GANYMEDE_PERIOD + Math.PI/3) + canvasXcenter;
-  y = a * Math.sin( (2 * Math.PI) * time/GANYMEDE_PERIOD + Math.PI/3);
-  return [x,y];
-}
-
-function calcCallistoPos(JW) {
-  var time = parseInt(document.getElementById("demo").innerHTML);
-  CALLISTO_PERIOD = 400; // hours
-  CALLISTO_A_TO_JUPITER_R = 26.334; // ratio of jupiter radius to orbit of moon
-  a = (JW * CALLISTO_A_TO_JUPITER_R) / (SCALE/2);
-
-  var canvasXcenter = canvas.width / 2  
-
-  x = a * Math.cos( (2 * Math.PI) * time/CALLISTO_PERIOD ) + canvasXcenter;
-  y = a * Math.sin( (2 * Math.PI) * time/CALLISTO_PERIOD );
-  return [x,y];
-}
-window.onclick = function(event) {
- if (event.target == document.getElementById("myModal")) {
-    document.getElementById("myModal").style.display = "none"
-  }
-}
-
-function whichIsWhich() {
-  document.getElementById("myModal").style.display = "block";
-}
 </script>  
-
-<style>
-#myBtn {
-  position: fixed;
-  bottom: 10px;
-  right: 30px;
-  font-size: min(max(16pt, 2vw), 24pt);
-  border: none;
-  outline: none;
-  padding: 15px;
-  border-radius: 4px;
-}
-
-#myBtn:hover {
-  transition-duration:0.4s;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow-y: hidden; 
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: lightgray;
-  border-radius:5px;
-  margin: auto;
-  padding: 20px;
-  border: 1vw solid white;
-  width: 40%;
-  opacity:0.75;
-}
-</style>
-
 </body>
 
 </html>

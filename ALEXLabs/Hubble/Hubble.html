@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="../ALEX.css">
+<link rel="stylesheet" href="./css/Hubble.css">
 
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
@@ -18,238 +19,13 @@ body {
   background-size:fill; 
 }
 
-* {
-  box-sizing:border-box;
-}
-.column {
-  float:left;
-  width:50%;
-}
-
-.row:after {
-  contents: "";
-  display: table;
-  clear: both;
-}
-
 h1, h2 {
   color:red;
 }
 
 p, a {
-  color:black;
+  color:white;
 }
-
-img {
-  width:85%;
-  height:85%;
-  border-radius:15px;
-}
-
-input {
-  background-color:powderblue;
-  border: 0.05vw solid darkblue;
-  border-radius:16px;
-  color:darkblue;
-  padding:0.5vw;
-  font-size:min(max(14pt, 2vw), 20pt);
-}
-
-input:hover {
-  transition:0.5s;
-  transform:scale(1.005);
-  background-color:darkblue;
-  color:powderblue;
-  margin-left:0px;
-  margin-right:0px;
-}
-
-input:not(:hover) {
-  transition:0.5s;
-  transform:scale(1);
-  border: 0.05vw solid darkblue;
-  color:darkblue;
-}
-
-.constellations {
-   width:100%;
-   height:100%;
-   position: relative;
-   display: inline-block;
-}
-
-.constellations .img-top {
-  display: none;
-  width:85%;
-  height:99.3%;  
-  position: absolute;
-  top:0;
-  left:0;
-}
-.constellations:hover .img-top {
-    display: inline-block;
-}
-
-.HubbleConstant {
-  border: 1vw solid red;
-  background-color:#ffa07a;
-  border-radius:5px;
-  padding:25px;
-  margin-top:10px;
-  margin-bottom:10px;
-  max-width:120ch;
-}
-
-footer {
-  margin-top:15px;
-  padding-bottom:0px;
-}
-
-body > footer {
-  display: table-row;
-}
-
-.footerButton {
-  margin-bottom:0;
-}
-
-canvas {
-  border:5px black solid;
-  background-color:white;
-  border-radius:15px;
-  width:75%;
-}
-
-button {
-  background-color:darkgray;
-  border:2px black solid;
-  border-radius:5px;
-  font-size:min(max(10pt, 2vw), 14pt);
-  position:absolute;
-  padding:2.5px;
-}
-
-button:hover {
-  background-color:white;
-  cursor:pointer;
-}
-
-input {
-  position:absolute;
-  width:50%;
-  background-color:darkgray;
-  border: 2px black solid;
-  border-radius:16px;
-  color:black;
-  padding:0.5vw;
-  font-size:min(max(10pt, 2vw), 14pt);
-  transition:0s;
-}
-
-input:hover {
-  background-color:white;
-  color:black;
-  border: 2px black solid;
-}
-
-input:not(:hover) {
-  border: 2px black solid;
-  color:black;
-}
-
-input::placeholder {
-  color:black;
-}
-
-.loading {
-  position: relative;
-}
-
-.loading:before {
-  content:'';
-  animation: load var(--seconds) linear;
-}
-
-@keyframes load{
-  0%{content:  'STARTING';}
-  5%{content:  'Observing.';}
-  7.5%{content:  'Observing..';}
-  10%{content: 'Observing...';}
-  12.5%{content: 'Observing';}
-  15%{content: 'Observing.';}
-  17.5%{content: 'Observing..';}
-  20%{content: 'Observing...';}
-  22.5%{content: 'Observing';}
-  25%{content: 'Observing.';}
-  27.5%{content: 'Observing..';}
-  30%{content: 'Observing...';}
-  32.5%{content: 'Observing';}
-  35%{content: 'Observing.';}
-  37.5%{content: 'Observing..';}
-  40%{content: 'Observing...';}
-  42.5%{content: 'Observing';}
-  45%{content: 'Observing.';}
-  47.5%{content: 'Observing..';}
-  50%{content: 'Observing...';}
-  52.5%{content: 'Observing';}
-  55%{content: 'Observing.';}
-  57.5%{content: 'Observing..';}
-  60%{content: 'Observing...';}
-  62.5%{content: 'Observing';}
-  65%{content: 'Observing.';}
-  67.5%{content: 'Observing..';}
-  70%{content: 'Observing...';}
-  72.5%{content: 'Observing';}
-  75%{content: 'Observing.';}
-  77.5%{content: 'Observing.';}
-  80%{content: 'Observing...';}
-  82.5%{content: 'Observing';}
-  85%{content: 'Observing.';}
-  87.5%{content: 'Observing..';}
-  90%{content: 'Observing...';}
-  92.5%{content: 'Observing';}
-  95%{content: 'Observing.';}
-  97.5%{content: 'Observing..';}
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow-y: hidden; 
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #ffa07a;
-  border-radius:5px;
-  margin: auto;
-  padding: 20px;
-  border: 1vw solid red;
-  width: 80%;
-}
-
-.openButton{
-  background-color:lightgreen;
-}
-.openButton:hover {
-  background-color:darkgreen;
-}
-.closeButton {
-  background-color:coral;
-}
-.closeButton:hover {
-  background-color:orange;
-}
-
 </style>
 
 </head>
@@ -267,8 +43,6 @@ input::placeholder {
     <h2 style="text-align:center;font-size:35pt;">Measuring the Hubble Constant</h2>
 
   </div>
- 
-
 
   <div class="center" style="position:relative;min-width:110ch;">
 
@@ -282,17 +56,17 @@ input::placeholder {
     <button onclick="south()" style="left:22.5%;top:30%;width:3%;" id="south">S</button>
 
     <button onclick="changeIncrement()" style="left:19%;top:45%;width:10%;background-color:darkgray" id="changeSlew">Change Slew Rate</button>
-    <button onclick="inc(20)" style="left:20%;top:55%;width:8%;display:none;" id='bigInc'>Rapid</button>
-    <button onclick="inc(5)" style="left:20%;top:60%;width:8%;display:none;" id='smallInc'>Nominal</button>
-    <button onclick="inc(1)" style="left:20%;top:65%;width:8%;display:none;" id='tinyInc'>Slow</button>
+    <button style="left:20%;top:55%;width:8%;display:none;" id='bigInc'>Rapid</button>
+    <button style="left:20%;top:60%;width:8%;display:none;" id='smallInc'>Nominal</button>
+    <button style="left:20%;top:65%;width:8%;display:none;" id='tinyInc'>Slow</button>
 
     <button onclick="showAll()" style="left:70.75%;top:30%;width:12%;background-color:darkgray" id="changeField">Change Field</button>
 
-    <button onclick="switchImage('test1')" style="left:71.75%;top:37.5%;width:10%;display:none;" id="Field1">Perseus</button>
-    <button onclick="switchImage('test2')" style="left:71.75%;top:45%;width:10%;display:none;" id="Field2">Ursa Minor</button>
-    <button onclick="switchImage('test3')" style="left:71.75%;top:52.5%;width:10%;display:none;" id="Field3">Ursa Major</button>
-    <button onclick="switchImage('test4')" style="left:71.75%;top:60%;width:10%;display:none;" id="Field4">Leo Minor</button>
-    <button onclick="switchImage('test5')" style="left:71.75%;top:67.5%;width:10%;display:none;" id="Field5">Draco</button>
+    <button onclick="switchImage('zoomImageField1')" style="left:71.75%;top:37.5%;width:10%;display:none;" id="Field1">Perseus</button>
+    <button onclick="switchImage('zoomImageField2')" style="left:71.75%;top:45%;width:10%;display:none;" id="Field2">Ursa Minor</button>
+    <button onclick="switchImage('zoomImageField3')" style="left:71.75%;top:52.5%;width:10%;display:none;" id="Field3">Ursa Major</button>
+    <button onclick="switchImage('zoomImageField4')" style="left:71.75%;top:60%;width:10%;display:none;" id="Field4">Leo Minor</button>
+    <button onclick="switchImage('zoomImageField5')" style="left:71.75%;top:67.5%;width:10%;display:none;" id="Field5">Draco</button>
 
     <button onclick="zoomIn()" style="left:20%;top:77.5%;width:8%;" id="zoomIn">Zoom In </button>
     <button onclick="zoomOut()" style="left:20%;top:77.5%;width:8%;display:none;" id="zoomOut">Zoom Out </button>
@@ -301,7 +75,7 @@ input::placeholder {
     <button onclick="animateDoorsOpen()" style="left:46%;top:87.5%;width:8%;" id="openButton" class="openButton">Open Dome</button>
     <button onclick="animateDoorsClose()" style="left:46%;top:87.5%;width:8%;display:none;" id="closeButton" class="closeButton">Close Dome</button>
 
-    <button style="left:40%;top:4%;width:20%;background-color:white;" id="fieldDisplay" onclick="imageCredits()">Welcome!</button>
+    <button style="left:40%;top:4%;width:20%;background-color:white;" id="fieldDisplay">Welcome!</button>
 
     <button onclick="intToggle()" style="left:70.75%;top:5%;width:12%;background-color:darkgray" id="intToggleButton">Change Integration Time </button>
 
@@ -309,12 +83,14 @@ input::placeholder {
 
   </div>
 
-  <div class="modal" id="myModal">
+  <p id="test"></p>
+
+  <div class="modal" id="spectrumWindow">
     <div class="modal-content">
       <p id="loading"></p>
       <p id="SpectrumDone"></p>
 
-	<p>The apparent magnitude of <span id="galaxyName"></span> is: <span id="appMag"></span> </p>
+	    <p>The apparent magnitude of <span id="galaxyName"></span> is: <span id="appMag"></span> </p>
 
       <div id="myPlot" style="width:100%;padding-left:0;padding-right:0%;"></div>
       <p>Click anywhere outside this box to exit</p>
@@ -331,7 +107,7 @@ input::placeholder {
     <h2>NGC 1260 (Lenticular Galaxy) -- Perseus</h2>
 
     <div class="constellations">
-      <img src="./Galaxies/zoomNGC1260.png" id = "test1"/>
+      <img src="./Galaxies/zoomNGC1260.png" id = "zoomImageField1"/>
       <img src="./Galaxies/NGC_1260.png" id = "NGC1260"/>
     </div>
 
@@ -342,7 +118,7 @@ input::placeholder {
     <h2>NGC 5452 -- Ursa Minor </h2>
 
     <div class="constellations">
-      <img src="./Galaxies/zoomNGC5452.png" id = "test2"/>
+      <img src="./Galaxies/zoomNGC5452.png" id = "zoomImageField2"/>
       <img src="./Galaxies/NGC_5452.jpeg" id = "NGC5452"/>
     </div>
 
@@ -353,7 +129,7 @@ input::placeholder {
     <h2>M 109 -- Ursa Major</h2>
 
     <div class="constellations">
-      <img src="./Galaxies/M109.png" id = "test3"/>
+      <img src="./Galaxies/M109.png" id = "zoomImageField3"/>
       <img src="./Galaxies/zoomM109.jpeg" id="M109" />
     </div>
 
@@ -364,7 +140,7 @@ input::placeholder {
     <h2>NGC 3294 -- Leo Minor</h2>
 
     <div class="constellations">
-      <img src="./Galaxies/NGC3294.png" id = "test4"/>
+      <img src="./Galaxies/NGC3294.png" id = "zoomImageField4"/>
       <img src="./Galaxies/zoomNGC3294.jpeg" id="NGC3294"/>
     </div>
 
@@ -375,7 +151,7 @@ input::placeholder {
     <h2>NGC 3294 -- Leo Minor</h2>
 
     <div class="constellations">
-      <img src="./Galaxies/NGC6143.png" id = "test5"/>
+      <img src="./Galaxies/NGC6143.png" id = "zoomImageField5"/>
       <img src="./Galaxies/zoomNGC6143.jpeg" id="NGC6143"/>
     </div>
 
@@ -424,946 +200,117 @@ input::placeholder {
   </div>
   </div>
 
-  <p style="color: white;">All field images taken from <a href="https://stellarium-web.org/" style="color: white" target="_blank">Stellarium</a></p>
+  <p >All field images taken from <a href="https://stellarium-web.org/" target="_blank">Stellarium</a></p>
 
-  <p style="color: white;">Images from zoom ins:</p>
-  <ul style="color: white;">
-    <li>NGC1260 Image Credit: <a href="https://en.wikipedia.org/wiki/NGC_1260#/media/File:NGC_1260-HST10877_38R814GB555.png" target="_blank"  style="color: white">Fabian RRRR, Wikipeida</a></li>
-    <li>NGC5452 Image Credit: <a href="https://cseligman.com/text/atlas/ngc54a.htm#5452" target="_blank"  style="color: white">Courtney Seligman</a></li>
-    <li>M109 Image Credit: <a href="http://annesastronomynews.com/photo-gallery-ii/galaxies-clusters/messier-109-ngc-3992/" target="_blank"  style="color: white">Anne's Astronomy News</a></li>
-    <li>NGC3294 Image Credit: <a href="http://www.caelumobservatory.com/gallery/n3294.shtml"  style="color: white">Mt. Lemmon SkyCenter</a></li>
-    <li>NGC6143 Image Credit: <a href="http://skyserver.sdss.org/dr14/SkyServerWS/ImgCutout/getjpeg?TaskName=Skyserver.Chart.Image&ra=245.426146&dec=+55.086131&scale=0.3&width=800&height=800&opt=&query="  style="color: white">SDSS, via WikiData</a></li>
+  <p >Images from zoom ins:</p>
+  <ul>
+    <li>NGC1260 Image Credit: <a href="https://en.wikipedia.org/wiki/NGC_1260#/media/File:NGC_1260-HST10877_38R814GB555.png" target="_blank">Fabian RRRR, Wikipeida</a></li>
+    <li>NGC5452 Image Credit: <a href="https://cseligman.com/text/atlas/ngc54a.htm#5452" target="_blank" >Courtney Seligman</a></li>
+    <li>M109 Image Credit: <a href="http://annesastronomynews.com/photo-gallery-ii/galaxies-clusters/messier-109-ngc-3992/" target="_blank">Anne's Astronomy News</a></li>
+    <li>NGC3294 Image Credit: <a href="http://www.caelumobservatory.com/gallery/n3294.shtml" >Mt. Lemmon SkyCenter</a></li>
+    <li>NGC6143 Image Credit: <a href="http://skyserver.sdss.org/dr14/SkyServerWS/ImgCutout/getjpeg?TaskName=Skyserver.Chart.Image&ra=245.426146&dec=+55.086131&scale=0.3&width=800&height=800&opt=&query=">SDSS, via WikiData</a></li>
   </ul>
 
+<script src="./js/constants.js"></script>
+<script src="./js/hotKeys.js"></script>
+<script src="./js/domeAnimations.js"></script>
+<script src="./js/generateSpectrum.js"></script>
+<script src="./js/moveTelescope.js"></script>
+<script src="./js/helperFunctions.js"></script>
 <script>
 //
 // Virtual Observatory
+//
+// This is broken into 6 .js files for clarity of what everything is doing
+// Everything in this .js file is handling defaults
 //
 // All of these galaxies are real galaxies
 // the numbers have been slightly fudged to
 // get a value for the hubble constant
 // closer to 70 km/s/Mpc
 // 
-// Sources of error for this lab:
-//  - Assuming that all galaxies are abs mag -20
-//  - Reading from the spectrum
-//
 // Something to implement if I have a ton of time
 //  - All galaxies in the field observable? 
 // I may never get to this, just a fair warning
 //
-
-var xpos = 60;
-var ypos = 80;
-
-var imgWidth  = 300;
-var imgHeight = 225;
-
-var RAPID = 15;
-var NOMINAL = 5;
-var SLOW = 1;
-
-var increment = RAPID; // Default Slewing Speed of the telescope is Rapid
-
-var imgName = 'test1';
-var image = document.getElementById('test1');
-
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext('2d');
 
-var bigInc   = document.getElementById('bigInc');
+var open  = false;
+var close = true;
+var move = false;
+var takingSpectrum = false;
+var zoomInBool  = false;
+var zoomOutBool = false;
+var emptyField = true; // for just the star field -- no galaxy
+
+// Default Field set to first in the list
+var all_field_names = Object.keys(whichIsWhichBackward);
+var currentField = all_field_names[0]; 
+var imgName = whichIsWhichBackward[currentField]; // Get the name of the image corresponding to the first field
+var image = document.getElementById(imgName); // Set the background image to that image
+
+// Sets the default first Field's color to white
+var cHelp = colorHelper[imgName];
+document.getElementById(cHelp).style.backgroundColor = 'white';
+// Set the default slew speed's color to white
+var bigInc = document.getElementById('bigInc');
 bigInc.style.backgroundColor = 'white';
 
-// Extent of the galaxies on the image: xmin, xmax, ymin, ymax
-var allGalExtent = {
-  "Perseus": [323, 346, 158, 183],
-  "UrsaMinor": [245, 312, 52, 93],
-  "UrsaMajor": [506, 535, 270, 320],
-  "LeoMinor": [215, 250, 192, 209],
-  "Draco": [556, 596, 300, 337]
-};
-
-var whichZoomIn = {
-  "Perseus": "NGC1260",
-  "UrsaMinor": "NGC5452",
-  "UrsaMajor": "M109",
-  "LeoMinor": "NGC3294",
-  "Draco": "NGC6143"
-}
-
-var whichZoomOut = {
-  "Perseus": "test1",
-  "UrsaMinor": "test2",
-  "UrsaMajor": "test3",
-  "LeoMinor": "test4",
-  "Draco": "test5"
-}
-
-var imageCredits = {
-  "Perseus": "https://en.wikipedia.org/wiki/NGC_1260#/media/File:NGC_1260-HST10877_38R814GB555.png",
-  "UrsaMinor": "https://cseligman.com/text/atlas/ngc54a.htm#5452",
-  "UrsaMajor": "http://annesastronomynews.com/photo-gallery-ii/galaxies-clusters/messier-109-ngc-3992/",
-  "LeoMinor": "http://www.caelumobservatory.com/gallery/n3294.shtml",
-  "Draco": "http://skyserver.sdss.org/dr14/SkyServerWS/ImgCutout/getjpeg?TaskName=Skyserver.Chart.Image&ra=245.426146&dec=+55.086131&scale=0.3&width=800&height=800&opt=&query="
-}
-
-function imageCredits() {
-  window.open(imageCredits[currentField],'_blank');
-}
-
-var currentField = "Perseus";
-
-var lambdaArr = new Array(1000);
-var fluxArr   = new Array(1000);
-
+// Creates a CSS variable for how long generating the spectrum takes
 var noise = 1;
-
 var docStyle = document.documentElement.style;
 docStyle.setProperty("--seconds", String(noise)+"s");
 
-var CALCIUM_H = 3969;
-var CALCIUM_K = 3934;
-
-var APP_MAGS = {
-  "Perseus":14.3,
-  "UrsaMinor":12.1,
-  "UrsaMajor":10.8,
-  "LeoMinor":11.6,
-  "Draco":13.2
-};
-var DISTS   = {
-  "Perseus":76.7,
-  "UrsaMinor":33.0,
-  "UrsaMajor":25.6,
-  "LeoMinor":30.1,
-  "Draco":52.5
-}; //Mpc
-
-var CLICK_FROM_CENTER = 1;
-
-// Center of galaxy: xcenter, ycenter, rough extent
-zoomGalaxyCenters = {  
-  "Perseus": [150, 238, 20],
-  "UrsaMinor": [224, 270, 40],
-  "UrsaMajor": [420, 342, 50],
-  "LeoMinor": [405, 389, 40],
-  "Draco": [169, 215, 50]
-};
-
-var TRUE_REDSHIFTS = {
-  "Perseus":0.01688, 
-  "UrsaMinor":0.006891,
-  "UrsaMajor":0.003496,
-  "LeoMinor":0.00523,
-  "Draco":0.009807
-} 
-
+// Loads in current value from constants.js
 var TRUE_REDSHIFT = TRUE_REDSHIFTS[currentField];
 var APP_MAG       = APP_MAGS[currentField];
 var DIST          = DISTS[currentField];
 
-var CALCIUM_H_REDSHIFTED = CALCIUM_H + CALCIUM_H * TRUE_REDSHIFT;
-var CALCIUM_K_REDSHIFTED = CALCIUM_K + CALCIUM_K * TRUE_REDSHIFT;
-
-var open  = false;
-var close = true;
-var zoomInBool  = false;
-var zoomOutBool = false;
-var changingInt = false;
-var takingSpectrum = false;
-var emptyField = true;
-
+// Set the default galaxy name and apparent magnitude on the spectrum
 document.getElementById("appMag").innerHTML = APP_MAG;
 document.getElementById("galaxyName").innerHTML = whichZoomIn[currentField];
 
-document.onkeydown = checkKey;
-document.onkeyup   = checkKeyUp;
-
-northButton = document.getElementById("north") 
-southButton = document.getElementById("south")
-eastButton  = document.getElementById("east")
-westButton  = document.getElementById("west")
-
-function checkKeyUp(e) {
-  e = e || window.event;
-
- if (e.keyCode == '87' || e.keyCode == "38") { // W or Up - move image north
-    unhover(northButton);
- } else if (e.keyCode == '83' || e.keyCode == "40") { // S or Down - move image south
-    unhover(southButton);
- } else if (e.keyCode == '65' || e.keyCode == "37") { // A or Left - move image east
-    unhover(eastButton);
- } else if (e.keyCode == '68' || e.keyCode == "39") { // D or Right - move image west
-    unhover(westButton);
- }
-}
-
-function checkKey(e) {
-  e = e || window.event;
-
-  if (e.keyCode == '87' || e.keyCode == "38") { // W or Up - move image north
-    e.preventDefault();
-    hover(northButton);
-    north();
-  } else if (e.keyCode == '83' || e.keyCode == "40") { // S or Down - move image south
-    e.preventDefault();
-    hover(southButton);
-    south();
-  } else if (e.keyCode == '65' || e.keyCode == "37") { // A or Left - move image east
-    e.preventDefault();
-    hover(eastButton);
-    east();
-  } else if (e.keyCode == '68' || e.keyCode == "39") { // D or Right - move image west
-    e.preventDefault();
-    hover(westButton);
-    west();
-  } else if (e.keyCode == '192') { //` ~ - toggle increment button
-    changeIncrement();
-  } else if (e.keyCode == '49') { // 1 - rapid slew
-    if (!changingInt) {
-      inc(RAPID);
-    }
-  } else if (e.keyCode == '50') { // 2 - nominal slew
-    if (!changingInt) {
-      inc(NOMINAL);
-    }
-  } else if (e.keyCode == '51') { // 3 - slow slew
-    if (!changingInt) {
-      inc(SLOW);
-    }
-  } else if (e.keyCode == '13') { // Enter - toggle integration time input
-    e.preventDefault();
-    intToggle();
-  } else if (e.keyCode == '70') { // F - show all Fields
-    showAll();
-  } else if (e.shiftKey && e.keyCode == '9') { // Shift+Tab - switch between fields backwards
-    e.preventDefault();
-    autoSwitch('backward');
-  } else if (e.keyCode == '9') { // Tab - switch between fields forwards
-    e.preventDefault();
-    autoSwitch('forward');
-  } else if (e.keyCode == '79') { // O - open/close dome
-    if ((close) && (!move)) {
-      animateDoorsOpen();
-    } else if ((open) && (move)) {
-      animateDoorsClose();
-    }
-  } else if (e.keyCode == '90') { // Z - zoom In/Out as appropriate
-    if (zoomOutBool) {
-      zoomOut();
-    } else {
-      zoomIn();
-    }
-  } else if (e.keyCode == '84') { // T - take spectrum
-    if ( (zoomOutBool) && (!takingSpectrum) ) {
-      buttonPress();
-    }
-  } else if (e.keyCode == '191') { // / ? - show hot keys
-    if (!takingSpectrum) {
-      hotKeysDiv();
-    }
-  }
-}
-
-function hover(element) {
-  element.style.backgroundColor = 'white';
-}
-
-function unhover(element) {
-  element.style.backgroundColor = 'darkgray';
-}
-
-function inc(newIncrement) {
-  increment = parseInt(newIncrement);
-  var bigInc   = document.getElementById('bigInc');
-  var smallInc = document.getElementById('smallInc');
-  var tinyInc  = document.getElementById('tinyInc');
-
-  if (increment == RAPID) {
-    bigInc.style.backgroundColor = 'white';
-    smallInc.style.backgroundColor = 'darkgray';
-    tinyInc.style.backgroundColor = 'darkgray';
-  } else if (increment == NOMINAL) {
-    bigInc.style.backgroundColor = 'darkgray';
-    smallInc.style.backgroundColor = 'white';
-    tinyInc.style.backgroundColor = 'darkgray';
-  } else if (increment == SLOW) {
-    bigInc.style.backgroundColor = 'darkgray';
-    smallInc.style.backgroundColor = 'darkgray';
-    tinyInc.style.backgroundColor = 'white';
-  }
-}
-
-function changeIncrement() {
-  var bigInc   = document.getElementById('bigInc');
-  var smallInc = document.getElementById('smallInc');
-  var tinyInc  = document.getElementById('tinyInc');
-
-  var changeSlewButton = document.getElementById("changeSlew");
-
-  if (changeSlewButton.style.backgroundColor === 'darkgray') {
-    changeSlewButton.style.backgroundColor = 'white';
-  } else {
-    changeSlewButton.style.backgroundColor = 'darkgray';
-  } 
-
-  bigInc.style.display   = bigInc.style.display != 'none'? 'none' : 'block';
-  smallInc.style.display = smallInc.style.display != 'none'? 'none' : 'block';
-  tinyInc.style.display  = tinyInc.style.display != 'none'? 'none' : 'block';
-}
-
-function intToggle() {
-  if (changingInt) {
-    changingInt = false;
-  } else if (!changingInt) {
-    changingInt = true;
-  }
-  var intInput = document.getElementById("intTime");
-  intInput.style.display = intInput.style.display != 'none' ? 'none' : 'block';
-
-  var intToggleButton = document.getElementById("intToggleButton");
-
-  if (intToggleButton.style.backgroundColor === 'darkgray') {
-    intToggleButton.style.backgroundColor = 'white';
-  } else {
-    intToggleButton.style.backgroundColor = 'darkgray';
-  }
-}
-
-function onGalaxyChecker() {
-  var extent = allGalExtent[currentField];
-  var xmin = extent[0];
-  var xmax = extent[1];
-  var ymin = extent[2];
-  var ymax = extent[3];
-  if ((xpos > xmin) && (xpos < xmax) && (ypos > ymin) && (ypos < ymax)) {
-    zoomInBool = true;
-    document.getElementById("zoomIn").style.backgroundColor  = "white";
-  } else {
-    zoomInBool = false;
-    document.getElementById("zoomIn").style.backgroundColor  = "darkgray";
-  }
-}
-
-var b4zoomx = 0;
-var b4zoomy = 0;
-
-function zoomIn() {
-  if (open) {
-    b4zoomx = xpos;
-    b4zoomy = ypos;
-    xpos = 40;
-    ypox = 60;
-    if (zoomInBool) {
-      zoomOutBool = true;
-      which = whichZoomIn[currentField];
-      image = document.getElementById(which);
-      document.getElementById("zoomOut").style.display = "block";
-      document.getElementById("zoomIn").style.display  = "none";
-      document.getElementById("takeSpectrum").style.display = "block";
-      zoomInBool = false;
-      emptyField = false;
-    } else {
-      image = document.getElementById("emptyField");
-      document.getElementById("zoomOut").style.display = "block";
-      document.getElementById("zoomIn").style.display  = "none";
-      document.getElementById("takeSpectrum").style.display = "block";
-      zoomOutBool = true;
-      emptyField = true;
-    }
-    telescopeFrame();
-  }
-}
-
-function zoomOut() {
-  xpos = b4zoomx;
-  ypos = b4zoomy;
-  zoomOutBool = false;
-  which = whichZoomOut[currentField];
-  image = document.getElementById(which);
-  telescopeFrame();
-  document.getElementById("zoomOut").style.display = "none";
-  document.getElementById("zoomIn").style.display  = "block";
-  document.getElementById("takeSpectrum").style.display = "none";
-  onGalaxyChecker();
-}
-
-var move = false;
-
-var domeLocLeft  = 375; // location of center of doors -- starts closed at 375
-var domeLocRight = 375;
-var width = 125;
-
-var changeAnimation = 5;
-
-function closedDome() {
-
-  ctx.fillStyle = 'gray';
-  ctx.fillRect(0, 0, 200, 500);
-  ctx.fillRect(550, 0, 200, 500);
-
-  ctx.fillStyle = 'darkgray';
-  ctx.fillRect(200, 0, 350, 500);
-
-  ctx.strokeStyle = 'black';
-  ctx.linewidth = 10;
-  ctx.moveTo(200, 0);
-  ctx.lineTo(200, 500);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(550, 0);
-  ctx.lineTo(550, 500);
-  ctx.stroke();
-
-  // dome doors
-  
-  ctx.strokeRect(250, 50, 125, 350);
-  ctx.strokeRect(375, 50, 125, 350);
-
-  ctx.strokeStyle = 'darkgray';
-  ctx.beginPath(); 
-  ctx.moveTo(375, 50);
-  ctx.lineTo(375, 400);
-  ctx.stroke();
-
-}
-
-function openDome() {
-  document.getElementById("fieldDisplay").innerHTML = 'Target: ' + whichZoomIn[currentField];
-  close = false;
-  move = true;
-  document.getElementById("openButton").style.display = "none";
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = 'gray';
-  ctx.fillRect(0, 0, 200, 500);
-  ctx.fillRect(550, 0, 200, 500);
-
-  ctx.fillStyle = 'darkgray';
-  ctx.fillRect(200, 0, 350, 500);
-  
-  ctx.strokeStyle = 'black';
-  ctx.linewidth = 10;
-  ctx.moveTo(200, 0);
-  ctx.lineTo(200, 500);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(550, 0);
-  ctx.lineTo(550, 500);
-  ctx.stroke();
-
-  ctx.fillStyle = 'black';
-  ctx.fillRect(250, 50, 250, 350);
-
-  ctx.drawImage(image, xpos, ypos, imgWidth, imgHeight, 250, 50, 250, 350);
-
-  if (domeLocLeft < 250) {
-    window.clearInterval(interval_tracker);
-    ctx.fillStyle = 'black';
-    ctx.fillRect(250, 50, 250, 350);
-    telescopeFrame();
-    open = true;
-
-    document.getElementById("closeButton").style.display = "block";
-    if (zoomOutBool) {
-      document.getElementById("zoomOut").style.display = "block";
-      document.getElementById("takeSpectrum").style.display = "block";
-    } 
-    if (zoomInBool) {
-      document.getElementById("zoomIn").style.display = "block";
-    }
-  }
-
-  domeLocLeft  = domeLocLeft - changeAnimation;
-  domeLocRight = domeLocRight + changeAnimation;
-  width = width - changeAnimation;
- 
-  // dome doors
-  ctx.strokeRect(250, 50, 250, 350);  
-  ctx.fillStyle="darkgray";
-  ctx.fillRect(domeLocLeft , 50, -width, 350);
-  ctx.fillRect(domeLocRight, 50, width, 350);
-
-  ctx.strokeStyle = 'darkgray';
-  ctx.beginPath(); 
-  ctx.moveTo(domeLocLeft, 50);
-  ctx.lineTo(domeLocLeft, 400);
-  ctx.stroke();
-  ctx.beginPath(); 
-  ctx.moveTo(domeLocRight, 50);
-  ctx.lineTo(domeLocRight, 400);
-  ctx.stroke();
-}
-
-function closeDome() {
-  open = false;
-  move = false;
-  document.getElementById("closeButton").style.display = "none";
-  document.getElementById("openButton").style.display = "none";
-  document.getElementById("zoomIn").style.display = "none";
-  document.getElementById("zoomOut").style.display = "none";
-  document.getElementById("takeSpectrum").style.display = "none";
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = 'gray';
-  ctx.fillRect(0, 0, 200, 500);
-  ctx.fillRect(550, 0, 200, 500);
-
-  ctx.fillStyle = 'darkgray';
-  ctx.fillRect(200, 0, 350, 500);
-  
-  ctx.strokeStyle = 'black';
-  ctx.linewidth = 10;
-  ctx.moveTo(200, 0);
-  ctx.lineTo(200, 500);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(550, 0);
-  ctx.lineTo(550, 500);
-  ctx.stroke();
-
-  domeLocLeft  = domeLocLeft + changeAnimation;
-  domeLocRight = domeLocRight - changeAnimation;
-  width = width + changeAnimation;
-
-  if (domeLocLeft > 375) {
-    document.getElementById("openButton").style.display = "block";
- 
-    ctx.fillStyle = 'black';
-    ctx.linewidth = 10;
-    ctx.fillRect(250, 50, 250, 350);    
-    ctx.beginPath();
-    ctx.strokeStyle = 'black';
-    ctx.moveTo(375,50);
-    ctx.lineTo(375,400);
-    ctx.stroke();
-  
-    // dome doors
-    ctx.fillStyle="darkgray";
-    ctx.strokeRect(250, 50, 250, 350);  
-    ctx.fillRect(domeLocLeft , 50, -width, 350);
-    ctx.fillRect(domeLocRight, 50, width, 350);
-    
-    ctx.strokeStyle = 'black';
-    ctx.linewidth = 10;
-    ctx.moveTo(200, 0);
-    ctx.lineTo(200, 500);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(550, 0);
-    ctx.lineTo(550, 500);
-    ctx.stroke();
-
-    close = true;
-    
-    window.clearInterval(interval_tracker);
-
-  } else {
-    
- 
-    ctx.fillStyle = 'black';
-    ctx.fillRect(250, 50, 250, 350);  
-    ctx.drawImage(image, xpos, ypos, imgWidth, imgHeight, 250, 50, 250, 350);
- 
-    // dome doors
-    ctx.strokeRect(250, 50, 250, 350);  
-    ctx.fillStyle="darkgray";
-    ctx.fillRect(domeLocLeft , 50, -width, 350);
-    ctx.fillRect(domeLocRight, 50, width, 350);
-
-    ctx.strokeStyle = 'darkgray';
-    ctx.beginPath(); 
-    ctx.moveTo(domeLocLeft, 50);
-    ctx.lineTo(domeLocLeft, 400);
-    ctx.stroke();
-    ctx.beginPath(); 
-    ctx.moveTo(domeLocRight, 50);
-    ctx.lineTo(domeLocRight, 400);
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.strokeStyle = 'black';
-    ctx.moveTo(domeLocLeft,50);
-    ctx.lineTo(domeLocLeft,400);
-    ctx.stroke();
-  }
-}
-
-
-var interval_tracker = "";
-
-var fps = 10;
-
-function animateDoorsOpen() {
-  
-  interval_tracker = setInterval(function(){ //throttle requestAnimationFrame to 20fps
-       requestAnimationFrame(openDome);
-  }, 1000/fps)
-}
-
-function animateDoorsClose() {
-  interval_tracker = setInterval(function(){ //throttle requestAnimationFrame to 20fps
-       requestAnimationFrame(closeDome);
-  }, 1000/fps)
-  ctx.fillStyle="darkgray";
-  ctx.strokeRect(250, 50, 250, 350);  
-}
-
-function telescopeFrame() {
-  onGalaxyChecker();
-  ctx.fillStyle = 'gray';
-  ctx.fillRect(0, 0, 200, 500);
-  ctx.fillRect(550, 0, 200, 500);
-
-  ctx.fillStyle = 'darkgray';
-  ctx.fillRect(200, 0, 350, 500);
-  
-  ctx.strokeStyle = 'black';
-  ctx.linewidth = 10;
-  ctx.moveTo(200, 0);
-  ctx.lineTo(200, 500);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(550, 0);
-  ctx.lineTo(550, 500);
-  ctx.stroke();
-
-  ctx.fillStyle = 'black';
-  ctx.fillRect(250, 50, 250, 350);
-
-  ctx.drawImage(image, xpos, ypos, imgWidth, imgHeight, 250, 50, 250, 350);
-
-  ctx.strokeRect(250, 50, 250, 350);
-
-  ctx.beginPath();
-  ctx.strokeStyle = 'red';
-
-  var topSpec    = 200;
-  var bottomSpec = 230;
-
-  ctx.moveTo(370, topSpec);
-  ctx.lineTo(370, bottomSpec);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(380, topSpec);
-  ctx.lineTo(380, bottomSpec);
-  ctx.stroke();
-}
-
-function west() {
-  if ((move) && (open)) {
-    if (xpos + increment < image.width - imgWidth) {
-      xpos = xpos + increment;
-      telescopeFrame();
-    }
-  }
-}
-
-function east() {
-  if ((move) && (open)) {
-    if (xpos - increment > 0) {
-      xpos = xpos - increment;
-      telescopeFrame();
-    }
-  }
-}
-
-function north() {
-  if ((move) && (open)) {
-    if (ypos - increment > 0) {
-      ypos = ypos - increment;
-      telescopeFrame();
-    }
-  }
-}
-
-function south() {
-  if ((move) && (open) ) {
-    if (ypos + increment < image.height - imgHeight) {
-      ypos = ypos + increment;
-      telescopeFrame();
-    }
-  }
-}
-
-function showAll() {
-  var changeFieldButton = document.getElementById("changeField")
-
-  if (changeFieldButton.style.backgroundColor === 'darkgray') {
-    changeFieldButton.style.backgroundColor = 'white';
-  } else {
-    changeFieldButton.style.backgroundColor = 'darkgray';
-  }
-
-  field1 = document.getElementById("Field1");
-  field1.style.display = field1.style.display != 'none'? 'none' : 'block';
-  
-  field2 = document.getElementById("Field2");
-  field2.style.display = field2.style.display != 'none'? 'none' : 'block';
-  
-  field3 = document.getElementById("Field3");
-  field3.style.display = field3.style.display != 'none'? 'none' : 'block';
-
-  field4 = document.getElementById("Field4");
-  field4.style.display = field4.style.display != 'none'? 'none' : 'block';
-
-  field5 = document.getElementById("Field5");
-  field5.style.display = field5.style.display != 'none'? 'none' : 'block';
-}
-
-var whichIsWhich = {
-  "test1":"Perseus",
-  "test2":"UrsaMinor",
-  "test3":"UrsaMajor",
-  "test4":"LeoMinor",
-  "test5":"Draco"
-};
-
-var whichIsWhichBackward = {
-  "Perseus":"test1",
-  "UrsaMinor":"test2",
-  "UrsaMajor":"test3",
-  "LeoMinor":"test4",
-  "Draco":"test5"
-};
-
-var colorHelper = {
-  "test1":"Field1",
-  "test2":"Field2",
-  "test3":"Field3",
-  "test4":"Field4",
-  "test5":"Field5"
-};
-
-var cHelp = colorHelper[imgName];
-document.getElementById(cHelp).style.backgroundColor = 'white';
-
-function switchImage(which2switch) {
-  if ((!move) && (close)) {
-    image = document.getElementById(which2switch);
-  
-    currentField = whichIsWhich[which2switch];
-    TRUE_REDSHIFT = TRUE_REDSHIFTS[currentField];
-    APP_MAG       = APP_MAGS[currentField];
-    DIST          = DISTS[currentField];
-
-    CALCIUM_H_REDSHIFTED = CALCIUM_H + CALCIUM_H * TRUE_REDSHIFT;
-    CALCIUM_K_REDSHIFTED = CALCIUM_K + CALCIUM_K * TRUE_REDSHIFT;
-
-    document.getElementById("appMag").innerHTML = APP_MAG;
-    document.getElementById("galaxyName").innerHTML = whichZoomIn[currentField];
-    document.getElementById("fieldDisplay").innerHTML = 'Target: ' + whichZoomIn[currentField];
-
-    zoomOutBool = false;
-
-    document.getElementById('intTime').value = '';
-
-    imgName = which2switch;
-    xpos = 60;
-    ypox = 40;
-    document.getElementById('domeWarningContainer').style.display = 'none';
-    document.getElementById('domeWarning').innerHTML = '';
-
-    cHelp = colorHelper[which2switch]
-
-    document.getElementById(cHelp).style.backgroundColor = 'white';    
-
-    keys = Object.keys(colorHelper);
-    for (var i = 0; i < keys.length; ++i) {
-      if (keys[i] != which2switch) {
-        document.getElementById(colorHelper[keys[i]]).style.backgroundColor = 'darkgray';
-      }
-    }
-    //document.getElementById("fieldDisplay").innerHTML = document.getElementById(cHelp).innerHTML;
-
-  } else {
-    document.getElementById('domeWarningContainer').style.display = 'block';
-    document.getElementById('domeWarning').innerHTML = 'You must close the dome before you can change fields';
-  }
-  //telescopeFrame();
-}
-
-function autoSwitch(direction) {
-  keys = Object.keys(whichIsWhichBackward);
-
-  var currentIndex = keys.indexOf(currentField);
-  var nextIndex = -1;  
-
-
-  if (direction === 'forward') {
-    nextIndex = currentIndex + 1;
-    if (nextIndex > keys.length - 1) {
-      nextIndex = 0;
-    }
-  } else if (direction = 'backward') {
-    nextIndex = currentIndex - 1;
-    if (nextIndex < 0) {
-      nextIndex = keys.length - 1;
-    }
-  }
-
-  switchImage(whichIsWhichBackward[keys[nextIndex]]);
-}
-
+// Calculates the redshift (assuming H is 3969 and K is 3934)
+var CALCIUM_H_REDSHIFTED = CALCIUM_H + CALCIUM_H * TRUE_REDSHIFT;
+var CALCIUM_K_REDSHIFTED = CALCIUM_K + CALCIUM_K * TRUE_REDSHIFT;
+
+// Buttons
+northButton = document.getElementById("north");
+southButton = document.getElementById("south");
+eastButton  = document.getElementById("east");
+westButton  = document.getElementById("west");
+
+// Start with the dome being closed (called from domeAnimations.js)
 closedDome();
 
-function addNoise() {
-  noise = parseInt(document.getElementById("intTime").value);
-}
-
-function random(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-function generateGaussian(mean,std){
-  var _2PI = Math.PI * 2;
-  var u1 = Math.random();
-  var u2 = Math.random();
-  
-  var z0 = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(_2PI * u2);
-  var z1 = Math.sqrt(-2.0 * Math.log(u1)) * Math.sin(_2PI * u2);
-
-  return z1 * std + mean;
-}
-
+// initize wavelength array
+var lambdaArr = new Array(1000);
 for (var i = 3900; i < 4901; ++i) {
   lambdaArr[i-3000] = i;
 }
 
-trace1 = {x:lambdaArr,y:fluxArr};
+// initialize flux array
+var fluxArr   = new Array(1000);
 
-data = [trace1];
-
-var layout= {
-  plot_bgcolor:"black",
-  paper_bgcolor:"black",
-  yaxis: {
-    autorange: true,
-    showgrid: false,
-    zeroline: false,
-    showline: false,
-    autotick: true,
-    ticks: '',
-    showticklabels: false
-  },
-  xaxis: {
-    tickcolor: "white",
-    tickfont: {color:"white"}
-  },
-  showlegend:false
+// change the readibilty of the spectrum
+function addNoise() {
+  noise = parseInt(document.getElementById("intTime").value);
 }
 
-var config = {
-  modeBarButtonsToRemove:['pan2d','lasso2d','select2d','autoScale2d','toImage','zoom2d','resetScale2d','zoomIn2d','zoomOut2d'],
-  responsive:true,
-  displaylogo:false
-}
-
-var done = false;
-var loader = document.getElementById("loading");
-var modal = document.getElementById("myModal");
-
-function updateDisplay() {
-  docStyle.setProperty("--seconds", String(noise)+"s");
-  if (done) {
-    done = false;
-    loader.classList.remove('loading');
-    //setTimeout(() => fill.classList.add('loading'), 1);
-  }
-}
-
-function buttonPress() {
-  takingSpectrum = true;
-  updateClickFromCenter();
-  modal.style.display = "block";
-  loader.classList.add("loading");
-  document.getElementById("SpectrumDone").innerHTML = "";
-  Plotly.newPlot("myPlot", [], layout, config)
-  loader.onclick = updateDisplay();
-  loader.addEventListener("animationend", function() {
-    generateSpectrum();
-    done = true;
-    updateDisplay();
-  });
-}
-
-function generateSpectrum() {
-  for (var i = 3900; i < 4901; ++i) {
-    lambdaArr[i-3000] = i;
-    fluxArr[i-3000] = i/4900 - generateGaussian(1/5,1/7)/Math.sqrt(noise*9);
-  }
-
-  for (var i = 0; i < 3000*Math.sqrt(noise); ++i) {
-    var index = lambdaArr.indexOf(Math.round(generateGaussian(CALCIUM_H_REDSHIFTED,4)));  
-    fluxArr[index] = fluxArr[index] - 0.0001*CLICK_FROM_CENTER;
-    var index = lambdaArr.indexOf(Math.round(generateGaussian(CALCIUM_K_REDSHIFTED,4)));  
-    fluxArr[index] = fluxArr[index] - 0.0001*CLICK_FROM_CENTER;
-  }
-  trace1 = {x:lambdaArr,y:fluxArr,marker:{color:'rgb(219, 64, 82)'}};
-
-  data = [trace1];
-  Plotly.newPlot("myPlot", data, layout, config);
-  if (noise == 1) {
-    var seconds = "second";
-  } else {
-    var seconds = "seconds";
-  }
-  document.getElementById("SpectrumDone").innerHTML = "Spectrum Complete (below), integration time: " + String(noise) + " " + String(seconds);
-}
-
-function sleep(milliseconds) {
-  const date = Date.now();
-  let currentDate = null;
-  do {
-    currentDate = Date.now();
-  } while (currentDate - date < milliseconds);
-}
-
+// When a modal is open, click off the box to exit it
 window.onclick = function(event) {
- if (event.target == modal) {
-    modal.style.display = "none";
+ if (event.target == spectrumModal) {
+    spectrumModal.style.display = "none";
     takingSpectrum = false;
- } else if (event.target == modal2) {
+ } else if (event.target == hotKeysModal) {
     hotKeysDiv();
  }
 }
-
-var modal2 = document.getElementById("hotKeys");
-
-function hotKeysDiv() {
-  hkDiv = document.getElementById("hotKeys")
-  hkDiv.style.display = hkDiv.style.display != 'none' ? 'none' : 'block';
-  hkButton = document.getElementById('hotKeysButton')
-  hkButton.innerHTML = hkButton.innerHTML != 'Hide Hot Keys' ? 'Hide Hot Keys' : 'Show Hot Keys';
-  hkButton.style.backgroundColor = hkButton.style.backgroundColor != 'white' ? 'white' : 'darkgray';
-}
-
-function updateClickFromCenter() {
-  currentGalaxyCenter = zoomGalaxyCenters[currentField];
-  var xcenter = currentGalaxyCenter[0];
-  var ycenter = currentGalaxyCenter[1];
-  var roughExtent = currentGalaxyCenter[2];
-
-  var distance = ( (xpos - xcenter) ** 2 + (ypos - ycenter) ** 2 ) ** (1/2);
-
-  if (emptyField) {
-    CLICK_FROM_CENTER = 0.0;
-  } else if (distance < roughExtent) {
-    CLICK_FROM_CENTER = 1;
-  } else if (distance < roughExtent*1.15) {
-    CLICK_FROM_CENTER = 0.25;
-  } else if (distance < roughExtent*1.5) {
-    CLICK_FROM_CENTER = 0.1;
-  } else {
-    CLICK_FROM_CENTER = 0.01;
-  }
-}
-
-Plotly.newPlot("myPlot", data, layout, config)
-
 </script>
+
 <footer>
   <button class="button" onclick="window.location.href = 'backgroundExplain.html'">About the background image </button>
 </footer>
-
 </body>
-
 </html>

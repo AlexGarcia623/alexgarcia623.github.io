@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="../ALEX.css">
+<link rel="stylesheet" href="./css/spectroscopy.css">
 
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
@@ -10,179 +11,6 @@
 
 <head>
 <style>
-body {
-  background-image:url('Nebula.jpeg');
-  background-size:cover;
-  background-attachment: fixed; 
-  background-size:fill; 
-}
-
-* {
-  box-sizing:border-box;
-}
-.column {
-  float:left;
-  width:50%;
-}
-
-.row:after {
-  contents: "";
-  display: table;
-  clear: both;
-}
-
-.column3 {
-  float:left;
-  width:33%;
-}
-
-
-h1 {
-  color:green;
-}
-
-h2 {
-  color:green;
-}
-
-p, a {
-  color:lightgreen;
-}
-
-
-#canvas {
-  border: 1px solid black;
-  width: 50%;
-  background-color:black;
-  border-radius:15px;
-}
-
-.slidecontainer {
-  width: 100%;
-}
-
-.slider {
-  -webkit-appearance: none;
-  border: 2px darkgreen solid;
-  width: 100%;
-  height: 25px;
-  background: lightgreen;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider:hover {
-  opacity: 1;
-  background:darkgreen;
-  border: 2px lightgreen solid;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  background:white;
-}
-
-.slider::-moz-range-thumb {
-  width: 35px;
-  height: 35px;
-}
-
-input {
-  color:lightgreen;
-  font-size:min(max(18pt, 2vw), 22pt);
-  border:2px darkgreen solid;
-}
-
-input:hover {
-  color:darkgreen;
-  background:lightgreen;
-}
-
-.AstrSpectroscopy {
-  border: 1vw solid darkgreen;
-  background-color:lightgreen;
-  border-radius:5px;
-  padding:10px;
-  margin-top:10px;
-  margin-bottom:10px;
-  max-width:120ch;
-}
-
-label {
-  color:lightgreen;
-}
-
-select {
-  background-color:black;
-  font-size: min(max(14pt, 1.5vw), 16pt);
-  color:white;
-  border: solid white 4px;
-  border-radius: 10px;
-}
-
-select:hover {
-  transition:0.4s;
-  background-color:white;
-  color:black;
-}
-
-select:not(:hover) {
-  transition:0.4s;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 2%; /* Location of the box */
-  left: 0;
-  top: 0;
-  overflow-y: hidden; 
-  width:100%;
-  height:100%;
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: white;
-  border-radius:5px;
-  margin: auto;
-  padding: 20px;
-  border: 1vw solid red;
-  width: 70%;
-  height: 60%;
-}
-
-.AstrSpecButton {
-  color:white;
-  border: 3px solid white;
-  background-color:black;
-  border-radius:5px;
-  padding:10px;
-  font-size:min(max(12pt, 2vw), 16pt);
-}
-
-.AstrSpecButton:hover {
-  transition:0.4s;
-  color:black;
-  background-color:white;
-}
-
-.AstrSpecButton:not(:hover) {
-  transition:0.4s;
-  color:white;
-  background-color:black;
-}
-
 .modalWhiteBckgrd {
   border: 1vw solid white;
   background-color:lightgray;
@@ -192,11 +20,13 @@ select:not(:hover) {
   margin-bottom:10px;
   max-width:120ch;
 }
-
 </style>
 
-<script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
-<script src="plotly-2.11.1.min.js"></script>
+<script>
+function SpecHome() {
+  window.open('AstronomicalSpectroscopy.html','_self');
+}
+</script>
 
 </head>
 
@@ -205,16 +35,10 @@ select:not(:hover) {
   <button class = "button biggerButton" onclick="SpecHome()">Main Menu</button>
 </header>
 
-<script>
-  function SpecHome() {
-    window.open('AstronomicalSpectroscopyII.html','_self');
-  }
-</script>
-
 <body>
 <div class="body">
 
-  <div class="AstrSpectroscopy center" style="background-color:black;" id="contain1">
+  <div class="AstrSpectroscopy center" id="contain1">
 
     <h1>Absorption Spectra</h1> 
 
@@ -231,14 +55,15 @@ select:not(:hover) {
     
     <br><br>    
 
-    <button onclick="showReference()" class="AstrSpecButton">Show Reference Spectra</button>
+    <button onclick="showReference()" class="AstrSpecButton center">Show Reference Spectra</button>
 
   </div>
 
   <canvas class="center" id="canvas" height="500" width="750"></canvas> <br>
-  <input class="center" id="repeats" type = "number" placeholder="# Photons" min="0" max="20" onchange="return;"/> 
+  <input class="center" id="repeats" type = "number" placeholder="# Photons" min="0" max="20"/> 
+ 
   <input type="button" onclick="start()" value="Start!" class="center"/>
-   
+ 
   <div class="modal" id="myModal" style="display:none;min-width:50ch;">
     <div class="modalContent modalWhiteBckgrd center" style="width:60%;">
       <h2 style="color:black;">Reference Spectra</h2>
@@ -252,7 +77,7 @@ select:not(:hover) {
 
   <p id="display"> </p>
 
-  <div class="AstrSpectroscopy center" style="background-color:black;" id = "contain2">
+  <div class="AstrSpectroscopy center" id = "contain2">
 
     <h2>Use this slider to set the photon energy</h2>
     <div class="slidecontainer">
@@ -260,11 +85,12 @@ select:not(:hover) {
       <h2 style="color:darkgreen;">Energy: <span id="energy"></span> eV</h2>
     </div>
 
-    <h2>Results:</h2>
+    <h2 style="text-align:left;">Results:</h2>
     
     <p id="displayResult">Observed: <span id="numObs">X</span> out of <span id="numEmit">Y</span></h2></p>
 
     <h2 style="color:darkgreen;"><span id="number"></span> <span id="finish"> </span> </h2>
+    <!-- There is probably a better way to do this, but I do not know it -->
     <p style="color:green;"><span id="prevNum1"></span> <span id="prev1"></span></p>
     <p style="color:green;"><span id="prevNum2"></span> <span id="prev2"></span></p>
     <p style="color:green;"><span id="prevNum3"></span> <span id="prev3"></span></p>
@@ -288,277 +114,43 @@ select:not(:hover) {
 
   </div>
 
-
-  <p id="test"></p>
-
 </body>
 
+<script src="./js/helperFunctions.js"></script>
+<script src="./js/wavelengthToColor.js"></script>
+<script src="./js/absorptionSpectra.js"></script>
+<script src="./js/absorptionSpectraConstants.js"></script>
 <script>
-// Based on code found here: https://gist.github.com/hacknightly/fd609abe5a7e15e223a823ee6e0724c8
-var x = 375;
-var y = 250;
-var counter = document.querySelector('canvas');
-var number = 1;
-var wavelength = 0; 
-var animation = false;
-var sleeptime = 500;
-var theta = 0;
-
+// Get all options for gasses (i.e. Mystery1, Mystery2...)
 var options = document.getElementById('whichGas').selectedOptions;
 var values = Array.from(options).map(({ value }) => value);
 values = String(values);
 
-var unlikelyEnergies = [1.9, 2.6, 2.9]; // Default: Hydrogen
-var weakUnlikelyEnergies = [3.3] // Default: Hydrogen
+// Defaults to first mystery gas
+var unlikelyEnergies = allGasEnergy[values];  
+var weakUnlikelyEnergies = allGasWeak[values];
 
-// Mystery 1 -- Hydrogen
-// Mystery 2 -- Mercury
-// Mystery 3 -- Helium
-// Mystery 4 -- Sodium
-
-// Absorbing values for different elements
-//
-// Highly Likely
-var allGasEnergy = {
-  "mystery1":[1.9, 2.6, 2.9],
-  "mystery2":[2.3, 2.8],
-  "mystery3":[1.9, 2.1, 2.5, 2.8],
-  "mystery4":[2.1]
-}
-// Weakly Likely 
-var allGasWeak = {
-  "mystery1":[3.3],
-  "mystery2":[2.1, 3.1],
-  "mystery3":[1.8, 2.9, 3.3],
-  "mystery4":[2.4]
-}
-
+// Handles switching mystery gasses
 function switchGas () {
   values = Array.from(options).map(({ value }) => value);
   whichGas = String(values);
   unlikelyEnergies = allGasEnergy[whichGas]
   weakUnlikelyEnergies = allGasWeak[whichGas]
 }
-
-var pAbs = 0;
-var pAbsLow = 0;
-var pAbsMedium = 0.275;
-var pAbsHigh = 0.55;
-
-var pDef = 0;
-var pDefAbsorber = 0;
-var pDefAbsWeak  = 0.1;
-var pDefElse = 0.075;
-
-var TOTAL_OBS  = 0;
-var TOTAL_EMIT = 0;
-
-function random(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-function init() {
-  animation = window.requestAnimationFrame(draw);
-}
-
-function draw() {
-  const canvas = document.getElementById('canvas');
-  const ctx = canvas.getContext('2d');    
-  ctx.strokeStyle = 'green';
-  ctx.beginPath();
-  ctx.lineWidth = 5;
-  ctx.moveTo(0,300);
-  ctx.lineTo(750,300);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.lineWidth = 5;
-  ctx.moveTo(0,100);
-  ctx.lineTo(750,100);
-  ctx.stroke();
-  ctx.strokeStyle = 'blue';
-  ctx.beginPath();
-  ctx.lineWidth = 5;
-  ctx.moveTo(250,25);
-  ctx.lineTo(500,25);
-  ctx.stroke();
-
-  var WL = wavelengtheVConverter(document.getElementById("energy").innerHTML);
-  var color = wavelengthToColor(WL);    
-
-  document.getElementById("energy").style.color = color;  
-
-  ctx.strokeStyle = color;
-  ctx.beginPath();
-  ctx.moveTo(x, y);
   
-  var pertx = 0;
-  var perty = 0;
-
-  var repeats = parseInt(document.getElementById("repeats").value)
-
-  if (y > 300 || y < 115) {
-    if (y < 30) {
-      var np1 = number + 1;
-      document.getElementById("number").innerHTML = np1 + ".";
-      if (x > 235 && x < 515) {
-        document.getElementById("finish").innerHTML = "Photon Observed";
-        TOTAL_OBS  += 1;
-        document.getElementById("numObs").innerHTML = TOTAL_OBS;
-      } else {
-        document.getElementById("finish").innerHTML = "No Photon Observed";
-      }
-
-      if (number < repeats - 1) {
-        sleep(sleeptime);
-        restart();
-      }
-      return;
-    }
-    pertx = 25 * Math.sin(theta);
-    perty = -25 * Math.abs( Math.cos(theta) );
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 2;
-    ctx.lineTo(x+pertx, y+perty);
-    ctx.stroke();
-    animation = window.requestAnimationFrame(draw);
-    x += pertx;
-    y += perty;
-  } else {
-    pertx = 10 * Math.sin(theta);
-    perty = -10 * Math.abs( 2 * Math.cos(theta) );
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 2;
-    if (Math.random() < pDef) {
-      pDef = pDef / 2;
-      var np1 = number + 1;
-      theta = random(0,2*Math.PI);
-      animation = window.requestAnimationFrame(draw);
-    } else if (Math.random() < pAbs) {
-      var np1 = number + 1;
-      document.getElementById("number").innerHTML = np1 + ".";
-      document.getElementById("finish").innerHTML = "No Photon Observed";
-      if (number < repeats - 1) {
-        sleep(sleeptime);
-        restart();
-      } else {
-        return;
-      }
-    } else if (x + pertx < 0 || x - pertx > 750) {
-      var np1 = number + 1;
-      document.getElementById("number").innerHTML = np1 + ".";
-      document.getElementById("finish").innerHTML = "No Photon Observed";
-      if (number < repeats - 1) {
-        sleep(sleeptime);
-        restart();
-      } else {
-        return;
-      }
-    } else {
-      x += pertx;
-      y += perty;
-      animation = window.requestAnimationFrame(draw);
-    }
-    ctx.lineTo(x+pertx,y+perty)
-    x += pertx;
-    y += perty;
-    ctx.stroke();
-  }
-  document.getElementById("numEmit").innerHTML = TOTAL_EMIT;
-  document.getElementById("numObs").innerHTML = TOTAL_OBS;
-  document.getElementById("displayResult").style.display = block;
-}
-  
-function start() {
-  TOTAL_EMIT = 1;
-  TOTAL_OBS  = 0;
-  theta = 0;
-  if (animation) {
-    window.cancelAnimationFrame(animation)
-  }
-  const canvas = document.getElementById('canvas');
-  const context = canvas.getContext('2d');
-
-  context.clearRect(0, 0, canvas.width, canvas.height);
-
-  for (var i=1; i < parseInt(document.getElementById("repeats").value); ++i) {
-    s1 = "prev" + String(i);
-    s2 = "prevNum" + String(i);
-    document.getElementById(s1).innerHTML = "";
-    document.getElementById(s2).innerHTML = "";
-  }
-
-  var slider = document.getElementById("myRange");
-  if (unlikelyEnergies.includes(parseFloat(slider.value))) {
-    pAbs = pAbsHigh;
-    pDef = pDefAbsorber;
-  } else if (weakUnlikelyEnergies.includes(parseFloat(slider.value))) {
-    pAbs = pAbsMedium;
-    pDef = pDefAbsWeak;
-  } else { 
-    pAbs = pAbsLow;
-    pDef = pDefElse;
-  }
-
-  x = 375;
-  y = 500;
-  number = 0;
-  document.getElementById("number").innerHTML = "";
-  document.getElementById("finish").innerHTML = "";
-  init();
-}
-
-function restart() {
-  TOTAL_EMIT += 1;
-  if (animation) {
-    window.cancelAnimationFrame(animation)
-  }
-  theta = 0;
-  number++;
-  const canvas = document.getElementById('canvas');
-  const context = canvas.getContext('2d');
-
-  context.clearRect(0, 0, canvas.width, canvas.height);
-
-  for (var i = 1; i < parseInt(document.getElementById("repeats").value); ++i) { 
-    k = parseInt(document.getElementById("repeats").value) - i;
-    j = k + 1;
-    s1 = "prev" + String(j); 
-    s2 = "prev" + String(k); 
-    s3 = "prevNum" + String(j); 
-    s4 = "prevNum" + String(k);
-    document.getElementById(s1).innerHTML = document.getElementById(s2).innerHTML; 
-    document.getElementById(s3).innerHTML = document.getElementById(s4).innerHTML;
-  }   	
-
-  if (unlikelyEnergies.includes(parseFloat(slider.value))) {
-    pAbs = pAbsHigh;
-    pDef = pDefAbsorber;
-  } else if (weakUnlikelyEnergies.includes(parseFloat(slider.value))) {
-    pAbs = pAbsMedium;
-    pDef = pDefAbsWeak;
-  } else {
-    pAbs = pAbsLow;
-    pDef = pDefElse;
-  }
-
-  document.getElementById("prev1").innerHTML = document.getElementById("finish").innerHTML;
-  document.getElementById("prevNum1").innerHTML = String(number) + ".";        
-  x = 375;
-  y = 500;
-  draw();
-}
-  
+// Get default energy
 var slider = document.getElementById("myRange");
 var output = document.getElementById("energy");
 output.innerHTML = slider.value;
 
+// Change all borders colors to default wavelength
 var WL = wavelengtheVConverter(document.getElementById("energy").innerHTML);
 var color = wavelengthToColor(WL);    
-
 document.getElementById("energy").style.color = color;
 document.getElementById("contain1").style.borderColor = color;
 document.getElementById("contain2").style.borderColor = color;
 
+// Change the wavelegth on slider change
 slider.oninput = function() {
   output.innerHTML = this.value;
   var WL = wavelengtheVConverter(document.getElementById("energy").innerHTML);
@@ -569,109 +161,13 @@ slider.oninput = function() {
   document.getElementById("contain2").style.borderColor = color;
 }
 
-var repeatInput = document.getElementById("repeats")
-// repeatInput.onchange = function() {start();}
-
-function wavelengtheVConverter(energy) {
-  h = 6.626e-34;
-  c = 3e8;
-  joules = energy*1.602e-19;
-  wavelength = parseInt((h*c)/(joules) * 1e9);
-  return wavelength;
-}
-
-  // takes wavelength in nm and returns an rgba value
-// Taken from: https://scienceprimer.com/javascript-code-convert-light-wavelength-color
-function wavelengthToColor(wavelength,count) {
-    var r,
-        g,
-        b,
-        alpha,
-        colorSpace,
-        wl = wavelength,
-        gamma = 1;
-
-
-    if (wl >= 300 && wl < 390) {
-        R = -1 * (wl - 400) / (400 - 300);
-        G = 0;
-        B = 1;
-    } else if (wl >= 390 && wl < 475) {
-        R = 0;
-        G = (wl - 400) / (475 - 400);
-        B = 1;  
-    } else if (wl >= 475 && wl < 510) {
-        R = 0;
-        G = 1;
-        B = -1 * (wl - 510) / (510 - 490);
-    } else if (wl >= 510 && wl < 580) {
-        R = (wl - 510) / (580 - 510);
-        G = 1;
-        B = 0;
-    } else if (wl >= 580 && wl < 645) {
-        R = 1;
-        G = -1 * (wl - 645) / (645 - 580);
-        B = 0.0;
-    } else if (wl >= 645 && wl <= 780) {
-        R = 1;
-        G = 0;
-        B = 0;
-    } else {
-        R = 0;
-        G = 0;
-        B = 0;
-    }
-
-    // intensty is lower at the edges of the visible spectrum.
-    //if (wl > 780 || wl < 300) {
-    //    alpha = 0;
-    //} else if (wl > 700) {
-    //    alpha = 2*(780 - wl) / (780 - 690);
-    //} else if (wl < 420) {
-    //    alpha = 2*(wl - 420) / (420 - 300);
-    //} else {
-    //    alpha = 1;
-    //}
-
-    alpha = 1;
-
-    colorSpace = "rgb(" + (R * 100) + "%," + (G * 100) + "%," + (B * 100) + "%, " + alpha + ")";
-
-    // colorSpace is an array with 5 elements.
-    // The first element is the complete code as a string.  
-    // Use colorSpace[0] as is to display the desired color.  
-    // use the last four elements alone or together to access each of the individual r, g, b and a channels.  
-    
-    return colorSpace;
-    
-}
-
-function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
-}
-
-function rgbToHex(r, g, b) {
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-  if ((new Date().getTime() - start) > milliseconds){
-    break;
-    }
-  }
-}
-
+// Handle bringing up the reference spectra
 var modal = document.getElementById("myModal");
-
 window.onclick = function(event) {
  if (event.target == modal) {
     modal.style.display = "none";
  }
 }
-
 function showReference() {
   refDiv = document.getElementById("myModal")
   refDiv.style.display = refDiv.style.display != 'none' ? 'none' : 'block';

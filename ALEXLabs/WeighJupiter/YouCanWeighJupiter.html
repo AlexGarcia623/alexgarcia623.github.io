@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="../ALEX.css">
+<link rel="stylesheet" href="./css/Jupiter.css">
 
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
@@ -8,112 +9,33 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-<style>
-body {
-  background-image:url('Jupiter.jpeg');
-  background-size:cover;
-  background-attachment: fixed; 
-  background-size:fill; 
-}
-
-* {
-  box-sizing:border-box;
-}
-.column {
-  float:left;
-  width:50%;
-}
-
-body {
-  background-color:black;
-}
-
-p {
-  color:darkblue;
-  font-size:min(max(14pt, 2vw), 20pt);
-}
-
-h1 {
-  color:blue;
-}
-
-input {
-  background-color:powderblue;
-  border: 0.05vw solid darkblue;
-  border-radius:16px;
-  color:darkblue;
-  padding:1.5vw;
-  font-size:min(max(16pt, 2vw), 24pt);
-}
-
-input:hover {
-  transition:0.5s;
-  transform:scale(1.25);
-  background-color:darkblue;
-  color:powderblue;
-}
-
-input:not(:hover) {
-  transition:0.5s;
-  transform:scale(1);
-  border: 0.05vw solid darkblue;
-  color:darkblue;
-}
-
-img {
-  width:40%;
-  height:25%;
-  border-radius:25px;
-}
-
-.WeighJupiter {
-  color:darkblue;
-  border: 1vw solid darkblue;
-  background-color:powderblue;
-  border-radius:5px;
-  padding:25px;
-  margin-top:10px;
-  margin-bottom:10px;
-}
-
-footer {
-  margin-top:15px;
-  padding-bottom:0px;
-}
-
-body > footer {
-  display: table-row;
-}
-
-.footerButton {
-  margin-bottom:0;
-}
-
-</style>
-
-</head>
-
 <header>
   <title>Weigh Jupiter</title>
   <button class = "button biggerButton" onclick="ALEXHome()">ALEX Home</button>
 </header>
 
 <script>
-  function ALEXHome() {
-    window.open('../ALEXLabs.html','_self');
-  }
+function ALEXHome() {
+  window.open('../ALEXLabs.html','_self');
+}
+function startConfig1() {
+  window.open("modeSelector.html","_self");
+}
+function backgroundImage() {
+  window.open("backgroundExplain.html","_self");
+}
 </script>
+
 <body>
 <div class="body">
 
-  <div class="WeighJupiter">
+  <div class="WeighJupiter center">
 
    <h1 style="text-align:center;font-size:35pt;">You Can Weigh Jupiter </h1> 
 
   </div>
 
-  <div class="WeighJupiter">
+  <div class="WeighJupiter center">
 
   <p>Welcome to You Can Weigh Jupiter! In this lab, we will be observing Jupiter at opposition. Opposition is when Jupiter is opposite the Sun in the sky. </p>
 
@@ -131,17 +53,6 @@ body > footer {
   <input type="button" onclick="startConfig1()" value="Start!" class="center"/>
 
   </div>
-  
-<script>
-function startConfig1() {
-  window.open("moonSelector1.html","_self");
-}
-
-function backgroundImage() {
-  window.open("backgroundExplain.html","_self");
-  //window.open("https://www.nasa.gov/image-feature/jpl/giant-storms-and-high-clouds",target="_blank");
-}
-</script>
 
 <footer>
   <button class="button" onclick="backgroundImage()">About the background image </button>
