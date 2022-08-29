@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="./css/frontPage.css">
 
-<meta http-equiv='cache-control' content='no-cache'> 
-<meta http-equiv='expires' content='0'> 
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
 <meta http-equiv='pragma' content='no-cache'>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,41 +12,7 @@
 <script src="https://kit.fontawesome.com/b502caab12.js" crossorigin="anonymous"></script>
 
 <style>
-@media only screen and (min-width: 800px) {
-  .dynBack {
-    margin-top:90px;
-    color:black;
-    background-image:url('./images/Merger.jpeg');
-    background-repeat:no-repeat;
-    background-attachment: fixed; 
-    background-size:cover;
-    padding:0;
-    height:100%;
-    display:block;
-    background-size: 100% 100%;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .dynBack {
-    background-image: url('./images/HubbleDeepField.jpeg');
-    background-repeat:no-repeat;
-    background-attachment: fixed; 
-    background-size:auto;
-  }
-}
-
-* {
-  box-sizing:border-box;
-}
-
-.row:after {
-  contents: "";
-  display: table;
-  clear: both;
-}
-
-
+  
 </style>
 
 <head>
@@ -53,39 +20,107 @@
 </head>
 
 <footer>
-  <div class="containbuttons" style="margin-bottom:0;">
-  <div class="dropup" >
-    <button class="dropbtn" onclick="contactMe()">Contacts</button>
-    <div class="dropup-content">
-      <a href="https://www.linkedin.com/in/alex-garcia-051300210/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-      <a href="https://github.com/AlexGarcia623" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-      <a href="https://astro.ufl.edu/directory/alex-garcia/" target="_blank"><i class="fa-solid fa-graduation-cap"></i> UF Astro</a>
-      <a href="mailto:alexgarcia@ufl.edu"><i class="fa-solid fa-envelope"></i> Email</a>
+  <div class="mobile">
+    <div class="containbuttons" style="margin-bottom:0;">
+      <div class="dropup">
+        <button class="dropbtn" onclick="contactMe()">Contacts</button>
+        <div class="dropup-content">
+          <a href="https://www.linkedin.com/in/alex-garcia-051300210/" target="_blank"><i
+              class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          <a href="https://github.com/AlexGarcia623" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://astro.ufl.edu/directory/alex-garcia/" target="_blank"><i
+              class="fa-solid fa-graduation-cap"></i> UF Astro</a>
+          <a href="mailto:alexgarcia@ufl.edu"><i class="fa-solid fa-envelope"></i> Email</a>
+        </div>
+      </div>
+      <button class="button biggerButton" onclick="CV()">CV</button>
+      <div class="dropup">
+        <button class="dropbtn" onclick="workExamples()">My Work</button>
+        <div class="dropup-content">
+          <a href="workExamples.html#Graduate Research"><i class="fa-solid fa-computer"></i><br>Research</a>
+          <a href="workExamples.html#Teaching"><i class="fa-solid fa-chalkboard-user"></i><br>Teaching</a>
+          <a href="workExamples.html#KSP"><i class="fa-solid fa-satellite"></i><br>Kika Silva Pla Planetarium</a>
+          <a href="workExamples.html#CARE"><i class="fa-solid fa-pencil"></i><br>CARE @ UIUC</a>
+        </div>
+      </div>
+      <button class="button biggerButton" onclick="inTheNews()">News</button>
+      <button class="button biggerButton" onclick="books()">Books!</button>
+      <button class="button biggerButton" onclick="ALEX()"><span style="color:darkorange">A</span><span
+          style="color:darkblue;">L</span><span style="color:darkgreen;">E</span><span style="color:tomato">X</span>
+        Labs</button>
     </div>
   </div>
-  <button class = "button biggerButton" onclick="CV()">CV</button>
-  <div class="dropup">
-    <button class="dropbtn" onclick="workExamples()">My Work</button>
-    <div class="dropup-content">
-      <a href="workExamples.html#Graduate Research"><i class="fa-solid fa-computer"></i><br>Research</a>
-      <a href="workExamples.html#Teaching"><i class="fa-solid fa-chalkboard-user"></i><br>Teaching</a>
-      <a href="workExamples.html#KSP"><i class="fa-solid fa-satellite"></i><br>Kika Silva Pla Planetarium</a>
-      <a href="workExamples.html#CARE"><i class="fa-solid fa-pencil"></i><br>CARE @ UIUC</a>
+  <div class="desktop">
+    <div class="containbuttons" style="margin-bottom:0;">
+      <!-- <div class="dropup">
+        <button class="dropbtn" onclick="contactMe()">Contacts</button>
+        <div class="dropup-content">
+          <a href="https://www.linkedin.com/in/alex-garcia-051300210/" target="_blank"><i
+              class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          <a href="https://github.com/AlexGarcia623" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://astro.ufl.edu/directory/alex-garcia/" target="_blank"><i
+              class="fa-solid fa-graduation-cap"></i> UF Astro</a>
+          <a href="mailto:alexgarcia@ufl.edu"><i class="fa-solid fa-envelope"></i> Email</a>
+        </div>
+      </div> -->
+      <button class="button biggerButton" onclick="CV()">CV</button>
+      <!-- <div class="dropup">
+        <button class="dropbtn" onclick="workExamples()">My Work</button>
+        <div class="dropup-content">
+          <a href="workExamples.html#Graduate Research"><i class="fa-solid fa-computer"></i><br>Research</a>
+          <a href="workExamples.html#Teaching"><i class="fa-solid fa-chalkboard-user"></i><br>Teaching</a>
+          <a href="workExamples.html#KSP"><i class="fa-solid fa-satellite"></i><br>Kika Silva Pla Planetarium</a>
+          <a href="workExamples.html#CARE"><i class="fa-solid fa-pencil"></i><br>CARE @ UIUC</a>
+        </div>
+      </div> -->
+      <button class="button biggerButton" onclick="inTheNews()">News</button>
+      <button class="button biggerButton" onclick="books()">Books!</button>
+      <button class="button biggerButton" onclick="ALEX()"><span style="color:darkorange">A</span><span
+          style="color:darkblue;">L</span><span style="color:darkgreen;">E</span><span style="color:tomato">X</span>
+        Labs</button>
     </div>
-  </div>
-  <button class = "button biggerButton" onclick="inTheNews()">News</button>
-  <button class = "button biggerButton" onclick="books()">Books!</button>
-  <button class = "button biggerButton" onclick="ALEX()"><span style="color:darkorange">A</span><span style="color:darkblue;">L</span><span style="color:darkgreen;">E</span><span style="color:tomato">X</span> Labs</button>
   </div>
 </footer>
 
-<body class="dynBack">
-  <div class = "row">
-    <h1 style="font-size: min(max(16pt, 3vw), 32pt); text-align:center; color:white;">Alex Garcia</h1>
+<body>
+  <div class="desktop">
+    <div style="background-color:black;width:25%;border-radius: 50%;" class="center">
+      <p style="text-align:center;"><i class="fa-solid fa-arrow-down"></i> Hover over me! <i
+          class="fa-solid fa-arrow-down"></i> </p>
+    </div>
+    <div class="card" id="nameCard">
+      <div class="card-inner">
+        <h1>Alex Garcia</h1>
+        <div class="row">
+          <div class="column border-right" onclick="window.open('workExamples.html#GraduateResearch','_self')">
+            <p>Graduate Student<br>University of Florida</p>
+          </div>
+          <div class="column" onclick="window.open('workExamples.html#KSP','_self')">
+            <p>Planetarium Assistant<br>Kika Silva Pla Planetarium</p>
+          </div>
+        </div>
+        <div class="mediaLinks">
+          <i class="fa-brands fa-linkedin-in"
+            onclick="window.open('https://www.linkedin.com/in/alex-garcia-051300210/',target='_blank')"></i>
+          <i class="fa-brands fa-github" onclick="window.open('https://github.com/AlexGarcia623',target='_blank');"></i>
+          <i class="fa-solid fa-graduation-cap"
+            onclick="window.open('https://astro.ufl.edu/directory/alex-garcia/',target='_blank');"></i>
+          <i class="fa-solid fa-address-book" onclick="window.open('contactMe.html',target='_self')"></i>
+          <!-- <a href="https://astro.ufl.edu/directory/alex-garcia/" target="_blank"></a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mobile">
+    <h1 style="color:white;font-size: 32pt;">Alex Garcia</h1>
   </div>
 </body>
 
 
+<script>
+  // window.onload = function() {
+  //   document.getElementById('nameCard').className += ':hover';
+  // }
+</script>
+
 </html>
-
-

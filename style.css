@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<head>
-<style>
 p {
   color:black;
   font-size: min(max(14pt, 1.5vw), 16pt);
@@ -318,7 +311,3 @@ section {
   margin-left:auto;
   margin-right:auto;
 }
-
-</style>
-</head>
-</html>
