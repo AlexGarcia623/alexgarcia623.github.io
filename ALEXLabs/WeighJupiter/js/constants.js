@@ -55,3 +55,5 @@ var CALLISTOx = 0;
 var CALLISTOy = 0;
 
 var JW = 105/SCALE;
+
+var COLOR_BLIND = false;

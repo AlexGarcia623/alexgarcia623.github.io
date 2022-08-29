@@ -42,7 +42,11 @@ function pNorm(p, norm) {
 function pNoise(p) {
     // Use after norm
     for (var i = 0; i < 1000; ++i) {
-        p[i] = p[i] * 0.925 - generateGaussian(0, 0.25);
+        var toCheck = p[i] * 0.925 - generateGaussian(0, 0.25);
+        if (toCheck < 0) {
+            toCheck = toCheck*-1;
+        }
+        p[i] = toCheck;
     }
     return p;
 }

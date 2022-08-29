@@ -68,3 +68,16 @@ window.onclick = function (event) {
         document.getElementById("myModal").style.display = "none"
     }
 }
+
+function colorBlindToggle() {
+    COLOR_BLIND = COLOR_BLIND == true ? false : true;
+    flipVisibility(document.getElementById('IOLabel'));
+    flipVisibility(document.getElementById('EUROPALabel'));
+    flipVisibility(document.getElementById('GANYMEDELabel'));
+    flipVisibility(document.getElementById('CALLISTOLabel'));
+    animate();
+}
+
+function flipVisibility(element) {
+    element.style.display = element.style.display == "none" ? "block" : "none";
+}

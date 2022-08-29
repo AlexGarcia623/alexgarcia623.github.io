@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="ALEX.css">
+<link rel="stylesheet" href="../ALEX.css">
+<link rel="stylesheet" href="./css/other.css">
+<link rel="Shortcut Icon" type="image/png" href="../ALEXIcon.png">
 
 <meta http-equiv='cache-control' content='no-cache'> 
 <meta http-equiv='expires' content='0'> 
@@ -9,96 +11,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
-<style>
-body {
-  background-image:url('./starBackground.jpeg');
-  background-size:cover;
-  background-attachment: fixed; 
-  background-size:fill;
-  display:table;
-  padding-bottom:0px;
-  margin-bottom:0px;
-}
-
-* {
-  box-sizing:border-box;
-}
-.column {
-  float:left;
-  width:50%;
-}
-
-.row:after {
-  contents: "";
-  display: table;
-  clear: both;
-}
-
-button {
-  background-color:black;
-  color:steelblue;
-  border: 1px solid tomato;
-  padding: 8px;
-  font-size: 12pt;
-}
-
-button:hover {
-  background-color:steelblue;
-  color:black;
-}
-
-img {
-  background-color:black;
-  padding:10px;
-  border-radius:15px;
-  min-width:150px;
-}
-
-h1,h2 {
-  color:#ff7518;
-}
-
-.ALEX {
-  border: 1vw solid darkorange;
-  color:black;
-  background-color:#ffc87c;
-  border-radius:5px;
-  padding:10px;
-  margin-top:5px;
-  margin-bottom:5px;
-}
-
-input {
-  width:25%;
-  font-size:15pt;
-  background-color:white;
-  color:blue;
-}
-</style>
-
-
 <script>
-function wavelengtheVConverter() {
-  h = 6.626e-34;
-  c = 3e8;
-  joules = document.converter.energy.value*1.602e-19;
-  document.getElementById("answer").innerHTML = ((h*c)/(joules) * 1e9).toFixed(1);
-  document.getElementById("nm").style.display = "inline";
-  document.converter.EJ.value = joules;
-}
-
-function wavelengthJConverter() {
-  h = 6.626e-34;
-  c = 3e8;
-  document.getElementById("answer").innerHTML = ((h*c)/(document.converter.EJ.value) * 1e9).toFixed(1);
-  document.getElementById("nm").style.display = "inline";
-  document.converter.energy.value = document.converter.EJ.value*1.602e-19;
-}
-
 function home() {
-  window.open("ALEXLabs.html",target="_self");
+  window.open("../ALEXLabs.html",target="_self");
 }
-
 </script>
 </head>
 
@@ -131,6 +47,26 @@ function home() {
   </div>
 
 </form>
+
+<script>
+function wavelengtheVConverter() {
+  h = 6.626e-34;
+  c = 3e8;
+  joules = document.converter.energy.value*1.602e-19;
+  document.getElementById("answer").innerHTML = ((h*c)/(joules) * 1e9).toFixed(1);
+  document.getElementById("nm").style.display = "inline";
+  document.converter.EJ.value = joules;
+}
+
+function wavelengthJConverter() {
+  h = 6.626e-34;
+  c = 3e8;
+  document.getElementById("answer").innerHTML = ((h*c)/(document.converter.EJ.value) * 1e9).toFixed(1);
+  document.getElementById("nm").style.display = "inline";
+  document.converter.energy.value = document.converter.EJ.value/1.602e-19;
+}
+</script>
+
 </body>
 
 </html>

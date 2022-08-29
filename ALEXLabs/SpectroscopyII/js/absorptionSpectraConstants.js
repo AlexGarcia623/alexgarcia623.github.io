@@ -42,3 +42,28 @@ var pDefElse = 0.075;
 // Catch and iterate how many photons hit the screen
 var TOTAL_OBS = 0;
 var TOTAL_EMIT = 0;
+
+var going = false;
+
+var COLORS = {
+    1.6:"Dark Red",
+    1.7:"Red",
+    1.8:"Red",
+    1.9:"Light Red",
+    2.0:"Dark Orange",
+    2.1:"Light Orange",
+    2.2:"Yellow",
+    2.3:"Bright Green",
+    2.4:"Green",
+    2.5:"Cyan",
+    2.6:"Light Blue",
+    2.7:"Blue",
+    2.8:"Dark Blue",
+    2.9:"Dark Blue",
+    3.0:"Light Purple",
+    3.1:"Purple",
+    3.2:"Purple",
+    3.3:"Violet",
+    3.4:"Violet",
+    3.5:"Violet"
+}

@@ -58,7 +58,18 @@ function drawMoonsInit(y, h) {
     if ((IOx > (canvas.width / 2 - JupiterWidth) && IOx < (canvas.width / 2 + JupiterWidth)) && (IOy > 0)) {
         // do nothing
     } else {
-        context.arc(IOx, dispY + 2, 0.75, 0, 2 * Math.PI, true);
+        if (COLOR_BLIND) {
+            context.moveTo(IOx - 2.5, dispY + 4*2.5/3 + 1);
+            context.lineTo(IOx + 2.5, dispY - 4*2.5/3 + 1);
+            context.lineTo(IOx + 2.5, dispY - 4*2.5/3 + 1);
+            context.lineTo(IOx - 2.5, dispY + 4*2.5/3 + 1);
+            context.moveTo(IOx + 2.5, dispY + 4*2.5/3 + 1);
+            context.lineTo(IOx - 2.5, dispY - 4*2.5/3 + 1);
+            context.lineTo(IOx - 2.5, dispY - 4*2.5/3 + 1);
+            context.lineTo(IOx + 2.5, dispY + 4*2.5/3 + 1);
+        } else {
+            context.arc(IOx, dispY + 2, 0.75, 0, 2 * Math.PI, true);
+        }
         context.stroke();
     }
 
@@ -72,7 +83,15 @@ function drawMoonsInit(y, h) {
     if ((EUROPAx > (canvas.width / 2 - JupiterWidth) && EUROPAx < (canvas.width / 2 + JupiterWidth)) && (EUROPAy > 0)) {
         // do nothing
     } else {
-        context.arc(EUROPAx, dispY - 1, 0.75, 0, 2 * Math.PI, true);
+        if (COLOR_BLIND) {
+            context.moveTo(EUROPAx - 1, dispY + 1);
+            context.lineTo(EUROPAx, dispY + 2);
+            context.lineTo(EUROPAx + 1, dispY + 1);
+            context.lineTo(EUROPAx, dispY);
+            context.closePath();
+        } else {
+            context.arc(EUROPAx, dispY - 1, 0.75, 0, 2 * Math.PI, true);
+        }
         context.stroke();
     }
 
@@ -86,7 +105,14 @@ function drawMoonsInit(y, h) {
     if ((GANYMEDEx > (canvas.width / 2 - JupiterWidth) && GANYMEDEx < (canvas.width / 2 + JupiterWidth)) && (GANYMEDEy > 0)) {
         // do nothing
     } else {
-        context.arc(GANYMEDEx, dispY + 5, 0.75, 0, 2 * Math.PI, true);
+        if (COLOR_BLIND) {
+            context.moveTo(GANYMEDEx, dispY + 5);
+            context.lineTo(GANYMEDEx + 1, dispY + 5);
+            context.lineTo(GANYMEDEx + 1, dispY + 4);
+            context.closePath();
+        } else {
+            context.arc(GANYMEDEx, dispY + 5, 0.75, 0, 2 * Math.PI, true);
+        }
         context.stroke();
     }
 
@@ -100,7 +126,15 @@ function drawMoonsInit(y, h) {
     if ((CALLISTOx > (canvas.width / 2 - JupiterWidth) && CALLISTOx < (canvas.width / 2 + JupiterWidth)) && (CALLISTOy > 0)) {
         // do nothing
     } else {
-        context.arc(CALLISTOx, dispY + 5, 0.75, 0, 2 * Math.PI, true);
+        if (COLOR_BLIND) {
+            context.moveTo(CALLISTOx - 2, dispY + 6);
+            context.lineTo(CALLISTOx + 2, dispY + 6);
+            context.lineTo(CALLISTOx + 2, dispY + 3);
+            context.lineTo(CALLISTOx - 2, dispY + 3);
+            context.closePath();
+        } else {
+            context.arc(CALLISTOx, dispY + 5, 0.75, 0, 2 * Math.PI, true);
+        }
         context.stroke();
     }
 }
@@ -117,7 +151,18 @@ function drawMoonsWShadow(y, h) {
     if ((IOx > (canvas.width / 2 - JupiterWidth) && IOx < (canvas.width / 2 + JupiterWidth)) && (IOy > 0)) {
         // do nothing
     } else {
-        context.arc(IOx, dispY + 2, 0.75, 0, 2 * Math.PI, true);
+        if (COLOR_BLIND) {
+            context.moveTo(IOx - 2.5, dispY + 4*2.5/3 + 1);
+            context.lineTo(IOx + 2.5, dispY - 4*2.5/3 + 1);
+            context.lineTo(IOx + 2.5, dispY - 4*2.5/3 + 1);
+            context.lineTo(IOx - 2.5, dispY + 4*2.5/3 + 1);
+            context.moveTo(IOx + 2.5, dispY + 4*2.5/3 + 1);
+            context.lineTo(IOx - 2.5, dispY - 4*2.5/3 + 1);
+            context.lineTo(IOx - 2.5, dispY - 4*2.5/3 + 1);
+            context.lineTo(IOx + 2.5, dispY + 4*2.5/3 + 1);
+        } else {
+            context.arc(IOx, dispY + 2, 0.75, 0, 2 * Math.PI, true);
+        }
         context.stroke();
     }
 
@@ -131,7 +176,18 @@ function drawMoonsWShadow(y, h) {
     if ((IOx > (canvas.width / 2 - JupiterWidth) && IOx < (canvas.width / 2 + JupiterWidth)) && (IOy > 0)) {
         // do nothing
     } else {
-        context.arc(IOx, dispY + 2, 0.75, 0, 2 * Math.PI, true);
+        if (COLOR_BLIND) {
+            context.moveTo(IOx - 2.5, dispY + 4*2.5/3 + 1);
+            context.lineTo(IOx + 2.5, dispY - 4*2.5/3 + 1);
+            context.lineTo(IOx + 2.5, dispY - 4*2.5/3 + 1);
+            context.lineTo(IOx - 2.5, dispY + 4*2.5/3 + 1);
+            context.moveTo(IOx + 2.5, dispY + 4*2.5/3 + 1);
+            context.lineTo(IOx - 2.5, dispY - 4*2.5/3 + 1);
+            context.lineTo(IOx - 2.5, dispY - 4*2.5/3 + 1);
+            context.lineTo(IOx + 2.5, dispY + 4*2.5/3 + 1);
+        } else {
+            context.arc(IOx, dispY + 2, 0.75, 0, 2 * Math.PI, true);
+        }
         context.stroke();
     }
 
@@ -142,7 +198,15 @@ function drawMoonsWShadow(y, h) {
     if ((EUROPAx > (canvas.width / 2 - JupiterWidth) && EUROPAx < (canvas.width / 2 + JupiterWidth)) && (EUROPAy > 0)) {
         // do nothing
     } else {
-        context.arc(EUROPAx, dispY - 1, 0.75, 0, 2 * Math.PI, true);
+        if (COLOR_BLIND) {
+            context.moveTo(EUROPAx - 1, dispY + 1);
+            context.lineTo(EUROPAx, dispY + 2);
+            context.lineTo(EUROPAx + 1, dispY + 1);
+            context.lineTo(EUROPAx, dispY);
+            context.closePath();
+        } else {
+            context.arc(EUROPAx, dispY - 1, 0.75, 0, 2 * Math.PI, true);
+        }
         context.stroke();
     }
 
@@ -156,7 +220,15 @@ function drawMoonsWShadow(y, h) {
     if ((EUROPAx > (canvas.width / 2 - JupiterWidth) && EUROPAx < (canvas.width / 2 + JupiterWidth)) && (EUROPAy > 0)) {
         // do nothing
     } else {
-        context.arc(EUROPAx, dispY - 1, 0.75, 0, 2 * Math.PI, true);
+        if (COLOR_BLIND) {
+            context.moveTo(EUROPAx - 1, dispY + 1);
+            context.lineTo(EUROPAx, dispY + 2);
+            context.lineTo(EUROPAx + 1, dispY + 1);
+            context.lineTo(EUROPAx, dispY);
+            context.closePath();
+        } else {
+            context.arc(EUROPAx, dispY - 1, 0.75, 0, 2 * Math.PI, true);
+        }
         context.stroke();
     }
 
@@ -167,7 +239,14 @@ function drawMoonsWShadow(y, h) {
     if ((GANYMEDEx > (canvas.width / 2 - JupiterWidth) && GANYMEDEx < (canvas.width / 2 + JupiterWidth)) && (GANYMEDEy > 0)) {
         // do nothing
     } else {
-        context.arc(GANYMEDEx, dispY + 5, 0.75, 0, 2 * Math.PI, true);
+        if (COLOR_BLIND) {
+            context.moveTo(GANYMEDEx, dispY + 5);
+            context.lineTo(GANYMEDEx + 1, dispY + 5);
+            context.lineTo(GANYMEDEx + 1, dispY + 4);
+            context.closePath();
+        } else {
+            context.arc(GANYMEDEx, dispY + 5, 0.75, 0, 2 * Math.PI, true);
+        }
         context.stroke();
     }
 
@@ -181,7 +260,14 @@ function drawMoonsWShadow(y, h) {
     if ((GANYMEDEx > (canvas.width / 2 - JupiterWidth) && GANYMEDEx < (canvas.width / 2 + JupiterWidth)) && (GANYMEDEy > 0)) {
         // do nothing
     } else {
-        context.arc(GANYMEDEx, dispY + 5, 0.75, 0, 2 * Math.PI, true);
+        if (COLOR_BLIND) {
+            context.moveTo(GANYMEDEx, dispY + 5);
+            context.lineTo(GANYMEDEx + 1, dispY + 5);
+            context.lineTo(GANYMEDEx + 1, dispY + 4);
+            context.closePath();
+        } else {
+            context.arc(GANYMEDEx, dispY + 5, 0.75, 0, 2 * Math.PI, true);
+        }
         context.stroke();
     }
 
@@ -192,7 +278,15 @@ function drawMoonsWShadow(y, h) {
     if ((CALLISTOx > (canvas.width / 2 - JupiterWidth) && CALLISTOx < (canvas.width / 2 + JupiterWidth)) && (CALLISTOy > 0)) {
         // do nothing
     } else {
-        context.arc(CALLISTOx, dispY, 0.75, 0, 2 * Math.PI, true);
+        if (COLOR_BLIND) {
+            context.moveTo(CALLISTOx - 2, dispY + 6);
+            context.lineTo(CALLISTOx + 2, dispY + 6);
+            context.lineTo(CALLISTOx + 2, dispY + 3);
+            context.lineTo(CALLISTOx - 2, dispY + 3);
+            context.closePath();
+        } else {
+            context.arc(CALLISTOx, dispY + 5, 0.75, 0, 2 * Math.PI, true);
+        }
         context.stroke();
     }
 
@@ -206,7 +300,15 @@ function drawMoonsWShadow(y, h) {
     if ((CALLISTOx > (canvas.width / 2 - JupiterWidth) && CALLISTOx < (canvas.width / 2 + JupiterWidth)) && (CALLISTOy > 0)) {
         // do nothing
     } else {
-        context.arc(CALLISTOx, dispY, 0.75, 0, 2 * Math.PI, true);
+        if (COLOR_BLIND) {
+            context.moveTo(CALLISTOx - 2, dispY + 6);
+            context.lineTo(CALLISTOx + 2, dispY + 6);
+            context.lineTo(CALLISTOx + 2, dispY + 3);
+            context.lineTo(CALLISTOx - 2, dispY + 3);
+            context.closePath();
+        } else {
+            context.arc(CALLISTOx, dispY + 5, 0.75, 0, 2 * Math.PI, true);
+        }
         context.stroke();
     }
 }

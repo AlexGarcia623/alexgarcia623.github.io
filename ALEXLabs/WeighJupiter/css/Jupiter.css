@@ -129,6 +129,21 @@ button:not(:hover) {
     transition-duration: 0.4s;
 }
 
+#cbBtn {
+    position: fixed;
+    bottom: 10px;
+    left: 30px;
+    font-size: min(max(16pt, 2vw), 24pt);
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+#cbBtn:hover {
+    transition-duration: 0.4s;
+}
+
 /* The Modal (background) */
 .modal {
     display: none;
