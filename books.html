@@ -103,6 +103,13 @@ h2 {
   text-align:center;
 }
 
+.freeFloating > h1 {
+  background-color: black;
+  width:45%;
+  border-radius: 50%;
+  margin-left:auto;
+  margin-right:auto;
+}
 
 </style>
 </head>
@@ -135,7 +142,9 @@ h2 {
 </header>
 
 <body>
-<h1>Currently Reading</h1>
+<div class=freeFloating>
+  <h1>Currently Reading</h1>
+</div>
 
 <div class="grid-ish bookCurrent center">
   <div class="col">
@@ -159,7 +168,9 @@ h2 {
   </div>
 </div>
 
-<h1>Recently Read</h1>
+<div class=freeFloating>
+  <h1>Recently Read</h1>
+</div>
 
 <div class="year">
   <h1 style="color:tomato;">2022</h1>

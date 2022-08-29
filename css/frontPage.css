@@ -21,6 +21,7 @@ body {
     background-color: rgb(80, 80, 80, 0.75);
     margin: auto;
     width: 30%;
+    min-height: 15ch;
     max-height: 20vh;
     transition: 2s;
 }
