@@ -1,74 +1,134 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="style.css">
-<link rel="Shortcut Icon" type="image/png" href="./images/tikzImage.png"> 
+<link rel="Shortcut Icon" type="image/png" href="./images/tikzImage.png">
 
 <script src="scripts.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://kit.fontawesome.com/b502caab12.js" crossorigin="anonymous"></script>
 
 <style>
+  a {
+    color: black;
+  }
 
-a {
-  color:black;
-}
+  a,p {
+    text-align: center;
+  }
 
+  .row {
+    display: flex;
+    background-color: gray;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px white solid;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .column {
+    width: 50%;
+  }
+
+  img {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding:0px;
+    margin: 0px;
+  }
 </style>
 
 <header>
   <title>Alex in the News</title>
   <div class="containbuttons">
-  <button class = "button biggerButton" onclick="home()">Home</button>
-  <div class="dropdown">
-    <button class="dropbtn" onclick="contactMe()">Contacts</button>
-    <div class="dropdown-content">
-      <a href="https://www.linkedin.com/in/alex-garcia-051300210/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-      <a href="https://github.com/AlexGarcia623" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-      <a href="https://astro.ufl.edu/directory/alex-garcia/" target="_blank"><i class="fa-solid fa-graduation-cap"></i> UF Astro</a>
-      <a href="mailto:alexgarcia@ufl.edu"><i class="fa-solid fa-envelope"></i> Email</a>
+    <button class="button biggerButton" onclick="home()">Home</button>
+    <div class="dropdown">
+      <button class="dropbtn" onclick="contactMe()">Contacts</button>
+      <div class="dropdown-content">
+        <a href="https://www.linkedin.com/in/alex-garcia-051300210/" target="_blank"><i
+            class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/AlexGarcia623" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://astro.ufl.edu/directory/alex-garcia/" target="_blank"><i
+            class="fa-solid fa-graduation-cap"></i> UF Astro</a>
+        <a href="mailto:alexgarcia@ufl.edu"><i class="fa-solid fa-envelope"></i> Email</a>
+      </div>
     </div>
-  </div>
-  <button class = "button biggerButton" onclick="CV()">CV</button>
-  <div class="dropdown">
-    <button class="dropbtn" onclick="workExamples()">My Work</button>
-    <div class="dropdown-content">
-      <a href="workExamples.html#Graduate Research"><i class="fa-solid fa-computer"></i><br>Research</a>
-      <a href="workExamples.html#Teaching"><i class="fa-solid fa-chalkboard-user"></i><br>Teaching</a>
-      <a href="workExamples.html#KSP"><i class="fa-solid fa-satellite"></i><br>Kika Silva Pla Planetarium</a>
-      <a href="workExamples.html#CARE"><i class="fa-solid fa-pencil"></i><br>CARE @ UIUC</a>
+    <button class="button biggerButton" onclick="CV()">CV</button>
+    <div class="dropdown">
+      <button class="dropbtn" onclick="workExamples()">My Work</button>
+      <div class="dropdown-content">
+        <a href="workExamples.html#Graduate Research"><i class="fa-solid fa-computer"></i><br>Research</a>
+        <a href="workExamples.html#Teaching"><i class="fa-solid fa-chalkboard-user"></i><br>Teaching</a>
+        <a href="workExamples.html#KSP"><i class="fa-solid fa-satellite"></i><br>Kika Silva Pla Planetarium</a>
+        <a href="workExamples.html#CARE"><i class="fa-solid fa-pencil"></i><br>CARE @ UIUC</a>
+      </div>
     </div>
-  </div>
-  <button class = "button biggerButton" onclick="books()">Books!</button>
+    <button class="button biggerButton" onclick="books()">Books!</button>
   </div>
 </header>
- 
+
 <body>
   <section>
-  <h1>Grainger College of Engineering Tutor Of The Year Award</h1>
+    <h1>Publication of Astronomy 1022L Lab Manual</h1>
 
-  <div class="desktop">
-    <iframe style="width:min(max(400px,60vw),600px); height:max(min(100px,2vw),300px);" src="https://www.youtube.com/embed/ejVhSmlkxvg?start=148" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="center"></iframe>
-    <p style="color:black;"><em>Additional Media on this:</em></p>
-  </div>
-  <div class="mobile">
-    <a href="https://www.youtube.com/watch?v=ejVhSmlkxvg&t=148s&ab_channel=OfficeofStudentFinancialAid-UIUC" target="_blank">Award Ceremony Video</a>
-  </div>
+    <h2>August 22, 2022</h2>
 
-  <p>
-  <a href="https://www.linkedin.com/posts/uofigrainger_congratulations-to-emily-williams-and-alex-activity-6788823643716648960-vbmt" target="_blank">College of Engineering LinkedIn Post</a><br><br>
-  <a href="https://www.facebook.com/PhysicsIllinois/posts/congrats-to-illinois-physics-student-alex-garcia/4142986329097394/" target="_blank">College of Engineering Facebook Post</a>
-  </p>
+    <div class="row">
+      <div class="column">
+        <img src="./images/manualCover.jpg" width=75% class="center">
+      </div>
+      <div class="column">
+        <img src="./images/manualFrontPage.jpg" width=75% class="center">
+      </div>
+
+    </div>
+
+    <p><a href="./AST1022LabManual.html" target="_blank">Learn more about the changes</a></p>
+    <p><a href="https://www.linkedin.com/posts/alex-garcia-astro_during-the-spring-semester-i-was-an-instructor-activity-6966421284087832576-SoOz?utm_source=share&utm_medium=member_desktop" target="_blank">My Linkedin post</a></p>
+    <p><a href="https://notes.target-copy.com/img/tc_cm_ast1022l.large.jpg" target="_blank">Target Copy website</a></p>
   </section>
 
   <section>
-  <h1>Graduation from Astronomy @ Illinois</h1>
-  <a href="https://astro.illinois.edu/news/2021-05-17/astronomy-congratulates-2021-graduating-seniors" target="_blank">List of all graduating seniors from department's webpage</a>
+    <h1>Graduation from Astronomy @ Illinois</h1>
+
+    <h2>May 17th, 2021</h2>
+
+    <p><a href="https://astro.illinois.edu/news/2021-05-17/astronomy-congratulates-2021-graduating-seniors"
+      target="_blank">List of all graduating seniors from department's webpage</a></p>
   </section>
 
   <section>
-  <h1>Grainger Voices</h1>
-  <a href="https://grainger.illinois.edu/news/voices/alex-garcia" target="_blank">Grainger Voices Article</a>
+    <h1>Grainger Voices</h1>
+
+    <h2>May 3rd, 2021</h2>
+
+    <p><a href="https://grainger.illinois.edu/news/voices/alex-garcia" target="_blank">Grainger Voices Article</a></p>
   </section>
-</body>  
+
+  <section>
+    <h1>Grainger College of Engineering Tutor Of The Year Award</h1>
+
+    <h2>April 16th, 2021</h2>
+
+    <div class="desktop">
+      <iframe style="width:60vw; height: 80vh;"
+        src="https://www.youtube.com/embed/ejVhSmlkxvg?start=148" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+        class="center"></iframe>
+    </div>
+    <div class="mobile">
+      <p><a href="https://www.youtube.com/watch?v=ejVhSmlkxvg&t=148s&ab_channel=OfficeofStudentFinancialAid-UIUC"
+        target="_blank">Award Ceremony Video</a></p>
+    </div>
+
+    <p>
+      <a href="https://www.linkedin.com/posts/uofigrainger_congratulations-to-emily-williams-and-alex-activity-6788823643716648960-vbmt"
+        target="_blank">College of Engineering LinkedIn Post</a></p>
+    <p>
+      <a href="https://www.facebook.com/PhysicsIllinois/posts/congrats-to-illinois-physics-student-alex-garcia/4142986329097394/"
+        target="_blank">College of Engineering Facebook Post</a>
+    </p>
+  </section>
+</body>
 
 </html>
