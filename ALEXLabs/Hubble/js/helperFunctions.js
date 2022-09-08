@@ -70,9 +70,11 @@ function onGalaxyChecker() {
   var ymax = extent[3];
   if ((xpos > xmin) && (xpos < xmax) && (ypos > ymin) && (ypos < ymax)) {
     zoomInBool = true;
+    overGalaxy = true;
     document.getElementById("zoomIn").style.backgroundColor  = "white";
   } else {
     zoomInBool = false;
+    overGalaxy = false;
     document.getElementById("zoomIn").style.backgroundColor  = "darkgray";
   }
 }

@@ -41,7 +41,7 @@ function moonSelector() {
   </div>
 
   <div class="slidecontainer" id="ZoomControl">
-    <input type="range" min="2.5" max="5" value="5" step="0.5" class="slider" id="zoomRange">
+    <input type="range" min="2" max="10" value="5" step="1" class="slider" id="zoomRange">
     <h2>Zoom: <span id="zoom"></span></h2>
   </div>
  
@@ -98,12 +98,12 @@ animate();
 // When clicking on the Canvas element, display the X position in arcseconds
 document.getElementById("canvas").addEventListener('click', printMousePos, true);
 function printMousePos(e){
-  var JupiterWidth = 110/SCALE * canvas.clientWidth / 1220;
+  var JupiterWidth = 105/SCALE * canvas.clientWidth / 1220;
   var rect = canvas.getBoundingClientRect();
   var xHalfWidth = canvas.clientWidth/2 + rect.left;
-  var cursorX = ( (parseInt(e.pageX) - xHalfWidth) / (2*JupiterWidth) ).toFixed(2);
+  var cursorX = ( (parseInt(e.pageX) - xHalfWidth) / (2*JupiterWidth)).toFixed(2);
   var cursorArcsec = (cursorX * 23.4 ).toFixed(2);
-  document.getElementById("clickSome").innerHTML = "X Positon (relative to center of frame): ";
+  document.getElementById("clickSome").innerHTML = "X Position (relative to center of frame): ";
   document.getElementById("clickLocation").innerHTML = cursorArcsec + "''";
   document.getElementById("clickNone").style.display = "none";
 }

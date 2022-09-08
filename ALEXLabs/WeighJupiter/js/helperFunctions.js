@@ -13,7 +13,7 @@ function calcIoPos(JW) {
     var time = parseInt(document.getElementById("demo").innerHTML);
     IO_PERIOD = 42; // hours
     IO_A_TO_JUPITER_R = 5.898; // ratio of jupiter radius to orbit of moon
-    a = (JW * IO_A_TO_JUPITER_R) / (SCALE / 2);
+    a = (JW * IO_A_TO_JUPITER_R);
 
     var canvasXcenter = canvas.width / 2
 
@@ -25,7 +25,7 @@ function calcEuropaPos(JW) {
     var time = parseInt(document.getElementById("demo").innerHTML);
     EUROPA_PERIOD = 85; // hours
     EUROPA_A_TO_JUPITER_R = 9.384; // ratio of jupiter radius to orbit of moon
-    a = (JW * EUROPA_A_TO_JUPITER_R) / (SCALE / 2);
+    a = (JW * EUROPA_A_TO_JUPITER_R);
 
     var canvasXcenter = canvas.width / 2
 
@@ -37,7 +37,7 @@ function calcGanymedePos(JW) {
     var time = parseInt(document.getElementById("demo").innerHTML);
     GANYMEDE_PERIOD = 172; // hours
     GANYMEDE_A_TO_JUPITER_R = 14.972; // ratio of jupiter radius to orbit of moon
-    a = (JW * GANYMEDE_A_TO_JUPITER_R) / (SCALE / 2);
+    a = (JW * GANYMEDE_A_TO_JUPITER_R);
 
     var canvasXcenter = canvas.width / 2
 
@@ -49,7 +49,7 @@ function calcCallistoPos(JW) {
     var time = parseInt(document.getElementById("demo").innerHTML);
     CALLISTO_PERIOD = 400; // hours
     CALLISTO_A_TO_JUPITER_R = 26.334; // ratio of jupiter radius to orbit of moon
-    a = (JW * CALLISTO_A_TO_JUPITER_R) / (SCALE / 2);
+    a = (JW * CALLISTO_A_TO_JUPITER_R);
 
     var canvasXcenter = canvas.width / 2
 

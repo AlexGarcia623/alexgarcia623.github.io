@@ -1,5 +1,3 @@
-// If I've done my job correctly all variables in this file are captialized.
-
 var APP_MAGS = {
   "Perseus":14.3,
   "UrsaMinor":12.1,
@@ -14,7 +12,8 @@ var DISTS   = {
   "UrsaMajor":25.6,
   "LeoMinor":30.1,
   "Draco":52.5
-}; //Mpc
+}; //Mpc 
+// Numbers from web -- I altered the redshifts slightly to get a cleaner H_0
 
 var TRUE_REDSHIFTS = {
   "Perseus":0.01688, 
@@ -71,7 +70,7 @@ var imageCreditsObj = {
 }
 
 // Center of galaxy: xcenter, ycenter, rough extent
-zoomGalaxyCenters = {  
+var zoomGalaxyCenters = {  
   "Perseus": [150, 238, 20],
   "UrsaMinor": [224, 270, 40],
   "UrsaMajor": [420, 342, 50],

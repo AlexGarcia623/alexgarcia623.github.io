@@ -91,7 +91,7 @@ p, a {
       <p id="loading"></p>
       <p id="SpectrumDone"></p>
 
-	    <p>The apparent magnitude of <span id="galaxyName"></span> is: <span id="appMag"></span> </p>
+	    <p id="magInfo" style="display:none;">The apparent magnitude of <span id="galaxyName"></span> is: <span id="appMag"></span> </p>
 
       <div id="myPlot" style="width:100%;padding-left:0;padding-right:0%;"></div>
       <p>Click anywhere outside this box to exit</p>
@@ -244,6 +244,7 @@ var takingSpectrum = false;
 var zoomInBool  = false;
 var zoomOutBool = false;
 var emptyField = true; // for just the star field -- no galaxy
+var overGalaxy = false;
 
 // Default Field set to first in the list
 var all_field_names = Object.keys(whichIsWhichBackward);
@@ -304,6 +305,7 @@ window.onclick = function(event) {
  if (event.target == spectrumModal) {
     spectrumModal.style.display = "none";
     takingSpectrum = false;
+    document.getElementById('magInfo').style.display = 'none';
  } else if (event.target == hotKeysModal) {
     hotKeysDiv();
  }

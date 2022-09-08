@@ -42,11 +42,14 @@ function buttonPress() {
   takingSpectrum = true;
   updateClickFromCenter();
   spectrumModal.style.display = "block";
+  document.getElementById('myPlot').style.display = 'none';
   loader.classList.add("loading");
   document.getElementById("SpectrumDone").innerHTML = "";
   Plotly.newPlot("myPlot", [], layout, config)
   loader.onclick = updateDisplay();
   loader.addEventListener("animationend", function() {
+    if (CLICK_FROM_CENTER != 0.0){document.getElementById('magInfo').style.display = 'block';}
+    document.getElementById('myPlot').style.display = 'block';
     generateSpectrum();
     done = true;
     updateDisplay();
