@@ -62,7 +62,7 @@ div {
 }
 
 .grid-ish > * {
-  flex: 1 0 33%;
+  flex: 1 0 50%;
 }
 
 .WeighJupiter {
@@ -126,6 +126,25 @@ div {
   background-color:maroon;
 }
 
+.SpaceWeather {
+  border: 1vw solid yellow;
+  background-color:#C7C72E;
+  border-radius:5px;
+  padding:25px;
+}
+
+.SpaceWeatherButton {
+  color:#8B8000;
+  border: 0.05vw solid #8B8000;
+  background-color:#C7C72E;
+  border-radius:5px;
+  padding:10px;
+}
+
+.SpaceWeatherButton:hover {
+  color:#C7C72E;
+  background-color:#8B8000;
+}
 
 .ALEX {
   border: 1vw solid darkorange;
@@ -200,44 +219,58 @@ body > footer {
 
   <div class="grid-ish">
 
-  <div class="WeighJupiter col">
+    <div class="WeighJupiter col">
 
-  <h2 style="color:blue;">You Can Weigh Jupiter</h2>
+    <h2 style="color:blue;">You Can Weigh Jupiter</h2>
 
-  <p style="color:darkblue;">How do Astronomers know how much the planets weigh? Wonder no more! This lab explores this very question with the motions of Jupiter's most famous moons: Io, Europa, Callisto and Ganymede. <br><br>
-  
-  Watch and measure as the moons orbit around Jupiter. With the measurements of the size of the orbits, their timing, and knowledge of Kepler's Laws, we can ascertain the mass of Jupiter!
-  </p>
+    <p style="color:darkblue;">How do Astronomers know how much the planets weigh? Wonder no more! This lab explores this very question with the motions of Jupiter's most famous moons: Io, Europa, Callisto and Ganymede. <br><br>
+    
+    Watch and measure as the moons orbit around Jupiter. With the measurements of the size of the orbits, their timing, and knowledge of Kepler's Laws, we can ascertain the mass of Jupiter!
+    </p>
 
-  <button class="WeighJupiterButton" onclick=Jupiter()>Weigh Jupiter </button>
+    <button class="WeighJupiterButton" onclick=Jupiter()>Weigh Jupiter </button>
 
+    </div>
+
+    <div class="AstrSpectroscopy col">
+    <h2 style="color:darkgreen;">Astronomical Spectroscopy</h2>
+
+    <p style="color:black;">Have you ever wondered by visible light is visible? Why does the Sun appears yellow? <br><br>
+
+    The answers lie in Spectroscopy and Blackbody radiation, the subjects of this lab. We predict what the temperature of the Sun is and what it is made of. This lab, a digital follow-up to the physical lab Astronomical Spectroscopy I, provides theoretical background through the example of the Sun. 
+    </p>
+
+    <button class="AstrSpecButton" onclick=AstrSpec()>Examine the Sun </button>
+
+    </div>
+
+    <div class="HubbleConstant col">
+    <h2 style="color:maroon;">Measuring the Hubble Constant</h2>
+
+    <p style="color:darkred">Astronomers all agree, the Universe is expanding. How are we so certain? The answer actually takes us back to spectroscopy! <br><br>
+
+    Looking at the Calcium H and K lines (at 3969 and 3934 Angstroms, respectively), we can generate spectra of the most distant galaxies. There's only one problem... the lines are not where we expect them to be! In fact, they move towards longer wavelengths the further away we look in our universe. Enter the Hubble-Lemaître law.
+    </p>
+
+    <button class="HubbleConstButton" onclick=Hubble()>Measure the Hubble Constant </button>
+
+    </div>
+    <div class="SpaceWeather col">
+
+      <h2 style="color:#8B8000;">Space Weather</h2> 
+    
+      <p style="color:black">If you're doing the "Space Weather" online back-up you can access the required data bases using these links </p>
+    
+      <button class="SpaceWeatherButton" onclick="window.open('https://gong2.nso.edu/products/tableView/table.php?configFile=configs/hAlpha.cfg',target='_blank')">Global Oscillation Network Group (GONG) Halpha</button>
+      <br><br>
+      <button class="SpaceWeatherButton" onclick="window.open('https://www.spaceweatherlive.com/en/solar-activity/solar-images/sdo.html',target='_blank')">Solar Dynamics Observatory (SDO)</button>
+      <br><br>
+      <button class="SpaceWeatherButton" onclick="window.open('https://www.spaceweatherlive.com/en/solar-activity/solar-images/soho.html',target='_blank')">Solar and Heliospheric Observatory (SOHO)</button>
+    
+    </div>
   </div>
 
-  <div class="AstrSpectroscopy col">
-  <h2 style="color:darkgreen;">Astronomical Spectroscopy</h2>
 
-  <p style="color:black;">Have you ever wondered by visible light is visible? Why does the Sun appears yellow? <br><br>
-
-  The answers lie in Spectroscopy and Blackbody radiation, the subjects of this lab. We predict what the temperature of the Sun is and what it is made of. This lab, a digital follow-up to the physical lab Astronomical Spectroscopy I, provides theoretical background through the example of the Sun. 
-  </p>
-
-  <button class="AstrSpecButton" onclick=AstrSpec()>Examine the Sun </button>
-
-  </div>
-
-  <div class="HubbleConstant col">
-  <h2 style="color:maroon;">Measuring the Hubble Constant</h2>
-
-  <p style="color:darkred">Astronomers all agree, the Universe is expanding. How are we so certain? The answer actually takes us back to spectroscopy! <br><br>
-
-  Looking at the Calcium H and K lines (at 3969 and 3934 Angstroms, respectively), we can generate spectra of the most distant galaxies. There's only one problem... the lines are not where we expect them to be! In fact, they move towards longer wavelengths the further away we look in our universe. Enter the Hubble-Lemaître law.
-  </p>
-
-  <button class="HubbleConstButton" onclick=Hubble()>Measure the Hubble Constant </button>
-
-  </div>
-
-</div>
 
 <div class="ALEX">
 
