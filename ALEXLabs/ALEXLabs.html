@@ -62,7 +62,7 @@ div {
 }
 
 .grid-ish > * {
-  flex: 1 0 50%;
+  flex: 1 0 33%;
 }
 
 .WeighJupiter {
@@ -146,6 +146,26 @@ div {
   background-color:#8B8000;
 }
 
+.ImpactCraters {
+  border: 1vw solid darkgray;
+  background-color:black;
+  border-radius:5px;
+  padding:25px;
+}
+
+.ImpactCratersButton {
+  color:white;
+  border: 0.05vw solid darkgray;
+  background-color:black;
+  border-radius:5px;
+  padding:10px;
+}
+
+.ImpactCratersButton:hover {
+  color:black;
+  background-color:white;
+}
+
 .ALEX {
   border: 1vw solid darkorange;
   color:black;
@@ -201,7 +221,8 @@ body > footer {
 
   Seeing the writing on the wall, as well as an opportunity to improve upon the formula these original labs had, I took it upon myself to reprogram some of these labs. The intent was to make them "future-proof". To that end, I programmed these labs in HTML/Javascript (as you can see). I make no claims of being an expert at either of these languages, but these labs are in a more stable place than when I started my TA position for this course. <br><br>
 
-  The labs that I have programmed are <span style="color:blue;">You Can Weigh Jupiter</span> (based on the CLEA lab of the same name), <span style="color:green">Astronomical Spectroscopy II</span> (based on "The Flow Of Energy Out Of The Sun" by CLEA), and <span style="color:crimson">Measuring the Hubble Constant</span> (based on the CLEA lab of the same name).</p>
+  The labs that I have programmed are <span style="color:blue;">You Can Weigh Jupiter</span> (based on the CLEA lab of the same name), <span style="color:green">Astronomical Spectroscopy II</span> (based on "The Flow Of Energy Out Of The Sun" by CLEA), and <span style="color:crimson">Measuring the Hubble Constant</span> (based on the CLEA lab of the same name). 
+  Additionally, there are useful links to <span style="color:yellow;">Space Weather</span> and <span style="color:gray">Impact Craters</span>.</p>
 
   <div class="mobile">
     <p style="color:black;"><span style="color:white;font-size:24pt;">Note that these labs are intended to be used on a desktop</span><br> (i.e. the Windows 10 computers in Bryant Space Science Center Room 7). I've made some adjustments to make it more universally friendly (pun intended), but there's only so much I can do with some labs. </p>
@@ -267,6 +288,16 @@ body > footer {
       <br><br>
       <button class="SpaceWeatherButton" onclick="window.open('https://www.spaceweatherlive.com/en/solar-activity/solar-images/soho.html',target='_blank')">Solar and Heliospheric Observatory (SOHO)</button>
     
+    </div>
+
+    <div class="ImpactCraters col">
+
+      <h2 style="color:gray;">Impact Craters</h2> 
+    
+      <p style="color:white">For this lab, we'll need to make a histogram for the third experiment. The link below will help you do that!</p>
+    
+      <button class="ImpactCratersButton" onclick="window.open('./impact/histogram.html',target='_self')">Make a histogram</button>
+      
     </div>
   </div>
 

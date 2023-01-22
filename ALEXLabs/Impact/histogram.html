@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="../ALEX.css">
+<link rel="stylesheet" href="./css/impact.css">
+<link rel="Shortcut Icon" type="image/png" href="moon.png">
+
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+<script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
+<script src="plotly-2.11.1.min.js"></script>
+<script>
+function ALEXHome() {
+  window.open('../ALEXLabs.html', '_self');
+}
+</script>
+<style>
+.wrapbox {
+  inline-size:100ch;
+  overflow-wrap: normal;
+  word-wrap: break-word;
+}
+</style>
+</head>
+
+<header>
+  <title>Impact Craters Histogram</title>
+  <button class="button biggerButton" onclick="ALEXHome()">Main Menu</button>
+</header>
+
+<body>
+  <div class="body">
+    <div class="Impact center">
+      <h1>Histograms</h2>
+
+
+        <p>Enter in the values here:</p>
+
+        <input id="ImpactSize" type="number" placeholder="Impact Size" min="0" max="100" onchange="" />
+        <button onclick="addValue()">Enter</button>
+        <button id="removeButton" onclick="removeLast()" style="display:none;">Remove Last</button>
+        
+        <div class="wrapbox">
+          <p>Values you've entered (<span id="numVals">0</span>):<br> <span id="Vals" style="overflow-wrap:normal;"></span></p>
+        </div>
+    </div>
+
+    <input type="button" onclick="plot()" value="Plot" class="center" />
+
+    <div class="Impact center" style="display:none;" id="plotHolder">
+
+      <div id="myPlot" style="width:100%;padding-left:0;padding-right:0%;"></div>
+
+    </div>
+</body>
+<script src="./js/hotKeys.js"></script>
+<script src="./js/functions.js"></script>
+<script>
+  var impactSizes = [];
+
+  var nBins = 5;
+
+  var PLOT_TOGGLE = false;
+</script>
+<footer>
+  <button class="button" onclick="window.location.href = 'backgroundExplain.html'">About the background image </button>
+</footer>
+</html>
