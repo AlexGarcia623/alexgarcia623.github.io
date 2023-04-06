@@ -2,17 +2,20 @@ var changingInt = false; // are we changing the integration time? If so don't al
 
 var increment = RAPID; // Default Slewing Speed of the telescope is Rapid (variables in constants.js)
 
+var BLINKING = false;
+var blinkInterval = '';
+
 var bigInc   = document.getElementById('bigInc');
 var smallInc = document.getElementById('smallInc');
 var tinyInc  = document.getElementById('tinyInc');
 
-bigInc.onclick = function() {inc(RAPID)};
+bigInc.onclick   = function() {inc(RAPID)};
 smallInc.onclick = function() {inc(NOMINAL)};
-tinyInc.onclick = function() {inc(SLOW)};
+tinyInc.onclick  = function() {inc(SLOW)};
 
-bigInc.style.backgroundColor = "white";
+bigInc.style.backgroundColor   = "white";
 smallInc.style.backgroundColor = "darkgray";
-tinyInc.style.backgroundColor = "darkgray";
+tinyInc.style.backgroundColor  = "darkgray";
 
 function inc(newIncrement) {
   newIncrement = parseInt(newIncrement);
@@ -20,17 +23,17 @@ function inc(newIncrement) {
   increment = newIncrement;
 
   if (newIncrement == RAPID) {
-    bigInc.style.backgroundColor = 'white';
+    bigInc.style.backgroundColor   = 'white';
     smallInc.style.backgroundColor = 'darkgray';
-    tinyInc.style.backgroundColor = 'darkgray';
+    tinyInc.style.backgroundColor  = 'darkgray';
   } else if (newIncrement == NOMINAL) {
-    bigInc.style.backgroundColor = 'darkgray';
+    bigInc.style.backgroundColor   = 'darkgray';
     smallInc.style.backgroundColor = 'white';
-    tinyInc.style.backgroundColor = 'darkgray';
+    tinyInc.style.backgroundColor  = 'darkgray';
   } else if (newIncrement == SLOW) {
-    bigInc.style.backgroundColor = 'darkgray';
+    bigInc.style.backgroundColor   = 'darkgray';
     smallInc.style.backgroundColor = 'darkgray';
-    tinyInc.style.backgroundColor = 'white';
+    tinyInc.style.backgroundColor  = 'white';
   }
 }
 
@@ -39,9 +42,9 @@ function changeIncrement() {
 
   changeSlewButton.style.backgroundColor = changeSlewButton.style.backgroundColor === "darkgray" ? 'white':'darkgray'; 
 
-  bigInc.style.display   = bigInc.style.display != 'none'? 'none' : 'block';
+  bigInc.style.display   = bigInc.style.display   != 'none'? 'none' : 'block';
   smallInc.style.display = smallInc.style.display != 'none'? 'none' : 'block';
-  tinyInc.style.display  = tinyInc.style.display != 'none'? 'none' : 'block';
+  tinyInc.style.display  = tinyInc.style.display  != 'none'? 'none' : 'block';
 }
 
 function intToggle() {
@@ -59,7 +62,9 @@ function intToggle() {
     intToggleButton.style.backgroundColor = 'white';
   } else {
     intToggleButton.style.backgroundColor = 'darkgray';
+    CHANGE_INT_OPEN = false;
   }
+  document.getElementById('intTime').focus();
 }
 
 function onGalaxyChecker() {
@@ -116,8 +121,8 @@ function switchImage(which2switch) {
     CALCIUM_H_REDSHIFTED = CALCIUM_H + CALCIUM_H * TRUE_REDSHIFT;
     CALCIUM_K_REDSHIFTED = CALCIUM_K + CALCIUM_K * TRUE_REDSHIFT;
 
-    document.getElementById("appMag").innerHTML = APP_MAG;
-    document.getElementById("galaxyName").innerHTML = whichZoomIn[currentField];
+    document.getElementById("appMag").innerHTML       = APP_MAG;
+    document.getElementById("galaxyName").innerHTML   = whichZoomIn[currentField];
     document.getElementById("fieldDisplay").innerHTML = 'Target: ' + whichZoomIn[currentField];
 
     zoomOutBool = false;
@@ -127,9 +132,10 @@ function switchImage(which2switch) {
     imgName = which2switch;
     xpos = 60;
     ypox = 40;
-    document.getElementById('domeWarningContainer').style.display = 'none';
+    document.getElementById('domeWarning').style.display = 'none';
     document.getElementById('domeWarning').innerHTML = '';
-
+    BLINKING = false;
+    window.clearInterval(blinkInterval);
     cHelp = colorHelper[which2switch]
 
     document.getElementById(cHelp).style.backgroundColor = 'white';    
@@ -143,10 +149,44 @@ function switchImage(which2switch) {
     //document.getElementById("fieldDisplay").innerHTML = document.getElementById(cHelp).innerHTML;
 
   } else {
-    document.getElementById('domeWarningContainer').style.display = 'block';
-    document.getElementById('domeWarning').innerHTML = 'You must close the dome before you can change fields';
+    document.getElementById('domeWarning').style.display = 'block';
+    document.getElementById('domeWarning').innerHTML = 'You must close the dome before you can change fields (click this to close this pop-up)';
+    if (!BLINKING) {
+      blinkInterval = setInterval(function() {
+        flashtext('domeWarning', 'red');
+        flashbackground('domeWarning', 'white');
+      }, 750 );
+      BLINKING = true;
+    }
   }
   //telescopeFrame();
+}
+
+function closeBlinker() {
+  document.getElementById('domeWarning').style.display = 'none';
+  document.getElementById('domeWarning').innerHTML = '';
+  BLINKING = false;
+  window.clearInterval(blinkInterval);
+}
+
+function flashtext(ele, col) {
+  var colCheck = document.getElementById(ele).style.color;
+
+  if (colCheck === 'white') {
+    document.getElementById(ele).style.color = col;
+  } else {
+    document.getElementById(ele).style.color = 'white';
+  }
+}
+
+function flashbackground(ele, col) {
+  var colCheck = document.getElementById(ele).style.backgroundColor;
+
+  if (colCheck === 'red') {
+    document.getElementById(ele).style.backgroundColor = col;
+  } else {
+    document.getElementById(ele).style.backgroundColor = 'red';
+  }
 }
 
 function autoSwitch(direction) {

@@ -82,6 +82,7 @@ p, a {
 
     <input id="intTime" type = "number" class="inputText" placeholder="Enter Time" min="1" max="1000" oninput=addNoise() onchange=addNoise() style="left:70.75%;top:17.5%;width:12%;display:none;"/>
 
+    <button id="domeWarning" style="color:white;display: none;left:43%;top:50%;width:15%;background-color: red;" onclick="closeBlinker()"></button>
   </div>
 
   <p id="test"></p>
@@ -99,9 +100,9 @@ p, a {
     </div>
   </div>
 
-  <div class="HubbleConstant center" id='domeWarningContainer' style="display:none;">
+  <!-- <div class="HubbleConstant center" id='domeWarningContainer' style="display:none;">
     <p id='domeWarning' style="color:black;"> </p>
-  </div>
+  </div> -->
 
   <div class="HubbleConstant center" style="display:none;">
 
@@ -181,19 +182,22 @@ p, a {
       <li>Tab: Move down one field</li>
       <li>Shift+Tab: Move up one field</li>
     </ul>
-    <li>`~: See slew rates </li>
+    <li>~: See slew rates </li>
     <ul>
-      <li>1: Rapid</li>
-      <li>2: Nominal</li>
-      <li>3: Slow</li>
+      <li>[: Rapid</li>
+      <li>]: Nominal</li>
+      <li>\: Slow</li>
     </ul>
     <li>Z: Zoom in/out </li>
-    <li>T: Take Spectrum </li>
-    <li>Enter: Input integration time </li>
+    <li>T: Open integration time inputter </li>
     <ul>
-      <li>Displaying the integration time input box disables the hot keys for changing slew rate. Press enter again to reenable</li>
+      <li>Type any number and the spectrum will generate with that number of seconds as its integration time (after pressing enter)</li>
     </ul>
-    <li>/?: Show hot keys/Close this menu</li>
+    <li>Enter: Take a spectrum </li>
+    <ul>
+      <li>Only works when zoomed in on a target</li>
+    </ul>
+    <li>/: Show hot keys/Close this menu</li>
   </ul>
 
   <p>Click anywhere outside this box (or press the / key) to exit this menu</p>
