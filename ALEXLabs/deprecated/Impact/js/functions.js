@@ -1,3 +1,6 @@
+// Created by Alex Garcia, 2022-23
+// ALEX Labs
+
 function addValue() {
   value = document.getElementById('ImpactSize').value;
   if (value != "" && value > 0 && value < 100) {

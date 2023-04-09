@@ -1,7 +1,12 @@
-// Mystery 1 -- Hydrogen
-// Mystery 2 -- Mercury
-// Mystery 3 -- Helium
-// Mystery 4 -- Sodium
+// Created by Alex Garcia, 2022-23
+// ALEX Labs
+
+/*
+    Mystery 1 -- Hydrogen
+    Mystery 2 -- Mercury
+    Mystery 3 -- Helium
+    Mystery 4 -- Sodium
+*/
 
 // Absorbing values for different elements
 //
@@ -45,6 +50,8 @@ var TOTAL_EMIT = 0;
 
 var going = false;
 
+// Colors corresponding to each energy
+// Used for color blind mode
 var COLORS = {
     1.6:"Dark Red",
     1.7:"Red",

@@ -1,9 +1,17 @@
-// takes wavelength in nm and returns an rgba value
-// Taken from: https://scienceprimer.com/javascript-code-convert-light-wavelength-color
+// Created by Alex Garcia, 2022-23
+// ALEX Labs
+// Code taken and modified from: https://scienceprimer.com/javascript-code-convert-light-wavelength-color
 
-// Used in spectral lines and absorption spectra
-// Takes wavelength and how many counts it has, returns either black or the desired color
 function wavelengthToColor(wavelength, counts=2) {
+    /* Convert a specific wavelength (in nm) to an actual color
+
+    Inputs:
+    wavelength - wavelength in nm
+    counts - number of photons detected of that wavelength, important for setting opacity, default is (2/2)
+
+    Outputs:
+    String - rgba color
+    */
     var r,
         g,
         b,
@@ -49,9 +57,15 @@ function wavelengthToColor(wavelength, counts=2) {
     return colorSpace;
 }
 
-// Used in blackbody
-// Takes wavelenth, returns color with opacity based on how close it is to IR/UV
 function wavelengthToColorAlpha(wavelength) {
+    /* Convert a specific wavelength (in nm) to an actual color, scales opacity of the color based on its wavelength
+
+    Inputs:
+    wavelength - wavelength in nm
+
+    Outputs:
+    String - rgba color
+    */
     var r,
         g,
         b,

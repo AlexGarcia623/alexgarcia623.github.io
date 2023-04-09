@@ -1,3 +1,6 @@
+<!-- Created by Alex Garcia, 2022-23 -->
+<!-- ALEX Labs -->
+
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="../ALEX.css">
@@ -89,24 +92,24 @@ function moonSelector() {
 <script src="./js/animation.js"></script>
 <script>
 
-var canvas = document.getElementById('canvas');
-var context = canvas.getContext('2d');
+  var canvas = document.getElementById('canvas');
+  var context = canvas.getContext('2d');
 
-// Create the first scene
-animate();
+  // Create the first scene
+  animate();
 
-// When clicking on the Canvas element, display the X position in arcseconds
-document.getElementById("canvas").addEventListener('click', printMousePos, true);
-function printMousePos(e){
-  var JupiterWidth = 105/SCALE * canvas.clientWidth / 1220;
-  var rect = canvas.getBoundingClientRect();
-  var xHalfWidth = canvas.clientWidth/2 + rect.left;
-  var cursorX = ( (parseInt(e.pageX) - xHalfWidth) / (2*JupiterWidth)).toFixed(2);
-  var cursorArcsec = (cursorX * 23.4 ).toFixed(2);
-  document.getElementById("clickSome").innerHTML = "X Position (relative to center of frame): ";
-  document.getElementById("clickLocation").innerHTML = cursorArcsec + "''";
-  document.getElementById("clickNone").style.display = "none";
-}
+  // When clicking on the Canvas element, display the X position in arcseconds
+  document.getElementById("canvas").addEventListener('click', printMousePos, true);
+  function printMousePos(e){
+    var JupiterWidth = 105/SCALE * canvas.clientWidth / 1220;
+    var rect = canvas.getBoundingClientRect();
+    var xHalfWidth = canvas.clientWidth/2 + rect.left;
+    var cursorX = ( (parseInt(e.pageX) - xHalfWidth) / (2*JupiterWidth)).toFixed(2);
+    var cursorArcsec = (cursorX * 23.4 ).toFixed(2);
+    document.getElementById("clickSome").innerHTML = "X Position (relative to center of frame): ";
+    document.getElementById("clickLocation").innerHTML = cursorArcsec + "''";
+    document.getElementById("clickNone").style.display = "none";
+  }
 
 </script>  
 

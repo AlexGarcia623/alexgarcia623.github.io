@@ -1,3 +1,6 @@
+// Created by Alex Garcia, 2022-23
+// ALEX Labs
+//
 // DOME ANIMATIONS
 //
 // Dome is default closed (called by closedDome()
@@ -7,7 +10,6 @@
 // "telescopeFrame()" is called on any movement (i.e. east/west, zoomIn/Out) to draw the Canvas
 //
 // Animation for closing the dome is in "animateDoorsClose()" which calles "closeDome()" iteratively
-//
 
 var interval_tracker = "";
 var fps = 10; // throttles animation speed
@@ -28,23 +30,30 @@ var xpos = 60;
 var ypos = 80;
 
 function animateDoorsOpen() {
-  // Opens the doors
+  /* Opens the doors
+
+  */
   interval_tracker = setInterval(function(){ //throttle requestAnimationFrame to 20fps
        requestAnimationFrame(openDome);
   }, 1000/fps)
 }
 
 function animateDoorsClose() {
-  // Closes the doors
+  /* Closes the doors
+
+  */
   interval_tracker = setInterval(function(){ //throttle requestAnimationFrame to 20fps
        requestAnimationFrame(closeDome);
   }, 1000/fps)
   ctx.fillStyle="darkgray";
-  ctx.strokeRect(250, 50, 250, 350);  
+  ctx.strokeRect(250, 50, 250, 350);
 }
 
 function closedDome() {
-  // default behavior of the dome -- hides the Canvas element
+  /* default behavior of the dome -- hides the Canvas element
+
+  Not to be confused with closeDome(), which actively closes the dome
+  */
   ctx.fillStyle = 'gray';
   ctx.fillRect(0, 0, 200, 500);
   ctx.fillRect(550, 0, 200, 500);
@@ -72,14 +81,15 @@ function closedDome() {
   ctx.moveTo(375, 50);
   ctx.lineTo(375, 400);
   ctx.stroke();
-
 }
 
 function openDome() {
-  // opens the dome
+  /* Creates animation for opening the dome
+
+  */
   document.getElementById("fieldDisplay").innerHTML = 'Target: ' + whichZoomIn[currentField];
   close = false;
-  move = true;
+  move  = true;
   document.getElementById("openButton").style.display = "none";
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = 'gray';
@@ -143,7 +153,9 @@ function openDome() {
 }
 
 function closeDome() {
-  // closes the dome
+  /* Creates animation for closing the dome
+
+  */
   open = false;
   move = false;
   document.getElementById("closeButton").style.display = "none";
@@ -234,10 +246,14 @@ function closeDome() {
     ctx.lineTo(domeLocLeft,400);
     ctx.stroke();
   }
+  // if blinking warning is open, close it
+  closeBlinker();
 }
 
 function telescopeFrame() {
-  // inverse of "closeDome()" this adds everything back when called upon and doesn't hide the Canvas element
+  /* inverse of "closeDome()" this adds everything back when called upon and doesn't hide the Canvas element
+
+  */
   onGalaxyChecker();
   ctx.fillStyle = 'gray';
   ctx.fillRect(0, 0, 200, 500);

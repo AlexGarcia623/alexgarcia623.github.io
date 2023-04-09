@@ -1,8 +1,19 @@
+// Created by Alex Garcia, 2022-23
+// ALEX Labs
+
+// Note that this is all depricated, as such documentation is likely lacking
+
 function init() {
+    /* Initialize the animation
+
+    */
     animation = window.requestAnimationFrame(draw);
 }
 
 function draw() {
+    /* Draw the photon path
+
+    */
     number++;
     counter.textContext = number;
     const canvas = document.getElementById('canvas');
@@ -11,11 +22,6 @@ function draw() {
     const disp = document.getElementById('display');
     document.getElementById("display").innerHTML = number;
 
-    //ctx.strokeStyle = 'yellow';
-    //ctx.beginPath();
-    //ctx.arc(375, 250, 200, 0, 2 * Math.PI);
-    //ctx.lineWidth = 3;
-    //ctx.stroke();
     ctx.beginPath();
     ctx.strokeStyle = 'red';
     ctx.arc(375, 250, 15, 0, 2 * Math.PI);
@@ -37,10 +43,8 @@ function draw() {
     } else if (((x - 375) ** 2 + (y - 250) ** 2) ** (1 / 2) < 150) {
         pertx = random(-10, 10);
         perty = random(-10, 10);
-    } //else {
-    //pertx = random(-10, 10);
-    //perty = random(-10, 10);
-    //}
+    } 
+
     ctx.lineWidth = 2;
     ctx.lineTo(x + pertx, y + perty);
     ctx.stroke();
@@ -60,6 +64,10 @@ function draw() {
 }
 
 function start() {
+    /* Button press
+    
+    Perform the animations
+    */
     if (animation) {
         window.cancelAnimationFrame(animation)
     }

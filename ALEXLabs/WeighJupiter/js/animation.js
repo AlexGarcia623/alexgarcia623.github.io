@@ -1,17 +1,27 @@
+// Created by Alex Garcia, 2022-23
+// ALEX Labs
+
 function animate() {
+    /* Create and clear canvas element for animations.
+
+    After create and clear, add the image of Jupiter with the correct scaling
+
+    This function is specifically for the non-continuous "Timestep" version of this lab
+    */
     context.clearRect(0, 0, canvas.width, canvas.height); // clear canvas
     Jupiter = new Image();
     Jupiter.src = 'JupiterRotating/spinning_jupiter-' + startString + '.png';
 
     Jupiter.onload = function () {
-        var wrh = Jupiter.width / Jupiter.height;
-        var newWidth = canvas.width / SCALE;
+        var wrh       = Jupiter.width / Jupiter.height; // width ratio height
+        var newWidth  = canvas.width / SCALE;
         var newHeight = newWidth / wrh;
+
         if (newHeight > canvas.height) {
             newHeight = canvas.height;
-            newWidth = newHeight * wrh;
+            newWidth  = newHeight * wrh;
         }
-        var xOffset = newWidth < canvas.width ? ((canvas.width - newWidth) / 2) : 0;
+        var xOffset = newWidth  < canvas.width  ? ((canvas.width  - newWidth)  / 2) : 0;
         var yOffset = newHeight < canvas.height ? ((canvas.height - newHeight) / 2) : 0;
 
         context.drawImage(Jupiter, xOffset, yOffset, newWidth, newHeight);
@@ -20,6 +30,12 @@ function animate() {
 }
 
 function animate_continuous() {
+    /* Create and clear canvas element for animations.
+
+    After create and clear, add the image of Jupiter with the correct scaling
+
+    This function is specifically for the continuous version of this lab
+    */
     var JW = 105 / SCALE;
 
     context.clearRect(0, 0, canvas.width / 2 - JW, canvas.height); // clear canvas
@@ -28,14 +44,16 @@ function animate_continuous() {
     Jupiter.src = 'JupiterRotating/spinning_jupiter-' + startString + '.png';
 
     Jupiter.onload = function () {
-        var wrh = Jupiter.width / Jupiter.height;
-        var newWidth = canvas.width / SCALE;
+        var wrh       = Jupiter.width / Jupiter.height;
+        var newWidth  = canvas.width / SCALE;
         var newHeight = newWidth / wrh;
+
         if (newHeight > canvas.height) {
             newHeight = canvas.height;
-            newWidth = newHeight * wrh;
+            newWidth  = newHeight * wrh;
         }
-        var xOffset = newWidth < canvas.width ? ((canvas.width - newWidth) / 2) : 0;
+
+        var xOffset = newWidth  < canvas.width  ? ((canvas.width  - newWidth)  / 2) : 0;
         var yOffset = newHeight < canvas.height ? ((canvas.height - newHeight) / 2) : 0;
 
         context.drawImage(Jupiter, xOffset, yOffset, newWidth, newHeight);
@@ -44,11 +62,18 @@ function animate_continuous() {
 }
 
 function drawMoonsInit(y, h) {
+    /* Draw the moons
+
+    Inputs: // These are vague... I did this a long time ago
+    y - vertical offset of the moons orbit
+    h - height of Jupiter
+
+    */
     var dispY = y + h / 2;
 
     JupiterWidth = 105 / SCALE;
 
-    // IO
+    //////// Io ////////
     context.strokeStyle = 'orange';
     context.beginPath();
     context.lineWidth = 2.5;
@@ -56,8 +81,9 @@ function drawMoonsInit(y, h) {
     IOx = I[0];
     IOy = I[1];
     if ((IOx > (canvas.width / 2 - JupiterWidth) && IOx < (canvas.width / 2 + JupiterWidth)) && (IOy > 0)) {
-        // do nothing
+        // do nothing if moon is behind Jupiter!
     } else {
+        // Draw the moon, check if we're in colorblind mode
         if (COLOR_BLIND) {
             context.moveTo(IOx - 2.5, dispY + 4*2.5/3 + 1);
             context.lineTo(IOx + 2.5, dispY - 4*2.5/3 + 1);
@@ -72,8 +98,9 @@ function drawMoonsInit(y, h) {
         }
         context.stroke();
     }
+    ////////////////////
 
-    // Europa
+    //////// Europa ////////
     context.strokeStyle = 'red';
     context.beginPath();
     context.lineWidth = 2.5;
@@ -81,8 +108,9 @@ function drawMoonsInit(y, h) {
     EUROPAx = E[0];
     EUROPAy = E[1];
     if ((EUROPAx > (canvas.width / 2 - JupiterWidth) && EUROPAx < (canvas.width / 2 + JupiterWidth)) && (EUROPAy > 0)) {
-        // do nothing
+        // do nothing if moon is behind Jupiter!
     } else {
+        // Draw the moon, check if we're in colorblind mode
         if (COLOR_BLIND) {
             context.moveTo(EUROPAx - 1, dispY + 1);
             context.lineTo(EUROPAx, dispY + 2);
@@ -94,8 +122,9 @@ function drawMoonsInit(y, h) {
         }
         context.stroke();
     }
+    ////////////////////
 
-    // Ganymede
+    //////// Ganymede ////////
     context.strokeStyle = 'green';
     context.beginPath();
     context.lineWidth = 2.5;
@@ -103,8 +132,9 @@ function drawMoonsInit(y, h) {
     GANYMEDEx = G[0];
     GANYMEDEy = G[1];
     if ((GANYMEDEx > (canvas.width / 2 - JupiterWidth) && GANYMEDEx < (canvas.width / 2 + JupiterWidth)) && (GANYMEDEy > 0)) {
-        // do nothing
+        // do nothing if moon is behind Jupiter!
     } else {
+        // Draw the moon, check if we're in colorblind mode
         if (COLOR_BLIND) {
             context.moveTo(GANYMEDEx, dispY + 5);
             context.lineTo(GANYMEDEx + 1, dispY + 5);
@@ -115,8 +145,9 @@ function drawMoonsInit(y, h) {
         }
         context.stroke();
     }
+    ////////////////////
 
-    // Callisto
+    //////// Callisto ////////
     context.strokeStyle = 'blue';
     context.beginPath();
     context.lineWidth = 2.5;
@@ -124,8 +155,9 @@ function drawMoonsInit(y, h) {
     CALLISTOx = C[0];
     CALLISTOy = C[1];
     if ((CALLISTOx > (canvas.width / 2 - JupiterWidth) && CALLISTOx < (canvas.width / 2 + JupiterWidth)) && (CALLISTOy > 0)) {
-        // do nothing
+        // do nothing if moon is behind Jupiter!
     } else {
+        // Draw the moon, check if we're in colorblind mode
         if (COLOR_BLIND) {
             context.moveTo(CALLISTOx - 2, dispY + 6);
             context.lineTo(CALLISTOx + 2, dispY + 6);
@@ -137,19 +169,32 @@ function drawMoonsInit(y, h) {
         }
         context.stroke();
     }
+    ////////////////////
 }
 
 function drawMoonsWShadow(y, h) {
+    /* Draw the moons with a trailing shadow
+
+    Same as drawMoonsInit(y, h), but draws the previous timestep as a black outline
+
+    (If you're an enterprising young JS developer, you could probably make this code much cleaner)
+
+    Inputs: // These are vague... I did this a long time ago
+    y - vertical offset of the moons orbit
+    h - height of Jupiter
+
+    */
     var dispY = y + h / 2;
 
     JupiterWidth = 105 / SCALE;
 
-    // IO - Previous
+    //////// Io ////////
+    // Shadow
     context.strokeStyle = 'black';
     context.beginPath();
     context.lineWidth = 2.5;
     if ((IOx > (canvas.width / 2 - JupiterWidth) && IOx < (canvas.width / 2 + JupiterWidth)) && (IOy > 0)) {
-        // do nothing
+        // do nothing if the moon is behind Jupiter
     } else {
         if (COLOR_BLIND) {
             context.moveTo(IOx - 2.5, dispY + 4*2.5/3 + 1);
@@ -166,7 +211,7 @@ function drawMoonsWShadow(y, h) {
         context.stroke();
     }
 
-    // IO
+    // Io itself
     context.strokeStyle = 'orange';
     context.beginPath();
     context.lineWidth = 2.5;
@@ -174,7 +219,7 @@ function drawMoonsWShadow(y, h) {
     IOx = I[0];
     IOy = I[1];
     if ((IOx > (canvas.width / 2 - JupiterWidth) && IOx < (canvas.width / 2 + JupiterWidth)) && (IOy > 0)) {
-        // do nothing
+        // do nothing if the moon is behind Jupiter
     } else {
         if (COLOR_BLIND) {
             context.moveTo(IOx - 2.5, dispY + 4*2.5/3 + 1);
@@ -190,13 +235,15 @@ function drawMoonsWShadow(y, h) {
         }
         context.stroke();
     }
+    ////////////////////
 
-    // Europa - Previous
+    //////// Europa ////////
+    // Shadow
     context.strokeStyle = 'black';
     context.beginPath();
     context.lineWidth = 2.5;
     if ((EUROPAx > (canvas.width / 2 - JupiterWidth) && EUROPAx < (canvas.width / 2 + JupiterWidth)) && (EUROPAy > 0)) {
-        // do nothing
+        // do nothing if moon is behind Jupiter
     } else {
         if (COLOR_BLIND) {
             context.moveTo(EUROPAx - 1, dispY + 1);
@@ -210,7 +257,7 @@ function drawMoonsWShadow(y, h) {
         context.stroke();
     }
 
-    // Europa
+    // Europa itself
     context.strokeStyle = 'red';
     context.beginPath();
     context.lineWidth = 2.5;
@@ -218,7 +265,7 @@ function drawMoonsWShadow(y, h) {
     EUROPAx = E[0];
     EUROPAy = E[1];
     if ((EUROPAx > (canvas.width / 2 - JupiterWidth) && EUROPAx < (canvas.width / 2 + JupiterWidth)) && (EUROPAy > 0)) {
-        // do nothing
+        // do nothing if moon is behind Jupiter
     } else {
         if (COLOR_BLIND) {
             context.moveTo(EUROPAx - 1, dispY + 1);
@@ -231,13 +278,15 @@ function drawMoonsWShadow(y, h) {
         }
         context.stroke();
     }
+    ////////////////////
 
-    // Ganymede -- Previous
+    //////// Ganymede ////////
+    // Shadow
     context.strokeStyle = 'black';
     context.beginPath();
     context.lineWidth = 0;
     if ((GANYMEDEx > (canvas.width / 2 - JupiterWidth) && GANYMEDEx < (canvas.width / 2 + JupiterWidth)) && (GANYMEDEy > 0)) {
-        // do nothing
+        // do nothing if moon is behind Jupiter
     } else {
         if (COLOR_BLIND) {
             context.moveTo(GANYMEDEx, dispY + 5);
@@ -250,7 +299,7 @@ function drawMoonsWShadow(y, h) {
         context.stroke();
     }
 
-    // Ganymede
+    // Ganymede itself
     context.strokeStyle = 'green';
     context.beginPath();
     context.lineWidth = 2.5;
@@ -258,7 +307,7 @@ function drawMoonsWShadow(y, h) {
     GANYMEDEx = G[0];
     GANYMEDEy = G[1];
     if ((GANYMEDEx > (canvas.width / 2 - JupiterWidth) && GANYMEDEx < (canvas.width / 2 + JupiterWidth)) && (GANYMEDEy > 0)) {
-        // do nothing
+        // do nothing if moon is behind Jupiter
     } else {
         if (COLOR_BLIND) {
             context.moveTo(GANYMEDEx, dispY + 5);
@@ -270,13 +319,15 @@ function drawMoonsWShadow(y, h) {
         }
         context.stroke();
     }
+    ////////////////////
 
-    // Callisto -- Previous
+    //////// Callisto ////////
+    // Shadow
     context.strokeStyle = 'black';
     context.beginPath();
     context.lineWidth = 2.5;
     if ((CALLISTOx > (canvas.width / 2 - JupiterWidth) && CALLISTOx < (canvas.width / 2 + JupiterWidth)) && (CALLISTOy > 0)) {
-        // do nothing
+        // do nothing if moon is behind Jupiter
     } else {
         if (COLOR_BLIND) {
             context.moveTo(CALLISTOx - 2, dispY + 6);
@@ -290,7 +341,7 @@ function drawMoonsWShadow(y, h) {
         context.stroke();
     }
 
-    // Callisto
+    // Callisto itself
     context.strokeStyle = 'blue';
     context.beginPath();
     context.lineWidth = 2.5;
@@ -298,7 +349,7 @@ function drawMoonsWShadow(y, h) {
     CALLISTOx = C[0];
     CALLISTOy = C[1];
     if ((CALLISTOx > (canvas.width / 2 - JupiterWidth) && CALLISTOx < (canvas.width / 2 + JupiterWidth)) && (CALLISTOy > 0)) {
-        // do nothing
+        // do nothing if moon is behind Jupiter
     } else {
         if (COLOR_BLIND) {
             context.moveTo(CALLISTOx - 2, dispY + 6);
@@ -311,43 +362,80 @@ function drawMoonsWShadow(y, h) {
         }
         context.stroke();
     }
+    ////////////////////
 }
 
 function Next() {
+    /* Set the next timestep in "Timestep" mode
+
+    Clear the clickLocation and potential warning messages
+
+    Find the next image and animate the new frame. Additionally, update the timing in the display
+
+    */
     document.getElementById("clickLocation").innerHTML = "";
-    document.getElementById("warning").innerHTML = "";
-    document.getElementById("restWarning").innerHTML = "";
+    document.getElementById("warning").innerHTML       = "";
+    document.getElementById("restWarning").innerHTML   = "";
+
     start = start + NUM_ITER;
     if (start > NUMBER_OF_FRAMES) {
         var diff = start % NUMBER_OF_FRAMES;
         start = diff;
     }
+
     startString = String(start);
     var counter = parseInt(document.getElementById("counter").innerHTML);
-    counter = counter + 1;
+    counter     = counter + 1;
     document.getElementById("counter").innerHTML = counter;
+
     var time_so_far = parseInt(document.getElementById("demo").innerHTML);
+
     document.getElementById("demo").innerHTML = time_so_far + DESIRED_TIME;
+
     animate();
 }
 
 function next_continuous() {
+    /* Set the next timestep in "Continuous" mode
+
+    Clear the potential warning messages
+
+    Find the next image and animate the new frame. Additionally, update the timing in the display
+
+    */
     document.getElementById("warning").innerHTML = ""
+
     start = start + NUM_ITER;
     if (start > NUMBER_OF_FRAMES) {
         var diff = start % NUMBER_OF_FRAMES;
         start = diff;
     }
+
     startString = String(start);
+
     var time_so_far = parseFloat(document.getElementById("demo").innerHTML);
+
     document.getElementById("demo").innerHTML = (time_so_far + DESIRED_TIME).toFixed(1);
+
     animate_continuous();
 }
 
 function Back() {
+    /* Go back to the previous timestep in "Timestep" mode
+
+    Clear the clickLocation 
+
+    Find the previous image and animate the new frame. Additionally, update the timing in the display
+
+    If you go back to 0 hours, do not update the position!
+
+    */
     document.getElementById("clickLocation").innerHTML = "";
+
     var time_so_far = parseInt(document.getElementById("demo").innerHTML);
     if ((time_so_far - DESIRED_TIME) <= 0) {
+        // Do not allow the user to go less than 0 hours
+        // Display warning message if they do this!
         start = 0;
         startString = String(start);
         document.getElementById("demo").innerHTML = 0;
@@ -357,24 +445,33 @@ function Back() {
         document.getElementById("demo").innerHTML = time_so_far - DESIRED_TIME;
         if (start - NUM_ITER < 0) {
             var diff = Math.abs(start - NUM_ITER);
-            start = NUMBER_OF_FRAMES - (diff % NUMBER_OF_FRAMES);
+            start    = NUMBER_OF_FRAMES - (diff % NUMBER_OF_FRAMES);
         } else {
             start = start - NUM_ITER;
         }
 
         startString = String(start);
     }
+
     animate();
 }
 
 var interval_tracker = "";
 var fps = 24;
 function startContinuousAnimation() {
-    interval_tracker = setInterval(function () { //throttle requestAnimationFrame to 20fps
+    /* Create continuous animation
+
+    Note that this is throttled to 24 fps, you can make this go faster by changing fps 
+    */
+    interval_tracker = setInterval(function () { //throttle requestAnimationFrame 
         requestAnimationFrame(next_continuous);
     }, 1000 / fps)
 }
 
 function stopContinuousAnimation() {
+    /* Stop the continuous animation
+
+    Just clears the animation Object
+    */
     window.clearInterval(interval_tracker);
 }

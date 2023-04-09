@@ -1,3 +1,6 @@
+// Created by Alex Garcia, 2022-23
+// ALEX Labs
+
 var NUMBER_OF_FRAMES = 71; // in gif
 
 var start = 0; // Starting time (in hours)

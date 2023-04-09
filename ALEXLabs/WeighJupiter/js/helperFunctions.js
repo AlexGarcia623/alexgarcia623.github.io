@@ -1,18 +1,36 @@
+// Created by Alex Garcia, 2022-23
+// ALEX Labs
+
 function changeTiming() {
+    /* Change timestep in "Timestep" mode
+
+    */
     NUM_ITER = Math.round(DESIRED_TIME / TIME_PER_FRAME);
 }
 
 function changeScale() {
+    /* Change scale of image (zoom in or out centered on Jupiter)
+
+    */
     context.clearRect(0, 0, canvas.width, canvas.height); // clear canvas
     animate();
 }
 
-// Calculate the positions of each of the moons
-// input JW is "Jupiter Width", which changes with scale
 function calcIoPos(JW) {
-    var time = parseInt(document.getElementById("demo").innerHTML);
-    IO_PERIOD = 42; // hours
-    IO_A_TO_JUPITER_R = 5.898; // ratio of jupiter radius to orbit of moon
+    /* Calculate the position of Io
+
+    All calculations done in terms of Jupiter radii (pixels)
+
+    Inputs:
+    JW - Jupiter width, changes with scale of image
+
+    Outputs:
+    array - contains x, y positions of Io
+    */
+    var time          = parseInt(document.getElementById("demo").innerHTML); // current time of animation
+    IO_PERIOD         = 42;                                                  // hours
+    IO_A_TO_JUPITER_R = 5.898;                                               // ratio of jupiter radius to orbit of moon
+
     a = (JW * IO_A_TO_JUPITER_R);
 
     var canvasXcenter = canvas.width / 2
@@ -22,9 +40,20 @@ function calcIoPos(JW) {
     return [x, y];
 }
 function calcEuropaPos(JW) {
-    var time = parseInt(document.getElementById("demo").innerHTML);
-    EUROPA_PERIOD = 85; // hours
-    EUROPA_A_TO_JUPITER_R = 9.384; // ratio of jupiter radius to orbit of moon
+    /* Calculate the position of Europa
+
+    All calculations done in terms of Jupiter radii (pixels)
+
+    Inputs:
+    JW - Jupiter width, changes with scale of image
+
+    Outputs:
+    array - contains x, y positions of Europa
+    */
+    var time              = parseInt(document.getElementById("demo").innerHTML); // curent time of animation
+    EUROPA_PERIOD         = 85;                                                  // hours
+    EUROPA_A_TO_JUPITER_R = 9.384;                                               // ratio of jupiter radius to orbit of moon
+
     a = (JW * EUROPA_A_TO_JUPITER_R);
 
     var canvasXcenter = canvas.width / 2
@@ -34,9 +63,20 @@ function calcEuropaPos(JW) {
     return [x, y];
 }
 function calcGanymedePos(JW) {
-    var time = parseInt(document.getElementById("demo").innerHTML);
-    GANYMEDE_PERIOD = 172; // hours
-    GANYMEDE_A_TO_JUPITER_R = 14.972; // ratio of jupiter radius to orbit of moon
+    /* Calculate the position of Ganymede
+
+    All calculations done in terms of Jupiter radii (pixels)
+
+    Inputs:
+    JW - Jupiter width, changes with scale of image
+
+    Outputs:
+    array - contains x, y positions of Ganymede
+    */
+    var time                = parseInt(document.getElementById("demo").innerHTML); // current time of animation
+    GANYMEDE_PERIOD         = 172;                                                 // hours
+    GANYMEDE_A_TO_JUPITER_R = 14.972;                                              // ratio of jupiter radius to orbit of moon
+
     a = (JW * GANYMEDE_A_TO_JUPITER_R);
 
     var canvasXcenter = canvas.width / 2
@@ -46,9 +86,20 @@ function calcGanymedePos(JW) {
     return [x, y];
 }
 function calcCallistoPos(JW) {
-    var time = parseInt(document.getElementById("demo").innerHTML);
-    CALLISTO_PERIOD = 400; // hours
-    CALLISTO_A_TO_JUPITER_R = 26.334; // ratio of jupiter radius to orbit of moon
+    /* Calculate the position of Callisto
+
+    All calculations done in terms of Jupiter radii (pixels)
+
+    Inputs:
+    JW - Jupiter width, changes with scale of image
+
+    Outputs:
+    array - contains x, y positions of Callisto
+    */
+    var time                = parseInt(document.getElementById("demo").innerHTML); // current time of animation
+    CALLISTO_PERIOD         = 400;                                                 // hours
+    CALLISTO_A_TO_JUPITER_R = 26.334;                                              // ratio of jupiter radius to orbit of moon
+
     a = (JW * CALLISTO_A_TO_JUPITER_R);
 
     var canvasXcenter = canvas.width / 2
@@ -58,18 +109,26 @@ function calcCallistoPos(JW) {
     return [x, y];
 }
 
-// Displays modal with information on which moon is which
 function whichIsWhich() {
+    /* Displays modal showing which moon is which
+
+    */
     document.getElementById("myModal").style.display = "block";
 }
 
 window.onclick = function (event) {
+    /* Clicking off the modal closes the modal
+
+    */
     if (event.target == document.getElementById("myModal")) {
         document.getElementById("myModal").style.display = "none"
     }
 }
 
 function colorBlindToggle() {
+    /* Toggle colorblind mode
+
+    */
     COLOR_BLIND = COLOR_BLIND == true ? false : true;
     flipVisibility(document.getElementById('IOLabel'));
     flipVisibility(document.getElementById('EUROPALabel'));
@@ -79,5 +138,8 @@ function colorBlindToggle() {
 }
 
 function flipVisibility(element) {
+    /* Change whether or not you can see and element
+
+    */
     element.style.display = element.style.display == "none" ? "block" : "none";
 }

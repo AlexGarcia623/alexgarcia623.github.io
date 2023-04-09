@@ -1,3 +1,6 @@
+// Created by Alex Garcia, 2022-23
+// ALEX Labs
+
 document.onkeydown = checkKey;
 
 // document.getElementById('test').innerHTML = slider.value;

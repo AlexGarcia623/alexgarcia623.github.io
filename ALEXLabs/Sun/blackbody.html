@@ -1,3 +1,6 @@
+<!-- Created by Alex Garcia, 2022-23 -->
+<!-- ALEX Labs -->
+
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="../ALEX.css">
@@ -55,6 +58,7 @@ function SpecHome() {
 <script src="./js/wavelengthToColor.js"></script>
 <script src="./js/blackbody.js"></script>
 <script>
+  // Define some constants and arrays for later
   var WLmin = 350;
   var WLmax = 700;
 
@@ -67,11 +71,6 @@ function SpecHome() {
   var slider = document.getElementById("myRange");
   var output = document.getElementById("Temperature");
   output.innerHTML = slider.value;
-
-  slider.oninput = function () {
-    output.innerHTML = this.value;
-    changeTemp();
-  }
 
   var layout = {
     plot_bgcolor: "black",
@@ -103,6 +102,13 @@ function SpecHome() {
     displaylogo: false,
   }
 
+  // When changing the slider, update the curves appropraitely 
+  slider.oninput = function () {
+    output.innerHTML = this.value;
+    changeTemp();
+  }
+
+  // Plot
   Plotly.newPlot("myPlot", data, layout, config);
 </script>
 <footer>

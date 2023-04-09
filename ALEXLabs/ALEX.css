@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+/* Created by Alex Garcia, 2022-23 */
+/* ALEX Labs */
 
-<head>
-<style>
 p {
   color:black;
   font-size: min(max(14pt, 1.5vw), 16pt);
@@ -157,7 +153,3 @@ table {
 ::-webkit-scrollbar-thumb:hover {
   background: gray; 
 }
-
-</style>
-</head>
-</html>

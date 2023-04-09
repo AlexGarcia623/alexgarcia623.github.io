@@ -1,3 +1,6 @@
+/* Created by Alex Garcia, 2022-23 */
+/* ALEX Labs */
+
 body {
     background-image: url('../../starBackground.jpeg');
     background-size: cover;
@@ -64,7 +67,6 @@ input {
 }
 
 .row:after {
-    contents: "";
     display: table;
     clear: both;
 }

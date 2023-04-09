@@ -1,12 +1,28 @@
+// Created by Alex Garcia, 2022-23
+// ALEX Labs
+
 function init() {
+    /* Initialize the animation
+
+    */
     animation = window.requestAnimationFrame(draw);
 }
 
 function draw() {
+    /* Create the photon path
+
+    This function is designed to be called iteratively and performs a series of checks to see if the photon is absorbed/deflected
+
+    It makes additional checks on whether the photon is still on screen or at the height of the detector
+
+    See detailed documentation below for specific details
+    */
     var SLIDER_HIDDEN = document.getElementById('myRange');
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
-    ctx.strokeStyle = 'green';
+    const canvas      = document.getElementById('canvas');
+    const ctx         = canvas.getContext('2d');
+
+    // Create boundary of gas
+    ctx.strokeStyle = 'white';
     ctx.beginPath();
     ctx.lineWidth = 5;
     ctx.moveTo(0, 300);
@@ -17,46 +33,71 @@ function draw() {
     ctx.moveTo(0, 100);
     ctx.lineTo(750, 100);
     ctx.stroke();
+
+    // Create detector
+    var detector_height = 25;
     ctx.strokeStyle = 'blue';
     ctx.beginPath();
     ctx.lineWidth = 5;
-    ctx.moveTo(250, 25);
-    ctx.lineTo(500, 25);
+    ctx.moveTo(250, detector_height);
+    ctx.lineTo(500, detector_height);
     ctx.stroke();
 
-    var WL = wavelengtheVConverter(document.getElementById("energy").innerHTML);
-    var color = wavelengthToColor(WL);
+    var WL    = wavelengtheVConverter(document.getElementById("energy").innerHTML); // get wavelength from energy slider
+    var color = wavelengthToColor(WL); // get color of wavelength
+    var repeats = parseInt(document.getElementById("repeats").value) // Number of photons to shoot
 
-    document.getElementById("energy").style.color = color;
+    if (isNaN(repeats)) {
+        // Pretty sure this is unnecessary
+        repeats = 1;
+    }
 
+    document.getElementById("energy").style.color = color; // Change the color of all the elements
+
+    // start the photon path
     ctx.strokeStyle = color;
     ctx.beginPath();
     ctx.moveTo(x, y);
 
+    // helpers for the next "timestep"
     var pertx = 0;
     var perty = 0;
 
-    var repeats = parseInt(document.getElementById("repeats").value)
+    // Gas limits
+    var gas_limit_low  = 115;
+    var gas_limit_high = 300;
 
-    if (isNaN(repeats)) {
-        repeats = 1;
-    }
+    // Detector limits
+    var detector_limit_low  = 235;
+    var detector_limit_high = 515;
 
-    if (y > 300 || y < 115) {
-        if (y < 30) {
+    // Screen limits
+    var screen_low  = 0;
+    var screen_high = 750;
+
+    if (y > gas_limit_high || y < gas_limit_low) {
+        // If outside the gas
+        if (y < (detector_height + 5)) {
+            // If the photon reached the height of the detector (+5)
+
             var np1 = number + 1;
             document.getElementById("number").innerHTML = np1 + ".";
-            if (x > 235 && x < 515) {
+
+            if (x > detector_limit_low && x < detector_limit_high) {
+                // If hit the detector
                 document.getElementById("finish").innerHTML = "Photon Observed";
                 TOTAL_OBS += 1;
             } else {
+                // If didn't hit the detector
                 document.getElementById("finish").innerHTML = "No Photon Observed";
             }
 
             if (number < repeats - 1) {
+                // If still have more photons
                 sleep(sleeptime);
                 restart();
             } else {
+                // If out of photons
                 SLIDER_HIDDEN.style.display = 'block';
                 document.getElementById("numEmit").innerHTML = TOTAL_EMIT;
                 document.getElementById("numObs").innerHTML = TOTAL_OBS;
@@ -68,26 +109,36 @@ function draw() {
             }
 
         }
-        pertx = 25 * Math.sin(theta);
+
+        // Unless animation ends, update the location of the photon
+        pertx =  25 * Math.sin(theta);
         perty = -25 * Math.abs(Math.cos(theta));
         ctx.strokeStyle = color;
         ctx.lineWidth = 2;
         ctx.lineTo(x + pertx, y + perty);
         ctx.stroke();
+
         animation = window.requestAnimationFrame(draw);
+
         x += pertx;
         y += perty;
     } else {
-        pertx = 10 * Math.sin(theta);
+        // If inside the gas
+        pertx =  10 * Math.sin(theta);
         perty = -10 * Math.abs(2 * Math.cos(theta));
+
         ctx.strokeStyle = color;
         ctx.lineWidth = 2;
+
+        // Draw a probaility of deflection and absorption
         if (Math.random() < pDef) {
+            // if deflected
             pDef = pDef / 2;
             var np1 = number + 1;
             theta = random(0, 2 * Math.PI);
             animation = window.requestAnimationFrame(draw);
         } else if (Math.random() < pAbs) {
+            // if absorbed
             var np1 = number + 1;
             document.getElementById("number").innerHTML = np1 + ".";
             document.getElementById("finish").innerHTML = "No Photon Observed";
@@ -99,7 +150,8 @@ function draw() {
                 SLIDER_HIDDEN.style.display = 'block';
                 going = false;
             }
-        } else if (x + pertx < 0 || x - pertx > 750) {
+        } else if (x + pertx < screen_low || x - pertx > screen_high) {
+            // if not deflected, not absorbed and off the screen
             var np1 = number + 1;
             document.getElementById("number").innerHTML = np1 + ".";
             document.getElementById("finish").innerHTML = "No Photon Observed";
@@ -117,6 +169,7 @@ function draw() {
                 return;
             }
         } else {
+            // if not deflected, nor absorbed but is still on teh screen
             x += pertx;
             y += perty;
             animation = window.requestAnimationFrame(draw);
@@ -126,20 +179,24 @@ function draw() {
         y += perty;
         ctx.stroke();
     }
-    // document.getElementById('test').innerHTML = TOTAL_OBS + '/' + TOTAL_EMIT
     document.getElementById("numEmit").innerHTML = TOTAL_EMIT;
     document.getElementById("numObs").innerHTML = TOTAL_OBS;
-
 }
 
 function start() {
+    /* Button press
+
+    Set the hyper parameters of the photons and remove option to switch gas
+
+    */
     going = true;
-    document.getElementById('myRangeTitle').style.display = "none";
-    document.getElementById('myRange').style.display = "none";
-    document.getElementById('whichGas').style.display = "none";
+    document.getElementById('myRangeTitle').style.display   = "none";
+    document.getElementById('myRange').style.display        = "none";
+    document.getElementById('whichGas').style.display       = "none";
     document.getElementById('whichGasChoose').style.display = "none";
-    document.getElementById('displayResult').style.display = "block";
-    document.getElementById('resultsText').style.display = "block";
+
+    document.getElementById('displayResult').style.display  = "block";
+    document.getElementById('resultsText').style.display    = "block";
     document.getElementById('whichGasChosen').style.display = "block";
 
     TOTAL_EMIT = 1;
@@ -182,6 +239,9 @@ function start() {
 }
 
 function restart() {
+    /* Same as start(), but ignores all of the checks required at the beginning
+
+    */
     TOTAL_EMIT += 1;
     if (animation) {
         window.cancelAnimationFrame(animation)

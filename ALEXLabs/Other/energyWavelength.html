@@ -1,3 +1,6 @@
+<!-- Created by Alex Garcia, 2022-23 -->
+<!-- ALEX Labs -->
+
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="../ALEX.css">
@@ -50,19 +53,30 @@ function home() {
 
 <script>
 function wavelengtheVConverter() {
+  /* Convert wavelength in nm to energy in electron Volts
+
+  */
   h = 6.626e-34;
   c = 3e8;
+
   joules = document.converter.energy.value*1.602e-19;
+
   document.getElementById("answer").innerHTML = ((h*c)/(joules) * 1e9).toFixed(1);
   document.getElementById("nm").style.display = "inline";
+
   document.converter.EJ.value = joules;
 }
 
 function wavelengthJConverter() {
+  /* Convert wavelength in nm to energy in Joules
+
+  */
   h = 6.626e-34;
   c = 3e8;
+
   document.getElementById("answer").innerHTML = ((h*c)/(document.converter.EJ.value) * 1e9).toFixed(1);
   document.getElementById("nm").style.display = "inline";
+  
   document.converter.energy.value = document.converter.EJ.value/1.602e-19;
 }
 </script>

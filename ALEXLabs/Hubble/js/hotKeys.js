@@ -1,3 +1,6 @@
+// Created by Alex Garcia, 2022-23
+// ALEX Labs
+
 // Checks for button press (or release) and does associate hot keys task (hotKeys.js)
 document.onkeydown = checkKey;
 document.onkeyup   = checkKeyUp;
@@ -5,14 +8,32 @@ document.onkeyup   = checkKeyUp;
 var CHANGE_INT_OPEN = false;
 
 function hover(element) {
+  /* Hovering over an element turns it white
+
+  Inputs:
+  element - hovered over element
+
+  */
   element.style.backgroundColor = 'white';
 }
 
 function unhover(element) {
+  /* "un-Hovering" an element turns it dark gray again
+
+  Inputs:
+  element - hovered over element
+
+  */
   element.style.backgroundColor = 'darkgray';
 }
 
 function checkKeyUp(e) {
+  /* When you stop pressing a key, return it to its original color
+
+  Inputs:
+  e - used to find the key user pressed
+
+  */
   e = e || window.event;
 
  if (e.keyCode == '87' || e.keyCode == "38") { // W or Up - move image north
@@ -27,10 +48,18 @@ function checkKeyUp(e) {
 }
 
 function blur_() {
+  /* Unfocus from integration time element (only potential active element in script)
+
+  */
   document.activeElement.blur();
 }
 
 function checkKey(e) {
+  /* Perform a specific action based on the key the user pressed
+
+  Inputs:
+  e - used to find the key user pressed
+  */
   e = e || window.event;
   if (e.keyCode == '87' || e.keyCode == "38") { // W or Up - move image north
     e.preventDefault();
@@ -128,9 +157,12 @@ function checkKey(e) {
 var hotKeysModal = document.getElementById("hotKeys");
 
 function hotKeysDiv() {
-  hkDiv = document.getElementById("hotKeys")
-  hkDiv.style.display = hkDiv.style.display != 'none' ? 'none' : 'block';
-  hkButton = document.getElementById('hotKeysButton')
-  hkButton.innerHTML = hkButton.innerHTML != 'Hide Hot Keys' ? 'Hide Hot Keys' : 'Show Hot Keys';
+  /* Display the div containing all of the hot keys information
+
+  */
+  hkDiv                          = document.getElementById("hotKeys")
+  hkDiv.style.display            = hkDiv.style.display != 'none' ? 'none' : 'block';
+  hkButton                       = document.getElementById('hotKeysButton')
+  hkButton.innerHTML             = hkButton.innerHTML != 'Hide Hot Keys' ? 'Hide Hot Keys' : 'Show Hot Keys';
   hkButton.style.backgroundColor = hkButton.style.backgroundColor != 'white' ? 'white' : 'darkgray';
 }

@@ -1,3 +1,6 @@
+// Created by Alex Garcia, 2022-23
+// ALEX Labs
+
 document.onkeydown = checkKey;
 
 // document.getElementById('test').innerHTML = slider.value;
@@ -6,9 +9,14 @@ var output = document.getElementById("energy");
 output.innerHTML = slider.value;
 
 function checkKey(e) {
+    /* When you stop pressing a key, return it to its original color
+
+    Inputs:
+    e - used to find the key user pressed
+
+    */
     e = e || window.event;
 
-    // e.preventDefault();
     if (e.keyCode == "37") { // Left -- Decrease energy
         if (!going) {
             slider.value = parseFloat(slider.value) - 0.1;

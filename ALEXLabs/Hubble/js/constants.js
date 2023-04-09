@@ -1,3 +1,6 @@
+// Created by Alex Garcia, 2022-23
+// ALEX Labs
+
 var APP_MAGS = {
   "Perseus":14.3,
   "UrsaMinor":12.1,
