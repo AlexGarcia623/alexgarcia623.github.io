@@ -50,13 +50,18 @@ function moonSelector() {
  
   </div>
 
-  <canvas id="canvas" class="center" width="600" height="400"></canvas> <br>
+  <div class="center" style="position:relative;" >
+    <canvas id="canvas" class="center" width="600" height="400"></canvas>
+
+    <button id="warning" style="color:white;display:none;left:38%;top:65%;width:25%;background-color: red;position:absolute;font-size:20pt;" onclick="blinker()">Warning:<br>Cannot go to negative times</button>
+  </div>
 
   <div class="WeighJupiter center">
 
   <h2 style="opacity:0.5">Time elapsed: <span id="demo" style="color:black;opacity:1;">0</span> Hours <span id="counter" style="opacity:0;">0</span></h2>
 
-  <p><span id="warning" style="color:red;"></span> <span id="restWarning"></span></p>
+  
+  <!-- <p><span id="warning" style="color:red;"></span> <span id="restWarning"></span></p> -->
 
   <input type="button" onclick="Next()" class="FoB" value="Next Timestep"/>
   <input type="button" onclick="Back()" class="FoB" value="Back One Timestep"/>

@@ -66,3 +66,38 @@ function sleep(milliseconds) {
         }
     }
 }
+
+
+function flashtext(ele, col) {
+    /* Flash text of element a certain color
+
+    Inputs:
+    ele - desired element whose text to flash
+    col - desired color to flash
+
+    */
+    var colCheck = document.getElementById(ele).style.color;
+
+    if (colCheck === 'white') {
+        document.getElementById(ele).style.color = col;
+    } else {
+        document.getElementById(ele).style.color = 'white';
+    }
+}
+  
+function flashbackground(ele, col) {
+    /* Flash element a certain color
+
+    Inputs:
+    ele - desired element to flash
+    col - desired color to flash
+
+    */
+    var colCheck = document.getElementById(ele).style.backgroundColor;
+
+    if (colCheck === 'red') {
+        document.getElementById(ele).style.backgroundColor = col;
+    } else {
+        document.getElementById(ele).style.backgroundColor = 'red';
+    }
+}

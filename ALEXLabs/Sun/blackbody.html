@@ -75,6 +75,7 @@ function SpecHome() {
   var layout = {
     plot_bgcolor: "black",
     paper_bgcolor: "black",
+    hovermode: false,
     yaxis: {
       autorange: true,
       showgrid: false,
@@ -82,7 +83,8 @@ function SpecHome() {
       showline: false,
       autotick: true,
       ticks: '',
-      showticklabels: false
+      showticklabels: false,
+      fixedrange: true
     },
     bargap: 0,
     xaxis: {
@@ -91,7 +93,8 @@ function SpecHome() {
       title: "Wavelength (nm)",
       titlefont: { color: "white" },
       tickvals: [1e-7, 2e-7, 3e-7, 4e-7, 5e-7, 6e-7, 7e-7, 8e-7, 9e-7, 10e-7],
-      ticktext: [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+      ticktext: [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
+      fixedrange: true
     },
   }
 

@@ -1,6 +1,9 @@
 // Created by Alex Garcia, 2022-23
 // ALEX Labs
 
+var BLINKING = false;
+var blinkInterval = '';
+
 function animate() {
     /* Create and clear canvas element for animations.
 
@@ -373,9 +376,7 @@ function Next() {
     Find the next image and animate the new frame. Additionally, update the timing in the display
 
     */
-    document.getElementById("clickLocation").innerHTML = "";
-    document.getElementById("warning").innerHTML       = "";
-    document.getElementById("restWarning").innerHTML   = "";
+    document.getElementById("warning").style.display = 'none';
 
     start = start + NUM_ITER;
     if (start > NUMBER_OF_FRAMES) {
@@ -438,9 +439,15 @@ function Back() {
         // Display warning message if they do this!
         start = 0;
         startString = String(start);
+        if (!BLINKING) {
+            blinkInterval = setInterval(function() {
+                flashtext('warning', 'red');
+                flashbackground('warning', 'white');
+            }, 750 );
+            BLINKING = true;
+        }
         document.getElementById("demo").innerHTML = 0;
-        document.getElementById("warning").innerHTML = "Warning:"
-        document.getElementById("restWarning").innerHTML = "Cannot access data before 0 Hours";
+        document.getElementById("warning").style.display = "block";
     } else {
         document.getElementById("demo").innerHTML = time_so_far - DESIRED_TIME;
         if (start - NUM_ITER < 0) {
@@ -474,4 +481,9 @@ function stopContinuousAnimation() {
     Just clears the animation Object
     */
     window.clearInterval(interval_tracker);
+}
+
+function blinker() {
+    warningElement = document.getElementById('warning')
+    warningElement.style.display = warningElement.style.display == 'block' ? 'none' : 'block';
 }

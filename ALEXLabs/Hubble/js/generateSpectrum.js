@@ -27,7 +27,25 @@ var layout= {
   },
   xaxis: {
     tickcolor: "white",
-    tickfont: {color:"white"}
+    tickfont: {color:"white"},
+    fixedrange: true,
+    title: {
+      text: 'Wavelength (Angstrom)',
+      font: {
+        color:'#FFFFFF',
+        size: 20
+      }
+    }
+  },
+  yaxis: {
+    fixedrange:true,
+    title: {
+      text: 'Flux',
+      font: {
+        color:'#FFFFFF',
+        size: 16
+      }
+    }
   },
   showlegend:false
 };

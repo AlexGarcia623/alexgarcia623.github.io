@@ -50,6 +50,9 @@ var TOTAL_EMIT = 0;
 
 var going = false;
 
+var BLINKING = false;
+var blinkInterval = '';
+
 // Colors corresponding to each energy
 // Used for color blind mode
 var COLORS = {
@@ -73,4 +76,12 @@ var COLORS = {
     3.3:"Violet",
     3.4:"Violet",
     3.5:"Violet"
+}
+
+// Different colored mediums
+var medium_color = {
+    "mystery1": 'green',
+    "mystery2": 'blue' ,
+    "mystery3": 'red'  ,
+    "mystery4": 'white'
 }

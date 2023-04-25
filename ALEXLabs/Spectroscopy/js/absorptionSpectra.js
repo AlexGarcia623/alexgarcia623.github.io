@@ -21,9 +21,16 @@ function draw() {
     const canvas      = document.getElementById('canvas');
     const ctx         = canvas.getContext('2d');
 
-    // Create boundary of gas
-    ctx.strokeStyle = 'white';
+    // Fill in gas
+    ctx.fillStyle = medium_color[values];
+    ctx.globalAlpha = 0.025;
     ctx.beginPath();
+    ctx.fillRect(0, 100, 750, 200);
+    ctx.stroke();
+    // Create boundary of gas
+    ctx.strokeStyle = medium_color[values];
+    ctx.beginPath();
+    ctx.globalAlpha = 1.0;
     ctx.lineWidth = 5;
     ctx.moveTo(0, 300);
     ctx.lineTo(750, 300);
@@ -275,7 +282,7 @@ function restart() {
         pDef = pDefElse;
     }
 
-    document.getElementById("prev1").innerHTML = document.getElementById("finish").innerHTML;
+    document.getElementById("prev1").innerHTML    = document.getElementById("finish").innerHTML;
     document.getElementById("prevNum1").innerHTML = String(number) + ".";
     x = 375;
     y = 500;

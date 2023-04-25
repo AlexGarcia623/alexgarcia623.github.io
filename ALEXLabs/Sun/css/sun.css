@@ -25,28 +25,6 @@ button:hover {
     color: black;
 }
 
-input {
-    color: gray;
-    font-size: min(max(16pt, 2vw), 20pt);
-    border: 2px darkgray solid;
-}
-
-input:hover {
-    color: darkgray;
-    background: gray;
-}
-
-h1,
-h2 {
-    color: white;
-    text-align: center;
-}
-
-p,
-a {
-    color: white;
-}
-
 
 footer {
     margin-top: 15px;
@@ -80,7 +58,7 @@ input {
 }
 
 input:hover {
-    color: orange;
+    color: black;
     background: sandybrown;
 }
 

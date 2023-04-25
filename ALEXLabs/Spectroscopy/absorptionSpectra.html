@@ -66,11 +66,15 @@ function SpecHome() {
 
   <button onclick="colorBlindToggle()" id="cbBtn" title="Colorblind Mode" class="AstrSpecButton">Colorblind Mode</button>
 
-  <canvas class="center" id="canvas" height="500" width="750"></canvas> <br>
+  <div style="position:relative;" >
+    <canvas class="center" id="canvas" height="500" width="750"></canvas> 
+    <button id="warning" style="color:white;display:none;left:38%;top:65%;width:25%;background-color: red;position:absolute;font-size:20pt;">Warning:<br>Max photons is 20</button>
+  </div>
+  <br>
   <input class="center" id="repeats" type = "number" placeholder="# Photons" min="0" max="20" oninput="checkNum()"/> 
  
-  <input type="button" onclick="start()" value="Start" class="center"/>
-  <input type="button" onclick="stop()" value="Stop" class="center" style="display:none;" id="stop"/>
+  <input type="button" onclick="start()" value="Start" class="center" id="startButton"/>
+  <input type="button" onclick="stop()"  value="Stop"  class="center" style="display:none;" id="stop"/>
  
   <div class="modal" id="myModal" style="display:none;min-width:50ch;">
     <div class="modalContent modalWhiteBckgrd center" style="width:60%;">
@@ -87,7 +91,7 @@ function SpecHome() {
 
   <div class="AstrSpectroscopy center" id = "contain2">
 
-    <p id="warning" style="color:red;display:none;text-align:center;">Warning: Max number of photons is 20</p>
+    <!-- <p id="warning" style="color:red;display:none;text-align:center;">Warning: Max number of photons is 20</p> -->
 
     <div class="slidecontainer">
       <h2>Energy: <span id="energy"></span> eV <span id="color" style="display:none;"></span></h2>
@@ -219,12 +223,21 @@ function colorBlindToggle() {
 
 function checkNum() {
   var repeatsInput = document.getElementById('repeats');
-  var warning = document.getElementById('warning');
+  var warning      = document.getElementById('warning');
   if (repeatsInput.value > 20) {
-    warning.style.display = warning.style.display == "none" ? "block" : "none";
+    warning.style.display = "block";
+    document.getElementById('startButton').style.display = 'none';
+    if (!BLINKING) {
+        blinkInterval = setInterval(function() {
+            flashtext('warning', 'red');
+            flashbackground('warning', 'white');
+        }, 750 );
+        BLINKING = true;
+    }
     // document.getElementById('warning').innerHTML = 'Max number of photons is 20'
   } else {
     warning.style.display = "none";
+    document.getElementById('startButton').style.display = 'block';
   }
 }
 </script>
