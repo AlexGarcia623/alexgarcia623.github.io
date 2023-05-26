@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css">
+<link rel="Shortcut Icon" type="image/png" href="./images/tikzImage.png">
+
+<script src="scripts.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/b502caab12.js" crossorigin="anonymous"></script>
+
+<style>
+
+  a:hover {
+    color:red;
+  }
+
+  a > section {
+    color:blue;
+  }
+
+  .row {
+    display: flex;
+    background-color: gray;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px white solid;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .column {
+    width: 50%;
+  }
+
+  img {
+    border-radius: 10px;
+    padding:0px;
+    margin: 0px;
+  }
+
+  .abstest {
+    border: 0.25vw gray solid;
+    background-color: white;
+    border-radius:15px;
+    padding:15px;
+    margin:10px 0 10px 0;
+    font-size:min(max(12pt, 1.5vw), 14pt);
+    padding:15px;
+    text-align: justify;
+  }
+
+  .caption {
+    text-align: center;
+    font-size: 13pt;
+  }
+
+  .Figure {
+    background-color: white;
+    width: fit-content;
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 20pt;
+  }
+</style>
+
+<header>
+  <title>Metallicity Gradients</title>
+  <div class="containbuttons">
+    <button class="button biggerButton" onclick="home()">Home</button>
+    <div class="dropdown">
+      <button class="dropbtn" onclick="contactMe()">Contacts</button>
+      <div class="dropdown-content">
+        <a href="https://www.linkedin.com/in/alex-garcia-051300210/" target="_blank"><i
+            class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/AlexGarcia623" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://astro.ufl.edu/directory/alex-garcia/" target="_blank"><i
+            class="fa-solid fa-graduation-cap"></i> UF Astro</a>
+        <a href="mailto:alexgarcia@ufl.edu"><i class="fa-solid fa-envelope"></i> Email</a>
+      </div>
+    </div>
+    <button class="button biggerButton" onclick="CV()">CV</button>
+    <button class = "button biggerButton" onclick="inTheNews()">News</button>
+    <div class="dropdown">
+      <button class="dropbtn" onclick="workExamples()">My Work</button>
+      <div class="dropdown-content">
+        <a href="workExamples.html#Graduate Research"><i class="fa-solid fa-computer"></i><br>Research</a>
+        <a href="workExamples.html#Teaching"><i class="fa-solid fa-chalkboard-user"></i><br>Teaching</a>
+        <a href="workExamples.html#KSP"><i class="fa-solid fa-satellite"></i><br>Kika Silva Pla Planetarium</a>
+        <a href="workExamples.html#CARE"><i class="fa-solid fa-pencil"></i><br>CARE @ UIUC</a>
+      </div>
+    </div>
+    <button class="button biggerButton" onclick="books()">Books!</button>
+  </div>
+</header>
+
+<body>
+  <section>
+    <h1>Metallicity Gradients: A deep dive</h1> 
+    <h2>Alex M. Garcia</h2>
+  </section>
+
+  <section>
+    <h2>Mass Metallicity Relation</h2>
+    <p>The metal content of galaxies has been increasingly appreciated as a constraint on galaxy evolution models.
+        Metals are formed within stars, while on the main sequence or during the later stages of their evolutionary cycles, as such, the overall metal abundance of a galaxy is entirely determined by the star formation history of that galaxy.
+        The metals from within the stars can be ejected back into the interstellar medium (ISM) through stellar (AGB) winds and supernovae explosions (SNe).
+        Once back in the ISM, the metals mix with the ISM and are dragged along in galactic winds or mix via turbulence.
+    </p>
+
+    <div class="Figure center">
+        <img class="center" src="./ResearchRelated/Metallicity/T04_MZR.jpeg">
+        <p class="caption" id="MZR">Figure 1: MZR from <a href="https://ui.adsabs.harvard.edu/abs/2004ApJ...613..898T/abstract" target="_blank">Tremonti et al. 2004</a></p>
+    </div>
+
+    <p>The link between galaxy the physical processes within a galaxy and its metal content gives rise to a key galaxy scaling relation: the mass metallicity relation (MZR; see <a href="#MZR">Figure 1</a>).
+        This very tight relation describes a correlation of increasing metal content with increasing galaxy mass (see, e.g., <a href="https://ui.adsabs.harvard.edu/abs/2004ApJ...613..898T/abstract" target="_blank">Tremonti et al. 2004</a>, <a href="https://ui.adsabs.harvard.edu/abs/2006ApJ...647..970L/abstract" target="_blank">Lee et al. 2006</a>)
+        Notably, this trend is not perfectly linear: there is a turn-over at the highest masses.
+        Briefly, the different slope of the relation at these highest masses is indicative of the efficacy of the physical processes (e.g., winds) at the different masses.
+    </p>
+
+    <h3>More relevant sources on the MZR</h3>
+
+    
+  </section>
+
+  <section>
+    <h2>Metallicity of individual galaxies</h2>
+
+    <p>While the MZR is an incredibly powerful tool for studying and understanding galaxy populations, individual systems are a little more subtle.
+        Importantly, for the purposes of this webpage, within individual galaxies the metal content is <b>not</b> homogeneous.
+        This makes qualitative sense - different parts of the galaxy are not the same.
+        For example, galaxies have been seen to evolve "inside out", meaning that the central part of the galaxy evolved prior to the regions exterior.
+    </p>
+
+  </section>
+</body>
+
+</html>
