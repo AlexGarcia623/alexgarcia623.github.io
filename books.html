@@ -19,10 +19,12 @@
 
 h3 {
   color:steelblue;
+  text-align: center;
 }
 
 p {
   color:black;
+  text-align: center;
 }
 
 div {
@@ -30,12 +32,21 @@ div {
 }
 
 img {
-  width:75%;
-  aspect-ratio:1/1.5;
+  width:50%;
+  height: 40%;
+  /* aspect-ratio:1/1.5; */
   border: 3px solid white;
   border-radius: 5px;
   min-width:15ch;
   max-width:35ch;
+}
+
+img > .bookRead {
+  border: 3px solid white;
+}
+
+img > .bookCurrent {
+  border: 3px solid orange;
 }
 
 /* Create two equal columns that floats next to each other */
@@ -63,7 +74,7 @@ img {
 }
 
 .grid-ish > * {
-  flex: 1 0 50%;
+  flex: 1 0 30%;
 }
 
 .bookCurrent {
@@ -74,6 +85,8 @@ img {
   margin-top:10px;
   padding:15px;
   max-width:125ch;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .bookRead {
@@ -84,6 +97,8 @@ img {
   width:80%;
   margin-top:10px;
   margin-bottom:10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .year {
@@ -97,7 +112,7 @@ img {
 
 
 h2 {
-  text-align:left;
+  text-align:center;
 }
 
 .year > p {
@@ -148,7 +163,7 @@ h2 {
   <h1>Currently Reading</h1>
 </div>
 
-<div class="grid-ish bookCurrent center">
+<!-- <div class="grid-ish bookCurrent center">
   <div class="col">
     <img src="./books/ProjectHailMary.jpg" class="center" style="border:3px solid orange;"></img>
   </div>
@@ -157,27 +172,29 @@ h2 {
     <h3>Andy Weir</h3>
     <p>Started: June 2023</p>
   </div>
-</div>
+</div> -->
 
-<div class="grid-ish bookCurrent center">
-  <div class="col">
-    <img src="./books/theDayWeFoundTheUniverse.jpeg" class="center" style="border:3px solid orange;"></img>
+<div class="grid-ish">
+  <div class="bookCurrent center">
+    <div class="col">
+      <img src="./books/theDayWeFoundTheUniverse.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>The Day We Found the Universe</h2>
+      <h3>Marcia Bartusiak</h3>
+      <p>Started: August 2022</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>The Day We Found the Universe</h2>
-    <h3>Marcia Bartusiak</h3>
-    <p>Started: August 2022</p>
-  </div>
-</div>
 
-<div class="grid-ish bookCurrent center">
-  <div class="col">
-    <img src="./books/HowToThinkAboutWeirdThings.jpeg" class="center" style="border:3px solid orange;"></img>
-  </div>
-  <div class="col">
-    <h2>How To Think About Weird Things</h2>
-    <h3>Theodore Schick Jr. & Lewis Vaughn</h3>
-    <p>Started: August 2022</p>
+  <div class="bookCurrent center">
+    <div class="col">
+      <img src="./books/HowToThinkAboutWeirdThings.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>How To Think About Weird Things</h2>
+      <h3>Theodore Schick Jr. & Lewis Vaughn</h3>
+      <p>Started: August 2022</p>
+    </div>
   </div>
 </div>
 
@@ -190,279 +207,285 @@ h2 {
   <p>As of last update, I have finished 8 books and read a total of 2,468 pages this year<p>
 </div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/DuckForPresident.jpeg" class="center" style="border:3px solid white;"></img>
+<div class="grid-ish">
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/DuckForPresident.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>Duck For President</h2>
+      <h3>Doreen Cronin with Betsy Lewin</h3>
+      <p>Finished: May 2023</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>Duck For President</h2>
-    <h3>Doreen Cronin with Betsy Lewin</h3>
-    <p>Finished: May 2023</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/TheStoryOfTheUniverseIn100Stars.jpeg" class="center" style="border:3px solid white;"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/TheStoryOfTheUniverseIn100Stars.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>The Story of the Universe in 100 Stars</h2>
+      <h3>Florian Freistetter</h3>
+      <p>Started: May 2023</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>The Story of the Universe in 100 Stars</h2>
-    <h3>Florian Freistetter</h3>
-    <p>Started: May 2023</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/TheModelThinker.jpeg" class="center" style="border:3px solid white;"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/TheModelThinker.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>The Model Thinker</h2>
+      <h3>Scott E. Page</h3>
+      <p>Finished: May 2023</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>The Model Thinker</h2>
-    <h3>Scott E. Page</h3>
-    <p>Finished: May 2023</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/Piranesi.jpeg" class="center" style="border:3px solid white;"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/Piranesi.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>Piranesi</h2>
+      <h3>Susanna Clarke</h3>
+      <p>Finished: May 2023</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>Piranesi</h2>
-    <h3>Susanna Clarke</h3>
-    <p>Finished: May 2023</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/ReturnOfTheKing.jpg" class="center" style="border:3px solid white;"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/ReturnOfTheKing.jpg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>The Lord of the Rings: The Return of the King</h2>
+      <h3>J.R.R. Tolkein</h3>
+      <p>Finished: May 2023</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>The Lord of the Rings: The Return of the King</h2>
-    <h3>J.R.R. Tolkein</h3>
-    <p>Finished: May 2023</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/TwoTowers.jpg" class="center" style="border:3px solid white;"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/TwoTowers.jpg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>The Lord of the Rings: The Two Towers</h2>
+      <h3>J.R.R. Tolkein</h3>
+      <p>Finished: April 2023</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>The Lord of the Rings: The Two Towers</h2>
-    <h3>J.R.R. Tolkein</h3>
-    <p>Finished: April 2023</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/FellowshipOfTheRing.jpg" class="center" style="border:3px solid white;"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/FellowshipOfTheRing.jpg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>The Lord of the Rings: The Fellowship of the Ring</h2>
+      <h3>J.R.R. Tolkein</h3>
+      <p>Finished: March 2023</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>The Lord of the Rings: The Fellowship of the Ring</h2>
-    <h3>J.R.R. Tolkein</h3>
-    <p>Finished: March 2023</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/fireAndBlood.jpg" class="center" style="border:3px solid white;"></img>
-  </div>
-  <div class="col">
-    <h2>Fire & Blood</h2>
-    <h3>George R.R. Martin</h3>
-    <p>Finished: January 2023</p>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/fireAndBlood.jpg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>Fire & Blood</h2>
+      <h3>George R.R. Martin</h3>
+      <p>Finished: January 2023</p>
+    </div>
   </div>
 </div>
 
 <div class="year">
   <h1 style="color:tomato;">2022</h1>
-  <p>During 2022, I read 11 books for a total of 7,637 pages<p>
+  <p>During 2022, I finished 11 books and read a total of 7,637 pages<p>
 
 </div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/theSentenceIsDeath.jpg" class="center" style="border:3px solid white;"></img>
+<div class="grid-ish">
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/theSentenceIsDeath.jpg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>The Sentence is Death</h2>
+      <h3>Anthony Horowitz</h3>
+      <p>Finished: August 2022</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>The Sentence is Death</h2>
-    <h3>Anthony Horowitz</h3>
-    <p>Finished: August 2022</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/BillionsAndBillions.jpeg" class="center" style="border:3px solid white;"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/BillionsAndBillions.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>Billions and Billions</h2>
+      <h3>Carl Sagan</h3>
+      <p>Finished: August 2022</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>Billions and Billions</h2>
-    <h3>Carl Sagan</h3>
-    <p>Finished: August 2022</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/theMartian.jpeg" class="center" style="border:3px solid white;"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/theMartian.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>The Martian</h2>
+      <h3>Andy Weir</h3>
+      <p>Finished: August 2022</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>The Martian</h2>
-    <h3>Andy Weir</h3>
-    <p>Finished: August 2022</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/ADanceWithDragons.jpeg" class="center" style="border:3px solid white;"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/ADanceWithDragons.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>A Dance with Dragons</h2>
+      <h3>George R.R. Martin</h3>
+      <p>Finished: August 2022</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>A Dance with Dragons</h2>
-    <h3>George R.R. Martin</h3>
-    <p>Finished: August 2022</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/AFeastForCrows.jpeg" class="center"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/AFeastForCrows.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>A Feast for Crows</h2>
+      <h3>George R.R. Martin</h3>
+      <p>Finished: June 2022</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>A Feast for Crows</h2>
-    <h3>George R.R. Martin</h3>
-    <p>Finished: June 2022</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/AStormOfSwords.jpeg" class="center"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/AStormOfSwords.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>A Storm Of Swords</h2>
+      <h3>George R.R. Martin</h3>
+      <p>Finished: May 2022</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>A Storm Of Swords</h2>
-    <h3>George R.R. Martin</h3>
-    <p>Finished: May 2022</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/AClashOfKings.jpeg" class="center"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/AClashOfKings.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>A Clash Of Kings</h2>
+      <h3>George R.R. Martin</h3>
+      <p>Finished: April 2022</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>A Clash Of Kings</h2>
-    <h3>George R.R. Martin</h3>
-    <p>Finished: April 2022</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/AGameOfThrones.jpeg" class="center"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/AGameOfThrones.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>A Game Of Thrones</h2>
+      <h3>George R.R. Martin</h3>
+      <p>Finished: March 2022</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>A Game Of Thrones</h2>
-    <h3>George R.R. Martin</h3>
-    <p>Finished: March 2022</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/TheWordIsMurder.jpeg" class="center"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/TheWordIsMurder.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>The Word Is Murder</h2>
+      <h3>Anthony Horowitz</h3>
+      <p>Finished: January 2022</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>The Word Is Murder</h2>
-    <h3>Anthony Horowitz</h3>
-    <p>Finished: January 2022</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/HumblePi.jpeg" class="center"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/HumblePi.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>Humble Pi: When Math Goes Wrong<br> in the Real World</h2>
+      <h3>Matt Parker</h3>
+      <p>Finished: January 2022</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>Humble Pi: When Math Goes Wrong<br> in the Real World</h2>
-    <h3>Matt Parker</h3>
-    <p>Finished: January 2022</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/HitchhikerGuide.jpeg" class="center"></img>
-  </div>
-  <div class="col">
-    <h2>The Hitchhiker's Guide to the Galaxy</h2>
-    <h3>Douglas Adams</h3>
-    <p>Finished: January 2022</p>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/HitchhikerGuide.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>The Hitchhiker's Guide to the Galaxy</h2>
+      <h3>Douglas Adams</h3>
+      <p>Finished: January 2022</p>
+    </div>
   </div>
 </div>
 
 <div class="year">
   <h1 style="color:tomato;">2021</h1>
-  <p>During 2021, I read 5 books for a total of 1,628 pages</p>
+  <p>During 2021, I finished 5 books and read a total of 1,628 pages</p>
 </div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/EinsteinsDreams.jpeg" class="center"></img>
+<div class="grid-ish">
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/EinsteinsDreams.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>Einstein's Dreams</h2>
+      <h3>Alan Lightman</h3>
+      <p>Finished: December 2021</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>Einstein's Dreams</h2>
-    <h3>Alan Lightman</h3>
-    <p>Finished: December 2021</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/BraveNewWorld.jpeg" class="center"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/BraveNewWorld.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>Brave New World</h2>
+      <h3>Aldous Huxley</h3>
+      <p>Finished: December 2021</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>Brave New World</h2>
-    <h3>Aldous Huxley</h3>
-    <p>Finished: December 2021</p>
-  </div>
-</div>
 
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/AstrophysicsPeopleHurry.jpeg" class="center"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/AstrophysicsPeopleHurry.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>Astrophysics for People in a Hurry</h2>
+      <h3>Neil DeGrasse Tyson</h3>
+      <p>Finished: December 2021</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>Astrophysics for People in a Hurry</h2>
-    <h3>Neil DeGrasse Tyson</h3>
-    <p>Finished: December 2021</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/AlgorithmsToLiveBy.jpeg" class="center"></img>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/AlgorithmsToLiveBy.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>Algorithms to Live By:<br> The Computer Science of Human Decisions</h2>
+      <h3>Brian Christan & Tom Griffiths</h3>
+      <p>Finished: December 2021</p>
+    </div>
   </div>
-  <div class="col">
-    <h2>Algorithms to Live By:<br> The Computer Science of Human Decisions</h2>
-    <h3>Brian Christan & Tom Griffiths</h3>
-    <p>Finished: December 2021</p>
-  </div>
-</div>
 
-<div class="grid-ish bookRead center">
-  <div class="col">
-    <img src="./books/Dune.jpeg" class="center"></img>
-  </div>
-  <div class="col">
-    <h2>Dune</h2>
-    <h3>Frank Herbert</h3>
-    <p>Finished: November 2021</p>
+  <div class="bookRead center">
+    <div class="col">
+      <img src="./books/Dune.jpeg" class="center"></img>
+    </div>
+    <div class="col">
+      <h2>Dune</h2>
+      <h3>Frank Herbert</h3>
+      <p>Finished: November 2021</p>
+    </div>
   </div>
 </div>
 </body>
