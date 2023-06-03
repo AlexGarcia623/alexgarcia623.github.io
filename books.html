@@ -74,14 +74,23 @@ img > .bookCurrent {
 }
 
 .grid-ish > * {
-  flex: 1 0 30%;
+  flex: 0 1 30%;
+}
+
+.grid-ish-current {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-ish-current > * {
+  flex: 0 1 48%; 
 }
 
 .bookCurrent {
   border:1vw orange solid;
   border-radius:15px;
   background-color:#ffc87c;
-  width:80%;
+  width:50%;
   margin-top:10px;
   padding:15px;
   max-width:125ch;
@@ -94,7 +103,7 @@ img > .bookCurrent {
   border-radius:15px;
   background-color:lightgray;
   padding:15px;
-  width:80%;
+  width:100%;
   margin-top:10px;
   margin-bottom:10px;
   margin-left: 10px;
@@ -109,7 +118,6 @@ img > .bookCurrent {
   margin-top:10px;
   margin-bottom:10px;
 }
-
 
 h2 {
   text-align:center;
@@ -163,18 +171,7 @@ h2 {
   <h1>Currently Reading</h1>
 </div>
 
-<!-- <div class="grid-ish bookCurrent center">
-  <div class="col">
-    <img src="./books/ProjectHailMary.jpg" class="center" style="border:3px solid orange;"></img>
-  </div>
-  <div class="col">
-    <h2>Project Hail Mary</h2>
-    <h3>Andy Weir</h3>
-    <p>Started: June 2023</p>
-  </div>
-</div> -->
-
-<div class="grid-ish">
+<div class="grid-ish-current">
   <div class="bookCurrent center">
     <div class="col">
       <img src="./books/theDayWeFoundTheUniverse.jpeg" class="center"></img>
@@ -196,6 +193,18 @@ h2 {
       <p>Started: August 2022</p>
     </div>
   </div>
+
+  <div class="bookCurrent center">
+    <div class="col">
+      <img src="./books/ProjectHailMary.jpg" class="center" style="border:3px solid orange;"></img>
+    </div>
+    <div class="col">
+      <h2>Project Hail Mary</h2>
+      <h3>Andy Weir</h3>
+      <p>Started: June 2023</p>
+    </div>
+  </div>
+  
 </div>
 
 <div class=freeFloating>
@@ -485,7 +494,6 @@ h2 {
       <h2>Dune</h2>
       <h3>Frank Herbert</h3>
       <p>Finished: November 2021</p>
-    </div>
   </div>
 </div>
 </body>
