@@ -44,32 +44,18 @@ div {
   margin:auto;
 }
 
-/*Thanks to Kevin Powell on YouTube! */
-.grid-ish {
-  display:flex;
-  flex-wrap: wrap;
-}
 img {
   width:50%;
   height: 40%;
-  border: 3px solid white;
-  border-radius: 5px;
-  min-width:15ch;
+  min-width:10ch;
   max-width:35ch;
-}
-
-.bookRead > img {
-  border: 3px solid white;
-}
-
-.bookCurrent > img {
-  border: 3px solid orange;
+  border-radius: 10px;
 }
 
 .bookCurrent {
   border:1vw orange solid;
   border-radius:15px;
-  background-color:#ffc87c;
+  background-color:rgba(255, 200, 124, 0.85);
   width:50%;
   margin-top:10px;
   padding:15px;
@@ -81,7 +67,7 @@ img {
 .bookRead {
   border:1vw white solid;
   border-radius:15px;
-  background-color:lightgray;
+  background-color:rgba(211, 211, 211, 0.85);
   padding:15px;
   width:100%;
   margin-top:10px;
@@ -93,7 +79,7 @@ img {
 .year {
   border:1vw blue solid;
   border-radius:15px;
-  background-color:lightblue;
+  background-color:rgba(173,216,230,0.85);
   padding:15px;
   margin-top:10px;
   margin-bottom:10px;
@@ -114,13 +100,23 @@ img {
 
 
 @media (max-width: 900px) {
+  /* MOBILE */
+
+  .grid-ish {
+    display:flex;
+    flex-wrap: wrap;
+    margin-left:8%
+  }
+
   .grid-ish > * {
-    flex: 0 1 42%;
+    width:40%;
   }
 
   .grid-ish-current {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 8%;
+    margin-right: 8%;
   }
 
   .grid-ish-current > * {
@@ -137,13 +133,24 @@ img {
 }
 
 @media (min-width: 900px) {
+  /* DESKTOP */
+
+  .grid-ish {
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    margin-right: 2%;
+  }
+
   .grid-ish > * {
-    flex: 0 1 23%;
+    flex: 0 1 30%;
   }
 
   .grid-ish-current {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 8%;
+    margin-right: 8%;
   }
 
   .grid-ish-current > * {
@@ -221,7 +228,7 @@ img {
 
   <div class="bookCurrent center">
     <div class="col">
-      <img src="./books/ProjectHailMary.jpg" class="center" style="border:3px solid orange;"></img>
+      <img src="./books/ProjectHailMary.jpg" class="center"></img>
     </div>
     <div class="col">
       <h2>Project Hail Mary</h2>
@@ -236,7 +243,6 @@ img {
   <h1 style="color:white;">Recently Read</h1>
 
   <p style="color:white;">As of last update, I have finished a total of <span id="totalbooks"></span> books and read <span id="totalpages"></span> pages.</p>
-  <h2>See which books I read:</h2>
   <p><a href="#2023">2023</a>&nbsp;&nbsp;&nbsp;<a href="#2022">2022</a>&nbsp;&nbsp;&nbsp;<a href="#2021">2021</a></p>
 </div>
 

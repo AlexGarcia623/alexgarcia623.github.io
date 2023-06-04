@@ -92,7 +92,7 @@ a:hover {
 section {
   border:1vw white solid;
   border-radius:15px;
-  background-color:lightgray;
+  background-color:rgba(211, 211, 211, 0.85);
   padding:15px;
   width:90%;
   margin-top:10px;
@@ -210,7 +210,7 @@ h3 {
   }
 
   .imgReference {
-    display: none;
+    display: none !important;
   }
 
   .immune {
@@ -260,7 +260,7 @@ h3 {
   <h2>What do I study?</h2>
 
   <p>
-    I am a galaxy evolution theorist, therefore I spend a lot of time in cosmological simulations.
+    I am a galaxy evolution theorist, therefore I spend a lot of time in cosmological simulations. <br><br>
     Recently, I have been trying to understand the baryon cycle -- specifically by quantifying how 
     changes in stellar feedback models implact galaxies as a whole. I've been trying to understand
     if there are obsverational diagnostics for the extent to which a galaxy's feedback is "bursty" or "gentle".
@@ -326,7 +326,7 @@ h3 {
 
   <h1>Teaching</h1>
 
-  <table style="margin-left:auto; margin-right:auto;">
+  <table style="margin-left:auto; margin-right:auto;" class="desktop">
     <tr style="text-align:left;">
       <th>Institution </th>
       <th>Course </th>
@@ -368,33 +368,75 @@ h3 {
       <td>Fall 2020</td>
     </tr>
   </table>
+  <table style="margin-left:auto; margin-right:auto;" class="mobile">
+    <tr style="text-align:left;">
+      <th>Course </th>
+      <th>Semester </th>
+    </tr> 
+    <tr>
+      <td><u><em>Florida</em></u></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Astronomy Labratory*</td>
+      <td>Spring 2023</td>
+    </tr>
+    <tr>
+      <td>Astronomy Labratory*</td>
+      <td>Spring 2022</td>
+    </tr>
+    <tr>
+      <td>Discovering the Universe</td>
+      <td>Fall 2021</td>
+    </tr>
+    <tr>
+      <td><u><em>Illinois</em></u>**</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Extrterrestrial Life</td>
+      <td>Spring 2021</td>
+    </tr>
+    <tr>
+      <td>Extraterrestrial Life</td>
+      <td>Winter 2020/2021</td>
+    </tr>
+    <tr>
+      <td>Introduction to Astronomy</td>
+      <td>Fall 2020</td>
+    </tr>
+    <tr>
+      <td>Killer Skies: Astro-Disasters</td>
+      <td>Fall 2020</td>
+    </tr>
+  </table>
 
-  <p>*As the lab instructor for Astronomy 1022, I was the primary instructor for two sections of the course. Responsibilites included giving two lectures every week (one for each section), conducting experiments, grading lab reports, and managing students. </p>
+  <p>*Primary instructor for two sections</p>
 
-  <p>**For all courses at the University of Illinois, I was employed as a Course Assistant. This title was given to undergraduates who were helping professors grade.</p> 
+  <p>**Course Assistant</p> 
 
 <h2>Astronomy 1022 Lab Manual </h2>
 
-  <p>During the Spring 2022 semester, I undertook the task of revising the new, tenth edition of the University Florida Astronomy 1022 manual, "Hands-on Astronomy". Each of the 15 different labs I had a hand in modernizing and helping overall functionality.</p>
+  <p>Originally compiled in 1997 and sparsely been updated since, I translated the old version into LaTeX and implemented much needed content updates. </p>
 
-  <p>Originally compiled in 1997 and sparsely been updated since, I translated the old version into LaTeX. The quality of life changes added a dynamic quality to the manual that should hopefully allow the Department of Astronomy to be able to use and update for years to come. </p>
-
-  <p>This manual is a required text for all students enrolled in the Astronomy 1022 lab course. To this day, students (and instructors) are still benefitting from the revisions that I implemented. This textbook is available for purchase at the <em>Target Copy</em> store on University Ave in Gainesville</p>
+  <p>This manual is a required text for all students enrolled in the Astronomy 1022 lab course. 
+    To this day, students (and instructors) are still benefitting from the revisions that I implemented.</p>
 
   <button class = "ALEXbutton center" onclick="openLink('AST1022LabManual.html')">See what changed!</button>
 
 <h2>ALEX Labs</h2>
 
-  <p> In addition to the Astronomy 1022 lab manual/textbook, during the Spring and Summer of 2022, I implemented new computer lab software into the curriculum. hese labs are inspired by the Contemporary Lab Experiences in Astronomy (CLEA) Labs created by Gettysburg College. Those labs had been in use by the Florida Astronomy department for well over a decade before these labs came along. CLEA labs ceased operations around 2016. In the years following, some of the software became inoperable on UF's Windows 10 machines. <br><br>
+  <p> In addition to the lab manual, I implemented new computer lab software into the curriculum. 
+    These labs are inspired by the Contemporary Lab Experiences in Astronomy (CLEA) Labs created by Gettysburg College.
+    CLEA labs ceased operations around 2016.  <br><br>
 
-  Seeing the writing on the wall, as well as an opportunity to improve upon the formula these original labs had, I took it upon myself to reprogram some of these labs. The intent was to make them "future-proof". To that end, I programmed these labs in HTML/Javascript. The labs are in a more stable place than when I started my TA position for this course. <br><br>
-
-  The labs that I have programmed are <span style="color:blue;">You Can Weigh Jupiter</span> (based on the CLEA lab of the same name), <span style="color:green">Astronomical Spectroscopy II</span> (based on "The Flow Of Energy Out Of The Sun" by CLEA), and <span style="color:crimson">Measuring the Hubble Constant</span> (based on the CLEA lab of the same name). <br><br>
-
-  These labs are hosted here on my website. Click the button below to see them.
+  The labs that I have programmed are <span style="color:blue;">You Can Weigh Jupiter</span> (based on the CLEA lab of the same name), <span style="color:green">Astronomical Spectroscopy II</span> (based on "The Flow Of Energy Out Of The Sun" by CLEA), and <span style="color:crimson">Measuring the Hubble Constant</span> (based on the CLEA lab of the same name).
   </p>
 
-  <button class = "ALEXbutton center" onclick="ALEX()">ALEX Labs</button>
+  <div class="desktop">
+    <p>These labs are hosted here on my website. Click the button below to see them.</p>
+    <button class = "ALEXbutton center" onclick="ALEX()">ALEX Labs</button>
+  </div>
 
 </section>
 
@@ -402,11 +444,6 @@ h3 {
 
   <h1>Kika Silva Pla Planetarium</h1>
 
-  <p>Starting in the Fall Semester of 2021, I work at the Kika Silva Pla Planetarium at Santa Fe College in Gainesville, FL. 
-    I work there alongside James Albury, the planetarium director and <em>star</em> of <a href="https://www.youtube.com/c/JamesAlburyTheSkyAboveUs" target="_blank">"The Sky Above Us"</a> webseries.
-  </p>
-
-  </p>
 
   <img src="./images/KSP.jpeg" class="center immune" height=100% width=70%>  
 
@@ -414,20 +451,19 @@ h3 {
 
   <p>
 
-    <p>I engage in science outreach to a wide variety of audiences.
-    The planetarium hosts weekly events on Fridays and Saturdays (starting 11/12/2021) for a series of different shows. 
+    <p>The planetarium hosts weekly events on Fridays and Saturdays. 
     The show topics range from educational to entertaining and all serve to get the public more interested in space and astronomy. 
 
     <br><br>
 
     My favorite accomplishment during my time at the Planetarium was learning to perform "Florida Skies", an hour long show giving the public a tour of the night-time sky.
-    Within my first eight months of working at the planetarium, I was able to perform this tour with our CHRONOS-II optical-mechanical projector. </p>
+  </p>
 
   <img src="./images/Chronos.webp" class="center" height=100% width=70%>  
 
   <h2>Show Credits</h2>
 
-  <p><b>Florida Skies <span style="color: #728FCE;">Winter</span>, <span style="color:yellow;">Spring</span>, <span style="color:green;">Summer</span>, and <span style="color:orange;">Autumn</span></b> - "Host", "Planetarium Staff"</p>
+  <p><b>Florida Skies <span style="color: #728FCE;">Winter</span>, <span style="color:yellow;">Spring</span>, <span style="color:green;">Summer</span>, and <span style="color:darkorange;">Autumn</span></b> - "Host", "Planetarium Staff"</p>
   <p><b>Music 360: Gustav Holst's The Planets</b> - "Production Crew"</p>
   <p><b>Dynamic Earth</b> - "Closed Captions for KSP"</p>
 
@@ -436,15 +472,14 @@ h3 {
 <section id = "CARE">
   <h1>Center for Academic Resources in Engineering (CARE) at UIUC</h1>
 
-  <h2>My invovlement with CARE</h2>
+  <p>During undergrad, I tutored for the College of Engineering. 
+    I tutored a number of different courses ranging in disciplines. 
+    During my junior year, I was appointed to the leadership team. <br><br>
 
-  <p>During undergrad, I tutored for the College of Engineering. I tutored a number of different courses ranging in disciplines. During my junior year, I was appointed to the leadership team, wherein I learned valuable skills in not only science communication and presentation, but in managing a team. <br><br>
-
-  My work as a tutor had a significant, positive impact on my fellow students. Three to four times a week for nearly 3 years, I would field many questions and help students succeed in any way that I could. I was recognized during my last semester as being honored with <a href="inTheNews.html">Tutor of the Year Honorable Mention</a> at the University level.
+  My work as a tutor had a significant, positive impact on my fellow students.
+  Three to four times a week for nearly 3 years, I would field many questions on a variety of different subjects (listed below).
+  I was recognized during my last semester as being honored with <a href="inTheNews.html">Tutor of the Year Honorable Mention</a> at the University level.
  </p>
-
-  <h2>Walk-in Tutoring</h2>
-  <p>CARE hosts daily tutoring sessions, typically from noon to midnight, where any student can come into our walk-in space and ask questions. Tutors are rotated in and out during these times and can answer questions on a myriad of different topics. <br><br> During my time as a CARE tutor, I answered questions on the following courses (courses only in College of Engineering):<br><br>
 
 <b style="color:steelblue;">Physics:</b>
 <ul>
@@ -471,62 +506,40 @@ h3 {
 </p>
 
   <h2>Exam Review Sessions </h2>
-  <p>In addition to walk-in tutoring, CARE hosts exam-review sessions for a number of different freshman- and sophomore-level courses.
-  These events are office hours sytle: two hours in length where students can come and ask a small team of tutors any questions about what they are working on in a particular course. 
+  <p>These events are office hours sytle: two hours in length where students can come and ask a small team of tutors any questions about their course in preparation for exams
   
   <br><br>
 
-  During the summer before my senior year of undergrad, I aided in creating new worksheets for the University of Illinois' College of Engineering's tutoring center.
-  All the worksheets were created in LaTeX and maintained by myself and others during the school year.
-  <a href="./pdfs/worksheets.html">Here</a> are some of the worksheets as they were in May of 2021. 
-
-  <br><br>
+  During the summer before my senior year of undergrad, I aided in creating new worksheets for these sessions.
 
   </p>
 
-  <div class="desktop">
-  <p>Additionally, I created a rudimentary Tikz guide for the diagrams that I created:</p>
-  <object data='./pdfs/Tikz.pdf' class="center">
-    <p style="color:red;">Oops! Your browser doesn't support PDFs!</p>
-    <p><a href="./pdfs/Tikz.pdf" target="_blank">View Instead</a></p>
-  </object>
-  </div>
-
-
   <h2>Data Analysis</h2>
-  <p>During my tenure as a tutor with CARE, I also looked at the traffic patterns of our walk-in tutoring center. I assembled these reports using python and LaTeX and preseneted them monthly, as well as every semseter, to the entire team. <a href="./pdfs/walkinReports.html">Here</a> are a couple of reports.</p>
-
-  <h2>Training Oncoming and Future tutors</h2>
-  <p>Additional responsibilities that I was handed as a member of the leadership team was to lead a demonstration interview for tutor applicatants as well as to document my work for future iterations of CARE. <br> <br>
-  The interviews with the candidates consisted of a 25-minute process where the applicant was handed a problem from a subject of their chosing and walked us through the solution. This process was done in order to assess the applicant's ability to guide students through a problem they were having trouble with. After the demonstration, we asked applicants a series of peer advising questions to determine if they could accurately recognize signs on mental distress and recommend resources on campus to help. <br> <br>
+  <p>I also looked at the traffic patterns of our walk-in tutoring center. 
+    I assembled monthly and semesterly reports and presented to our entire team. 
   </p>
 </section>
 
 <section id="Undergraduate Research">
   <h1>Undergraduate Research</h1>
 
-  <p>During my time at Illinois, I participated with two research groups: Professor Bryan Dunne's and Professor Yue Shen's. I started with Professor Dunne in the fall semester of my senior year and with Professon Shen the spring of my senior year.</p>
-
   <h2>Professor Bryan Dunne</h2>
 
   <p>My work with Professor Dunne was focused on beginning research methods. 
-    The program was run through <a href="https://www.oursolarsiblings.com/" target="_blank">Our Solar Sibilings</a>, maintained and operated by Michael Fitzgerald, out of Melbourne Australia.
-    The program consisted of weekly modules intended to get students familiar with the process of research.
     Our group, made up of three undergraduate students, worked on an observation project on variable stars of the RR Lyrae variety.
-    Our target: V0660 Andromeda.</p>
+  </p>
 
-  <p>One of the first modules had us get familiar with the photo-editing program <em>Gimp</em>. We chose a supernova at random, requested composite images, and stacked them together in Gimp.
+  <p class="imgReference">One of the first modules had us get familiar with the photo-editing program <em>Gimp</em>. We chose a supernova at random, requested composite images, and stacked them together in Gimp.
      <span class="imgReference">Below is the result.</span>
-     The next, and (unfortunately due to time constraints) last, step of this project was the literature review. 
-     We were beginning to assemble the framework of a paper when we ran into out of time for the project.</p>
+  </p>
+  <p>
+     We were beginning a literature review when my involvment with the project ended.</p>
 
   <img src="./images/FirstImage.png" class="center" height=100% width=70%>  
 
   <h2>Professor Yue Shen</h2>
 
-  <p>My work with Professor Shen was centered on the Sloan Digitial Sky Survey (SDSS) Data Release 16, specifically the quasars.
-     We wanted to analyze and get rid of a lot of the noise on the spectrum of these quasars.
-     This project was an analysis project and more hands-on with coding than my previous experience with Professor Dunne.
+  <p>My (very brief) work with Professor Shen was centered on SDSS DR16 looking at quasars.
      My small part in this project was to translate an IDL script into Python.
      The script filtered out this noise and give a much neater spectral emission line.
     </p>

@@ -317,7 +317,7 @@ th, td {
 section {
   border:1vw white solid;
   border-radius:15px;
-  background-color:lightgray;
+  background-color:rgba(211, 211, 211, 0.85);
   padding:15px;
   width:85%;
   margin-top:10px;
