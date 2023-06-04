@@ -6,8 +6,6 @@ p {
 @media (max-width: 900px) {
   body {
     margin: 0pt;
-    background-image: url('./images/HubbleDeepField.jpeg');
-    background-repeat: repeat-x;
   }
 }
 @media (min-width: 900px) {
@@ -27,9 +25,8 @@ body {
   background-size: 75% 100%;
   font-size: min(max(14pt, 1.5vw), 16pt);
   background-image: url('./images/HubbleDeepField.jpeg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background-repeat:repeat-y;
+  background-size: contain;
 }
 
 header {
