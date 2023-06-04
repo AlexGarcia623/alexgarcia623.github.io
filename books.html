@@ -17,11 +17,6 @@
   box-sizing: border-box;
 }
 
-h3 {
-  color:steelblue;
-  text-align: center;
-}
-
 p {
   color:black;
   text-align: center;
@@ -54,64 +49,22 @@ div {
   display:flex;
   flex-wrap: wrap;
 }
-
-@media (max-width: 900px) {
-  .grid-ish > * {
-    flex: 0 1 42%;
-  }
-
-  .grid-ish-current {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .grid-ish-current > * {
-    flex: 0 1 100%; 
-  }
-
-  body {
-    margin: 0pt;
-    background-image: url('./images/HubbleDeepField.jpeg');
-    background-repeat: repeat-x;
-  }
-
-  img {
-    display: none !important;
-  }
+img {
+  width:50%;
+  height: 40%;
+  border: 3px solid white;
+  border-radius: 5px;
+  min-width:15ch;
+  max-width:35ch;
 }
 
-@media (min-width: 900px) {
-  .grid-ish > * {
-    flex: 0 1 23%;
-  }
-
-  .grid-ish-current {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .grid-ish-current > * {
-    flex: 0 1 48%; 
-  }
-  img {
-    width:50%;
-    height: 40%;
-    border: 3px solid white;
-    border-radius: 5px;
-    min-width:15ch;
-    max-width:35ch;
-  }
-
-  img > .bookRead {
-    border: 3px solid white;
-  }
-
-  img > .bookCurrent {
-    border: 3px solid orange;
-  }
-
+.bookRead > img {
+  border: 3px solid white;
 }
 
+.bookCurrent > img {
+  border: 3px solid orange;
+}
 
 .bookCurrent {
   border:1vw orange solid;
@@ -146,10 +99,6 @@ div {
   margin-bottom:10px;
 }
 
-h2 {
-  text-align:center;
-}
-
 .year > p {
   text-align:center;
 }
@@ -163,6 +112,60 @@ h2 {
   margin-bottom:10px;
 }
 
+
+@media (max-width: 900px) {
+  .grid-ish > * {
+    flex: 0 1 42%;
+  }
+
+  .grid-ish-current {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .grid-ish-current > * {
+    flex: 0 1 100%; 
+  }
+
+  body {
+    margin: 0pt;
+    background-image: url('./images/HubbleDeepField.jpeg');
+    background-repeat: repeat-x;
+  }
+
+  .bookCurrent > p, h2, h3  {
+    display: none !important;
+  }
+
+  .bookRead > p, h2, h3 {
+    display: none !important;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid-ish > * {
+    flex: 0 1 23%;
+  }
+
+  .grid-ish-current {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .grid-ish-current > * {
+    flex: 0 1 48%; 
+  }
+
+  h2 {
+    text-align:center;
+  }
+
+  h3 {
+    color:steelblue;
+    text-align: center;
+  }
+
+}
 </style>
 
 </head>

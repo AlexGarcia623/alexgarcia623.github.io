@@ -11,7 +11,7 @@ function ALEX() {
 }
 
 function CV() {
-  window.open("./pdfs/GarciaA_CV.pdf");
+  window.open("./pdfs/GarciaA_CV.pdf","_self");
 }
   
 function inTheNews() {
