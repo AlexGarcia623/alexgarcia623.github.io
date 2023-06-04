@@ -13,10 +13,6 @@
   --inv-text-color:white;
 }
 
-body {
-  margin:0 5% 0 5%;
-}
-
 .column3 {
   float:left;
   width:33%;
@@ -98,7 +94,7 @@ section {
   border-radius:15px;
   background-color:lightgray;
   padding:15px;
-  width:80%;
+  width:90%;
   margin-top:10px;
   margin-bottom:10px;
   display: block;
@@ -110,6 +106,7 @@ table {
   border:0.5vw steelblue solid;
   border-radius:15px;
   background-color: lightblue;
+  width: 80%;
 }
 
 .publication {
@@ -172,8 +169,7 @@ button:hover {
 
 section > h1 {
   padding: 10px;
-  border-bottom: 0.5vw black solid ;
-  border-radius: 15px;
+  color:black;
 }
 
 html {
@@ -208,6 +204,20 @@ h3 {
   color:black;
 }
 
+@media(max-width:900px) {
+  img {
+    display: none !important;
+  }
+
+  .imgReference {
+    display: none;
+  }
+
+  .immune {
+    display: block !important;
+  }
+}
+
 </style>
 
 <header>
@@ -231,7 +241,7 @@ h3 {
 
 <body>
 <div class="container">
-<section id="Table of Contents" class="ToC">
+<section id="Table of Contents" class="ToC desktop">
   <h1>Table of Contents</h1>
   <div class="linkContainer">
     <button class = "ToCButton" onclick="location.href = '#Graduate Research'">Graduate Research</button><br>
@@ -243,7 +253,7 @@ h3 {
 </section>
 
 <section id="Graduate Research" >
-  <h1>Graduate Research</h1>
+  <h1>Research</h1>
   
   <p>I currently work in <a href="https://astro.ufl.edu/directory/paul-torrey/" target="_blank">Paul Torrey's</a> group at the University of Virgina (formerly at Florida).</p>
 
@@ -257,7 +267,9 @@ h3 {
 
   </p>
 
-  <p>Interested in learning more? Check out:
+  <h2>Interested in learning more? </h2>
+
+  <p>Check out:
     <ul>
       <li>The <a href="https://youtu.be/hqZEw38RbPs" target="_blank">oral defense</a>
         of my project master's project (Gas-phase metallicity break radii in star-forming galaxies in IllustrisTNG)</li>
@@ -266,7 +278,7 @@ h3 {
     </ul>
      </p>
 
-  <h2>Publications (First author)</h2>
+  <h3>Publications (First author)</h3>
 
   <p style="text-align: center;"><a href="https://ui.adsabs.harvard.edu/search/q=%20%20author%3A%22Garcia%2C%20Alex%20M%22%20author%3A%22Torrey%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank">NASA/ADS search</a></p>
 
@@ -390,21 +402,26 @@ h3 {
 
   <h1>Kika Silva Pla Planetarium</h1>
 
-  <p>Starting in the Fall Semester of 2021, I work at the Kika Silva Pla Planetarium at Santa Fe College in Gainesville, FL. I work there alongside James Albury, the planetarium director and <em>star</em> of <a href="https://www.youtube.com/c/JamesAlburyTheSkyAboveUs" target="_blank">"The Sky Above Us"</a> webseries.</p>
-
-  <p>I engage in science outreach to a wide variety of audiences. The planetarium hosts weekly events on Fridays and Saturdays (starting 11/12/2021) for a series of different shows. The show topics range from educational to entertaining and all serve to get the public more interested in space and astronomy. 
+  <p>Starting in the Fall Semester of 2021, I work at the Kika Silva Pla Planetarium at Santa Fe College in Gainesville, FL. 
+    I work there alongside James Albury, the planetarium director and <em>star</em> of <a href="https://www.youtube.com/c/JamesAlburyTheSkyAboveUs" target="_blank">"The Sky Above Us"</a> webseries.
+  </p>
 
   </p>
 
-  <img src="./images/KSP.jpeg" class="center" height=100% width=70%>  
+  <img src="./images/KSP.jpeg" class="center immune" height=100% width=70%>  
+
+  <h2>What did I do at the Planetarium?</h2>
 
   <p>
 
-One of the earliest projects that I worked on at KSP Planetarium was to add an accessible option for many of the shows with closed captioning. As a person with a hearing disability, this was certainly something that I felt was important that the planetarium had and something that I felt it didn't when I arrived.
+    <p>I engage in science outreach to a wide variety of audiences.
+    The planetarium hosts weekly events on Fridays and Saturdays (starting 11/12/2021) for a series of different shows. 
+    The show topics range from educational to entertaining and all serve to get the public more interested in space and astronomy. 
 
-<br><br>
+    <br><br>
 
-My favorite accomplishment during my time at the Planetarium was learning to perform "Florida Skies", an hour long show giving the public a tour of the night-time sky. Within my first eight months of working at the planetarium, I was able to perform this tour with our CHRONOS-II optical-mechanical projector. </p>
+    My favorite accomplishment during my time at the Planetarium was learning to perform "Florida Skies", an hour long show giving the public a tour of the night-time sky.
+    Within my first eight months of working at the planetarium, I was able to perform this tour with our CHRONOS-II optical-mechanical projector. </p>
 
   <img src="./images/Chronos.webp" class="center" height=100% width=70%>  
 
@@ -414,14 +431,10 @@ My favorite accomplishment during my time at the Planetarium was learning to per
   <p><b>Music 360: Gustav Holst's The Planets</b> - "Production Crew"</p>
   <p><b>Dynamic Earth</b> - "Closed Captions for KSP"</p>
 
-  <h2>More Info</h2>
-
-  <p>For more information about the planetarium, including when the next shows are, please visit the <a href="https://www.sfcollege.edu/planetarium/" target="_blank">Kika Silva Pla Website</a>. To contact me directly about anything regarding the planetarium please <a href='contactMe.html'>email me</a> </p>
-
 </section>
   
 <section id = "CARE">
-  <h1>Center for Academic Resources in Engineering (CARE) UIUC</h1>
+  <h1>Center for Academic Resources in Engineering (CARE) at UIUC</h1>
 
   <h2>My invovlement with CARE</h2>
 
@@ -458,18 +471,25 @@ My favorite accomplishment during my time at the Planetarium was learning to per
 </p>
 
   <h2>Exam Review Sessions </h2>
-  <p>In addition to walk-in tutoring, CARE hosts exam-review sessions for a number of different freshman- and sophomore-level courses. These events are office hours sytle: two hours in length where students can come and ask a small team of tutors any questions about what they are working on in a particular course. <br><br>
+  <p>In addition to walk-in tutoring, CARE hosts exam-review sessions for a number of different freshman- and sophomore-level courses.
+  These events are office hours sytle: two hours in length where students can come and ask a small team of tutors any questions about what they are working on in a particular course. 
+  
+  <br><br>
 
-During the summer before my senior year of undergrad, I aided in creating new worksheets for the University of Illinois' College of Engineering's tutoring center. All the worksheets were created in LaTeX and maintained by myself and others during the school year. <a href="./pdfs/worksheets.html">Here</a> are some of the worksheets as they were in May of 2021. <br><br> Additionally, I created a rudimentary Tikz guide for the diagrams that I created:</p>
+  During the summer before my senior year of undergrad, I aided in creating new worksheets for the University of Illinois' College of Engineering's tutoring center.
+  All the worksheets were created in LaTeX and maintained by myself and others during the school year.
+  <a href="./pdfs/worksheets.html">Here</a> are some of the worksheets as they were in May of 2021. 
+
+  <br><br>
+
+  </p>
 
   <div class="desktop">
+  <p>Additionally, I created a rudimentary Tikz guide for the diagrams that I created:</p>
   <object data='./pdfs/Tikz.pdf' class="center">
     <p style="color:red;">Oops! Your browser doesn't support PDFs!</p>
     <p><a href="./pdfs/Tikz.pdf" target="_blank">View Instead</a></p>
   </object>
-  </div>
-  <div class="mobile">
-    <p><a href="./pdfs/Tikz.pdf" target="_blank">View Tikz Document</a></p>
   </div>
 
 
@@ -489,9 +509,16 @@ During the summer before my senior year of undergrad, I aided in creating new wo
 
   <h2>Professor Bryan Dunne</h2>
 
-  <p>My work with Professor Dunne was focused on beginning research methods. The program was run through <a href="https://www.oursolarsiblings.com/" target="_blank">Our Solar Sibilings</a>, maintained and operated by Michael Fitzgerald, out of Melbourne Australia. The program consisted of weekly modules intended to get students familiar with the process of research. Our group, made up of three undergraduate students, worked on an observation project on variable stars of the RR Lyrae variety. Our target: V0660 Andromeda.</p>
+  <p>My work with Professor Dunne was focused on beginning research methods. 
+    The program was run through <a href="https://www.oursolarsiblings.com/" target="_blank">Our Solar Sibilings</a>, maintained and operated by Michael Fitzgerald, out of Melbourne Australia.
+    The program consisted of weekly modules intended to get students familiar with the process of research.
+    Our group, made up of three undergraduate students, worked on an observation project on variable stars of the RR Lyrae variety.
+    Our target: V0660 Andromeda.</p>
 
-  <p>One of the first modules had us get familiar with the photo-editing program <em>Gimp</em>. We chose a supernova at random, requested composite images, and stacked them together in Gimp. Below is the result. The next, and (unfortunately due to time constraints) last, step of this project was the literature review. We were beginning to assemble the framework of a paper when we ran into out of time for the project.</p>
+  <p>One of the first modules had us get familiar with the photo-editing program <em>Gimp</em>. We chose a supernova at random, requested composite images, and stacked them together in Gimp.
+     <span class="imgReference">Below is the result.</span>
+     The next, and (unfortunately due to time constraints) last, step of this project was the literature review. 
+     We were beginning to assemble the framework of a paper when we ran into out of time for the project.</p>
 
   <img src="./images/FirstImage.png" class="center" height=100% width=70%>  
 

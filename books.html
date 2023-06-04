@@ -31,24 +31,6 @@ div {
   padding-top:0;
 }
 
-img {
-  width:50%;
-  height: 40%;
-  /* aspect-ratio:1/1.5; */
-  border: 3px solid white;
-  border-radius: 5px;
-  min-width:15ch;
-  max-width:35ch;
-}
-
-img > .bookRead {
-  border: 3px solid white;
-}
-
-img > .bookCurrent {
-  border: 3px solid orange;
-}
-
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
@@ -73,18 +55,63 @@ img > .bookCurrent {
   flex-wrap: wrap;
 }
 
-.grid-ish > * {
-  flex: 0 1 30%;
+@media (max-width: 900px) {
+  .grid-ish > * {
+    flex: 0 1 45%;
+  }
+
+  .grid-ish-current {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .grid-ish-current > * {
+    flex: 0 1 100%; 
+  }
+
+  body {
+    margin: 0pt;
+    background-image: url('./images/HubbleDeepField.jpeg');
+    background-repeat: repeat-x;
+  }
+
+  img {
+    display: none !important;
+  }
 }
 
-.grid-ish-current {
-  display: flex;
-  flex-wrap: wrap;
+@media (min-width: 900px) {
+  .grid-ish > * {
+    flex: 0 1 23%;
+  }
+
+  .grid-ish-current {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .grid-ish-current > * {
+    flex: 0 1 48%; 
+  }
+  img {
+    width:50%;
+    height: 40%;
+    border: 3px solid white;
+    border-radius: 5px;
+    min-width:15ch;
+    max-width:35ch;
+  }
+
+  img > .bookRead {
+    border: 3px solid white;
+  }
+
+  img > .bookCurrent {
+    border: 3px solid orange;
+  }
+
 }
 
-.grid-ish-current > * {
-  flex: 0 1 48%; 
-}
 
 .bookCurrent {
   border:1vw orange solid;
@@ -127,12 +154,13 @@ h2 {
   text-align:center;
 }
 
-.freeFloating > h1 {
-  background-color: black;
-  width:45%;
-  border-radius: 50%;
-  margin-left:auto;
-  margin-right:auto;
+.toc {
+  border:1vw white solid;
+  border-radius:15px;
+  background-color:rgba(1, 1, 1, 0.5);
+  padding:15px;
+  margin-top:10px;
+  margin-bottom:10px;
 }
 
 </style>
@@ -167,8 +195,8 @@ h2 {
 </header>
 
 <body>
-<div class=freeFloating>
-  <h1>Currently Reading</h1>
+<div class=toc>
+  <h1 style="color:white;">Currently Reading</h1>
 </div>
 
 <div class="grid-ish-current">
@@ -207,13 +235,17 @@ h2 {
   
 </div>
 
-<div class=freeFloating>
-  <h1>Recently Read</h1>
+<div class="toc">
+  <h1 style="color:white;">Recently Read</h1>
+
+  <p style="color:white;">As of last update, I have finished a total of <span id="totalbooks"></span> books and read <span id="totalpages"></span> pages.</p>
+  <h2>See which books I read:</h2>
+  <p><a href="#2023">2023</a>&nbsp;&nbsp;&nbsp;<a href="#2022">2022</a>&nbsp;&nbsp;&nbsp;<a href="#2021">2021</a></p>
 </div>
 
-<div class="year">
+<div class="year" id="2023">
   <h1 style="color:tomato;">2023</h1>
-  <p>As of last update, I have finished 8 books and read a total of 2,468 pages this year<p>
+  <p>As of last update, I have finished <span id='2023books'>8</span> books and read a total of <span id='2023pages'>2,468</span> pages this year<p>
 </div>
 
 <div class="grid-ish">
@@ -306,9 +338,9 @@ h2 {
   </div>
 </div>
 
-<div class="year">
+<div class="year" id="2022">
   <h1 style="color:tomato;">2022</h1>
-  <p>During 2022, I finished 11 books and read a total of 7,637 pages<p>
+  <p>During 2022, I finished <span id="2022books">11</span> books and read a total of <span id="2022pages">7,637</span> pages<p>
 
 </div>
 
@@ -435,9 +467,9 @@ h2 {
   </div>
 </div>
 
-<div class="year">
+<div class="year" id="2021">
   <h1 style="color:tomato;">2021</h1>
-  <p>During 2021, I finished 5 books and read a total of 1,628 pages</p>
+  <p>During 2021, I finished <span id="2021books">5</span> books and read a total of <span id="2021pages">1,628</span> pages</p>
 </div>
 
 <div class="grid-ish">
@@ -497,4 +529,23 @@ h2 {
   </div>
 </div>
 </body>
+
+<script>
+  var _2023books = parseInt(document.getElementById('2023books').innerHTML);
+  var _2022books = parseInt(document.getElementById('2022books').innerHTML);
+  var _2021books = parseInt(document.getElementById('2021books').innerHTML);
+
+  var total_books = _2021books + _2022books + _2023books;
+
+  document.getElementById('totalbooks').innerHTML = total_books;
+
+  var _2023pages = parseInt(document.getElementById('2023pages').innerHTML.replace(/,/g, ''));
+  var _2022pages = parseInt(document.getElementById('2022pages').innerHTML.replace(/,/g, ''));
+  var _2021pages = parseInt(document.getElementById('2021pages').innerHTML.replace(/,/g, ''));
+
+  var total_pages = _2021pages + _2022pages + _2023pages;
+
+  document.getElementById('totalpages').innerHTML = total_pages.toLocaleString();
+
+</script>
 </html>
