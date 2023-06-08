@@ -167,13 +167,10 @@ button:hover {
   width: 60%;
 }
 
-/* section > h1 {
-  padding: 10px;
-  color:black;
-} */
-
-html {
-  scroll-behavior: smooth;
+@media (min-width:900px) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 .ToCButton {
@@ -297,11 +294,10 @@ h3 {
     <p>Accepted to MNRAS 12/16/2022!<p>
 
     <p>Check out my 
-      <a href="https://www.youtube.com/watch?v=hqZEw38RbPs&t=42s&ab_channel=AlexGarcia" target="_blank">oral defense</a>
+      <a href="https://youtu.be/hqZEw38RbPs" target="_blank">oral defense</a>
        of this project.</p>
 
     <button class="abstractButton" onclick="showAbstract('BRAbstract')">Abstract</button>
-    <!-- <button class="documentButton" onclick="openLink('./pdfs/Break_Radius_Paper.pdf')">Preprint</button> -->
     <button class="documentButton" onclick="openLink('https://academic.oup.com/mnras/advance-article-abstract/doi/10.1093/mnras/stac3749/6960583?utm_source=advanceaccess&utm_campaign=mnras&utm_medium=email','_blank')">MNRAS</button>
     <button class="documentButton" onclick="openLink('https://arxiv.org/abs/2212.03326','_blank')">arXiv</button>
     <button class="githubButton" onclick="openLink('https://github.com/AlexGarcia623/Break-Radii','_blank')">Github Repo</button>
@@ -576,8 +572,13 @@ h3 {
 //Get the button
 var mybutton = document.getElementById("myBtn");
 
+var media = window.matchMedia('(min-width: 900px)');
+
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+if (media.matches){
+  window.onscroll = function() {scrollFunction()};
+}
+
 
 function scrollFunction() {
   var height = 700;
