@@ -95,6 +95,14 @@ a:hover {
   color:white;
 }
 
+a:visited {
+  color:red;
+}
+
+a:visited:hover{
+  color:white;
+}
+
 .body {
   display: in-line block;
   margin-left:10%;
