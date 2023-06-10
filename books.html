@@ -150,7 +150,7 @@
     }
   }
 
-  @media (max-width: 1450px) and (min-width:900px) {
+  @media (max-width: 1460px) and (min-width:900px) {
     .grid-ish {
       display: flex;
       flex-wrap: wrap;
@@ -182,9 +182,13 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+    h2 {
+      text-align: center;
+    }
   }
 
-  @media (min-width: 1450px) {
+  @media (min-width: 1460px) {
     /* DESKTOP */
 
     .grid-ish {
@@ -271,18 +275,8 @@
   </div>
 
   <div class="grid-ish-current">
-    <div class="bookCurrent center">
-      <div class="col">
-        <img src="./books/theDayWeFoundTheUniverse.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>The Day We Found the Universe</h2>
-        <h3>Marcia Bartusiak</h3>
-        <p>Started: August 2022</p>
-      </div>
-    </div>
 
-    <!-- <div class="bookCurrent center">
+    <div class="bookCurrent center">
     <div class="col">
       <img src="./books/ProjectHailMary.jpg" class="center"></img>
     </div>
@@ -291,7 +285,7 @@
       <h3>Andy Weir</h3>
       <p>Started: June 2023</p>
     </div>
-  </div> -->
+  </div>
 
   </div>
 
@@ -306,12 +300,23 @@
 
   <div class="year" id="2023">
     <h1 style="color:tomato;">2023</h1>
-    <p>As of last update, I have finished <span id='2023books'>9</span> books and read a total of <span
-        id='2023pages'>2,774</span> pages this year
+    <p>As of last update, I have finished <span id='2023books'></span> books and read a total of <span
+        id='2023pages'>2,977</span> pages this year
     <p>
   </div>
 
-  <div class="grid-ish">
+  <div class="grid-ish" id="books2023">
+
+    <div class="bookRead center">
+      <div class="col">
+        <img src="./books/theDayWeFoundTheUniverse.jpeg" class="center"></img>
+      </div>
+      <div class="col">
+        <h2>The Day We Found the Universe</h2>
+        <h3>Marcia Bartusiak</h3>
+        <p>Finished: June 2023</p>
+      </div>
+    </div>
 
     <div class="bookRead center">
       <div class="col">
@@ -421,7 +426,7 @@
     <p>
   </div>
 
-  <div class="grid-ish">
+  <div class="grid-ish" id="books2022">
     <div class="bookRead center">
       <div class="col">
         <img src="./books/theSentenceIsDeath.jpg" class="center"></img>
@@ -526,7 +531,7 @@
         <img src="./books/HumblePi.jpeg" class="center"></img>
       </div>
       <div class="col">
-        <h2>Humble Pi: When Math Goes Wrong<br> in the Real World</h2>
+        <h2>Humble Pi: When Math Goes Wrong in the Real World</h2>
         <h3>Matt Parker</h3>
         <p>Finished: January 2022</p>
       </div>
@@ -550,7 +555,7 @@
       pages</p>
   </div>
 
-  <div class="grid-ish">
+  <div class="grid-ish" id="books2021">
     <div class="bookRead center">
       <div class="col">
         <img src="./books/EinsteinsDreams.jpeg" class="center"></img>
@@ -590,7 +595,7 @@
         <img src="./books/AlgorithmsToLiveBy.jpeg" class="center"></img>
       </div>
       <div class="col">
-        <h2>Algorithms to Live By:<br> The Computer Science of Human Decisions</h2>
+        <h2>Algorithms to Live By: The Computer Science of Human Decisions</h2>
         <h3>Brian Christan & Tom Griffiths</h3>
         <p>Finished: December 2021</p>
       </div>
@@ -606,17 +611,14 @@
         <p>Finished: November 2021</p>
       </div>
     </div>
+
+
+    
+    
   </div>
 </body>
 
 <script>
-  var _2023books = parseInt(document.getElementById('2023books').innerHTML);
-  var _2022books = parseInt(document.getElementById('2022books').innerHTML);
-  var _2021books = parseInt(document.getElementById('2021books').innerHTML);
-
-  var total_books = _2021books + _2022books + _2023books;
-
-  document.getElementById('totalbooks').innerHTML = total_books;
 
   var _2023pages = parseInt(document.getElementById('2023pages').innerHTML.replace(/,/g, ''));
   var _2022pages = parseInt(document.getElementById('2022pages').innerHTML.replace(/,/g, ''));
@@ -625,6 +627,19 @@
   var total_pages = _2021pages + _2022pages + _2023pages;
 
   document.getElementById('totalpages').innerHTML = total_pages.toLocaleString();
+
+  var parent2023   = document.getElementById('books2023');
+  var parent2022   = document.getElementById('books2022');
+  var parent2021   = document.getElementById('books2021');
+  var numBooks2023 = parent2023.getElementsByClassName('bookRead');
+  var numBooks2022 = parent2022.getElementsByClassName('bookRead');
+  var numBooks2021 = parent2021.getElementsByClassName('bookRead');
+
+  document.getElementById('2023books').innerHTML = numBooks2023.length;
+  document.getElementById('2022books').innerHTML = numBooks2022.length;
+  document.getElementById('2021books').innerHTML = numBooks2021.length;
+
+  document.getElementById('totalbooks').innerHTML = numBooks2023.length + numBooks2022.length + numBooks2021.length;
 
 </script>
 
