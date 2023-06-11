@@ -3,6 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="books.css">
   <link rel="Shortcut Icon" type="image/png" href="./images/tikzImage.png">
 
   <meta http-equiv='cache-control' content='no-cache'>
@@ -13,232 +14,6 @@
 
 <script src="scripts.js"></script>
 <script src="https://kit.fontawesome.com/b502caab12.js" crossorigin="anonymous"></script>
-<style>
-  * {
-    box-sizing: border-box;
-  }
-
-  p {
-    color: black;
-    text-align: center;
-  }
-
-  div {
-    padding-top: 0;
-  }
-
-  /* Create two equal columns that floats next to each other */
-  .column {
-    float: left;
-    width: 50%;
-    height: auto;
-  }
-
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  .row {
-    margin: auto;
-  }
-
-  img {
-    width: 50%;
-    height: 40%;
-    min-width: 10ch;
-    max-width: 35ch;
-    border-radius: 10px;
-  }
-
-  .bookCurrent {
-    border: 1vw orange solid;
-    border-radius: 15px;
-    background-color: rgba(255, 200, 124, 0.85);
-    width: 50%;
-    margin-top: 10px;
-    padding: 15px;
-    max-width: 125ch;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .bookRead {
-    border: 1vw white solid;
-    border-radius: 15px;
-    background-color: rgba(211, 211, 211, 0.85);
-    padding: 15px;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .year {
-    border: 1vw blue solid;
-    border-radius: 15px;
-    background-color: rgba(173, 216, 230, 0.85);
-    padding: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  .year>p {
-    text-align: center;
-  }
-
-  .toc {
-    border: 1vw white solid;
-    border-radius: 15px;
-    background-color: rgba(1, 1, 1, 0.5);
-    padding: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  .current {
-    border: 1vw orange solid;
-    border-radius: 15px;
-    background-color: rgba(1, 1, 1, 0.5);
-    padding: 15px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-
-  @media (max-width: 900px) {
-    /* MOBILE */
-
-    .grid-ish {
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: 8%;
-    }
-
-    .grid-ish>* {
-      width: 40%;
-    }
-
-    .grid-ish .bookRead:last-child:nth-child(odd) {
-      margin-left: 25%;
-      margin-right: auto;
-    }
-
-    .grid-ish-current {
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: 8%;
-      margin-right: 8%;
-    }
-
-    .grid-ish-current>* {
-      flex: 0 1 100%;
-    }
-
-    .bookCurrent>p,
-    h2,
-    h3 {
-      display: none !important;
-    }
-
-    .bookRead>p,
-    h2,
-    h3 {
-      display: none !important;
-    }
-  }
-
-  @media (max-width: 1460px) and (min-width:900px) {
-    .grid-ish {
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: 13%;
-      margin-right: -3%;
-    }
-
-    .grid-ish>* {
-      flex: 0 1 40%;
-    }
-
-    .grid-ish .bookRead:last-child:nth-child(odd) {
-      margin-left: 22%;
-      margin-right: auto;
-    }
-
-    .grid-ish-current {
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: 8%;
-      margin-right: 8%;
-    }
-
-    .grid-ish-current>* {
-      flex: 0 1 48%;
-    }
-
-    .grid-ish-current .bookCurrent:only-child {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    h2 {
-      text-align: center;
-    }
-  }
-
-  @media (min-width: 1460px) {
-    /* DESKTOP */
-
-    .grid-ish {
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .grid-ish>* {
-      flex: 0 1 31.6%;
-    }
-
-    .grid-ish .bookRead:last-child:not(:nth-child(3n+0)) {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .grid-ish .bookRead:nth-last-child(2):not(:nth-child(3n+0)):not(:nth-child(3n-1)) {
-      margin-left: 18%;
-      margin-right: -16%;
-    }
-
-    .grid-ish-current {
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: 8%;
-      margin-right: 8%;
-    }
-
-    .grid-ish-current>* {
-      flex: 0 1 48%;
-    }
-
-    .grid-ish-current .bookCurrent:only-child {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    h2 {
-      text-align: center;
-    }
-
-    h3 {
-      color: steelblue;
-      text-align: center;
-    }
-
-  }
-</style>
 
 <header>
   <title>What's Alex Reading</title>
@@ -274,372 +49,55 @@
     <h1 style="color:orange;">Currently Reading</h1>
   </div>
 
-  <div class="grid-ish-current">
-
-    <div class="bookCurrent center">
-    <div class="col">
-      <img src="./books/ProjectHailMary.jpg" class="center"></img>
-    </div>
-    <div class="col">
-      <h2>Project Hail Mary</h2>
-      <h3>Andy Weir</h3>
-      <p>Started: June 2023</p>
-    </div>
+  <div class="grid-ish-current" id="current">
   </div>
 
-  </div>
-
-  <div class="toc">
+  <div class="toc" id="recent">
     <h1 style="color:white;">Recently Read</h1>
 
-    <p style="color:white;">As of last update, I have finished a total of <span id="totalbooks"></span> books and read
-      <span id="totalpages"></span> pages since November 2021.
-    </p>
-    <p><a href="#2023">2023</a>&nbsp;&nbsp;&nbsp;<a href="#2022">2022</a>&nbsp;&nbsp;&nbsp;<a href="#2021">2021</a></p>
+    <select class="center" name="Filter By" id="whichFilter" onchange="changeFilter()">
+      <option value="byYear">Year</option>
+      <option value="byGenre">Genre</option>
+    </select>
+
+    <p style="color:white;"></p>
+
+    <p id='genericSelector'></p>
   </div>
 
-  <div class="year" id="2023">
-    <h1 style="color:tomato;">2023</h1>
-    <p>As of last update, I have finished <span id='2023books'></span> books and read a total of <span
-        id='2023pages'>2,977</span> pages this year
-    <p>
+  <div id="byYear">
   </div>
 
-  <div class="grid-ish" id="books2023">
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/theDayWeFoundTheUniverse.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>The Day We Found the Universe</h2>
-        <h3>Marcia Bartusiak</h3>
-        <p>Finished: June 2023</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/HowToThinkAboutWeirdThings.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>How To Think About Weird Things</h2>
-        <h3>Theodore Schick Jr. & Lewis Vaughn</h3>
-        <p>Finished: June 2023</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/DuckForPresident.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>Duck For President</h2>
-        <h3>Doreen Cronin with Betsy Lewin</h3>
-        <p>Finished: May 2023</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/TheStoryOfTheUniverseIn100Stars.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>The Story of the Universe in 100 Stars</h2>
-        <h3>Florian Freistetter</h3>
-        <p>Started: May 2023</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/TheModelThinker.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>The Model Thinker</h2>
-        <h3>Scott E. Page</h3>
-        <p>Finished: May 2023</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/Piranesi.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>Piranesi</h2>
-        <h3>Susanna Clarke</h3>
-        <p>Finished: May 2023</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/ReturnOfTheKing.jpg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>The Lord of the Rings: The Return of the King</h2>
-        <h3>J.R.R. Tolkein</h3>
-        <p>Finished: May 2023</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/TwoTowers.jpg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>The Lord of the Rings: The Two Towers</h2>
-        <h3>J.R.R. Tolkein</h3>
-        <p>Finished: April 2023</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/FellowshipOfTheRing.jpg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>The Lord of the Rings: The Fellowship of the Ring</h2>
-        <h3>J.R.R. Tolkein</h3>
-        <p>Finished: March 2023</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/fireAndBlood.jpg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>Fire & Blood</h2>
-        <h3>George R.R. Martin</h3>
-        <p>Finished: January 2023</p>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="year" id="2022">
-    <h1 style="color:tomato;">2022</h1>
-    <p>During 2022, I finished <span id="2022books">11</span> books and read a total of <span
-        id="2022pages">7,637</span> pages
-    <p>
-  </div>
-
-  <div class="grid-ish" id="books2022">
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/theSentenceIsDeath.jpg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>The Sentence is Death</h2>
-        <h3>Anthony Horowitz</h3>
-        <p>Finished: August 2022</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/BillionsAndBillions.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>Billions and Billions</h2>
-        <h3>Carl Sagan</h3>
-        <p>Finished: August 2022</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/theMartian.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>The Martian</h2>
-        <h3>Andy Weir</h3>
-        <p>Finished: August 2022</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/ADanceWithDragons.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>A Dance with Dragons</h2>
-        <h3>George R.R. Martin</h3>
-        <p>Finished: August 2022</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/AFeastForCrows.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>A Feast for Crows</h2>
-        <h3>George R.R. Martin</h3>
-        <p>Finished: June 2022</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/AStormOfSwords.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>A Storm Of Swords</h2>
-        <h3>George R.R. Martin</h3>
-        <p>Finished: May 2022</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/AClashOfKings.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>A Clash Of Kings</h2>
-        <h3>George R.R. Martin</h3>
-        <p>Finished: April 2022</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/AGameOfThrones.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>A Game Of Thrones</h2>
-        <h3>George R.R. Martin</h3>
-        <p>Finished: March 2022</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/TheWordIsMurder.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>The Word Is Murder</h2>
-        <h3>Anthony Horowitz</h3>
-        <p>Finished: January 2022</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/HumblePi.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>Humble Pi: When Math Goes Wrong in the Real World</h2>
-        <h3>Matt Parker</h3>
-        <p>Finished: January 2022</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/HitchhikerGuide.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>The Hitchhiker's Guide to the Galaxy</h2>
-        <h3>Douglas Adams</h3>
-        <p>Finished: January 2022</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="year" id="2021">
-    <h1 style="color:tomato;">2021</h1>
-    <p>During 2021, I finished <span id="2021books">5</span> books and read a total of <span id="2021pages">1,628</span>
-      pages</p>
-  </div>
-
-  <div class="grid-ish" id="books2021">
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/EinsteinsDreams.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>Einstein's Dreams</h2>
-        <h3>Alan Lightman</h3>
-        <p>Finished: December 2021</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/BraveNewWorld.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>Brave New World</h2>
-        <h3>Aldous Huxley</h3>
-        <p>Finished: December 2021</p>
-      </div>
-    </div>
-
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/AstrophysicsPeopleHurry.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>Astrophysics for People in a Hurry</h2>
-        <h3>Neil DeGrasse Tyson</h3>
-        <p>Finished: December 2021</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/AlgorithmsToLiveBy.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>Algorithms to Live By: The Computer Science of Human Decisions</h2>
-        <h3>Brian Christan & Tom Griffiths</h3>
-        <p>Finished: December 2021</p>
-      </div>
-    </div>
-
-    <div class="bookRead center">
-      <div class="col">
-        <img src="./books/Dune.jpeg" class="center"></img>
-      </div>
-      <div class="col">
-        <h2>Dune</h2>
-        <h3>Frank Herbert</h3>
-        <p>Finished: November 2021</p>
-      </div>
-    </div>
-
-
-    
-    
+  <div id="byGenre" style="display: none;">
   </div>
 </body>
 
+<script src="bookInfo.js"></script>
+<script src="bookBackEnd.js"></script>
 <script>
 
-  var _2023pages = parseInt(document.getElementById('2023pages').innerHTML.replace(/,/g, ''));
-  var _2022pages = parseInt(document.getElementById('2022pages').innerHTML.replace(/,/g, ''));
-  var _2021pages = parseInt(document.getElementById('2021pages').innerHTML.replace(/,/g, ''));
+  var options       = document.getElementById('whichFilter').selectedOptions;
+  var currentFilter = Array.from(options).map(({ value }) => value);
 
-  var total_pages = _2021pages + _2022pages + _2023pages;
+  var filter2index = {
+    'byYear':0,
+    'byGenre':1
+  }
 
-  document.getElementById('totalpages').innerHTML = total_pages.toLocaleString();
+  var filterOptions = {
+    'byYear': [],
+    'byGenre': []
+  };
 
-  var parent2023   = document.getElementById('books2023');
-  var parent2022   = document.getElementById('books2022');
-  var parent2021   = document.getElementById('books2021');
-  var numBooks2023 = parent2023.getElementsByClassName('bookRead');
-  var numBooks2022 = parent2022.getElementsByClassName('bookRead');
-  var numBooks2021 = parent2021.getElementsByClassName('bookRead');
+  var filterDivsExist = {
+    'byYear':false,
+    'byGenre':false
+  };
 
-  document.getElementById('2023books').innerHTML = numBooks2023.length;
-  document.getElementById('2022books').innerHTML = numBooks2022.length;
-  document.getElementById('2021books').innerHTML = numBooks2021.length;
-
-  document.getElementById('totalbooks').innerHTML = numBooks2023.length + numBooks2022.length + numBooks2021.length;
+  makeCurrentBooks();
+  generateBookClasses(currentFilter);
+  changeQuickLinks(currentFilter);
+  workingcounter(currentFilter);
 
 </script>
 
