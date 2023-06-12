@@ -152,6 +152,21 @@ function makeCurrentBooks() {
         col2.appendChild(writer);
         col2.appendChild(date);
         col2.appendChild(npages);
+
+        if (currentFilter == "byPageCount") {
+          npages_display = document.createElement('p');
+          npages_display.innerHTML = "Pages: " + String(pages);
+        
+          col2.appendChild(npages_display);
+        } else if (currentFilter == "bySubGenre") {
+          if (selectors[filter2index[currentFilter]] == "Childrens") {
+            joke_display = document.createElement('p');
+            joke_display.innerHTML = "This was a difficult read! ;)";
+            joke_display.setAttribute('style','color:red;font-size:20pt;')
+
+            col2.appendChild(joke_display);
+          }
+        }
       }
       filterDivsExist[currentFilter] = true;
 

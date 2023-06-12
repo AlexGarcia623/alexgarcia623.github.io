@@ -60,6 +60,7 @@
       <option value="byGenre">Genre</option>
       <option value="bySubGenre">Sub-Genre</option>
       <option value="byPageCount">Page Count</option>
+      <option value="byAuthor">Author</option>
     </select>
 
     <p style="color:white;"></p>
@@ -78,6 +79,9 @@
 
   <div id="byPageCount" style="display: none;">
   </div>
+
+  <div id="byAuthor" style="display: none;">
+  </div>
 </body>
 
 <script src="bookInfo.js"></script>
@@ -91,14 +95,16 @@
     'byYear':0,
     'byGenre':1,
     'bySubGenre':2,
-    'byPageCount':3
+    'byPageCount':3,
+    'byAuthor':4
   }
 
   var filterOptions = {
     'byYear': [],
     'byGenre': [],
     'bySubGenre': [],
-    'byPageCount': []
+    'byPageCount': [],
+    'byAuthor': []
   };
 
   var filterDivsExist = {
@@ -106,6 +112,7 @@
     'byGenre':false,
     'bySubGenre':false,
     'byPageCount':false,
+    'byAuthor':false
   };
 
   makeCurrentBooks();

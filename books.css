@@ -82,6 +82,7 @@
     padding: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
+    overflow-wrap: break-word;
   }
 
   .current {
@@ -168,7 +169,7 @@
       margin-right: auto;
     }
 
-    h2 {
+    h2, h3 {
       text-align: center;
     }
   }
@@ -239,8 +240,10 @@
     color: black;
     border: solid white 4px;
     border-radius: 10px;
-    margin: 10px;
+    margin: 15px;
     padding: 5px;
+    line-height: 50px;
+    white-space: nowrap;
   }
 
   .selector:hover {
