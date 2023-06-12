@@ -3,10 +3,8 @@ function makeCurrentBooks() {
       var attributes   = current_books[currentBook];
 
       var author       = attributes[0];
-      var whenStarted = attributes[1];
-      var pages        = attributes[2];
-      var selectors    = attributes[3];
-      var image        = attributes[4];
+      var whenStarted  = attributes[1];
+      var image        = attributes[3];
 
       var parentDiv = document.getElementById('current');
 
@@ -77,8 +75,9 @@ function makeCurrentBooks() {
         var author       = attributes[0];
         var whenFinished = attributes[1];
         var pages        = attributes[2];
-        var selectors    = attributes[3];
-        var image        = attributes[4];
+        var image        = attributes[3];
+
+        var selectors    = book_classes[currentBook];
 
         var parentDiv = document.getElementById(currentFilter);
 
@@ -208,7 +207,7 @@ function makeCurrentBooks() {
         n_pages   = n_pages + pages;
       }
 
-      location_of_text.innerHTML = 'I have read ' + String(n_books) + ' books of this category for a total of ' + n_pages.toLocaleString() + ' pages';
+      location_of_text.innerHTML = 'I have read ' + String(n_books) + ' books in this category for a total of ' + n_pages.toLocaleString() + ' pages';
 
       total_books = total_books + n_books;
       total_pages = total_pages + n_pages;
