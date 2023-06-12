@@ -48,13 +48,10 @@
   <div class=current>
     <h1 style="color:orange;">Currently Reading</h1>
   </div>
-
   <div class="grid-ish-current" id="current">
   </div>
-
-  <div class="toc" id="recent">
+  <div class="toc center" id="recent">
     <h1 style="color:white;">Recently Read</h1>
-
     <select class="center" name="Filter By" id="whichFilter" onchange="changeFilter()">
       <option value="byYear">Year</option>
       <option value="byGenre">Genre</option>
@@ -62,25 +59,8 @@
       <option value="byPageCount">Page Count</option>
       <option value="byAuthor">Author</option>
     </select>
-
     <p style="color:white;"></p>
-
     <p id='genericSelector'></p>
-  </div>
-
-  <div id="byYear">
-  </div>
-
-  <div id="byGenre" style="display: none;">
-  </div>
-
-  <div id="bySubGenre" style="display: none;">
-  </div>
-
-  <div id="byPageCount" style="display: none;">
-  </div>
-
-  <div id="byAuthor" style="display: none;">
   </div>
 </body>
 
@@ -91,29 +71,29 @@
   var options       = document.getElementById('whichFilter').selectedOptions;
   var currentFilter = Array.from(options).map(({ value }) => value);
 
-  var filter2index = {
-    'byYear':0,
-    'byGenre':1,
-    'bySubGenre':2,
-    'byPageCount':3,
-    'byAuthor':4
+  var arr = [...document.getElementById('whichFilter').options];
+  var optionsArray = arr.map(a => a.value);
+
+  var filter2index    = {}
+  var filterOptions   = {}
+  var filterDivsExist = {}
+
+  var n = 0;
+  for (option of optionsArray) {
+    filter2index[option]    = n;
+    filterOptions[option]   = [];
+    filterDivsExist[option] = false;
+
+    newOptionDiv = document.createElement('div');
+    newOptionDiv.setAttribute('id',option);
+    if (n != 0) {
+      newOptionDiv.setAttribute('style','display:none;')
+    }
+
+    document.body.appendChild(newOptionDiv);
+
+    n++;
   }
-
-  var filterOptions = {
-    'byYear': [],
-    'byGenre': [],
-    'bySubGenre': [],
-    'byPageCount': [],
-    'byAuthor': []
-  };
-
-  var filterDivsExist = {
-    'byYear':false,
-    'byGenre':false,
-    'bySubGenre':false,
-    'byPageCount':false,
-    'byAuthor':false
-  };
 
   makeCurrentBooks();
   generateBookClasses(currentFilter);

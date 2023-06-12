@@ -55,6 +55,7 @@ function makeCurrentBooks() {
     options   = document.getElementById('whichFilter').selectedOptions;
     newFilter = String(Array.from(options).map(({ value }) => value));
 
+    
     document.getElementById(currentFilter).style.display = 'none';
     document.getElementById(newFilter).style.display     = 'block';
 

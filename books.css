@@ -76,13 +76,19 @@
   }
 
   .toc {
+    display: inline-block;
     border: 1vw white solid;
     border-radius: 15px;
     background-color: rgba(1, 1, 1, 0.5);
     padding: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
+    display: block; /* Change from inline-block to block */
+    margin-inline: auto;
+    width: max-content;
     overflow-wrap: break-word;
+    max-width: 100%;
+    min-width: 90%;
   }
 
   .current {
