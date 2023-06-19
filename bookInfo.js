@@ -2,10 +2,11 @@
 // values -> [author, date finished, pages, [byYear, byGenre], picture]
 
 var current_books = {
-    "Project Hail Mary":["Andy Weir",'June 2023', 476,"./books/ProjectHailMary.jpg"],
+    "The Long Way to a Small, Angry Planet":["Becky Chambers",'June 2023',518,'./books/theLongWayToASmallAngryPlanet.jpeg']
 }
 
 var books = {
+    "Project Hail Mary":["Andy Weir",'June 2023', 476,"./books/ProjectHailMary.jpg"],
     "The Day We Discovered The Universe":['Marcia Bartusiak','June 2023',337,'./books/theDayWeFoundTheUniverse.jpeg'],
     "How To Think About Weird Things":['Theodore Schick Jr. & Lewis Vaughn','June 2023',338,'./books/HowToThinkAboutWeirdThings.jpeg'],
     "Duck For President":["Doreen Cronin with Betsy Lewin",'May 2023',40,'./books/DuckForPresident.jpeg'],
@@ -37,7 +38,7 @@ var books = {
 }
 
 var book_classes = {
-
+    "The Long Way to a Small, Angry Planet"            :['2023','Fiction','Sci-fi','500+','Becky Chambers'],
     "Project Hail Mary"                                :['2023','Fiction','Sci-fi','300+','Andy Weir'],
     "The Day We Discovered The Universe"               :['2023','Non-Fiction','History','300+','Marcia Bartusiak'],
     "How To Think About Weird Things"                  :['2023','Non-Fiction','Science Psychology','300+','Theodore Schick Jr. & Lewis Vaughn'],
