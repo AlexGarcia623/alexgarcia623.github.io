@@ -13,7 +13,41 @@
 <script src="https://kit.fontawesome.com/b502caab12.js" crossorigin="anonymous"></script>
 
 <style>
-  
+  .UVA {
+    background: url('./images/UVA.webp');
+    background-clip: border-box;
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+    opacity: 0.6;
+  }
+
+  .UVA:hover {
+    opacity: 1;
+    color: white;
+  }
+
+  .KSP {
+    background-image: url('./images/KSP.jpeg');
+    background-clip: border-box;
+    background-position: center;
+    background-size: contain;
+    transition: 0.5s;
+    opacity: 0.6;
+  }
+
+  .KSP:hover {
+    opacity: 1;
+  }
+
+  .UVA > p, .KSP > p {
+    text-shadow: 0 0 2px black;
+  }
+
+  .UVA:hover > p, .KSP:hover > p {
+    text-shadow: 0 0 2px black;
+    color:white;
+  }
 </style>
 
 <head>
@@ -93,13 +127,19 @@
       <div class="card-inner">
         <h1>Alex M. Garcia</h1>
         <div class="row">
-          <div class="column border-right" onclick="window.open('workExamples.html#Graduate Research','_self')">
-            <p>Graduate Student<br>University of Florida</p>
+          <div class="column border-right UVA" onclick="window.open('workExamples.html#Graduate Research','_self')">
+            <p>Graduate Student<br>University of Virginia</p>
           </div>
-          <div class="column" onclick="window.open('workExamples.html#KSP','_self')">
+          <div class="column KSP" onclick="window.open('workExamples.html#KSP','_self')">
             <p>Planetarium Assistant<br>Kika Silva Pla Planetarium</p>
           </div>
         </div>
+        <!-- <div class="row">
+          <div class="only-column center UVA" onclick="window.open('workExamples.html#Graduate Research','_self')">
+            <p>Graduate Student<br>University of Virginia</p>
+          </div>
+        </div> -->
+        
         <div class="mediaLinks">
           <i class="fa-brands fa-linkedin-in"
             onclick="window.open('https://www.linkedin.com/in/alex-garcia-051300210/',target='_blank')"></i>

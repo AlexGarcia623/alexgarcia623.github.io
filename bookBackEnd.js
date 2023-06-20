@@ -223,12 +223,17 @@ function makeCurrentBooks() {
         n_pages   = n_pages + pages;
       }
 
-      location_of_text.innerHTML = 'I have read ' + String(n_books) + ' books in this category for a total of ' + n_pages.toLocaleString() + ' pages';
+      var s = 's';
+      if (n_books == 1) {
+        s = '';
+      }
+
+      location_of_text.innerHTML = 'I have read ' + String(n_books) + ' book' + s + ' in this category for a total of ' + n_pages.toLocaleString() + ' pages';
 
       total_books = total_books + n_books;
       total_pages = total_pages + n_pages;
     }
 
-    var complete_string = 'As of last update, I have finished a total of ' + String(total_books) + ' books for a total of ' + total_pages.toLocaleString() + ' pages';
+    var complete_string = 'As of last update, I have finished a total of ' + String(total_books) + ' books for a total of ' + total_pages.toLocaleString() + ' pages since November 2021';
     document.getElementById('recent').getElementsByTagName('p')[0].innerHTML = complete_string;
   }

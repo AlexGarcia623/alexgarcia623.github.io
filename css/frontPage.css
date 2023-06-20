@@ -30,6 +30,11 @@ body {
     width: 80%;
     max-height: 60vh;
 }
+/* 
+.card:hover {
+    width: 60%;
+    max-height: 60vh;
+} */
 
 .card:not(:hover) {
     max-height: 20vh;
@@ -137,7 +142,14 @@ a {
     margin: 5px;
 }
 
-.column:hover {
+.only-column {
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.column:hover, .only-column:hover {
     cursor: pointer;
     background-color: rgb(80, 80, 80, 1);
 }
