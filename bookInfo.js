@@ -2,10 +2,11 @@
 // values -> [author, date finished, pages, [byYear, byGenre], picture]
 
 var current_books = {
-    "The Ascent of Information":['Caleb Scharf','June 2023',352,'./books/AscentOfInfo.jpg'],
+    "The Hobbit":['J.R.R. Tolkein','June 2023',365,'./books/theHobbit.webp'],
 }
 
 var books = {
+    "The Ascent of Information":['Caleb Scharf','June 2023',352,'./books/AscentOfInfo.jpg'],
     "The Long Way to a Small, Angry Planet":["Becky Chambers",'June 2023',518,'./books/theLongWayToASmallAngryPlanet.jpeg'],
     "Project Hail Mary":["Andy Weir",'June 2023', 476,"./books/ProjectHailMary.jpg"],
     "The Day We Discovered The Universe":['Marcia Bartusiak','June 2023',337,'./books/theDayWeFoundTheUniverse.jpeg'],
@@ -39,12 +40,13 @@ var books = {
 }
 
 var book_classes = {
+    "The Hobbit"                                       :['2023','Fiction','Fantasy','300+','J.R.R. Tolkein'],
     "The Ascent of Information"                        :['2023','Non-Fiction','Science Psychology','300+','Caleb Scharf'],
     "The Long Way to a Small, Angry Planet"            :['2023','Fiction','Sci-fi','500+','Becky Chambers'],
     "Project Hail Mary"                                :['2023','Fiction','Sci-fi','300+','Andy Weir'],
     "The Day We Discovered The Universe"               :['2023','Non-Fiction','History','300+','Marcia Bartusiak'],
     "How To Think About Weird Things"                  :['2023','Non-Fiction','Science Psychology','300+','Theodore Schick Jr. & Lewis Vaughn'],
-    "Duck For President"                               :['2023','Fiction','Childrens','Less than 300',"Doreen Cronin & Betsy Lewin"],
+    "Duck For President"                               :['2023','Fiction',"Children's",'Less than 300',"Doreen Cronin & Betsy Lewin"],
     "The Story of The Universe in 100 Stars"           :['2023','Non-Fiction','Science','Less than 300',"Florian Freistetter"],
     "The Model Thinker"                                :['2023','Non-Fiction','Science Psychology','300+',"Scott E. Page"],
     "Piranesi"                                         :['2023','Fiction','Fantasy','Less than 300','Susana Clarke'],
