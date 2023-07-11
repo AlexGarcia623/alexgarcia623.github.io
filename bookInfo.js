@@ -2,10 +2,11 @@
 // values -> [author, date finished, pages, [byYear, byGenre], picture]
 
 var current_books = {
-    "The Hobbit":['J.R.R. Tolkein','June 2023',365,'./books/theHobbit.webp'],
+    "The War of the Worlds":['H.G. Wells','July 2023',224,'./books/WarOfTheWorlds.jpeg'],
 }
 
 var books = {
+    "The Hobbit":['J.R.R. Tolkein','July 2023',365,'./books/theHobbit.webp'],
     "The Ascent of Information":['Caleb Scharf','June 2023',352,'./books/AscentOfInfo.jpg'],
     "The Long Way to a Small, Angry Planet":["Becky Chambers",'June 2023',518,'./books/theLongWayToASmallAngryPlanet.jpeg'],
     "Project Hail Mary":["Andy Weir",'June 2023', 476,"./books/ProjectHailMary.jpg"],
@@ -40,6 +41,7 @@ var books = {
 }
 
 var book_classes = {
+    "The War of the Worlds"                            :['2023','Fiction','Sci-fi','Less than 300','H.G. Wells'],
     "The Hobbit"                                       :['2023','Fiction','Fantasy','300+','J.R.R. Tolkein'],
     "The Ascent of Information"                        :['2023','Non-Fiction','Science Psychology','300+','Caleb Scharf'],
     "The Long Way to a Small, Angry Planet"            :['2023','Fiction','Sci-fi','500+','Becky Chambers'],
