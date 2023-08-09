@@ -2,10 +2,11 @@
 // values -> [author, date finished, pages, [byYear, byGenre], picture]
 
 var current_books = {
-    "The War of the Worlds":['H.G. Wells','July 2023',224,'./books/WarOfTheWorlds.jpeg'],
+    "1984":['George Orwell','August 2023',304,'./books/1984.webp'],
 }
 
 var books = {
+    "The War of the Worlds":['H.G. Wells','August 2023',224,'./books/WarOfTheWorlds.jpeg'],
     "The Hobbit":['J.R.R. Tolkein','July 2023',365,'./books/theHobbit.webp'],
     "The Ascent of Information":['Caleb Scharf','June 2023',352,'./books/AscentOfInfo.jpg'],
     "The Long Way to a Small, Angry Planet":["Becky Chambers",'June 2023',518,'./books/theLongWayToASmallAngryPlanet.jpeg'],
@@ -41,6 +42,7 @@ var books = {
 }
 
 var book_classes = {
+    "1984"                                             :['2023','Fiction','Sci-fi','300+','George Orwell'],
     "The War of the Worlds"                            :['2023','Fiction','Sci-fi','Less than 300','H.G. Wells'],
     "The Hobbit"                                       :['2023','Fiction','Fantasy','300+','J.R.R. Tolkein'],
     "The Ascent of Information"                        :['2023','Non-Fiction','Science Psychology','300+','Caleb Scharf'],
