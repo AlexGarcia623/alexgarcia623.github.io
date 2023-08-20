@@ -2,10 +2,11 @@
 // values -> [author, date finished, pages, [byYear, byGenre], picture]
 
 var current_books = {
-    "1984":['George Orwell','August 2023',304,'./books/1984.webp'],
+    "The Iliad":["Homer","August 2023",683,'./books/theIliad.jpeg']
 }
 
 var books = {
+    "1984":['George Orwell','August 2023',304,'./books/1984.webp'],
     "The War of the Worlds":['H.G. Wells','August 2023',224,'./books/WarOfTheWorlds.jpeg'],
     "The Hobbit":['J.R.R. Tolkein','July 2023',365,'./books/theHobbit.webp'],
     "The Ascent of Information":['Caleb Scharf','June 2023',352,'./books/AscentOfInfo.jpg'],
@@ -42,6 +43,7 @@ var books = {
 }
 
 var book_classes = {
+    "The Iliad"                                        :['2023','Fiction','Poetry','500+','Homer'],
     "1984"                                             :['2023','Fiction','Sci-fi','300+','George Orwell'],
     "The War of the Worlds"                            :['2023','Fiction','Sci-fi','Less than 300','H.G. Wells'],
     "The Hobbit"                                       :['2023','Fiction','Fantasy','300+','J.R.R. Tolkein'],
