@@ -2,12 +2,14 @@
 // values -> [author, date finished, pages, [byYear, byGenre], picture]
 
 var current_books = {
-    "Don Quixote":['Miguel De Cervantes',"August 2023",1072,'./books/DonQuixote.jpeg']
+    "Space Chronicles":['Niel DeGrasse Tyson',"September 2023",384,'./books/SpaceChronicles.jpg']
 }
 
 var books = {
+    "2001: A Space Odyssey":['Arthur C. Clarke','September 2023',297,'./books/2001ASpaceOdyssey.jpeg'],
+    "Don Quixote":['Miguel De Cervantes',"September 2023",1072,'./books/DonQuixote.jpeg'],
     "The Iliad":["Homer","August 2023",683,'./books/theIliad.jpeg'],
-    "1984":['George Orwell','August 2023',304,'./books/1984.webp'],
+    " 1984":['George Orwell','August 2023',304,'./books/1984.webp'],
     "The War of the Worlds":['H.G. Wells','August 2023',224,'./books/WarOfTheWorlds.jpeg'],
     "The Hobbit":['J.R.R. Tolkein','July 2023',365,'./books/theHobbit.webp'],
     "The Ascent of Information":['Caleb Scharf','June 2023',352,'./books/AscentOfInfo.jpg'],
@@ -44,9 +46,10 @@ var books = {
 }
 
 var book_classes = {
+    "2001: A Space Odyssey"                            :['2023','Fiction','Sci-fi','Less than 300','Arthur C. Clarke'],
     "Don Quixote"                                      :['2023','Fiction','Classics','1000+','Miguel De Cervantes'],
     "The Iliad"                                        :['2023','Fiction','Classics','500+','Homer'],
-    "1984"                                             :['2023','Fiction','Sci-fi','300+','George Orwell'],
+    " 1984"                                            :['2023','Fiction','Sci-fi','300+','George Orwell'],
     "The War of the Worlds"                            :['2023','Fiction','Sci-fi','Less than 300','H.G. Wells'],
     "The Hobbit"                                       :['2023','Fiction','Fantasy','300+','J.R.R. Tolkein'],
     "The Ascent of Information"                        :['2023','Non-Fiction','Science Psychology','300+','Caleb Scharf'],
