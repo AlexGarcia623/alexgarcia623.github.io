@@ -2,10 +2,11 @@
 // values -> [author, date finished, pages, [byYear, byGenre], picture]
 
 var current_books = {
-    "Space Chronicles":['Niel DeGrasse Tyson',"September 2023",384,'./books/SpaceChronicles.jpg']
+    "It":['Stephen King','October 2023',1120,'./books/it.jpg']
 }
 
 var books = {
+    "Space Chronicles":['Niel DeGrasse Tyson',"October 2023",384,'./books/SpaceChronicles.jpg'],
     "2001: A Space Odyssey":['Arthur C. Clarke','September 2023',297,'./books/2001ASpaceOdyssey.jpeg'],
     "Don Quixote":['Miguel De Cervantes',"September 2023",1072,'./books/DonQuixote.jpeg'],
     "The Iliad":["Homer","August 2023",683,'./books/theIliad.jpeg'],
@@ -46,6 +47,7 @@ var books = {
 }
 
 var book_classes = {
+    "Space Chronicles"                                 :['2023','Non-Fiction','Science','300+','Neil deGrasse Tyson'],
     "2001: A Space Odyssey"                            :['2023','Fiction','Sci-fi','Less than 300','Arthur C. Clarke'],
     "Don Quixote"                                      :['2023','Fiction','Classics','1000+','Miguel De Cervantes'],
     "The Iliad"                                        :['2023','Fiction','Classics','500+','Homer'],
