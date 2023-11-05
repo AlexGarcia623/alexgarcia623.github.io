@@ -2,10 +2,11 @@
 // values -> [author, date finished, pages, [byYear, byGenre], picture]
 
 var current_books = {
-    "The Ultimate Hitchhiker's Guide to the Galaxy":['Douglas Adams','October 2023',823,'./books/UltimateHitchhikers.jpg']
+    "Great Expectations":['Charles Dickens','November 2023', 505, './books/GreatExpectations.jpeg']
 }
 
 var books = {
+    "The Ultimate Hitchhiker's Guide to the Galaxy":['Douglas Adams','November 2023',823,'./books/UltimateHitchhikers.jpg'],
     "It":['Stephen King','October 2023',1120,'./books/it.jpg'],
     "Space Chronicles":['Niel DeGrasse Tyson',"October 2023",384,'./books/SpaceChronicles.jpg'],
     "2001: A Space Odyssey":['Arthur C. Clarke','September 2023',297,'./books/2001ASpaceOdyssey.jpeg'],
@@ -48,6 +49,7 @@ var books = {
 }
 
 var book_classes = {
+    "Great Expectations"                               :['2023','Fiction','Classics','500+','Charles Dickens'],
     "The Ultimate Hitchhiker's Guide to the Galaxy"    :['2023','Fiction','Sci-fi','500+','Douglas Adams'],
     "It"                                               :['2023','Fiction','Horror','1000+','Stephen King'],
     "Space Chronicles"                                 :['2023','Non-Fiction','Science','300+','Neil deGrasse Tyson'],
