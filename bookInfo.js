@@ -2,6 +2,9 @@
 // values -> [author, date finished, pages, [byYear, byGenre], picture]
 
 var current_books = {
+    "A Wrinkle In Time":["Madeleine L'Engle",'December 2023',211,'./books/AWrinkleInTime.jpeg'],
+    "The Song of Achilles":["Madeline Miller",'December 2023',369,'./books/SongOfAchilles.jpeg'],
+    "Red Mars":["Kim Stanley Robinson",'December 2023',592,'./books/RedMars.jpeg'],
     "The Disordered Cosmos":['Chanda Prescod-Weinstein','December 2023',336,'./books/DisorderedCosmos.jpg'],
 }
 
@@ -50,8 +53,14 @@ var books = {
     "Dune":["Frank Herbert","November 2021",604,"./books/Dune.jpeg"]
 }
 
+// key -> Book Title
+// [ Year read, Fiction/Non-Fiction, Sub-Genre, Page bin, Author(s) ]
+
 var book_classes = {
+    "Red Mars"                                         :['2023','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
     "The Disordered Cosmos"                            :['2023','Non-Fiction','Science','300+','Chanda Prescod-Weinstein'],
+    "The Song of Achilles"                             :['2023','Fiction','Fantasy','300+',"Madeline Miller"],
+    "A Wrinkle In Time"                                :['2023','Fiction','Fantasy','Less than 300',"Madeleine L'Engle"],
     "The Haunting Of Hill House"                       :['2023','Fiction','Horror','Less than 300','Shirley Jackson'],
     "Great Expectations"                               :['2023','Fiction','Classics','500+','Charles Dickens'],
     "The Ultimate Hitchhiker's Guide to the Galaxy"    :['2023','Fiction','Sci-fi','500+','Douglas Adams'],
