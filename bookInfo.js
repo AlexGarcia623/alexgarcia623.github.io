@@ -2,13 +2,13 @@
 // values -> [author, date finished, pages, [byYear, byGenre], picture]
 
 var current_books = {
-    "A Wrinkle In Time":["Madeleine L'Engle",'December 2023',211,'./books/AWrinkleInTime.jpeg'],
     "The Song of Achilles":["Madeline Miller",'December 2023',369,'./books/SongOfAchilles.jpeg'],
     "Red Mars":["Kim Stanley Robinson",'December 2023',592,'./books/RedMars.jpeg'],
     "The Disordered Cosmos":['Chanda Prescod-Weinstein','December 2023',336,'./books/DisorderedCosmos.jpg'],
 }
 
 var books = {
+    "A Wrinkle In Time":["Madeleine L'Engle",'December 2023',211,'./books/AWrinkleInTime.jpeg'],
     "The Haunting Of Hill House":['Shirley Jackson','December 2023',204,'./books/HauntingOfHillHouse.jpg'],
     "Great Expectations":['Charles Dickens','November 2023', 505, './books/GreatExpectations.jpeg'],
     "The Ultimate Hitchhiker's Guide to the Galaxy":['Douglas Adams','November 2023',823,'./books/UltimateHitchhikers.jpg'],
