@@ -4,10 +4,12 @@
 var current_books = {
     "The Song of Achilles":["Madeline Miller",'December 2023',369,'./books/SongOfAchilles.jpeg'],
     "Red Mars":["Kim Stanley Robinson",'December 2023',592,'./books/RedMars.jpeg'],
-    "The Disordered Cosmos":['Chanda Prescod-Weinstein','December 2023',336,'./books/DisorderedCosmos.jpg'],
 }
 
 var books = {
+    "The Disordered Cosmos":['Chanda Prescod-Weinstein','January 2024',336,'./books/DisorderedCosmos.jpg'],
+    "Dune":["Frank Herbert","January 2024",604,"./books/Dune.jpeg"],
+
     "A Wrinkle In Time":["Madeleine L'Engle",'December 2023',211,'./books/AWrinkleInTime.jpeg'],
     "The Haunting Of Hill House":['Shirley Jackson','December 2023',204,'./books/HauntingOfHillHouse.jpg'],
     "Great Expectations":['Charles Dickens','November 2023', 505, './books/GreatExpectations.jpeg'],
@@ -50,16 +52,21 @@ var books = {
     "Brave New World":["Aldous Huxley","December 2021",288,"./books/BraveNewWorld.jpeg"],
     "Astrophysics for People in a Hurry":["Neil deGrasse Tyson",'December 2021',222,"./books/AstrophysicsPeopleHurry.jpeg"],
     "Algorithms to Live By: The Computer Science of Human Decisions":["Brian Christan & Tom Griffiths",'December 2021',368,"./books/AlgorithmsToLiveBy.jpeg"],
-    "Dune":["Frank Herbert","November 2021",604,"./books/Dune.jpeg"]
+    "Dune":["Frank Herbert","November 2021 & January 2024",604,"./books/Dune.jpeg"]
 }
 
 // key -> Book Title
 // [ Year read, Fiction/Non-Fiction, Sub-Genre, Page bin, Author(s) ]
 
 var book_classes = {
-    "Red Mars"                                         :['2023','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
-    "The Disordered Cosmos"                            :['2023','Non-Fiction','Science','300+','Chanda Prescod-Weinstein'],
-    "The Song of Achilles"                             :['2023','Fiction','Fantasy','300+',"Madeline Miller"],
+
+    // 2024
+    "Dune"                                             :["2024","Fiction","Sci-fi",'500+','Frank Herbert'],
+    "Red Mars"                                         :['2024','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
+    "The Disordered Cosmos"                            :['2024','Non-Fiction','Science','300+','Chanda Prescod-Weinstein'],
+    "The Song of Achilles"                             :['2024','Fiction','Fantasy','300+',"Madeline Miller"],
+
+    // 2023
     "A Wrinkle In Time"                                :['2023','Fiction','Fantasy','Less than 300',"Madeleine L'Engle"],
     "The Haunting Of Hill House"                       :['2023','Fiction','Horror','Less than 300','Shirley Jackson'],
     "Great Expectations"                               :['2023','Fiction','Classics','500+','Charles Dickens'],
@@ -86,6 +93,7 @@ var book_classes = {
     "The Lord of the Rings: The Fellowship of the Ring":['2023','Fiction',"Fantasy",'300+','J.R.R. Tolkein'],
     "Fire and Blood"                                   :['2023','Fiction',"Fantasy",'500+','George R.R. Martin'],
 
+    // 2022
     "The Sentence is Death"                            :['2022','Fiction',"Mystery",'300+','Anthony Horowitz'],
     "Billions and Billions"                            :["2022","Non-Fiction","Science",'300+','Carl Sagan'],
     "The Martian"                                      :['2022','Fiction',"Sci-fi",'300+','Andy Weir'],
@@ -98,9 +106,10 @@ var book_classes = {
     "Humble Pi: When Math Goes Wrong in the Real World":['2022','Non-Fiction',"Science",'300+','Matt Parker'],
     "The Hitchhiker's Guide to the Galaxy"             :['2022','Fiction',"Sci-fi",'Less than 300','Douglas Adams'],
 
+    // 2021
     "Einstein's Dreams"                                             :['2021','Fiction',"Science",'Less than 300','Alan Lightman'],
     "Brave New World"                                               :['2021','Fiction',"Sci-fi",'Less than 300','Aldous Huxley'],
     "Astrophysics for People in a Hurry"                            :['2021','Non-Fiction',"Science",'Less than 300','Neil deGrasse Tyson'],
     "Algorithms to Live By: The Computer Science of Human Decisions":['2021','Non-Fiction',"Science Psychology",'300+','Brian Christansan & Tom Griffiths'],
-    "Dune"                                                          :["2021","Fiction","Sci-fi",'500+','Frank Herbert']
+    // "Dune"                                                          :["2021","Fiction","Sci-fi",'500+','Frank Herbert'] // I need to fix some logic for this to work..
 }
