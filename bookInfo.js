@@ -2,11 +2,12 @@
 // values -> [author, date finished, pages, [byYear, byGenre], picture]
 
 var current_books = {
-    "The Song of Achilles":["Madeline Miller",'December 2023',369,'./books/SongOfAchilles.jpeg'],
-    "Red Mars":["Kim Stanley Robinson",'December 2023',592,'./books/RedMars.jpeg'],
+    // "Red Mars":["Kim Stanley Robinson",'December 2023',592,'./books/RedMars.jpeg'],
+    "A Psalm for the Wild-Built":["Becky Chambers",'March 2024', 147,'./books/aPsalmForTheWildBuilt.jpg'],
 }
 
 var books = {
+    "The Song of Achilles":["Madeline Miller",'March 2024',369,'./books/SongOfAchilles.jpeg'],
     "The Disordered Cosmos":['Chanda Prescod-Weinstein','January 2024',336,'./books/DisorderedCosmos.jpg'],
     "Dune":["Frank Herbert","January 2024",604,"./books/Dune.jpeg"],
 
@@ -52,7 +53,7 @@ var books = {
     "Brave New World":["Aldous Huxley","December 2021",288,"./books/BraveNewWorld.jpeg"],
     "Astrophysics for People in a Hurry":["Neil deGrasse Tyson",'December 2021',222,"./books/AstrophysicsPeopleHurry.jpeg"],
     "Algorithms to Live By: The Computer Science of Human Decisions":["Brian Christan & Tom Griffiths",'December 2021',368,"./books/AlgorithmsToLiveBy.jpeg"],
-    "Dune":["Frank Herbert","November 2021 & January 2024",604,"./books/Dune.jpeg"]
+    "Dune (Repeat)":["Frank Herbert","November 2021",604,"./books/Dune.jpeg"]
 }
 
 // key -> Book Title
@@ -61,6 +62,7 @@ var books = {
 var book_classes = {
 
     // 2024
+    "A Psalm for the Wild-Built"                       :["2024",'Fiction',"Sci-fi",'Less than 300','Becky Chambers'],
     "Dune"                                             :["2024","Fiction","Sci-fi",'500+','Frank Herbert'],
     "Red Mars"                                         :['2024','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
     "The Disordered Cosmos"                            :['2024','Non-Fiction','Science','300+','Chanda Prescod-Weinstein'],
@@ -111,5 +113,5 @@ var book_classes = {
     "Brave New World"                                               :['2021','Fiction',"Sci-fi",'Less than 300','Aldous Huxley'],
     "Astrophysics for People in a Hurry"                            :['2021','Non-Fiction',"Science",'Less than 300','Neil deGrasse Tyson'],
     "Algorithms to Live By: The Computer Science of Human Decisions":['2021','Non-Fiction',"Science Psychology",'300+','Brian Christansan & Tom Griffiths'],
-    // "Dune"                                                          :["2021","Fiction","Sci-fi",'500+','Frank Herbert'] // I need to fix some logic for this to work..
+    "Dune (Repeat)"                                                 :["2021","Fiction","Sci-fi",'500+','Frank Herbert'] // I need to fix some logic for this to work..
 }
