@@ -3,10 +3,11 @@
 
 var current_books = {
     // "Red Mars":["Kim Stanley Robinson",'December 2023',592,'./books/RedMars.jpeg'],
-    "Optimal Illusions":["Coco Krumme",'March 2024',256,'./books/optimalIllusions.jpeg'],
+    "Dune: Messiah":["Frank Herbert",'March 2024',336,'./books/DuneMessiah.jpg'],
 }
 
 var books = {
+    "Optimal Illusions":["Coco Krumme",'March 2024',256,'./books/optimalIllusions.jpeg'],
     "A Psalm for the Wild-Built":["Becky Chambers",'March 2024', 147,'./books/aPsalmForTheWildBuilt.jpg'],
     "The Song of Achilles":["Madeline Miller",'March 2024',369,'./books/SongOfAchilles.jpeg'],
     "The Disordered Cosmos":['Chanda Prescod-Weinstein','January 2024',336,'./books/DisorderedCosmos.jpg'],
@@ -63,7 +64,8 @@ var books = {
 var book_classes = {
 
     // 2024
-    "Optimal Illusions"                                :["2024",'Non-Fiction','Science Psychology','Coco Krumme'],
+    "Dune: Messiah"                                    :["2024","Fiction","Sci-fi","300+",'Frank Herbert'],
+    "Optimal Illusions"                                :["2024",'Non-Fiction','Science Psychology','Less than 300','Coco Krumme'],
     "A Psalm for the Wild-Built"                       :["2024",'Fiction',"Sci-fi",'Less than 300','Becky Chambers'],
     "Dune"                                             :["2024","Fiction","Sci-fi",'500+','Frank Herbert'],
     "Red Mars"                                         :['2024','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
