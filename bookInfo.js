@@ -3,10 +3,14 @@
 
 var current_books = {
     // "Red Mars":["Kim Stanley Robinson",'December 2023',592,'./books/RedMars.jpeg'],
-    "Dune: Messiah":["Frank Herbert",'March 2024',336,'./books/DuneMessiah.jpg'],
+    "The Big Bang of Numbers":["Manli Suri","May 2024",384,'./books/TheBigBangOfNumbers.jpg'],
+    "A Knight of the Seven Kingdoms":["George R.R. Martin","May 2024",355,'./books/DunkAndEgg.jpg'],
 }
 
 var books = {
+    "And Then There Were None":["Agatha Christie","May 2024",264,'./books/AndThenThereWereNone.jpg'],
+    "I, Robot":["Isaac Asimov",'May 2024',224,'./books/iRobot.jpeg'],
+    "Dune: Messiah":["Frank Herbert",'May 2024',336,'./books/DuneMessiah.jpg'],
     "Optimal Illusions":["Coco Krumme",'March 2024',256,'./books/optimalIllusions.jpeg'],
     "A Psalm for the Wild-Built":["Becky Chambers",'March 2024', 147,'./books/aPsalmForTheWildBuilt.jpg'],
     "The Song of Achilles":["Madeline Miller",'March 2024',369,'./books/SongOfAchilles.jpeg'],
@@ -64,6 +68,8 @@ var books = {
 var book_classes = {
 
     // 2024
+    "And Then There Were None"                         :["2024","Fiction","Mystery","Less than 300","Agatha Christie"],
+    "I, Robot"                                         :["2024",'Fiction','Sci-fi','Less than 300','Isaac Asimov'],
     "Dune: Messiah"                                    :["2024","Fiction","Sci-fi","300+",'Frank Herbert'],
     "Optimal Illusions"                                :["2024",'Non-Fiction','Science Psychology','Less than 300','Coco Krumme'],
     "A Psalm for the Wild-Built"                       :["2024",'Fiction',"Sci-fi",'Less than 300','Becky Chambers'],
@@ -74,7 +80,7 @@ var book_classes = {
 
     // 2023
     "A Wrinkle In Time"                                :['2023','Fiction','Fantasy','Less than 300',"Madeleine L'Engle"],
-    "The Haunting Of Hill House"                       :['2023','Fiction','Horror','Less than 300','Shirley Jackson'],
+    "The Haunting Of Hill House"                       :['2023','Fiction','Mystery','Less than 300','Shirley Jackson'],
     "Great Expectations"                               :['2023','Fiction','Classics','500+','Charles Dickens'],
     "The Ultimate Hitchhiker's Guide to the Galaxy"    :['2023','Fiction','Sci-fi','500+','Douglas Adams'],
     "It"                                               :['2023','Fiction','Horror','1000+','Stephen King'],
