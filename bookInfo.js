@@ -3,11 +3,12 @@
 
 var current_books = {
     // "Red Mars":["Kim Stanley Robinson",'December 2023',592,'./books/RedMars.jpeg'],
-    "The Big Bang of Numbers":["Manli Suri","May 2024",384,'./books/TheBigBangOfNumbers.jpg'],
+    "Moby Dick":["Herman Melville",'June 2024',720,'./books/mobileRichard.jpeg'],
     "A Knight of the Seven Kingdoms":["George R.R. Martin","May 2024",355,'./books/DunkAndEgg.jpg'],
 }
 
 var books = {
+    "The Big Bang of Numbers":["Manli Suri","June 2024",384,'./books/TheBigBangOfNumbers.jpg'],
     "And Then There Were None":["Agatha Christie","May 2024",264,'./books/AndThenThereWereNone.jpg'],
     "I, Robot":["Isaac Asimov",'May 2024',224,'./books/iRobot.jpeg'],
     "Dune: Messiah":["Frank Herbert",'May 2024',336,'./books/DuneMessiah.jpg'],
@@ -68,6 +69,7 @@ var books = {
 var book_classes = {
 
     // 2024
+    "The Big Bang of Numbers"                          :["2024","Non-Fiction","Science","300+","Manli Suri"],
     "And Then There Were None"                         :["2024","Fiction","Mystery","Less than 300","Agatha Christie"],
     "I, Robot"                                         :["2024",'Fiction','Sci-fi','Less than 300','Isaac Asimov'],
     "Dune: Messiah"                                    :["2024","Fiction","Sci-fi","300+",'Frank Herbert'],
