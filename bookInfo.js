@@ -2,12 +2,16 @@
 // values -> [author, date finished, pages, [byYear, byGenre], picture]
 
 var current_books = {
-    // "Red Mars":["Kim Stanley Robinson",'December 2023',592,'./books/RedMars.jpeg'],
+    "Jurassic Park":["Michael Crichton",'July 2024',449,'./books/jurassicPark.jpg'],
     "Moby Dick":["Herman Melville",'June 2024',720,'./books/mobileRichard.jpeg'],
-    "A Knight of the Seven Kingdoms":["George R.R. Martin","May 2024",355,'./books/DunkAndEgg.jpg'],
 }
 
+// key -> Book Title
+// values -> [author, date finished, pages, [byYear, byGenre], picture]
+
 var books = {
+    // 2024
+    "A Knight of the Seven Kingdoms":["George R.R. Martin","July 2024",355,'./books/DunkAndEgg.jpg'],
     "The Big Bang of Numbers":["Manli Suri","June 2024",384,'./books/TheBigBangOfNumbers.jpg'],
     "And Then There Were None":["Agatha Christie","May 2024",264,'./books/AndThenThereWereNone.jpg'],
     "I, Robot":["Isaac Asimov",'May 2024',224,'./books/iRobot.jpeg'],
@@ -18,6 +22,7 @@ var books = {
     "The Disordered Cosmos":['Chanda Prescod-Weinstein','January 2024',336,'./books/DisorderedCosmos.jpg'],
     "Dune":["Frank Herbert","January 2024",604,"./books/Dune.jpeg"],
 
+    // 2023
     "A Wrinkle In Time":["Madeleine L'Engle",'December 2023',211,'./books/AWrinkleInTime.jpeg'],
     "The Haunting Of Hill House":['Shirley Jackson','December 2023',204,'./books/HauntingOfHillHouse.jpg'],
     "Great Expectations":['Charles Dickens','November 2023', 505, './books/GreatExpectations.jpeg'],
@@ -44,6 +49,7 @@ var books = {
     "The Lord of the Rings: The Fellowship of the Ring":["J.R.R. Tolkien",'March 2023',398,"./books/FellowshipOfTheRing.jpg"],
     "Fire and Blood":["George R.R. Martin",'January 2023',736,"./books/fireAndBlood.jpg","Fantasy"],
 
+    // 2022
     "The Sentence is Death":["Anthony Horowitz","August 2022",384,"./books/theSentenceIsDeath.jpg"],
     "Billions and Billions":["Carl Sagan","August 2022",320,"./books/BillionsAndBillions.jpeg"],
     "The Martian":["Andy Weir","August 2022",369,"./books/theMartian.jpeg"],
@@ -56,6 +62,7 @@ var books = {
     "Humble Pi: When Math Goes Wrong in the Real World":["Matt Parker",'January 2022',336,"./books/HumblePi.jpeg"],
     "The Hitchhiker's Guide to the Galaxy":["Douglas Adams",'January 2022',208,"./books/HitchhikerGuide.jpeg"],
 
+    // 2021
     "Einstein's Dreams":["Alan Lightman","December 2021",144,"./books/EinsteinsDreams.jpeg"],
     "Brave New World":["Aldous Huxley","December 2021",288,"./books/BraveNewWorld.jpeg"],
     "Astrophysics for People in a Hurry":["Neil deGrasse Tyson",'December 2021',222,"./books/AstrophysicsPeopleHurry.jpeg"],
@@ -64,11 +71,14 @@ var books = {
 }
 
 // key -> Book Title
-// [ Year read, Fiction/Non-Fiction, Sub-Genre, Page bin, Author(s) ]
+// values -> [ Year read, Fiction/Non-Fiction, Sub-Genre, Page bin, Author(s) ]
 
 var book_classes = {
 
     // 2024
+    "Jurassic Park"                                    :["2024","Fiction","Sci-fi","300+","Michael Crichton"],
+    "Moby Dick"                                        :["2024","Fiction","Classics",'500+',"Herman Melville"],
+    "A Knight of the Seven Kingdoms"                   :["2024","Fiction",'Fantasy',"300+","George R.R. Martin"],
     "The Big Bang of Numbers"                          :["2024","Non-Fiction","Science","300+","Manli Suri"],
     "And Then There Were None"                         :["2024","Fiction","Mystery","Less than 300","Agatha Christie"],
     "I, Robot"                                         :["2024",'Fiction','Sci-fi','Less than 300','Isaac Asimov'],

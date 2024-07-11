@@ -228,12 +228,25 @@ function makeCurrentBooks() {
         s = '';
       }
 
-      location_of_text.innerHTML = 'I have read ' + String(n_books) + ' book' + s + ' in this category for a total of ' + n_pages.toLocaleString() + ' pages';
+      location_of_text.innerHTML = 'I have read ' + String(n_books) + ' book' + s + ' in this category for a total of ' + n_pages.toLocaleString() + ' pages.';
+
+      location_of_text.innerHTML += '<br><br>Average book length: ' + parseInt(n_pages/n_books).toLocaleString() + ' pages.';
 
       total_books = total_books + n_books;
       total_pages = total_pages + n_pages;
     }
 
-    var complete_string = 'As of last update, I have finished a total of ' + String(total_books) + ' books for a total of ' + total_pages.toLocaleString() + ' pages since November 2021';
+    let currentDate = new Date();
+    let startDate = new Date(2021, 10, 1); // Months are zero-indexed in JavaScript
+
+    let yearsDiff = currentDate.getFullYear() - startDate.getFullYear();
+    let monthsDiff = currentDate.getMonth() - startDate.getMonth();
+
+    let totalMonths = yearsDiff * 12 + monthsDiff;
+
+    var complete_string = 'Since November 2021, I have finished ' + String(total_books) + ' books totaling ' + total_pages.toLocaleString() + ' pages.';
+    complete_string += '<br><br>I average approximately ' + String( parseInt(total_pages / total_books) ) + " pages per book, ";
+    complete_string += (total_books/totalMonths).toFixed(1).toLocaleString() + " books per month, ";
+    complete_string += 'and ' + ( parseInt(total_pages / totalMonths)).toLocaleString() + " pages per month.";
     document.getElementById('recent').getElementsByTagName('p')[0].innerHTML = complete_string;
   }
