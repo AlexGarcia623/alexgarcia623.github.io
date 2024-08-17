@@ -2,7 +2,7 @@
 // values -> [author, date finished, pages, [byYear, byGenre], picture]
 
 var current_books = {
-    "A Line To Kill":["Anthony Horowitz",'July 2024',384,'./books/ALineToKill.jpg'],
+    "The Twist of a Knife":["Anthony Horowitz",'August 2024',384,'./books/TwistOfKnife.jpg'],
     "Jurassic Park":["Michael Crichton",'July 2024',449,'./books/jurassicPark.jpg'],
 }
 
@@ -11,6 +11,7 @@ var current_books = {
 
 var books = {
     // 2024
+    "A Line To Kill":["Anthony Horowitz",'August 2024',384,'./books/ALineToKill.jpg'],
     "Moby Dick":["Herman Melville",'July 2024',720,'./books/mobileRichard.jpeg'],
     "A Knight of the Seven Kingdoms":["George R.R. Martin","July 2024",355,'./books/DunkAndEgg.jpg'],
     "The Big Bang of Numbers":["Manli Suri","June 2024",384,'./books/TheBigBangOfNumbers.jpg'],
@@ -77,6 +78,7 @@ var books = {
 var book_classes = {
 
     // 2024
+    "The Twist of a Knife"                             :["2024","Fiction","Mystery","300+","Anthony Horowitz"],
     "A Line To Kill"                                   :["2024","Fiction","Mystery","300+","Anthony Horowitz"],
     "Jurassic Park"                                    :["2024","Fiction","Sci-fi","300+","Michael Crichton"],
     "Moby Dick"                                        :["2024","Fiction","Classics",'500+',"Herman Melville"],
