@@ -2,7 +2,7 @@
 // values -> [author, date finished, pages, [byYear, byGenre], picture]
 
 var current_books = {
-    "The Twist of a Knife":["Anthony Horowitz",'August 2024',384,'./books/TwistOfKnife.jpg'],
+    "Thinking Better":['Marcus Du Sautoy','August 2024',326,'./books/thinkingBetter.jpg'],
     "Jurassic Park":["Michael Crichton",'July 2024',449,'./books/jurassicPark.jpg'],
 }
 
@@ -11,6 +11,8 @@ var current_books = {
 
 var books = {
     // 2024
+    // "Thinking Better":['Marcus Du Sautoy','August 2024',326,'./books/thinkingBetter.jpg'],
+    "The Twist of a Knife":["Anthony Horowitz",'August 2024',384,'./books/TwistOfKnife.jpg'],
     "A Line To Kill":["Anthony Horowitz",'August 2024',384,'./books/ALineToKill.jpg'],
     "Moby Dick":["Herman Melville",'July 2024',720,'./books/mobileRichard.jpeg'],
     "A Knight of the Seven Kingdoms":["George R.R. Martin","July 2024",355,'./books/DunkAndEgg.jpg'],
@@ -78,6 +80,7 @@ var books = {
 var book_classes = {
 
     // 2024
+    "Thinking Better"                                  :['2024','Non-Fiction','Science Psychology','300+','Marcus Du Sautoy'],
     "The Twist of a Knife"                             :["2024","Fiction","Mystery","300+","Anthony Horowitz"],
     "A Line To Kill"                                   :["2024","Fiction","Mystery","300+","Anthony Horowitz"],
     "Jurassic Park"                                    :["2024","Fiction","Sci-fi","300+","Michael Crichton"],
