@@ -1,17 +1,24 @@
 // key -> Book Title
-// values -> [author, date finished, pages, [byYear, byGenre], picture]
+// values -> [ author, date started, pages, picture ]
 
 var current_books = {
-    "Thinking Better":['Marcus Du Sautoy','August 2024',326,'./books/thinkingBetter.jpg'],
+    // "Green Mars":["Kim Stanley Robinson","September 2024",640,'./books/GreenMars.jpg'],
+    // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
+    // "Red Mars":["Kim Stanley Robinson","September 2024",592,'./books/RedMars.jpeg'],
+    "The Adventures of Sherlock Holmes":["Arthur Conan Doyal",'August 2024',711,'./books/SherlockHolmes.jpg'],
     "Jurassic Park":["Michael Crichton",'July 2024',449,'./books/jurassicPark.jpg'],
 }
 
 // key -> Book Title
-// values -> [author, date finished, pages, [byYear, byGenre], picture]
+// values -> [ author, date finished, pages, picture ] // Same as above
 
 var books = {
     // 2024
-    // "Thinking Better":['Marcus Du Sautoy','August 2024',326,'./books/thinkingBetter.jpg'],
+    // "Green Mars":["Kim Stanley Robinson","September 2024",640,'./books/GreenMars.jpg'],
+    // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
+    // "Red Mars":["Kim Stanley Robinson","September 2024",592,'./books/RedMars.jpeg'],
+    // "The Adventures of Sherlock Holmes":["Arthur Conan Doyal",'August 2024',711,'./books/SherlockHolmes.jpg'],
+    "Thinking Better":['Marcus Du Sautoy','August 2024',326,'./books/thinkingBetter.jpg'],
     "The Twist of a Knife":["Anthony Horowitz",'August 2024',384,'./books/TwistOfKnife.jpg'],
     "A Line To Kill":["Anthony Horowitz",'August 2024',384,'./books/ALineToKill.jpg'],
     "Moby Dick":["Herman Melville",'July 2024',720,'./books/mobileRichard.jpeg'],
@@ -75,11 +82,15 @@ var books = {
 }
 
 // key -> Book Title
-// values -> [ Year read, Fiction/Non-Fiction, Sub-Genre, Page bin, Author(s) ]
+// values -> [ year read, Fiction/Non-Fiction, subgenre, pages bin, author ]
 
 var book_classes = {
 
     // 2024
+    "Green Mars"                                       :['2024','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
+    "Blue Mars"                                        :['2024','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
+    "Red Mars"                                         :['2024','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
+    "The Adventures of Sherlock Holmes"                :['2024','Fiction','Mystery','500+','Arthur Conan Doyle'],
     "Thinking Better"                                  :['2024','Non-Fiction','Science Psychology','300+','Marcus Du Sautoy'],
     "The Twist of a Knife"                             :["2024","Fiction","Mystery","300+","Anthony Horowitz"],
     "A Line To Kill"                                   :["2024","Fiction","Mystery","300+","Anthony Horowitz"],
@@ -93,7 +104,6 @@ var book_classes = {
     "Optimal Illusions"                                :["2024",'Non-Fiction','Science Psychology','Less than 300','Coco Krumme'],
     "A Psalm for the Wild-Built"                       :["2024",'Fiction',"Sci-fi",'Less than 300','Becky Chambers'],
     "Dune"                                             :["2024","Fiction","Sci-fi",'500+','Frank Herbert'],
-    "Red Mars"                                         :['2024','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
     "The Disordered Cosmos"                            :['2024','Non-Fiction','Science','300+','Chanda Prescod-Weinstein'],
     "The Song of Achilles"                             :['2024','Fiction','Fantasy','300+',"Madeline Miller"],
 
@@ -142,5 +152,5 @@ var book_classes = {
     "Brave New World"                                               :['2021','Fiction',"Sci-fi",'Less than 300','Aldous Huxley'],
     "Astrophysics for People in a Hurry"                            :['2021','Non-Fiction',"Science",'Less than 300','Neil deGrasse Tyson'],
     "Algorithms to Live By: The Computer Science of Human Decisions":['2021','Non-Fiction',"Science Psychology",'300+','Brian Christansan & Tom Griffiths'],
-    "Dune (Repeat)"                                                 :["2021","Fiction","Sci-fi",'500+','Frank Herbert'] // I need to fix some logic for this to work..
+    "Dune (Repeat)"                                                 :["2021","Fiction","Sci-fi",'500+','Frank Herbert'] 
 }
