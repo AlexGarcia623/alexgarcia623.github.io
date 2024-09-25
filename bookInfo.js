@@ -4,8 +4,7 @@
 var current_books = {
     // "Green Mars":["Kim Stanley Robinson","September 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
-    // "Red Mars":["Kim Stanley Robinson","September 2024",592,'./books/RedMars.jpeg'],
-    "The Adventures of Sherlock Holmes":["Arthur Conan Doyal",'August 2024',711,'./books/SherlockHolmes.jpg'],
+    "Red Mars":["Kim Stanley Robinson","September 2024",592,'./books/RedMars.jpeg'],
     "Jurassic Park":["Michael Crichton",'July 2024',449,'./books/jurassicPark.jpg'],
 }
 
@@ -17,7 +16,7 @@ var books = {
     // "Green Mars":["Kim Stanley Robinson","September 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
     // "Red Mars":["Kim Stanley Robinson","September 2024",592,'./books/RedMars.jpeg'],
-    // "The Adventures of Sherlock Holmes":["Arthur Conan Doyal",'August 2024',711,'./books/SherlockHolmes.jpg'],
+    "The Adventures of Sherlock Holmes":["Arthur Conan Doyal",'August 2024',711,'./books/SherlockHolmes.jpg'],
     "Thinking Better":['Marcus Du Sautoy','August 2024',326,'./books/thinkingBetter.jpg'],
     "The Twist of a Knife":["Anthony Horowitz",'August 2024',384,'./books/TwistOfKnife.jpg'],
     "A Line To Kill":["Anthony Horowitz",'August 2024',384,'./books/ALineToKill.jpg'],
