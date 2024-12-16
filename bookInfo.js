@@ -2,20 +2,22 @@
 // values -> [ author, date started, pages, picture ]
 
 var current_books = {
-    // "Green Mars":["Kim Stanley Robinson","September 2024",640,'./books/GreenMars.jpg'],
+    "Green Mars":["Kim Stanley Robinson","December 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
-    "Red Mars":["Kim Stanley Robinson","September 2024",592,'./books/RedMars.jpeg'],
-    "Nemesis":["Isaac Asimov","October 2023",400,'./books/nemesis.jpg']
+    "Nemesis":["Isaac Asimov","October 2024",400,'./books/nemesis.jpg']
 }
 
 // key -> Book Title
 // values -> [ author, date finished, pages, picture ] // Same as above
 
 var books = {
-    // 2024
+    // 2025
     // "Green Mars":["Kim Stanley Robinson","September 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
-    // "Red Mars":["Kim Stanley Robinson","September 2024",592,'./books/RedMars.jpeg'],
+    // "Nemesis":["Isaac Asmiov","October 2024",400,'./books/nemesis.jpg']
+
+    // 2024
+    "Red Mars":["Kim Stanley Robinson","December 2024",592,'./books/RedMars.jpeg'],
     "Jurassic Park":["Michael Crichton",'October 2024',449,'./books/jurassicPark.jpg'],
     "The Adventures of Sherlock Holmes":["Arthur Conan Doyal",'August 2024',711,'./books/SherlockHolmes.jpg'],
     "Thinking Better":['Marcus Du Sautoy','August 2024',326,'./books/thinkingBetter.jpg'],
@@ -86,11 +88,12 @@ var books = {
 
 var book_classes = {
 
-    "Green Mars"                                       :['2024','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
-    "Blue Mars"                                        :['2024','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
+    // 2025
+    "Green Mars"                                       :['2025','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
+    "Blue Mars"                                        :['2025','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
+    "Nemesis"                                          :['2025','Fiction','Sci-fi','300+','Isaac Asimov'],
 
     // 2024
-    "Nemesis"                                          :['2024','Fiction','Sci-fi','300+','Isaac Asimov'],
     "Red Mars"                                         :['2024','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
     "The Adventures of Sherlock Holmes"                :['2024','Fiction','Mystery','500+','Arthur Conan Doyle'],
     "Thinking Better"                                  :['2024','Non-Fiction','Science Psychology','300+','Marcus Du Sautoy'],
