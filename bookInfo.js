@@ -4,7 +4,6 @@
 var current_books = {
     "Green Mars":["Kim Stanley Robinson","December 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
-    "Nemesis":["Isaac Asimov","October 2024",400,'./books/nemesis.jpg']
 }
 
 // key -> Book Title
@@ -14,7 +13,7 @@ var books = {
     // 2025
     // "Green Mars":["Kim Stanley Robinson","September 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
-    // "Nemesis":["Isaac Asmiov","October 2024",400,'./books/nemesis.jpg']
+    "Nemesis":["Isaac Asmiov","January 2025",400,'./books/nemesis.jpg'],
 
     // 2024
     "Red Mars":["Kim Stanley Robinson","December 2024",592,'./books/RedMars.jpeg'],
