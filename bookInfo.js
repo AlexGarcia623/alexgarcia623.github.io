@@ -4,7 +4,7 @@
 var current_books = {
     // "Green Mars":["Kim Stanley Robinson","December 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
-    "The Joy of X":['Steven Strogatz','January 2025',336,'./books/theJoyOfX.jpg']
+    "Player Piano":["Kurt Vonnegut","February 2024",341,'./books/playerPiano.jpg']
 }
 
 // key -> Book Title
@@ -14,6 +14,7 @@ var books = {
     // 2025
     // "Green Mars":["Kim Stanley Robinson","September 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
+    "The Joy of X":['Steven Strogatz','January 2025',336,'./books/theJoyOfX.jpg'],
     "Nemesis":["Isaac Asmiov","January 2025",400,'./books/nemesis.jpg'],
 
     // 2024
@@ -89,6 +90,7 @@ var books = {
 var book_classes = {
 
     // 2025
+    "The Joy of X"                                     :['2025','Non-Fiction','Science','300+','Steven Strogatz'],
     "Green Mars"                                       :['2025','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
     "Blue Mars"                                        :['2025','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
     "Nemesis"                                          :['2025','Fiction','Sci-fi','300+','Isaac Asimov'],
