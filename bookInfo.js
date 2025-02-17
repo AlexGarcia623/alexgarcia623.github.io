@@ -4,7 +4,7 @@
 var current_books = {
     // "Green Mars":["Kim Stanley Robinson","December 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
-    "Player Piano":["Kurt Vonnegut","February 2024",341,'./books/playerPiano.jpg']
+    "Numbers Don't Lie":["Vaclav Smil","Feburary 2025",384,'./books/NumbersDontLie.jpg']
 }
 
 // key -> Book Title
@@ -14,6 +14,7 @@ var books = {
     // 2025
     // "Green Mars":["Kim Stanley Robinson","September 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
+    "Player Piano":["Kurt Vonnegut","February 2025",341,'./books/playerPiano.jpg'],
     "The Joy of X":['Steven Strogatz','January 2025',336,'./books/theJoyOfX.jpg'],
     "Nemesis":["Isaac Asmiov","January 2025",400,'./books/nemesis.jpg'],
 
@@ -90,7 +91,8 @@ var books = {
 var book_classes = {
 
     // 2025
-    "The Joy of X"                                     :['2025','Non-Fiction','Science','300+','Steven Strogatz'],
+    "Player Piano"                                     :['2025','Fiction','Dystopian Fiction','300+','Kurt Vonnegut'],
+    "The Joy of X"                                     :['2025','Non-Fiction','Science/Math','300+','Steven Strogatz'],
     "Green Mars"                                       :['2025','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
     "Blue Mars"                                        :['2025','Fiction','Sci-fi','500+',"Kim Stanley Robinson"],
     "Nemesis"                                          :['2025','Fiction','Sci-fi','300+','Isaac Asimov'],
@@ -104,14 +106,14 @@ var book_classes = {
     "Jurassic Park"                                    :["2024","Fiction","Sci-fi","300+","Michael Crichton"],
     "Moby Dick"                                        :["2024","Fiction","Classics",'500+',"Herman Melville"],
     "A Knight of the Seven Kingdoms"                   :["2024","Fiction",'Fantasy',"300+","George R.R. Martin"],
-    "The Big Bang of Numbers"                          :["2024","Non-Fiction","Science","300+","Manli Suri"],
+    "The Big Bang of Numbers"                          :["2024","Non-Fiction","Science/Math","300+","Manli Suri"],
     "And Then There Were None"                         :["2024","Fiction","Mystery","Less than 300","Agatha Christie"],
     "I, Robot"                                         :["2024",'Fiction','Sci-fi','Less than 300','Isaac Asimov'],
     "Dune: Messiah"                                    :["2024","Fiction","Sci-fi","300+",'Frank Herbert'],
     "Optimal Illusions"                                :["2024",'Non-Fiction','Science Psychology','Less than 300','Coco Krumme'],
     "A Psalm for the Wild-Built"                       :["2024",'Fiction',"Sci-fi",'Less than 300','Becky Chambers'],
-    "Dune"                                             :["2024","Fiction","Sci-fi",'500+','Frank Herbert'],
-    "The Disordered Cosmos"                            :['2024','Non-Fiction','Science','300+','Chanda Prescod-Weinstein'],
+    "Dune (Repeat)"                                    :["2024","Fiction","Sci-fi",'500+','Frank Herbert'],
+    "The Disordered Cosmos"                            :['2024','Non-Fiction','Science Psychology','300+','Chanda Prescod-Weinstein'],
     "The Song of Achilles"                             :['2024','Fiction','Fantasy','300+',"Madeline Miller"],
 
     // 2023
@@ -120,11 +122,11 @@ var book_classes = {
     "Great Expectations"                               :['2023','Fiction','Classics','500+','Charles Dickens'],
     "The Ultimate Hitchhiker's Guide to the Galaxy"    :['2023','Fiction','Sci-fi','500+','Douglas Adams'],
     "It"                                               :['2023','Fiction','Horror','1000+','Stephen King'],
-    "Space Chronicles"                                 :['2023','Non-Fiction','Science','300+','Neil deGrasse Tyson'],
+    "Space Chronicles"                                 :['2023','Non-Fiction','Science/Math','300+','Neil deGrasse Tyson'],
     "2001: A Space Odyssey"                            :['2023','Fiction','Sci-fi','Less than 300','Arthur C. Clarke'],
     "Don Quixote"                                      :['2023','Fiction','Classics','1000+','Miguel De Cervantes'],
     "The Iliad"                                        :['2023','Fiction','Classics','500+','Homer'],
-    " 1984"                                            :['2023','Fiction','Sci-fi','300+','George Orwell'],
+    " 1984"                                            :['2023','Fiction','Dystopian Fiction','300+','George Orwell'],
     "The War of the Worlds"                            :['2023','Fiction','Sci-fi','Less than 300','H.G. Wells'],
     "The Hobbit"                                       :['2023','Fiction','Fantasy','300+','J.R.R. Tolkein'],
     "The Ascent of Information"                        :['2023','Non-Fiction','Science Psychology','300+','Caleb Scharf'],
@@ -133,7 +135,7 @@ var book_classes = {
     "The Day We Discovered The Universe"               :['2023','Non-Fiction','History','300+','Marcia Bartusiak'],
     "How To Think About Weird Things"                  :['2023','Non-Fiction','Science Psychology','300+','Theodore Schick Jr. & Lewis Vaughn'],
     "Duck For President"                               :['2023','Fiction',"Children's",'Less than 300',"Doreen Cronin & Betsy Lewin"],
-    "The Story of The Universe in 100 Stars"           :['2023','Non-Fiction','Science','Less than 300',"Florian Freistetter"],
+    "The Story of The Universe in 100 Stars"           :['2023','Non-Fiction','Science/Math','Less than 300',"Florian Freistetter"],
     "The Model Thinker"                                :['2023','Non-Fiction','Science Psychology','300+',"Scott E. Page"],
     "Piranesi"                                         :['2023','Fiction','Fantasy','Less than 300','Susana Clarke'],
     "The Lord of the Rings: The Return of the King"    :['2023','Fiction',"Fantasy",'500+','J.R.R. Tolkein'],
@@ -143,7 +145,7 @@ var book_classes = {
 
     // 2022
     "The Sentence is Death"                            :['2022','Fiction',"Mystery",'300+','Anthony Horowitz'],
-    "Billions and Billions"                            :["2022","Non-Fiction","Science",'300+','Carl Sagan'],
+    "Billions and Billions"                            :["2022","Non-Fiction","Science/Math",'300+','Carl Sagan'],
     "The Martian"                                      :['2022','Fiction',"Sci-fi",'300+','Andy Weir'],
     "A Dance with Dragons"                             :['2022','Fiction',"Fantasy",'1000+','George R.R. Martin'],
     "A Feast for Crows"                                :['2022','Fiction',"Fantasy",'1000+','George R.R. Martin'],
@@ -151,13 +153,13 @@ var book_classes = {
     "A Clash of Kings"                                 :['2022','Fiction',"Fantasy",'1000+','George R.R. Martin'],
     "A Game of Thrones"                                :['2022','Fiction',"Fantasy",'500+','George R.R. Martin'],
     "The Word is Murder"                               :['2022','Fiction',"Mystery",'300+','Anthony Horowitz'],
-    "Humble Pi: When Math Goes Wrong in the Real World":['2022','Non-Fiction',"Science",'300+','Matt Parker'],
+    "Humble Pi: When Math Goes Wrong in the Real World":['2022','Non-Fiction',"Science/Math",'300+','Matt Parker'],
     "The Hitchhiker's Guide to the Galaxy"             :['2022','Fiction',"Sci-fi",'Less than 300','Douglas Adams'],
 
     // 2021
-    "Einstein's Dreams"                                             :['2021','Fiction',"Science",'Less than 300','Alan Lightman'],
-    "Brave New World"                                               :['2021','Fiction',"Sci-fi",'Less than 300','Aldous Huxley'],
-    "Astrophysics for People in a Hurry"                            :['2021','Non-Fiction',"Science",'Less than 300','Neil deGrasse Tyson'],
+    "Einstein's Dreams"                                             :['2021','Fiction',"Science Psychology",'Less than 300','Alan Lightman'],
+    "Brave New World"                                               :['2021','Fiction',"Dystopian Fiction",'Less than 300','Aldous Huxley'],
+    "Astrophysics for People in a Hurry"                            :['2021','Non-Fiction',"Science/Math",'Less than 300','Neil deGrasse Tyson'],
     "Algorithms to Live By: The Computer Science of Human Decisions":['2021','Non-Fiction',"Science Psychology",'300+','Brian Christansan & Tom Griffiths'],
-    "Dune (Repeat)"                                                 :["2021","Fiction","Sci-fi",'500+','Frank Herbert'] 
+    "Dune"                                                          :["2021","Fiction","Sci-fi",'500+','Frank Herbert'] 
 }
