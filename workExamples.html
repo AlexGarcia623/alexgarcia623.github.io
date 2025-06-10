@@ -269,33 +269,38 @@ video {
   <p>
     I am a galaxy evolution theorist. I spend a lot of time in cosmological simulations. <br><br>
     Recently, I have been trying to understand the baryon cycle -- specifically by quantifying how 
-    changes in stellar feedback models of simulations impact galaxies as a whole. I've been trying to understand
-    if there are obsverational diagnostics for the extent to which a galaxy's feedback is "bursty" or "gentle".
+    changes in stellar feedback models of simulations impact galaxies as a whole.
+    I've been really interested in tuning the SMUGGLE model for cosmological zoom ins! Check out the video below for one such (well behaved galaxy)
+    <!-- I've been trying to understand -->
+    <!-- if there are obsverational diagnostics for the extent to which a galaxy's feedback is "bursty" or "gentle". -->
 
   </p>
 
-  <video class="center" controls>
+  <!-- <video class="center" controls>
     <source src="./ResearchRelated/alpha_TNG.mp4" type="video/mp4">
-  </video>
+  </video> -->
 
-  <p class="center" style="width:50%;min-width: 35ch;border: solid 0.25em steelblue;padding: 5px;border-radius: 15px;background-color: lightblue;">
+  <img class="center" src="./ResearchRelated/movie_no_number.gif" style="width: 40%;"/>  
+
+  <!-- <p class="center" style="width:50%;min-width: 35ch;border: solid 0.25em steelblue;padding: 5px;border-radius: 15px;background-color: lightblue;">
     <span style="color:red;">Download the full-resolution videos below!</span><br>
     This is an animation for a recent project I've been working on. 
     It shows the Mannucci et al. (2010) parameterization of the fundamental metallicity relation (FMR) across cosmic time in the Illustris TNG-100 simulation.
     The left panel is the dispersion, or overall measure of scatter, about the relation on the right as a function of the free parameter alpha.
     The minimum scatter relation is what we refer to as the "global" version of the FMR. 
     To learn more about the FMR check out my recent work: <a href="#HowFisFMR">Paper I</a> <a href="#deconstructingFMR">Paper II</a> 
-  </p>
+  </p> -->
 
-  <p>
+  <!-- <p>
     Intersted in the videos? &nbsp;
     <a href="./ResearchRelated/Garcia2023_FMR_TNG.mp4" download="Garcia2023_FMR_TNG">TNG FMR Video Download</a> (5.4 MB) &nbsp;
     <a href="./ResearchRelated/Garcia2023_FMR_Illustris.mp4" download="Garcia2023_FMR_Illustris">Illustris FMR Video Download</a> (4.6 MB) &nbsp;
     <a href="./ResearchRelated/Garcia2023_FMR_EAGLE.mp4" download="Garcia2023_FMR_EAGLE">EAGLE FMR Video Download</a> (3.7 MB) &nbsp;
-  </p>
-  <h2>Interested in learning more? </h2>
+  </p>-->
+  <h2>Recent Talks/Posters</h2>
 
   <ul>
+    <li><a href="./pdfs/Poster_FMR.pdf" target="_blank">Poster</a> from the <a href="https://eventi.unibo.it/ism-difa-bologna-2024/important-dates-info" target="_blank">Views on the Multi-Phase ISM</a> conference I recently attended in Bologna, Italy </li>
     <li><a href="https://www.youtube.com/live/5Gqn8pI7Xg8?t=5040s">Video</a> from the <a href="https://www.stsci.edu/contents/events/stsci/2024/april/recipes-to-regulate-star-formation-at-all-scales">Recipes to Regulate Star Formation at all Scales</a> conference in Baltimore, Maryland</li>
     <li><a href="./pdfs/Poster.pdf" target="_blank">Poster</a> from the <a href="https://galaxiesfromscratch2024.univie.ac.at/home/" target="_blank">Building Galaxies from Scratch</a> conference I recently attended in Vienna, Austria </li>
     <li><a href="./ResearchRelated/Garcia_1215_Session13_Speaker3.pdf" target="_blank">Slides</a> from a <a href='https://www.phy.cuhk.edu.hk/events/conf2023/abstract/Alex_Garcia.html'>talk</a> I gave at the <a href="https://www.phy.cuhk.edu.hk/events/conf2023/index.html">"Resolving Galaxy Ecosystems Across All Scales"</a> Conference in Hong Kong</li>
@@ -321,15 +326,23 @@ video {
   </div> -->
 
   <div class="publication" id="HighZGradients">
-    <h3>Metallicity Gradients in Cosmological Simulations Depend Strongly on Feedback Model: Forecasts
-      for High-redshift JWST Observations</h3>
+    <h3>Metallicity Gradients in Modern Cosmological Simulations I: Tension Between Smooth Stellar Feedback Models and Observations</h3>
 
-      <p>In Prep... more coming soon!</p>
+      <p>Submitted to ApJ</p>
 
       <button class="abstractButton" onclick="showAbstract('HighZGradientsAbstract')">Abstract</button>
+      <button class="documentButton" onclick="openLink('https://arxiv.org/abs/2503.03804','_blank')">arXiv</button>
+      <button class="githubButton" onclick="openLink('https://github.com/AlexGarcia623/gradients_paper1_data','_blank')">Github Repo (Data)</button>
+      <button class="githubButton" onclick="openLink('https://github.com/AlexGarcia623/gradients_paper1_scripts','_blank')">Github Repo (Scripts)</button>
 
       <p id="HighZGradientsAbstract" style="display: none;" class="abstest" data-bs-toggle="collapse">
-        Work in progress!
+        The metallicity of galaxies, and its variation with galactocentric radius, provides key insights into the formation histories of galaxies and the physical processes driving their evolution.
+        In this work, we analyze the radial metallicity gradients of star forming galaxies in the EAGLE, Illustris, IllustrisTNG, and SIMBA cosmological simulations across a broad mass (10^8.0Msun <= M_\star < ~10^12.0 Msun) and redshift (0 <= z <= 8 ) range.
+        We find that all simulations predict strong negative (i.e., radially decreasing) metallicity gradients at early cosmic times, likely due to their similar treatments of relatively smooth stellar feedback not providing sufficient mixing to quickly flatten gradients.
+        The strongest redshift evolution occurs in galaxies with stellar masses of 10^10.0-10^11.0 Msun, while galaxies with stellar masses < 10^10 Msun and >10^{11}Msun exhibit weaker redshift evolution.
+        Our results of negative gradients at high-redshift contrast with the many positive and flat gradients in the 1<z<4 observational literature.
+        At z>6, the negative gradients observed with JWST and ALMA are flatter than those in simulations, albeit with closer agreement than at lower redshift.
+        Overall, we suggest that these smooth stellar feedback galaxy simulations may not sufficiently mix their metal content radially, and that either stronger stellar feedback or additional subgrid turbulent metal diffusion models may be required to better reproduce observed metallicity gradients.
       </p> 
 
 
@@ -338,11 +351,12 @@ video {
   <div class="publication" id="HighZGradients">
     <h3>Star-Formation, Metallicity, and Stellar Mass on kpc-scales in IllustrisTNG</h3>
 
-      <p>In Prep... more coming soon!</p>
+      <p>Submitted to ApJ</p>
 
       <p>This work is led by Alex Qi, a former graduate student at the University of Florida. I took over this project in September 2024 and finished the analysis + wrote the paper</p>
 
       <button class="abstractButton" onclick="showAbstract('QiAbstract')">Abstract</button>
+      <button class="documentButton" onclick="openLink('https://arxiv.org/abs/2501.18687','_blank')">arXiv</button>
 
       <p id="QiAbstract" style="display: none;" class="abstest" data-bs-toggle="collapse">
         Integral field unit (IFU) observations have extended our knowledge of galactic properties to kpc (or, sometimes, even smaller) patches of galaxies.
@@ -367,10 +381,13 @@ video {
       The Evolution in Normalisation of the Mass-Metallicity Relation</h3>
 
 
-    <p>Submitted to MNRAS</p>
+    <p>Accepted to MNRAS January 2025!</p>
 
     <button class="abstractButton" onclick="showAbstract('TensionAbstract')">Abstract</button>
     <button class="documentButton" onclick="openLink('https://arxiv.org/abs/2407.06254','_blank')">arXiv</button>
+    <button class="documentButton" onclick="openLink('https://academic.oup.com/mnras/article/536/1/119/7901351','_blank')">MNRAS</button>
+    <button class="githubButton" onclick="openLink('https://github.com/AlexGarcia623/does_the_fmr_evolve_simulations_2/tree/main','_blank')">Github Repo</button>
+
 
     <p id="TensionAbstract" style="display: none;" class="abstest" data-bs-toggle="collapse">
       The metal content of galaxies is a direct probe of the baryon cycle.
@@ -391,7 +408,7 @@ video {
       Correlation Between Offsets from the Mass-Metallicity Relation and Star
       Formation Rate</h3>
 
-    <p>Accepted to MNRAS 05/13/2024!</p>
+    <p>Accepted to MNRAS May 2024!</p>
 
     <p>Check out:
       <a href="https://www.youtube.com/live/5Gqn8pI7Xg8?t=5040s" target="_blank">talk</a>
@@ -419,7 +436,7 @@ These results highlight the importance of avoiding coarse redshift binning when 
 
     <h3>Interplay of Stellar and Gas-Phase Metallicities: Unveiling Insights for Stellar Feedback Modeling with Illustris, IllustrisTNG, and EAGLE</h3>
   
-    <p>Accepted to MNRAS 03/12/2024!</p>
+    <p>Accepted to MNRAS March 2024!</p>
 
     <button class="abstractButton" onclick="showAbstract('FuMRoSAbstract')">Abstract</button>
     <button class="documentButton" onclick="openLink('https://arxiv.org/abs/2401.12310','_blank')">arXiv</button>
@@ -441,7 +458,7 @@ These results highlight the importance of avoiding coarse redshift binning when 
 
     <h3>Gas-phase metallicity break radii of star-forming galaxies in IllustrisTNG </h3>  
 
-    <p>Accepted to MNRAS 12/16/2022!<p>
+    <p>Accepted to MNRAS January 2023!<p>
 
     <p>Check out: <a href="./ResearchRelated/BreakRadii.pdf" target="_blank">Slides</a> and
       <a href="https://youtu.be/hqZEw38RbPs" target="_blank">talk</a>

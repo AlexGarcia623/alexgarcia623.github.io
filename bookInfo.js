@@ -4,7 +4,7 @@
 var current_books = {
     // "Green Mars":["Kim Stanley Robinson","December 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
-    "The Thursday Murder Club":["Richard Osman","February 2025",1,'./books/ThursdayMurderClub.jpg'],
+    "Children of Dune":["Frank Herbert","June 2025",494,'./books/childrenOfDune.jpg']
 }
 
 // key -> Book Title
@@ -14,6 +14,8 @@ var books = {
     // 2025
     // "Green Mars":["Kim Stanley Robinson","September 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
+    "The Great Gatsby":["F. Scott Fitzgerald","May 2025",180,"./books/greatGatsby.jpg"],
+    "The Thursday Murder Club":["Richard Osman","March 2025",388,'./books/ThursdayMurderClub.jpg'],
     "Numbers Don't Lie":["Vaclav Smil","February 2025",384,'./books/NumbersDontLie.jpg'],
     "Player Piano":["Kurt Vonnegut","February 2025",341,'./books/playerPiano.jpg'],
     "The Joy of X":['Steven Strogatz','January 2025',336,'./books/theJoyOfX.jpg'],
@@ -92,6 +94,8 @@ var books = {
 var book_classes = {
 
     // 2025
+    "The Great Gatsby"                                 :['2025','Fiction','Classics','Less than 300',"F. Scott Fitzgerald"],
+    "The Thursday Murder Club"                         :['2025','Fiction','Mystery','300+',"Richard Osman"],
     "Numbers Don't Lie"                                :['2025','Non-Fiction','Science/Math','300+','Vaclav Smil'],
     "Player Piano"                                     :['2025','Fiction','Dystopian Fiction','300+','Kurt Vonnegut'],
     "The Joy of X"                                     :['2025','Non-Fiction','Science/Math','300+','Steven Strogatz'],
