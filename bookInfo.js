@@ -4,7 +4,7 @@
 var current_books = {
     // "Green Mars":["Kim Stanley Robinson","December 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
-    "Children of Dune":["Frank Herbert","June 2025",494,'./books/childrenOfDune.jpg']
+    "Erewhon":["Samuel Butler",'July 2025',272,'./books/erewhon.jpg']
 }
 
 // key -> Book Title
@@ -14,6 +14,8 @@ var books = {
     // 2025
     // "Green Mars":["Kim Stanley Robinson","September 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
+    "The Gods Themselves":["Isaac Asimov","July 2025",288,'./books/theGodsThemselves.jpeg'],
+    "Children of Dune":["Frank Herbert","June 2025",494,'./books/childrenOfDune.jpg'],
     "The Great Gatsby":["F. Scott Fitzgerald","May 2025",180,"./books/greatGatsby.jpg"],
     "The Thursday Murder Club":["Richard Osman","March 2025",388,'./books/ThursdayMurderClub.jpg'],
     "Numbers Don't Lie":["Vaclav Smil","February 2025",384,'./books/NumbersDontLie.jpg'],
@@ -94,6 +96,8 @@ var books = {
 var book_classes = {
 
     // 2025
+     "The Gods Themselves"                             :['2025','Fiction','Sci-fi','Less than 300',"Isaac Asimov"],
+    "Children of Dune"                                 :["2025","Fiction",'Sci-fi','300+','Frank Herbert'],
     "The Great Gatsby"                                 :['2025','Fiction','Classics','Less than 300',"F. Scott Fitzgerald"],
     "The Thursday Murder Club"                         :['2025','Fiction','Mystery','300+',"Richard Osman"],
     "Numbers Don't Lie"                                :['2025','Non-Fiction','Science/Math','300+','Vaclav Smil'],
