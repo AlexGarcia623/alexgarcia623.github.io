@@ -4,16 +4,19 @@
 var current_books = {
     // "Green Mars":["Kim Stanley Robinson","December 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
-    "Losing The Nobel Prize":["Brian Keating","September 2025",368,'./books/LosingNobelPrize.jpg'],
+    "God Emperor of Dune":["Frank Herbert","October 2025",587,'./books/god_emperor.jpg'],
 }
 
 // key -> Book Title
 // values -> [ author, date finished, pages, picture ] // Same as above
 
 var books = {
-    // 2025
     // "Green Mars":["Kim Stanley Robinson","September 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
+
+    // 2025
+    "Fahrenheit 451":["Ray Bradbury","October 2025",249,'./books/fahrenheit_451.jpg'],
+    "Losing The Nobel Prize":["Brian Keating","October 2025",368,'./books/LosingNobelPrize.jpg'],
     "Erewhon":["Samuel Butler",'July 2025',272,'./books/erewhon.jpg'],
     "The Gods Themselves":["Isaac Asimov","July 2025",288,'./books/theGodsThemselves.jpeg'],
     "Children of Dune":["Frank Herbert","June 2025",494,'./books/childrenOfDune.jpg'],
@@ -97,6 +100,9 @@ var books = {
 var book_classes = {
 
     // 2025 
+
+    "Fahrenheit 451"                                   :["2025","Fiction",'Classics','Less than 300','Ray Bradbury'],
+    "Losing The Nobel Prize"                           :["2025","Fiction",'Science Psychology','300+','Brian Keating'],
     "Erewhon"                                          :['2025','Fiction','Classics','Less than 300','Samuel Butler'],
     "The Gods Themselves"                              :['2025','Fiction','Sci-fi','Less than 300',"Isaac Asimov"],
     "Children of Dune"                                 :["2025","Fiction",'Sci-fi','300+','Frank Herbert'],
