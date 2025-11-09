@@ -4,7 +4,7 @@
 var current_books = {
     // "Green Mars":["Kim Stanley Robinson","December 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
-    "God Emperor of Dune":["Frank Herbert","October 2025",587,'./books/god_emperor.jpg'],
+    "To Kill a Mockingbird":["Harper Lee","November 2025",336,'./books/toKillAMockingbird.jpg'],
 }
 
 // key -> Book Title
@@ -15,6 +15,7 @@ var books = {
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
 
     // 2025
+    "God Emperor of Dune":["Frank Herbert","October 2025",587,'./books/god_emperor.jpg'],
     "Fahrenheit 451":["Ray Bradbury","October 2025",249,'./books/fahrenheit_451.jpg'],
     "Losing The Nobel Prize":["Brian Keating","October 2025",368,'./books/LosingNobelPrize.jpg'],
     "Erewhon":["Samuel Butler",'July 2025',272,'./books/erewhon.jpg'],
@@ -100,7 +101,7 @@ var books = {
 var book_classes = {
 
     // 2025 
-
+    "God Emperor of Dune"                              :["2025","Fiction",'Sci-fi','500+','Frank Herbert'],
     "Fahrenheit 451"                                   :["2025","Fiction",'Classics','Less than 300','Ray Bradbury'],
     "Losing The Nobel Prize"                           :["2025","Fiction",'Science Psychology','300+','Brian Keating'],
     "Erewhon"                                          :['2025','Fiction','Classics','Less than 300','Samuel Butler'],
