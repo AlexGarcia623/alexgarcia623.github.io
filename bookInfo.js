@@ -4,7 +4,7 @@
 var current_books = {
     // "Green Mars":["Kim Stanley Robinson","December 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
-    "To Kill a Mockingbird":["Harper Lee","November 2025",336,'./books/toKillAMockingbird.jpg'],
+    "Frankenstein":["Mary Shelley","November 2025",280,'./books/Frankenstein.jpg']
 }
 
 // key -> Book Title
@@ -15,9 +15,10 @@ var books = {
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
 
     // 2025
+    "To Kill a Mockingbird":["Harper Lee","November 2025",336,'./books/toKillAMockingbird.jpg'],
     "God Emperor of Dune":["Frank Herbert","October 2025",587,'./books/god_emperor.jpg'],
     "Fahrenheit 451":["Ray Bradbury","October 2025",249,'./books/fahrenheit_451.jpg'],
-    "Losing The Nobel Prize":["Brian Keating","October 2025",368,'./books/LosingNobelPrize.jpg'],
+    "Losing The Nobel Prize":["Brian Keating","October 2025",368,'./books/losingNobelPrize.jpg'],
     "Erewhon":["Samuel Butler",'July 2025',272,'./books/erewhon.jpg'],
     "The Gods Themselves":["Isaac Asimov","July 2025",288,'./books/theGodsThemselves.jpeg'],
     "Children of Dune":["Frank Herbert","June 2025",494,'./books/childrenOfDune.jpg'],
@@ -37,7 +38,7 @@ var books = {
     "A Line To Kill":["Anthony Horowitz",'August 2024',384,'./books/ALineToKill.jpg'],
     "Moby Dick":["Herman Melville",'July 2024',720,'./books/mobileRichard.jpeg'],
     "A Knight of the Seven Kingdoms":["George R.R. Martin","July 2024",355,'./books/DunkAndEgg.jpg'],
-    "The Big Bang of Numbers":["Manli Suri","June 2024",384,'./books/TheBigBangOfNumbers.jpg'],
+    "The Big Bang of Numbers":["Manil Suri","June 2024",384,'./books/TheBigBangOfNumbers.jpg'],
     "And Then There Were None":["Agatha Christie","May 2024",264,'./books/AndThenThereWereNone.jpg'],
     "I, Robot":["Isaac Asimov",'May 2024',224,'./books/iRobot.jpeg'],
     "Dune: Messiah":["Frank Herbert",'May 2024',336,'./books/DuneMessiah.jpg'],
@@ -101,6 +102,7 @@ var books = {
 var book_classes = {
 
     // 2025 
+    "To Kill a Mockingbird"                            :['2025','Fiction','Classics','300+',"Harper Lee"],
     "God Emperor of Dune"                              :["2025","Fiction",'Sci-fi','500+','Frank Herbert'],
     "Fahrenheit 451"                                   :["2025","Fiction",'Classics','Less than 300','Ray Bradbury'],
     "Losing The Nobel Prize"                           :["2025","Fiction",'Science Psychology','300+','Brian Keating'],
@@ -125,7 +127,7 @@ var book_classes = {
     "Jurassic Park"                                    :["2024","Fiction","Sci-fi","300+","Michael Crichton"],
     "Moby Dick"                                        :["2024","Fiction","Classics",'500+',"Herman Melville"],
     "A Knight of the Seven Kingdoms"                   :["2024","Fiction",'Fantasy',"300+","George R.R. Martin"],
-    "The Big Bang of Numbers"                          :["2024","Non-Fiction","Science/Math","300+","Manli Suri"],
+    "The Big Bang of Numbers"                          :["2024","Non-Fiction","Science/Math","300+","Manil Suri"],
     "And Then There Were None"                         :["2024","Fiction","Mystery","Less than 300","Agatha Christie"],
     "I, Robot"                                         :["2024",'Fiction','Sci-fi','Less than 300','Isaac Asimov'],
     "Dune: Messiah"                                    :["2024","Fiction","Sci-fi","300+",'Frank Herbert'],
