@@ -4,7 +4,8 @@
 var current_books = {
     // "Green Mars":["Kim Stanley Robinson","December 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
-    "Frankenstein":["Mary Shelley","November 2025",280,'./books/Frankenstein.jpg']
+    // "Frankenstein":["Mary Shelley","November 2025",280,'./books/Frankenstein.jpg']
+    "The Adventures of Huckleberry Finn":["Mark Twain",'December 2025',327,'./books/huckfinn.jpg']
 }
 
 // key -> Book Title
@@ -15,12 +16,15 @@ var books = {
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
 
     // 2025
+    "A Christmas Carol":["Charles Dickens",'December 2025',184,'./books/achristmascarol.jpg'],
+    "Everything Bad is Good For You":["Steven Johnson","December 2025",254,'./books/everythingbad.jpg'],
     "To Kill a Mockingbird":["Harper Lee","November 2025",336,'./books/toKillAMockingbird.jpg'],
     "God Emperor of Dune":["Frank Herbert","October 2025",587,'./books/god_emperor.jpg'],
     "Fahrenheit 451":["Ray Bradbury","October 2025",249,'./books/fahrenheit_451.jpg'],
     "Losing The Nobel Prize":["Brian Keating","October 2025",368,'./books/losingNobelPrize.jpg'],
     "Erewhon":["Samuel Butler",'July 2025',272,'./books/erewhon.jpg'],
     "The Gods Themselves":["Isaac Asimov","July 2025",288,'./books/theGodsThemselves.jpeg'],
+    "The Jazz of Physics":['Stephon Alexander','June 2025',272,'./books/jazzofphysics.jpeg'],
     "Children of Dune":["Frank Herbert","June 2025",494,'./books/childrenOfDune.jpg'],
     "The Great Gatsby":["F. Scott Fitzgerald","May 2025",180,"./books/greatGatsby.jpg"],
     "The Thursday Murder Club":["Richard Osman","March 2025",388,'./books/ThursdayMurderClub.jpg'],
@@ -102,12 +106,15 @@ var books = {
 var book_classes = {
 
     // 2025 
+    "A Christmas Carol"                                :['2025','Fiction','Classics','Less than 300',"Charles Dickens"],
+    "Everything Bad is Good For You"                   :["2025","Non-Fiction",'Science Psychology','Less than 300','Steven Johnson'],
     "To Kill a Mockingbird"                            :['2025','Fiction','Classics','300+',"Harper Lee"],
     "God Emperor of Dune"                              :["2025","Fiction",'Sci-fi','500+','Frank Herbert'],
     "Fahrenheit 451"                                   :["2025","Fiction",'Classics','Less than 300','Ray Bradbury'],
     "Losing The Nobel Prize"                           :["2025","Fiction",'Science Psychology','300+','Brian Keating'],
     "Erewhon"                                          :['2025','Fiction','Classics','Less than 300','Samuel Butler'],
     "The Gods Themselves"                              :['2025','Fiction','Sci-fi','Less than 300',"Isaac Asimov"],
+    "The Jazz of Physics"                              :['2025','Non-Fiction','Science/Math','Less than 300','Stephon Alexander'],
     "Children of Dune"                                 :["2025","Fiction",'Sci-fi','300+','Frank Herbert'],
     "The Great Gatsby"                                 :['2025','Fiction','Classics','Less than 300',"F. Scott Fitzgerald"],
     "The Thursday Murder Club"                         :['2025','Fiction','Mystery','300+',"Richard Osman"],
