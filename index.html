@@ -13,6 +13,20 @@
 <script src="https://kit.fontawesome.com/b502caab12.js" crossorigin="anonymous"></script>
 
 <style>
+  .Harvard {
+    background: url('./images/harvard.jpg');
+    background-clip: border-box;
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+    opacity: 0.6;
+  }
+
+  .Harvard:hover {
+    opacity: 1;
+    color: white;
+  }
+
   .UVA {
     background: url('./images/UVA.webp');
     background-clip: border-box;
@@ -40,11 +54,11 @@
     opacity: 1;
   }
 
-  .UVA > p, .KSP > p {
+  .UVA > p, .KSP > p, .Harvard > p {
     text-shadow: 0 0 2px black;
   }
 
-  .UVA:hover > p, .KSP:hover > p {
+  .UVA:hover > p, .KSP:hover > p, .Harvard:hover > p {
     text-shadow: 0 0 2px black;
     color:white;
   }
@@ -127,11 +141,11 @@
       <div class="card-inner">
         <h1>Alex M. Garcia</h1>
         <div class="row">
-          <div class="column border-right UVA" onclick="window.open('workExamples.html#Graduate Research','_self')">
-            <p>Graduate Student<br>University of Virginia</p>
+          <div class="column border-right Harvard" onclick="window.open('workExamples.html#KSP','_self')">
+            <p>Post-doctoral Fellow<br>Center for Astrophysics</p>
           </div>
-          <div class="column KSP" onclick="window.open('workExamples.html#KSP','_self')">
-            <p>Planetarium Assistant<br>Kika Silva Pla Planetarium</p>
+          <div class="column UVA" onclick="window.open('workExamples.html#Graduate Research','_self')">
+            <p>Graduate Student<br>University of Virginia</p>
           </div>
         </div>
         <!-- <div class="row">

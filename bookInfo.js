@@ -5,7 +5,7 @@ var current_books = {
     // "Green Mars":["Kim Stanley Robinson","December 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
     // "Frankenstein":["Mary Shelley","November 2025",280,'./books/Frankenstein.jpg']
-    "Pride and Prejudice":['Jane Austen','January 2026',435,'./books/prideandprejudice.jpeg'],
+    "Romeo And Juliet":["William Shakespeare",'February 2026',336,'./books/RomeoAndJuliet.jpeg']
 }
 
 // key -> Book Title
@@ -15,6 +15,7 @@ var books = {
     // "Green Mars":["Kim Stanley Robinson","September 2024",640,'./books/GreenMars.jpg'],
     // "Blue Mars":["Kim Stanley Robinson","September 2024",761,'./books/BlueMars.jpg'],
     // 2026
+    "Pride and Prejudice":['Jane Austen','February 2026',435,'./books/prideandprejudice.jpeg'],
     "The Time Machine":['H.G. Wells','January 2026',118,'./books/timemachine.jpeg'],
     "The Adventures of Huckleberry Finn":["Mark Twain",'December 2025',327,'./books/huckfinn.jpg'],
 
@@ -109,6 +110,7 @@ var books = {
 var book_classes = {
 
     // 2026
+    "Pride and Prejudice"                              :['2026','Fiction','Classics','300+', 'Jane Austen'],
     "The Time Machine"                                 :['2026','Fiction','Classics','Less than 300','H.G. Wells'],
     "The Adventures of Huckleberry Finn"               :['2026',"Fiction",'Classics','300+','Mark Twain'],
 
