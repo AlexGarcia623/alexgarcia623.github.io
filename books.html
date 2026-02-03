@@ -70,7 +70,8 @@
 <script>
 
   var options       = document.getElementById('whichFilter').selectedOptions;
-  var currentFilter = Array.from(options).map(({ value }) => value);
+  // var currentFilter = Array.from(options).map(({ value }) => value);
+  var currentFilter = options[0].value;
 
   var arr = [...document.getElementById('whichFilter').options];
   var optionsArray = arr.map(a => a.value);

@@ -70,6 +70,9 @@ function makeCurrentBooks() {
     if (!filterDivsExist[currentFilter]) {
       all_headers   = [];
       all_selectors = [];
+
+      let sortedBooks = Object.entries(books);
+
       for (var currentBook in books) {
         var attributes   = books[currentBook];
 
@@ -170,6 +173,22 @@ function makeCurrentBooks() {
         }
       }
       filterDivsExist[currentFilter] = true;
+
+      if (currentFilter === "byYear") {
+        all_headers.sort((a, b) => Number(b) - Number(a));
+      } else {
+        all_headers.sort((a, b) => a.localeCompare(b));
+      }
+
+      const parent = document.getElementById(currentFilter);
+
+      for (let header of all_headers) {
+        const headerDiv = document.getElementById(header);
+        const gridDiv   = document.getElementById('books' + header);
+
+        parent.appendChild(headerDiv);
+        parent.appendChild(gridDiv);
+      }
 
       filterOptions[currentFilter] = all_headers;
     }    

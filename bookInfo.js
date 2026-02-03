@@ -171,7 +171,7 @@ var book_classes = {
     "Project Hail Mary"                                :['2023','Fiction','Sci-fi','300+','Andy Weir'],
     "The Day We Discovered The Universe"               :['2023','Non-Fiction','History','300+','Marcia Bartusiak'],
     "How To Think About Weird Things"                  :['2023','Non-Fiction','Science Psychology','300+','Theodore Schick Jr. & Lewis Vaughn'],
-    "Duck For President"                               :['2023','Fiction',"Children's",'Less than 300',"Doreen Cronin & Betsy Lewin"],
+    "Duck For President"                               :['2023','Fiction',"Short Stories",'Less than 300',"Doreen Cronin & Betsy Lewin"],
     "The Story of The Universe in 100 Stars"           :['2023','Non-Fiction','Science/Math','Less than 300',"Florian Freistetter"],
     "The Model Thinker"                                :['2023','Non-Fiction','Science Psychology','300+',"Scott E. Page"],
     "Piranesi"                                         :['2023','Fiction','Fantasy','Less than 300','Susana Clarke'],
