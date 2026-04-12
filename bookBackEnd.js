@@ -83,6 +83,12 @@ function makeCurrentBooks() {
 
         var selectors    = book_classes[currentBook];
 
+        var rating = selectors[5];
+
+        if (currentFilter === "byFavorites" && isNaN(parseInt(rating))) {
+          continue;
+        }
+
         var parentDiv = document.getElementById(currentFilter);
 
         if (!all_headers.includes(selectors[filter2index[currentFilter]])) {
@@ -162,19 +168,11 @@ function makeCurrentBooks() {
           npages_display.innerHTML = "Pages: " + String(pages);
         
           col2.appendChild(npages_display);
-        } else if (currentFilter == "bySubGenre") {
-          if (selectors[filter2index[currentFilter]] == "Childrens") {
-            joke_display = document.createElement('p');
-            joke_display.innerHTML = "This was a difficult read! ;)";
-            joke_display.setAttribute('style','color:red;font-size:20pt;')
-
-            col2.appendChild(joke_display);
-          }
-        }
+        } 
       }
       filterDivsExist[currentFilter] = true;
 
-      if (currentFilter === "byYear") {
+      if (currentFilter === "byYear" || currentFilter === "byFavorites") {
         all_headers.sort((a, b) => Number(b) - Number(a));
       } else {
         all_headers.sort((a, b) => a.localeCompare(b));
@@ -247,9 +245,28 @@ function makeCurrentBooks() {
         s = '';
       }
 
-      location_of_text.innerHTML = 'I have read ' + String(n_books) + ' book' + s + ' in this category for a total of ' + n_pages.toLocaleString() + ' pages.';
+      if (currentFilter !== "byFavorites") {
+        location_of_text.innerHTML = 'I have read ' + String(n_books) + ' book' + s + ' in this category for a total of ' + n_pages.toLocaleString() + ' pages.';
 
-      location_of_text.innerHTML += '<br><br>Average book length: ' + parseInt(n_pages/n_books).toLocaleString() + ' pages.';
+        location_of_text.innerHTML += '<br><br>Average book length: ' + parseInt(n_pages/n_books).toLocaleString() + ' pages.';
+      } else {
+        let ratingText = {
+          10: "Best books I've read",
+          9: "All-time classics",
+          8: "Great",
+          7: "Very good",
+          6: "Enjoyed",
+          5: "Fine/Good",
+          4: "Not a huge fan",
+          3: "Wasn't for me",
+          2: "Moby Dick"
+        };
+
+        location_of_text.innerHTML = ratingText[header] 
+          ? ratingText[header]
+          : "";
+        // location_of_text.innerHTML = '';
+      }
 
       total_books = total_books + n_books;
       total_pages = total_pages + n_pages;
