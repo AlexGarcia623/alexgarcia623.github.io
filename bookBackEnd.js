@@ -85,6 +85,7 @@ function makeCurrentBooks() {
 
         var rating = selectors[5];
 
+
         if (currentFilter === "byFavorites" && isNaN(parseInt(rating))) {
           continue;
         }
@@ -172,8 +173,8 @@ function makeCurrentBooks() {
       }
       filterDivsExist[currentFilter] = true;
 
-      if (currentFilter === "byYear" || currentFilter === "byFavorites") {
-        all_headers.sort((a, b) => Number(b) - Number(a));
+      if (currentFilter === "byYear" || currentFilter === "byFavorites" || currentFilter === "byYearWritten") {
+        all_headers.sort((a, b) => parseInt(b) - parseInt(a));
       } else {
         all_headers.sort((a, b) => a.localeCompare(b));
       }
